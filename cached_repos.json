@@ -1,0 +1,167 @@
+{
+    "updated_at": "2024-12-03T19:25:09.693784+00:00",
+    "repositories": [
+        {
+            "name": "HW_ascom_camera",
+            "html_url": "https://github.com/ScopeFoundry/HW_ascom_camera",
+            "description": null,
+            "last_updated": "2024-08-12T01:05:28Z"
+        },
+        {
+            "name": "HW_ni_daq",
+            "html_url": "https://github.com/ScopeFoundry/HW_ni_daq",
+            "description": null,
+            "last_updated": "2017-01-10T20:27:05Z"
+        },
+        {
+            "name": "HW_thorlabs_powermeter",
+            "html_url": "https://github.com/ScopeFoundry/HW_thorlabs_powermeter",
+            "description": null,
+            "last_updated": "2024-08-12T00:38:50Z"
+        },
+        {
+            "name": "HW_random_gen",
+            "html_url": "https://github.com/ScopeFoundry/HW_random_gen",
+            "description": null,
+            "last_updated": "2017-01-23T22:17:34Z"
+        },
+        {
+            "name": "HW_virtual_function_gen",
+            "html_url": "https://github.com/ScopeFoundry/HW_virtual_function_gen",
+            "description": null,
+            "last_updated": "2017-02-03T18:30:05Z"
+        },
+        {
+            "name": "HW_picoharp",
+            "html_url": "https://github.com/ScopeFoundry/HW_picoharp",
+            "description": null,
+            "last_updated": "2017-12-13T17:55:22Z"
+        },
+        {
+            "name": "HW_mcl_stage",
+            "html_url": "https://github.com/ScopeFoundry/HW_mcl_stage",
+            "description": "MadCityLabs Nanopositioner Stage ScopeFoundry Hardware component",
+            "last_updated": "2020-12-21T20:34:38Z"
+        },
+        {
+            "name": "HW_newport_esp300",
+            "html_url": "https://github.com/ScopeFoundry/HW_newport_esp300",
+            "description": "ScopeFoundry Hardware Component for Newport ESP300 motion controller",
+            "last_updated": "2024-08-12T02:07:03Z"
+        },
+        {
+            "name": "HW_attocube_ecc100",
+            "html_url": "https://github.com/ScopeFoundry/HW_attocube_ecc100",
+            "description": "Attocube ECC100 closed loop stage ScopeFoundry Hardware Component",
+            "last_updated": "2017-11-27T20:11:16Z"
+        },
+        {
+            "name": "HW_acton_spec",
+            "html_url": "https://github.com/ScopeFoundry/HW_acton_spec",
+            "description": "Acton Spectrometer 2300i ScopeFoundry Hardware Component",
+            "last_updated": "2023-12-17T10:15:42Z"
+        },
+        {
+            "name": "HW_attocube_anc150",
+            "html_url": "https://github.com/ScopeFoundry/HW_attocube_anc150",
+            "description": "Attocube ANC150 open loop stage ScopeFoundry Hardware Component",
+            "last_updated": "2017-11-27T20:34:31Z"
+        },
+        {
+            "name": "HW_andor_camera",
+            "html_url": "https://github.com/ScopeFoundry/HW_andor_camera",
+            "description": null,
+            "last_updated": "2024-08-12T00:29:30Z"
+        },
+        {
+            "name": "HW_tenma_power",
+            "html_url": "https://github.com/ScopeFoundry/HW_tenma_power",
+            "description": null,
+            "last_updated": "2017-11-27T20:35:26Z"
+        },
+        {
+            "name": "HW_picam",
+            "html_url": "https://github.com/ScopeFoundry/HW_picam",
+            "description": "ScopeFoundry hardware plug-in to control PICAM-based Princeton Instruments Cameras",
+            "last_updated": "2023-01-31T18:27:34Z"
+        },
+        {
+            "name": "HW_foundry_data_organizer",
+            "html_url": "https://github.com/ScopeFoundry/HW_foundry_data_organizer",
+            "description": "plug in to add proposal identifier to h5 metadata",
+            "last_updated": "2023-09-05T21:52:56Z"
+        },
+        {
+            "name": "HW_asi_stage",
+            "html_url": "https://github.com/ScopeFoundry/HW_asi_stage",
+            "description": "ASI Stage ScopeFoundry Hardware Component",
+            "last_updated": "2023-09-20T03:25:28Z"
+        },
+        {
+            "name": "HW_lambda_zup",
+            "html_url": "https://github.com/ScopeFoundry/HW_lambda_zup",
+            "description": "Lambda Zup Power Supply ScopeFoundry Hardware Component",
+            "last_updated": "2024-08-12T00:33:19Z"
+        },
+        {
+            "name": "HW_zwo_camera",
+            "html_url": "https://github.com/ScopeFoundry/HW_zwo_camera",
+            "description": "ASI ZWO Astronomy Camera ScopeFoundry Hardware Component",
+            "last_updated": "2024-08-12T00:35:51Z"
+        },
+        {
+            "name": "HW_zaber_motion",
+            "html_url": "https://github.com/ScopeFoundry/HW_zaber_motion",
+            "description": "Zaber motion control stage ScopeFoundry Hardware Component",
+            "last_updated": "2024-08-12T00:35:00Z"
+        },
+        {
+            "name": "HW_zeiss_sem",
+            "html_url": "https://github.com/ScopeFoundry/HW_zeiss_sem",
+            "description": "Zeiss SEM REMCON32 ScopeFoundry Hardware Component",
+            "last_updated": "2024-08-12T00:37:28Z"
+        },
+        {
+            "name": "HW_quantum_composer",
+            "html_url": "https://github.com/ScopeFoundry/HW_quantum_composer",
+            "description": "Quantum Composer HW",
+            "last_updated": "2024-08-12T00:40:26Z"
+        },
+        {
+            "name": "HW_dynamixel_servo",
+            "html_url": "https://github.com/ScopeFoundry/HW_dynamixel_servo",
+            "description": "Robotis Dynamixel Servo Motor ScopeFoundry Hardware Component",
+            "last_updated": "2024-08-12T00:41:58Z"
+        },
+        {
+            "name": "HW_canon_ccapi",
+            "html_url": "https://github.com/ScopeFoundry/HW_canon_ccapi",
+            "description": "Canon Camera Capture (CCAPI) ScopeFoundry Hardware Component",
+            "last_updated": "2024-08-12T00:44:11Z"
+        },
+        {
+            "name": "HW_andor_spec",
+            "html_url": "https://github.com/ScopeFoundry/HW_andor_spec",
+            "description": "Andor Spectrometer ScopeFoundry Hardware Component",
+            "last_updated": "2024-08-12T00:45:08Z"
+        },
+        {
+            "name": "HW_crystaltech_aotf",
+            "html_url": "https://github.com/ScopeFoundry/HW_crystaltech_aotf",
+            "description": "CrystalTech AOTF ScopeFoundry Hardware Component",
+            "last_updated": "2024-08-12T00:46:30Z"
+        },
+        {
+            "name": "HW_flircam",
+            "html_url": "https://github.com/ScopeFoundry/HW_flircam",
+            "description": "FLIRCAM Spinnaker API Camera ScopeFoundry Hardware Component",
+            "last_updated": "2024-08-12T00:47:58Z"
+        },
+        {
+            "name": "HW_igus_dryve",
+            "html_url": "https://github.com/ScopeFoundry/HW_igus_dryve",
+            "description": "Igus Dryve Motion Control ScopeFoundry Hardware Component",
+            "last_updated": "2024-08-12T00:57:38Z"
+        }
+    ]
+}
