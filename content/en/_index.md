@@ -70,7 +70,7 @@ Uses:
 * [API Documentation](http://scopefoundry.readthedocs.io/en/latest/ScopeFoundry.html)
 
 
-![Microscope](microscope.png)
+![Microscope](featured-background.jpg)
 
 
 
