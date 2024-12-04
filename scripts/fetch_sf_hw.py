@@ -32,7 +32,9 @@ def fetch_and_cache_repos():
                 "description": repo["description"],
                 "last_updated": repo["updated_at"]
             }
-            for repo in repos if repo["name"].startswith(HW_PREFIX)
+            for repo in repos if repo["name"].startswith(
+                # hard coding this exception, but there might be others?
+                HW_PREFIX) and not repo["name"] == "HW_foundry_data_organizer"
         ]
 
         cache_data = {

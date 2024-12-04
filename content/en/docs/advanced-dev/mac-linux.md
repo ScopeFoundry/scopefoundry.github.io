@@ -1,6 +1,6 @@
 ---
 title: MacOS and Linux
-description: Show your user how to work through some end to end examples.
+description: Instructions for ScopeFoundry Development on macOS and Linux.
 date: 2017-01-04
 weight: 2
 ---
