@@ -29,6 +29,10 @@ last_updated: {repo["last_updated"]}
 - [GitHub Repository]({repo["html_url"]})
 - Last Updated: {repo["last_updated"]}
 
+## Readme
+
+{repo["readme"]}
+
 """
 
             filename = f"content/en/docs/reference/hw-components/{repo['name']}.md"

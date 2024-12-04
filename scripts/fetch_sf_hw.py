@@ -14,6 +14,17 @@ GITHUB_API_URL = f"https://api.github.com/orgs/{ORG}/repos"
 # optional for higher rate limits, but we should only need to run this a few times a day, max
 GITHUB_TOKEN = None # "your_github_token_here"
 
+
+def fetch_readme(repo_url):
+    """
+    https://docs.github.com/en/rest/repos/contents?apiVersion=2022-11-28#get-a-repository-readme
+    """
+    api_url = repo_url.replace("https://github.com", "https://api.github.com/repos") + "/contents/README.md"
+    response = requests.get(api_url, headers={"Accept": "application/vnd.github.raw+json"}, timeout=100)
+    if response.status_code == 200:
+        return response.text
+    return "README could not be retrieved."
+
 def fetch_and_cache_repos():
     """
     Uses the github API to find all hardware component repos in the parent ScopeFoundry project
@@ -30,7 +41,8 @@ def fetch_and_cache_repos():
                 "name": repo["name"],
                 "html_url": repo["html_url"],
                 "description": repo["description"],
-                "last_updated": repo["updated_at"]
+                "last_updated": repo["updated_at"],
+                "readme": fetch_readme(repo["html_url"])
             }
             for repo in repos if repo["name"].startswith(
                 # hard coding this exception, but there might be others?
@@ -53,3 +65,4 @@ def fetch_and_cache_repos():
 
 if __name__ == "__main__":
     fetch_and_cache_repos()
+# Fetch README content
