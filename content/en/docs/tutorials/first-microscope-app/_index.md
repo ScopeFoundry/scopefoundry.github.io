@@ -14,7 +14,7 @@ weight: 1
 
 Note: We recommend the [Anaconda][anaconda_dl] Python distribution, which contains many easy-to-install scientific python packages.
 
-* Download and Install [Anaconda][anaconda_dl]. The recommended Python version is 3.6, but 2.7 may also work (but is currently untested). If you already had a non-Anaconda version of python installed, you will need to make sure you use Anaconda if you would like to follow the instructions below.
+* Download and Install [Anaconda][anaconda_dl]. The recommended Python version is 3.11, but 2.7 may also work (but is currently untested). If you already had a non-Anaconda version of python installed, you will need to make sure you use Anaconda if you would like to follow the instructions below.
 
 * Anaconda provides a way to make a clean set of packages in an "environment". Follow these steps to create an [conda environment](http://conda.pydata.org/docs/using/envs.html). This environment includes ScopeFoundry and all of the packages ScopeFoundry needs to run. 
 
@@ -23,9 +23,9 @@ __Windows__
 Open an Anaconda prompt and run the following commands:
     
 ```sh
-> conda create -n scopefoundry python=3.6
-> activate scopefoundry
-(scopefoundry) > conda install numpy pyqt qtpy h5py pyqtgraph
+> conda create -n scopefoundry python=3.12
+> conda activate scopefoundry
+(scopefoundry) > conda install numpy pyqt qtpy h5py pyqtgraph pyserial matplotlib qtconsole
 (scopefoundry) > pip install ScopeFoundry
 ```
 The first two lines create and activate a clean python / conda environment for your ScopeFoundry app to use, the next lines install the required packages and the final line install the ScopeFoundry package itself.    
@@ -37,7 +37,7 @@ __Mac / Linux__
 Open a terminal and run the following commands:
 
 ```sh
-$ conda create -n scopefoundry python=3.6
+$ conda create -n scopefoundry python=3.11
 $ source activate scopefoundry
 (scopefoundry) $ conda install numpy pyqt qtpy h5py pyqtgraph
 (scopefoundry) $ pip install ScopeFoundry
@@ -49,7 +49,8 @@ The first two lines create and activate a clean python / conda environment for y
 ## Step 2: Create your Microscope App
 
 
-Make a directory (folder) for you microscope, say `fancy_microscope`, and create a file inside called `fancy_microscope.py`(A complete version of this file is available [here][fancy_microscope_app.py]). Copy and paste the following content into this file and save it.
+Make a new directory/folder for you microscope, say `fancy_microscope`, and create a file inside called `fancy_microscope.py` 
+\(a complete version of this file is available [here](fancy_microscope_app.py)\). Copy and paste the following content into this file and save it.
 
 This file tells ScopeFoundry all about your microscope -- like any hardware and measurement components that are part of your microscope setup. 
 

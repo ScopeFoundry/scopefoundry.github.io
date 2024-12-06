@@ -1,8 +1,8 @@
 ---
-title: Tutorials
-description: Show your user how to work through some end to end examples.
+title: Developer Tutorials
+description: Learn to write your own custom ScopeFoundry hardware and measurement plugins.
 date: 2017-01-04
-weight: 2
+weight: 3
 ---
 
 {{% pageinfo %}}

@@ -13,21 +13,21 @@ A Python platform for controlling custom laboratory experiments and visualizing 
 
 
 
-## Install
+## Quick Install
 
-Using [Anaconda](https://www.continuum.io/downloads) with Python 3.6:
+Using [Anaconda](https://www.anaconda.com/download) with Python 3.11:
 
 ```
 conda install numpy pyqt qtpy h5py pyqtgraph
 pip install ScopeFoundry
 ```
 
-Source Code available on GitHub: <https://github.com/ScopeFoundry/>
+Visit [Getting Started](docs/getting-started.md) for full instructions.
+
 
 ### Data Browser
 
 For a pre-compiled version of FoundryDataBrowser, check the [releases page](https://github.com/ScopeFoundry/FoundryDataBrowser/releases)
-
 
 
 ## Why ScopeFoundry?
@@ -51,20 +51,16 @@ Uses:
 
 
 ## Tutorials
+Learn to write your own custom components for ScopeFoundry:
 
-[1st_microscope]: ./building_your_first_microscope.md
-[measure_tut]: ./custom_measurement.md
-[hw_tut]: ./building_a_custom_hardware_plugin.md
-[databrowser_tut]: ./databrowser_view_tutorial.md
-
-* [Your First Microscope][1st_microscope]
-* [Custom Measurements][measure_tut]
-* [Hardware Plug-in][hw_tut]
-* [Data Browser Viewer][databrowser_tut]
+* [Your First Microscope](docs/tutorials/first-microscope-app/)
+* [Custom Measurements](docs/tutorials/custom-measurements)
+* [Hardware Plug-in](docs/tutorials/hardware-plugin)
+* [Data Browser Viewer](docs/tutorials/data-browser-plugin)
 
 
 ## Documentation
-
+Browse documentation for currently supported hardware devices as well as advanced development topics.
 * [Key Concepts](key_concepts/key_concepts.md)
 * [Advanced Development](advanced_dev.md)
 * [API Documentation](http://scopefoundry.readthedocs.io/en/latest/ScopeFoundry.html)
@@ -74,12 +70,6 @@ Uses:
 
 
 
-<!--
-[![data_browse_img](microscope_400.png)][1st_microscope]
-[![measure_dia](./measure_diagram.png)][measure_tut]
-[![hw_diagram](./hw_plugin_diagram.png)][hw_tut]
-[![data_browse_img](databrowse_1_400.png)][databrowser_tut]
--->
 
 ## Where to Find More
 
