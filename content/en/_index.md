@@ -1,78 +1,77 @@
 ---
-title: ScopeFoundry
-# using docs to have sidebar visible on homepage
-type: docs
+title: Goldydocs
 ---
 
-
-![ScopeFoundry Logo -- Sideview of a cog next to a microscope](/sf_logo.png)
-
-
-A Python platform for controlling custom laboratory experiments and visualizing scientific data
-
-
-
-
-## Quick Install
-
-Using [Anaconda](https://www.anaconda.com/download) with Python 3.11:
-
-```
-conda install numpy pyqt qtpy h5py pyqtgraph
-pip install ScopeFoundry
-```
-
-Visit [Getting Started](docs/getting-started.md) for full instructions.
+{{< blocks/cover title="ScopeFoundry" image_anchor="bottom" height="full" >}}
+<a class="btn btn-lg btn-primary me-3 mb-4" href="/docs/">
+  Learn More <i class="fas fa-arrow-alt-circle-right ms-2"></i>
+</a>
+<a class="btn btn-lg btn-secondary me-3 mb-4" href="https://github.com/google/docsy-example">
+  Download <i class="fab fa-github ms-2 "></i>
+</a>
+<p class="lead mt-5">Porridge temperature assessment &mdash; in the cloud!</p>
+{{< blocks/link-down color="info" >}}
+{{< /blocks/cover >}}
 
 
-### Data Browser
+{{% blocks/lead color="primary" %}}
+Goldydocs provides a single web UI providing visibility into porridge
+temperature, chair size, and bed softness metrics! You can even find out who's
+been eating **your** porridge.
 
-For a pre-compiled version of FoundryDataBrowser, check the [releases page](https://github.com/ScopeFoundry/FoundryDataBrowser/releases)
-
-
-## Why ScopeFoundry?
-
-
-An open-source alternative to LabView or MATLAB instrument control.
-
-* Modular, cross-platform Python graphical interface allows for fast data acquisition and visualization 
-* Build lab equipment graphical interfaces interactively with Qt Creator
-* Live updates of measurement code for fast development and debugging
-* Hardware plug-ins for simple and complex scientific equipment
-
-Uses: 
-
-* Currently used in multi-modal scanning microscopy measurements with electrons and optics
-* Flexible for many other data acquisition tasks
-
-## Demo Videos
-
-<b>[Demo Videos](video_demos.md)</b>
+(Sadly, Goldydocs isn't a real project, but you can use this site as an example
+to create your own real websites with [Docsy](https://docsy.dev))
+{{% /blocks/lead %}}
 
 
-## Tutorials
-Learn to write your own custom components for ScopeFoundry:
+{{% blocks/section color="dark" type="row" %}}
+{{% blocks/feature icon="fa-lightbulb" title="New chair metrics!" %}}
+The Goldydocs UI now shows chair size metrics by default.
 
-* [Your First Microscope](docs/tutorials/first-microscope-app/)
-* [Custom Measurements](docs/tutorials/custom-measurements)
-* [Hardware Plug-in](docs/tutorials/hardware-plugin)
-* [Data Browser Viewer](docs/tutorials/data-browser-plugin)
-
-
-## Documentation
-Browse documentation for currently supported hardware devices as well as advanced development topics.
-* [Key Concepts](key_concepts/key_concepts.md)
-* [Advanced Development](advanced_dev.md)
-* [API Documentation](http://scopefoundry.readthedocs.io/en/latest/ScopeFoundry.html)
+Please follow this space for updates!
+{{% /blocks/feature %}}
 
 
-![Microscope](featured-background.jpg)
+{{% blocks/feature icon="fab fa-github" title="Contributions welcome!" url="https://github.com/google/docsy-example" %}}
+We do a [Pull Request](https://github.com/google/docsy-example/pulls) contributions workflow on **GitHub**. New users are always welcome!
+{{% /blocks/feature %}}
 
 
+{{% blocks/feature icon="fab fa-twitter" title="Follow us on Twitter!" url="https://twitter.com/docsydocs" %}}
+For announcement of latest features etc.
+{{% /blocks/feature %}}
 
 
-## Where to Find More
+{{% /blocks/section %}}
 
-For questions about using ScopeFoundry, please visit and post on the ScopeFoundry [project mailing list / forum](https://groups.google.com/forum/#!forum/scopefoundry)
 
-For Source Code of ScopeFoundry visit our [GitHub page](https://github.com/scopefoundry/)
+{{% blocks/section %}}
+This is the second section
+{.h1 .text-center}
+{{% /blocks/section %}}
+
+
+{{% blocks/section type="row" %}}
+
+{{% blocks/feature icon="fab fa-app-store-ios" title="Download **from AppStore**" %}}
+Get the Goldydocs app!
+{{% /blocks/feature %}}
+
+{{% blocks/feature icon="fab fa-github" title="Contributions welcome!"
+    url="https://github.com/google/docsy-example" %}}
+We do a [Pull Request](https://github.com/google/docsy-example/pulls)
+contributions workflow on **GitHub**. New users are always welcome!
+{{% /blocks/feature %}}
+
+{{% blocks/feature icon="fab fa-twitter" title="Follow us on Twitter!"
+    url="https://twitter.com/GoHugoIO" %}}
+For announcement of latest features etc.
+{{% /blocks/feature %}}
+
+{{% /blocks/section %}}
+
+
+{{% blocks/section %}}
+This is the another section
+{.h1 .text-center}
+{{% /blocks/section %}}
