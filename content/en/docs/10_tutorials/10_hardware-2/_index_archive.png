@@ -1,0 +1,29 @@
+---
+title: Hardware 2 - low level interface
+description: more on low level interface implementation 
+date: 2025-01-01
+weight: 10
+---
+
+### The gap to close
+
+With an actual hardware, the architecture required to display the state of a hardware on a widget can be summarized in a diagram:
+
+![hw_diagram](hw_diagram.png)
+
+Somewhat complex but fortunately 
+
+- (reading the diagram from the left) By following the steps in the manufacturer manual's "installation" section you typically create or register some sort process in your operating system that allow one to communicate with the hardware.
+- (reading the diagram from right) In part 1 you have learned that ScopeFoundry, running on python process,
+
+Here we give hints on how to write the `_dev.py` file. This sometimes also called a Device wrapper, some python code IO
+
+
+
+most of this architecture is (hardware, cable, driver, io process) is provided by the manufacturer of your hardware and can be realized by following the steps in the manufacturer manual's "getting started" section. Typically this results in some sort process running on Windows (label IO Process in the diagram) that allows the user to read write data to the hardware device. 
+
+On the other end, we learned in Part 1 how the _hw.py is used to handle given the _dev.py wrapper.
+
+
+
+Part 2 stuff

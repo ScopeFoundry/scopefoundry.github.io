@@ -5,15 +5,12 @@ date: 2017-01-04
 weight: 2
 ---
 
-{{% pageinfo %}}
-This is a placeholder page that shows you how to use this template site.
-{{% /pageinfo %}}
+The goals of this tutorial is to
 
-The goal of this Tutorial is two-fold:
-
-- Helping you to build your first microscope app fast. With ScopeFoundry.tools getting started is easy
+- Help you build your first microscope app
 - Provide some documentation
+- Use ScopeFoundry.tools efficiently
 
-If you are new, we recommend you to take all basic tutorials in order: [Get started!](1_getting-started)
+Acces code from [tutorial repository](https://github.com/UBene/scope_foundry_2_basic_tutorial)
 
-More detailed concepts can be found in [KeyConcepts](docs/key-concepts.md)
+If you are new, we recommend you to take all basic tutorials in order

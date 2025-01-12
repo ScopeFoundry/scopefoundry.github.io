@@ -5,7 +5,7 @@ date: 2025-01-01
 weight: 2
 ---
 
-Here we discuss how to build a custom hardware plug-in for ScopeFoundry. If one is not [available in our list of plug-ins](docs/reference/hw-components/), you can build one based on tutorial. By the end of part 1 you have created a plugin that is a virtual sine wave generator and you will have learned basic ScopeFoundry concepts. Virtual because we just simulate values that in practice will come from physical device. In part 2 we will close the gap.
+Here we discuss how to build a custom hardware plug-in for ScopeFoundry. If one is not [available in our list of plug-ins](docs/reference/hw-components/), you can build one based on the tutorial. By the end of part 1, you have created a plugin that is a virtual sine wave generator and you will have learned basic ScopeFoundry concepts. Virtual because we just simulate values that in practice will come from a physical device. In part 2 we will close the gap.
 
 ## First steps
 
@@ -21,9 +21,10 @@ Fill out the `new hardware` tab as below and hit `create new hardware`:
 
 ![tools_new_hardware](tools_new_hardware.png)
 
-Note, that this generated the required files in your `ScopeFoundryHW` folder. You can copy the the content of import statements into your `fancy_app.py` file (hat you already have generated in a  [prev tutorial ](../1_getting-started) renamed from `example_2d_slow_scan_app.py` to `fancy_app.py`). If you used the values entered above your `fancy_app.py` should look like:
+Note, that this generated the required files in your `ScopeFoundryHW` folder. You can copy the content of import statements into your `fancy_app.py` file (that you already have generated in a [prev tutorial](../1_getting-started) renamed from `example_2d_slow_scan_app.py` to `fancy_app.py`). If you used the values entered above your `fancy_app.py` should look like:
 
 ```python
+# fancy_app.py
 import sys
 
 from ScopeFoundry import BaseMicroscopeApp
@@ -47,15 +48,16 @@ if __name__ == "__main__":
 
 ```
 
-From here, in general 2 files in `ScopeFoundryHW/random_number_gen` are important and will modified to complete part 1:
+From here, in general, 2 files in `ScopeFoundryHW/random_number_gen` are important and will be modified to complete part 1:
 
-## number_gen_dev.py
+## Low level interface: number_gen_dev.py
 
-In general this file functions as a low level interface between ScopeFoundry and an IO Process running on Windows. For part 1 of this tutorial this file will be just given and simulates values for a sine wave function generator. (Nowadays this somewhat true as most manufactureres provide a python library that handle all low level handling). In [part 2](../10_hardware-2) we give somewhat tipps how to write this in practice.
+In general, this file functions as a low-level interface between ScopeFoundry and a process or demon running on the operating system that communicates with the hardware. For now, this file will be just given and simulates values for a sine wave function generator. In [part 2](../10_hardware-2) we give some tips on how to write this in practice.
 
-Go ahead and and replace the content of random_gen_dev.dev with the following content
+Go ahead and replace the content of `random_gen_dev.dev` with the following content
 
 ```python
+# number_gen_dev.py
 import time
 
 import numpy as np
@@ -111,9 +113,11 @@ if __name__ == '__main__':
 
 ```
 
-When we create an instance of this device class, we begin communication to the device. Other methods with names starting with `read_` or `write_` are the messages we can pass back and forth to the device.
+##### Some comments:
 
-In this case we defined a method `read_rand_num` which uses a random number generator from numpy and returns a random value every time it's called. This function is referenced in the hardware plugin section below code.
+When we create an instance of this device class, we begin communication with the device. Other methods with names starting with `read_` or `write_` are the messages we can pass back and forth to the device.
+
+In this case, we defined a method `read_rand_num` which uses a random number generator from numpy and returns a random value every time it's called. This function is referenced in the hardware plugin section below code.
 
 In the case where you would like to connect to real scientific equipment and define basic functions based on its communication protocol, I would recommend the following:
 
@@ -121,11 +125,14 @@ In the case where you would like to connect to real scientific equipment and def
 - Then define a write function which can send messages to the device over RS232, Ethernet, via DLL or other protocol as required.
 
 
-## number_gen_hw.py: the ScopeFoundry Hardware Plug-in
+## The actual ScopeFoundry Hardware plug-in
 
-The next step is to create the `HardwareComponent` ScopeFoundry plug-in that gets actually imported to your app. Here we sub-class `HardwareComponent` and define three methods: `setup()`, `connect()`, and `disconnect()`: 
+The next step is to create a subclass `ScopeFoundry.hardware.HardwareComponent` that will be added to the app. 
+
+The required methods are: `setup()`, `connect()`, and `disconnect()`.
 
 ```python
+# number_gen_hw.py
 from ScopeFoundry.hardware import HardwareComponent
 
 
@@ -168,23 +175,23 @@ class NumberGenHw(HardwareComponent):
 
 ```
 
-There are several critical components contained within this module which essentially handle signals, settings, and links to low level device functions. 
+There are several critical components contained within this module which essentially handle signals, settings, and links to low-level device functions. 
 
-For the sake of simplicity we've omitted hardware level signals in this basic tutorial.
+For the sake of simplicity, we've omitted hardware level signals in this basic tutorial.
 
 - `class`: We make our module a _subclass_ of `HardwareComponent`.
 	- `setup()`
-		- Here we set up a few settings for this hardware, these settings are `LoggedQuantity` objects that contain a hardware value that can read or written. This object helps keep this value in sync between hardware, measurement and graphical interface.
+		- Here we set up a few settings for this hardware, these settings are `LoggedQuantity` objects that contain a hardware value that can be read or written. This object helps keep this value in sync between hardware, measurement and graphical interface.
 
 	- `connect()`
 		- We define an object `self.dev` which instantiates the low-level device wrapper and thereby accesses hardware functions.
-		- Using `connect_to_hardware()` we   to the device level `self.dev.rand_func`. Every time the we call `settings.get_lq("rand_data").read_from_hardware()` is called, the linked functions will be called.
+		- Using `connect_to_hardware()` we link to the device level `self.dev.rand_func`. Every time we call `settings.get_lq("rand_data").read_from_hardware()`, the linked functions will be called.
 		- We run `self.read_from_hardware()` to update all hardware-connected settings with initial readout values.
 
 	- `disconnect()`
 		- We clean up the mess we made by removing objects after use.
 
-By having the `connect()` and `disconnect()`  we can cleanly reconnect hardware during an App run. This is especially useful when debugging a hardware plug-in to a new device. 
+By having the `connect()` and `disconnect()` we can cleanly reconnect hardware during an App run. This is especially useful when debugging a hardware plug-in to a new device. 
 
 
 
@@ -196,8 +203,8 @@ Test by running:
 $ python fancy_app.py
 ```
 
-you should see:
+You should see:
 
 ![app_after_part1](app_after_part1.png)
 
-Note that we have implicitely created a measurement. It is working yet, this will be part of the [next](../3-measurement) tutorial.
+Note that we have implicitly created and added a measurement to the app. It is not working yet, this will be part of the [next tutorial](../3_measurement).
