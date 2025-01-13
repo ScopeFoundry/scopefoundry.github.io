@@ -2,7 +2,7 @@
 title: Key Concepts
 description: >
   Slides demonstrating ScopeFoundry Concepts
-weight: 4
+weight: 900
 ---
 ## Why ScopeFoundry
 
@@ -43,5 +43,4 @@ A central component you will see at all levels of a ScopeFoundry program is a "L
 
 ![H5 data](/images/key-concepts//Slide11.png)
 ![H5 example](/images/key-concepts//Slide12.png)
-
 

@@ -32,5 +32,5 @@ ScopeFoundry is an open-source alternative to LabView or MATLAB instrument contr
 
 Give your users next steps from the Overview. For example:
 
-- [Getting Started](docs/tutorials/1_getting-started/): Get started with ScopeFoundry.
-- [Examples](/docs/examples/): Check out some example code!
+- [Getting Started](docs/getting-started): Get started with ScopeFoundry
+- [Tutorial](10_tutorials)
