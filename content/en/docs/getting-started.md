@@ -1,10 +1,8 @@
 ---
 title: Getting Started
 description: Installing ScopeFoundry and its dependencies.
-weight: 2
+weight: 1
 ---
-
-## Step 1: Installing Python and ScopeFoundry
 
 
 [anaconda_dl]: https://www.anaconda.com/download/
@@ -15,9 +13,10 @@ Note: We recommend the [Anaconda][anaconda_dl] Python distribution, which contai
 * Anaconda provides a way to make a clean set of packages in an "environment". Follow these steps to create an [conda environment](http://conda.pydata.org/docs/using/envs.html). This environment includes ScopeFoundry and all of the packages ScopeFoundry needs to run. 
 
 __Windows__
-    
+
 Open an Anaconda prompt and run the following commands:
     
+
 ```sh
 > conda create -n scopefoundry python=3.11
 > conda activate scopefoundry
