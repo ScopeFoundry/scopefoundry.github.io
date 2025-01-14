@@ -18,11 +18,18 @@ def mk_unique_title(repo):
 
 
 def sort_key(repo):
-    return f'{repo["name"]}:{repo["updated_at"]}'
+    return f'{repo["name"].lower()}:{repo["updated_at"]}'
 
 
 def markdown_content(
-    title, name, html_url, description=None, updated_at=None, readme=None, **kwargs
+    title,
+    weight,
+    name,
+    html_url,
+    description=None,
+    updated_at=None,
+    readme=None,
+    **kwargs,
 ):
     # dedented bc otherwise python writes indentation:
     # https://stackoverflow.com/questions/53142613/error-in-converting-from-markdown-to-editor-in-flask
@@ -30,7 +37,7 @@ def markdown_content(
 ---
 title: {title}
 description: {description or "No description available."}
-markdown_generated: {datetime.datetime.now(datetime.UTC).isoformat()}
+weight: {weight}
 ---
 - [GitHub Repository]({html_url})
 - Last Updated: {updated_at}
@@ -40,16 +47,17 @@ markdown_generated: {datetime.datetime.now(datetime.UTC).isoformat()}
 
 
 def generate_markdown_files(repos_list):
-    # iterate such that 1. title is alphabetically ordered, if duplicates exists check updated_at
+    # iterate such that 1. title is alphabetically ordered, if duplicates exists check last_updated
+    weight = 1
     for repo in sorted(repos_list, key=sort_key):
         title = mk_unique_title(repo)
         filename = (
             f"content/en/docs/reference/hw-components/{title.replace(" ", "-")}.md"
         )
         with open(filename, "w", encoding="utf8") as md_file:
-            md_file.write(markdown_content(title, **repo))
-        print(f"Generated {filename}")
-
+            md_file.write(markdown_content(title, weight, **repo))
+        print(f"Generated {filename} {weight=}")
+        weight += 1
 
 if __name__ ==  "__main__":
     # Fetch the cached data
