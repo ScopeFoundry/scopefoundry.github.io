@@ -2,7 +2,7 @@
 ---
 title: HW_lumenera_lucam (UBene)
 description: No description available.
-last_updated: 2023-01-27T22:33:51Z
+markdown_generated: 2025-01-14T19:33:49.734642+00:00
 ---
 - [GitHub Repository](https://github.com/UBene/HW_lumenera_lucam)
 - Last Updated: 2023-01-27T22:33:51Z

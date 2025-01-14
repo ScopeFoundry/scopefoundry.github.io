@@ -2,7 +2,7 @@
 ---
 title: HW_acton_spec (ScopeFoundry)
 description: Acton Spectrometer 2300i ScopeFoundry Hardware Component
-last_updated: 2023-12-17T10:15:42Z
+markdown_generated: 2025-01-14T19:33:49.733875+00:00
 ---
 - [GitHub Repository](https://github.com/ScopeFoundry/HW_acton_spec)
 - Last Updated: 2023-12-17T10:15:42Z

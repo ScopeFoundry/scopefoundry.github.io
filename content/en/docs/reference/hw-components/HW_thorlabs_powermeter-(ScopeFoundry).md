@@ -2,7 +2,7 @@
 ---
 title: HW_thorlabs_powermeter (ScopeFoundry)
 description: No description available.
-last_updated: 2024-08-12T00:38:50Z
+markdown_generated: 2025-01-14T19:33:49.735310+00:00
 ---
 - [GitHub Repository](https://github.com/ScopeFoundry/HW_thorlabs_powermeter)
 - Last Updated: 2024-08-12T00:38:50Z
