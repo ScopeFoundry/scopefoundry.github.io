@@ -1,17 +1,12 @@
 
 ---
-title: HW_thorlabs_powermeter
+title: HW_thorlabs_powermeter (ScopeFoundry)
 description: No description available.
 last_updated: 2024-08-12T00:38:50Z
 ---
-
-## HW_thorlabs_powermeter
-
 - [GitHub Repository](https://github.com/ScopeFoundry/HW_thorlabs_powermeter)
 - Last Updated: 2024-08-12T00:38:50Z
-
 ## Readme
-
 ScopeFoundryHW.thorlabs_powermeter
 ==================================
 
@@ -48,4 +43,3 @@ How to Install
 ---------------
 
 pip install pyvisa
-

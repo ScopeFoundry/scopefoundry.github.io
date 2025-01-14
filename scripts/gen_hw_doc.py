@@ -6,47 +6,58 @@ import json
 
 HW_PREFIX = "HW_"
 
-def fetch_cached_repos():
+def laod_cached_repos():
     with open("cached_repos.json", "r", encoding="utf8") as file:
         return json.load(file)  # Load JSON as a dictionary
 
-def generate_markdown_files(repos_list):
-    for repo in repos_list:
-        if repo["name"].startswith(HW_PREFIX):
 
-# dedented bc otherwise python writes indentation:
-# https://stackoverflow.com/questions/53142613/error-in-converting-from-markdown-to-editor-in-flask
+def mk_unique_title(repo):
+    owner = repo.get("html_url", "").split("/")[-2]
+    return f"{repo['name']} ({owner})"
 
-            markdown_content = f"""
+
+def sort_key(repo):
+    return f'{repo["name"]}:{repo["last_updated"]}'
+
+
+def markdown_content(
+    title, name, html_url, description=None, last_updated=None, readme=None, **kwargs
+):
+    # dedented bc otherwise python writes indentation:
+    # https://stackoverflow.com/questions/53142613/error-in-converting-from-markdown-to-editor-in-flask
+    return f"""
 ---
-title: {repo["name"]}
-description: {repo["description"] or "No description available."}
-last_updated: {repo["last_updated"]}
+title: {title}
+description: {description or "No description available."}
+last_updated: {last_updated}
 ---
-
-## {repo["name"]}
-
-- [GitHub Repository]({repo["html_url"]})
-- Last Updated: {repo["last_updated"]}
-
+- [GitHub Repository]({html_url})
+- Last Updated: {last_updated}
 ## Readme
-
-{repo["readme"]}
-
+{readme}
 """
 
-            filename = f"content/en/docs/reference/hw-components/{repo['name']}.md"
-            with open(filename, "w", encoding="utf8") as md_file:
-                md_file.write(markdown_content)
-            print(f"Generated {filename}")
+
+def generate_markdown_files(repos_list):
+    # iterate such that 1. title is alphabetically ordered, if duplicates exists check last_updated
+    for repo in sorted(repos_list, key=sort_key):
+        title = mk_unique_title(repo)
+        filename = (
+            f"content/en/docs/reference/hw-components/{title.replace(" ", "-")}.md"
+        )
+        with open(filename, "w", encoding="utf8") as md_file:
+            md_file.write(markdown_content(title, **repo))
+        print(f"Generated {filename}")
 
 
 if __name__ ==  "__main__":
     # Fetch the cached data
-    repos = fetch_cached_repos()
-    # Access the list of repositories 
+    repos = laod_cached_repos()
+    # Access the list of repositories
     # **TODO** check against when this was last done,
     # no point if recent.
     repos_list = repos.get("repositories", [])
     # Generate Markdown files
-    generate_markdown_files(repos_list)
+    if repos_list:
+        # TODO delete previous files
+        generate_markdown_files(repos_list)

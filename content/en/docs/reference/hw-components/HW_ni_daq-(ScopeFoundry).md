@@ -1,17 +1,12 @@
 
 ---
-title: HW_ni_daq
+title: HW_ni_daq (ScopeFoundry)
 description: No description available.
 last_updated: 2017-01-10T20:27:05Z
 ---
-
-## HW_ni_daq
-
 - [GitHub Repository](https://github.com/ScopeFoundry/HW_ni_daq)
 - Last Updated: 2017-01-10T20:27:05Z
-
 ## Readme
-
 ScopeFoundryHW.ni_daq
 =====================
 
@@ -44,5 +39,4 @@ Requirements
 	* ScopeFoundry
 	* [PyDAQmx](http://pythonhosted.org/PyDAQmx/)
 	* [NI DAQmx](https://www.ni.com/dataacquisition/nidaqmx.htm)
-
 

@@ -1,17 +1,12 @@
 
 ---
-title: HW_zwo_camera
+title: HW_zwo_camera (ScopeFoundry)
 description: ASI ZWO Astronomy Camera ScopeFoundry Hardware Component
 last_updated: 2024-08-12T00:35:51Z
 ---
-
-## HW_zwo_camera
-
 - [GitHub Repository](https://github.com/ScopeFoundry/HW_zwo_camera)
 - Last Updated: 2024-08-12T00:35:51Z
-
 ## Readme
-
 
 
 uses the python-zwoasi python library and SDK from ZWO
@@ -27,6 +22,5 @@ xattr -d com.apple.quarantine ScopeFoundryHW/zwo_camera/ASI_linux_mac_SDK_V1.22/
 
 You must also have libusb installed (homebrew works):
 	brew install libusb 
-
 
 

@@ -1,17 +1,12 @@
 
 ---
-title: HW_acton_spec
+title: HW_acton_spec (UBene)
 description: Acton Spectrometer 2300i ScopeFoundry Hardware Component
-last_updated: 2023-12-17T10:15:42Z
+last_updated: 2022-03-30T13:44:52Z
 ---
-
-## HW_acton_spec
-
-- [GitHub Repository](https://github.com/ScopeFoundry/HW_acton_spec)
-- Last Updated: 2023-12-17T10:15:42Z
-
+- [GitHub Repository](https://github.com/UBene/HW_acton_spec)
+- Last Updated: 2022-03-30T13:44:52Z
 ## Readme
-
 ScopeFoundryHW.acton_spec
 =====================
 
@@ -41,5 +36,4 @@ Requirements
 
 	* ScopeFoundry
 	* PySerial
-
 

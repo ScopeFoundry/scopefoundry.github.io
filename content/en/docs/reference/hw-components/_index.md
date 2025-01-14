@@ -4,6 +4,8 @@ description: Hardware components with existing ScopeFoundry plug-ins
 weight: 9
 ---
 
+This page periodically scan github for HW_* repos.
+
 {{% pageinfo %}}
 This is a placeholder page that shows you how to use this template site.
 {{% /pageinfo %}}

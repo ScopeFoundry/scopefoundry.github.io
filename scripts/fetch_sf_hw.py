@@ -2,125 +2,132 @@
 Queries GitHub for all ScopeFoundry hardware component repos.
 Caches information in json for use with ScopeFoundry website search.
 """
+
 import datetime
 import json
+from pathlib import Path
+
 import requests
 
 # check both "official" SF repo and collaborator forks for hw submodules
+# GitHub API differentiates users and orgs
+# TODO make FORKS dynamic e.g: ask github for all forks of SF or expand the list of collaborators
 ORG = "ScopeFoundry"
-FORKS = ["UBene"]
+ORG_FORKS = []
+USER_FORKS = ["UBene"]
 
-HW_PREFIX = "HW_"   # all hardware component repos appear to/should start with HW_...
-OUTPUT_FILE = "cached_repos.json"
-GITHUB_API_URL = f"https://api.github.com/orgs/{ORG}/repos"
+ORGS = [ORG] + ORG_FORKS  # needed in fetch_repos, TODO: make better design
 
-# optional for higher rate limits, but we should only need to run this a few times a day, max
-GITHUB_TOKEN = None # "your_github_token_here"
+HW_PREFIX = "HW_"  # all hardware component repos appear to/should start with HW_...
+CACHE_FILE = "cached_repos.json"
 
 
-def fetch_readme(repo_url):
+# when number collaboraters exceed 59 we need a TOKEN
+# without TOKEN we get 60 requests per hour
+# we need one request per user to get all repos
+# and one per repository that needs to be updated
+GITHUB_TOKEN = None  # "your_github_token_here"
+
+
+def query_github(api_url):
+    headers = {"Accept": "application/vnd.github.raw+json"}
+    if GITHUB_TOKEN:
+        headers["Authorization"] = f"token {GITHUB_TOKEN}"
+    return requests.get(api_url, headers=headers, timeout=100)
+
+
+def fetch_readme(repo_url: str):
     """
     Fetches the readme file from a given repository using the GitHub API
     https://docs.github.com/en/rest/repos/contents?apiVersion=2022-11-28#get-a-repository-readme
     """
-    api_url = repo_url.replace("https://github.com", "https://api.github.com/repos") + "/contents/README.md"
-    headers = {"Accept": "application/vnd.github.raw+json"}
-    if GITHUB_TOKEN:
-        headers["Authorization"] = f"token {GITHUB_TOKEN}"
-
-    response = requests.get(api_url, headers={"Accept": "application/vnd.github.raw+json"}, timeout=100)
+    api_url = (
+        repo_url.replace("https://github.com", "https://api.github.com/repos")
+        + "/contents/README.md"
+    )
+    response = query_github(api_url)
     if response.status_code == 200:
         return response.text
     return "README could not be retrieved."
 
 
-def fetch_repos(user):
+def fetch_repos(owner):
     """
     Fetches repositories for a given GitHub user or organization.
     """
-    api_url = GITHUB_API_URL.format(user=user)
-    headers = {"Authorization": f"token {GITHUB_TOKEN}"} if GITHUB_TOKEN else {}
+    if owner in ORGS:
+        api_url = f"https://api.github.com/orgs/{owner}/repos"
+    else:
+        api_url = f"https://api.github.com/users/{owner}/repos"
 
-    response = requests.get(api_url, headers=headers, timeout=10)
+    response = query_github(api_url)
     if response.status_code == 200:
         return response.json()
     else:
-        print(f"Failed to fetch repositories for {user}: {response.status_code} - {response.text}")
+        print(
+            f"Failed to fetch repositories for {owner}: {response.status_code} - {response.text}"
+        )
         return []
 
-def merge_repos(scopefoundry_repos, forks_repos):
-    """
-    Merges repositories from ScopeFoundry and collaborator forks.
-    Ensures that the most recently updated version of each hardware component is included.
-    """
-    combined = {}
 
-    # Add all "official" ScopeFoundry HW component repos
-    for repo in scopefoundry_repos:
-        combined[repo["name"]] = repo
+def read_cached_repos():
+    if not Path(CACHE_FILE).exists():
+        return []
+    with open(CACHE_FILE, "r", encoding="utf8") as file:
+        return json.load(file)["repositories"]
 
-    # Add/merge collaborator forks, preferring the more recently updated version
-    for fork in forks_repos:
-        if fork["name"] in combined:
-            # Compare update times and keep the latest
-            if fork["last_updated"] > combined[fork["name"]]["last_updated"]:
-                combined[fork["name"]] = fork
-        else:
-            combined[fork["name"]] = fork
 
-    return list(combined.values())
+def replace_cached_data(cache_data):
+    with open(CACHE_FILE, "w", encoding="utf8") as f:
+        json.dump(cache_data, f, indent=4)
+
+
+def timestamped_id(repo):
+    timestamp = repo["updated_at"] if "updated_at" in repo else repo["last_updated"]
+    return f'{repo["html_url"]}:{timestamp}'
 
 
 def fetch_and_cache_repos():
     """
     Fetches repositories from both ScopeFoundry and collaborator forks, then caches the results.
     """
-    scopefoundry_repos = fetch_repos(ORG)
-    # check each collaborator's repos; may need to use GitHub PAT depending on # of API calls
-    for author in FORKS:
-        forks_repos = fetch_repos(author)
+    # can reduce the number of requests if only updating the new repos
+    existing_ids = [{timestamped_id(repo): repo} for repo in read_cached_repos()]
 
-    # Filter for hardware component repositories
-    scopefoundry_hw_repos = [
-        {
-            "name": repo["name"],
-            "owner": repo["org"],
-            "org": "ScopeFoundry",
-            "html_url": repo["html_url"],
-            "description": repo["description"],
-            "last_updated": repo["updated_at"],
-            "readme": fetch_readme(repo["html_url"])
-        }
-        for repo in scopefoundry_repos
-        if repo["name"].startswith(HW_PREFIX) and repo["name"] != "HW_foundry_data_organizer"
-    ]
+    # fetch hw repos
+    hw_repos = []
+    for owner in [ORG] + USER_FORKS:
+        repos = fetch_repos(owner)
+        for repo in repos:
+            if not repo["name"].startswith(HW_PREFIX):
+                continue
 
-    forks_hw_repos = [
-        {
-            "name": repo["name"],
-            "owner": repo["org"],
-            "html_url": repo["html_url"],
-            "description": repo["description"],
-            "last_updated": repo["updated_at"],
-            "readme": fetch_readme(repo["html_url"])
-        }
-        for repo in forks_repos
-        if repo["name"].startswith(HW_PREFIX)
-    ]
+            if timestamped_id(repo) in existing_ids:
+                to_cache = existing_ids[timestamped_id(repo)]
+            else:
+                to_cache = {
+                    "name": repo["name"],
+                    "owner": owner,
+                    "html_url": repo["html_url"],
+                    "description": repo["description"],
+                    "last_updated": repo["updated_at"],
+                    "readme": fetch_readme(repo["html_url"]),
+                }
+            hw_repos.append(to_cache)
 
-    # Merge the repositories, prioritizing the latest updates
-    combined_hw_repos = merge_repos(scopefoundry_hw_repos, forks_hw_repos)
+    if not hw_repos:
+        msg = "Failed to update HW Component Cache: No hardware component repositories found"
+        print(msg)
+        return
 
-    # Save to the cache
     cache_data = {
         "fetched_at": datetime.datetime.now(datetime.UTC).isoformat(),
-        "repositories": combined_hw_repos
+        "repositories": hw_repos,
     }
+    replace_cached_data(cache_data)
 
-    with open(OUTPUT_FILE, "w", encoding="utf8") as f:
-        json.dump(cache_data, f, indent=4)
-
-    print(f"HW Component Cache updated successfully at {datetime.datetime.now(datetime.UTC).isoformat()}")
+    msg = f"HW Component Cache updated successfully at {cache_data['fetched_at']}"
+    print(msg)
 
 
 if __name__ == "__main__":

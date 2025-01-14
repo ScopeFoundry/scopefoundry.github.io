@@ -1,22 +1,17 @@
 
 ---
-title: HW_random_gen
+title: HW_virtual_function_gen (ScopeFoundry)
 description: No description available.
-last_updated: 2017-01-23T22:17:34Z
+last_updated: 2017-02-03T18:30:05Z
 ---
-
-## HW_random_gen
-
-- [GitHub Repository](https://github.com/ScopeFoundry/HW_random_gen)
-- Last Updated: 2017-01-23T22:17:34Z
-
+- [GitHub Repository](https://github.com/ScopeFoundry/HW_virtual_function_gen)
+- Last Updated: 2017-02-03T18:30:05Z
 ## Readme
+ScopeFoundryHW.virtual_function_gen
+===================================
 
-ScopeFoundryHW.random_gen
-===========================
-
-ScopeFoundry hardware plug-in example that presents a random number
-generator as a hardware device
+ScopeFoundry hardware plug-in example that virtual function
+generator as a hardware device. It creates Sine and Square waves
 
 ScopeFoundry is a Python platform for controlling custom laboratory 
 experiments and visualizing scientific data
@@ -37,4 +32,3 @@ Requirements
 
 	* ScopeFoundry
 	* numpy
-
