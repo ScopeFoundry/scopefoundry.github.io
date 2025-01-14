@@ -2,6 +2,7 @@
 Generates markdown doc pages for HW components pulled from GitHub.
 Uses fetch_sf_hw.py as helper func for GitHub REST API
 """
+import datetime
 import json
 
 HW_PREFIX = "HW_"
@@ -17,11 +18,11 @@ def mk_unique_title(repo):
 
 
 def sort_key(repo):
-    return f'{repo["name"]}:{repo["last_updated"]}'
+    return f'{repo["name"]}:{repo["updated_at"]}'
 
 
 def markdown_content(
-    title, name, html_url, description=None, last_updated=None, readme=None, **kwargs
+    title, name, html_url, description=None, updated_at=None, readme=None, **kwargs
 ):
     # dedented bc otherwise python writes indentation:
     # https://stackoverflow.com/questions/53142613/error-in-converting-from-markdown-to-editor-in-flask
@@ -29,17 +30,17 @@ def markdown_content(
 ---
 title: {title}
 description: {description or "No description available."}
-last_updated: {last_updated}
+markdown_generated: {datetime.datetime.now(datetime.UTC).isoformat()}
 ---
 - [GitHub Repository]({html_url})
-- Last Updated: {last_updated}
+- Last Updated: {updated_at}
 ## Readme
 {readme}
 """
 
 
 def generate_markdown_files(repos_list):
-    # iterate such that 1. title is alphabetically ordered, if duplicates exists check last_updated
+    # iterate such that 1. title is alphabetically ordered, if duplicates exists check updated_at
     for repo in sorted(repos_list, key=sort_key):
         title = mk_unique_title(repo)
         filename = (
