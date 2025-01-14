@@ -50,7 +50,23 @@ setup(
     )
 ```
 
-If you would like to contribute a plug-in to ScopeFoundry, please do! Contact the maintainers on our [project mailing list](https://groups.google.com/forum/#!forum/scopefoundry).
+
+
+## How to contribute HW_*
+
+This page periodically scans GitHub for HW_* repos and adds it to the [references](/docs/reference/hw-components/). Thereby, it considers users/organisations that forked the ScopeFoundry Repo.
+
+So to share your hardware:
+
+1. make a github account
+2. Fork [ScopeFoundry repo](https://github.com/ScopeFoundry/ScopeFoundry) to your github account
+3. Follow [packaging instructions](/docs/guides/hardware-packaging)
+
+and this page should find your hardware.
+
+Thanks.
+
+
 
 
 ## Where to Find Out More
