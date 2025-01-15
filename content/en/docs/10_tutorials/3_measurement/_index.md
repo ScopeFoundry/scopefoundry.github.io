@@ -4,6 +4,8 @@ description: Learn how to build a custom Measurement and how to get started anal
 date: 2025-01-01
 weight: 3
 ---
+[ Qt Creator ]:https://www.qt.io/offline-installers
+
 
 We will be describing how to build the `number_gen_readout` measurement that works together with ScopeFoundryHW package we made in the [previous example](../2_hardware-1). When run, this measurement periodically samples values from the `number_gen` hardware component.
 
@@ -39,10 +41,11 @@ Then we override `setup()` and `run()` functions that define the measurement. St
         s.New("save_h5", bool, initial=True)
 ```
 
-To define 3 parameters that will be used during the measurement. When a measurement is started, a new thread is launched, within which eventually the run() function is called, let's override it to 
+To define 3 parameters that will be used during the measurement. 
 
-1. Sample values from the "number_gen" hardware component 
-2. Save it to a h5 file (if user desires) 
+When a measurement is started, a new thread is launched, within which eventually the `run()` function is called, let's override it to 
+
+1. sample values from the "number_gen" hardware component 
 
 ```python
     def run(self):
@@ -69,7 +72,7 @@ To define 3 parameters that will be used during the measurement. When a measurem
 -  `interrupt_measurement_called` flag is set to True when the user stops the measurement. Here it breaks out the loop as the measurement spends most of its time there
 - Using `set_progress()` update the progress bar and also calculates an estimated time until the measurement is done based on the time it started and the progress percentage you set.
 
-Finally, some boilerplate code at the end of a measurement, that saves the data and all the settings of the app:
+2. save it to a h5 file (if user desires). With this boilerplate code all settings from every hardware and the measurement are saved.
 
 ```python
         if self.settings["save_h5"]:
@@ -87,9 +90,7 @@ Finally, some boilerplate code at the end of a measurement, that saves the data 
             self.h5_file.close()
 ```
 
-This completes a measurement. 
-
-### The case for using self.settings
+#### The case for using self.settings
 
 - When saving data as written above, the values are added to the resulting file which is useful
   - To analyze data
@@ -273,14 +274,17 @@ As usual this can be run with:
 $ python fancy_app.py
 ```
 
+![done_after](done_after.png)
+
+*screenshot of improved version - see bellow*
+
 [next tutorial](../10_hardware-2)
 
-
-## Alternative: Build the user interface with qt-creator
+## Bonus: Build the user interface with qt-creator
 
 In the above implementation we created the figure programmatically. However, we could also create use the qt creator to design a user interface.  
 
-1. Download the free [Qt Creator](https://www.qt.io/offline-installers)
+1. Download the free [Qt Creator]
 2. Create `.ui` file. The one used here, `number_gen_readout.ui`, can be found in the [tutorial repository](https://github.com/UBene/scope_foundry_2_basic_tutorial). ![qt-creator-sine-plot-ui](qt-creator-sine-plot-ui.png)
 3. Save the `ui` file next to the measurement file (sibling path)
 4. Adjust the `setup_figure()` method of the measurement
@@ -309,10 +313,10 @@ In the above implementation we created the figure programmatically. However, we 
         # Create PlotDataItem object ( a scatter plot on the axes )
         self.plot_lines = {"y": self.plot.plot(pen="g")}
 ```
-The resulting app should look like (using dated version of ScopeFoundry):
+
+The resulting app should look like:
 
 ![microscope-with-func-gen](microscope-with-func-gen.png)
-
 
 ## Bonus 1: Analyzed with ipynb
 
@@ -321,6 +325,7 @@ Clicking the `analyze` button on the left panel one can quickly start to analyze
 ![analyze_with_ipynb](analyze_with_ipynb.png)
 
 [see more details about this feature](docs/knowledge-base/analyze-with-ipynb/)
+
 
 
 ## Bonus 2: Improved version
