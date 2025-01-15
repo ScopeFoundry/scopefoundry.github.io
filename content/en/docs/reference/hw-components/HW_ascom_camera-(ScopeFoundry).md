@@ -2,7 +2,7 @@
 ---
 title: HW_ascom_camera (ScopeFoundry)
 description: No description available.
-markdown_generated: 2025-01-14T19:33:49.734021+00:00
+weight: 6
 ---
 - [GitHub Repository](https://github.com/ScopeFoundry/HW_ascom_camera)
 - Last Updated: 2024-08-12T01:05:28Z

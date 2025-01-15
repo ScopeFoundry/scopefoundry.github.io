@@ -5,16 +5,17 @@ date: 2017-01-04
 weight: 3
 ---
 
-## Install Anaconda 3
-(Python latest version), only for your Windows User (who must be an Administrator), not for everyone. Pick a good directory, sometimes it will try to install deep within LocalSettings
+[anaconda_dl]: https://www.continuum.io/downloads
+[Eclipse]: http://www.eclipse.org
+[PyDev]: http://www.pydev.org
+[conda_env]: http://conda.pydata.org/docs/using/envs.html
+[install ScopeFoundry]: docs/getting-started
+[Qt Creator]: https://www.qt.io/offline-installers
 
+Requires [install ScopeFoundry]
 
-## Set up Anaconda Enviroment
+{{% pageinfo %}} 01.01.2025: This page is potentially dated: check back soon {{% /pageinfo %}}
 
-```
-conda create --name scopefoundry anaconda=2019.07
-conda activate scopefoundry
-```
 
 ## Install Git
 
@@ -39,7 +40,7 @@ Tree structure of a typical experiment repository
 	│   ├── virtual_function_gen/		# Local sub-tree of specific hardware plugin
 	│   └── ...
 	└── microscope_app.py
-	
+
 
 
 * Create a folder (main folder) where you are going to put the ScopeFoundry code. Open Anaconda Prompt (or Terminal) and go to that folder
@@ -54,7 +55,7 @@ Tree structure of a typical experiment repository
 		(this will add a copy of ScopeFoundry to the main folder)
 	* Grab Hardware plugins from ScopeFoundry's github page:
 		* ```git subtree add --prefix ScopeFoundryHW/virtual_function_gen/  https://github.com/ScopeFoundry/HW_virtual_function_gen.git master```
-(this will add a particular Harware to the ScopeFoundryHW folder)
+		(this will add a particular Harware to the ScopeFoundryHW folder)
 
 
 * To update ScopeFoundry to the latest version:
@@ -97,7 +98,7 @@ one of the two following ways:
 	* Right click on the newly created folder in Eclipse, select PyDev-> Set as folder in PYTHONPATH
 
 ## QT Creator
-* INSTALL QT Creator (use default options). This for interactive creation of QT user interface files (.ui)
+* INSTALL [Qt Creator]. This for interactive creation of QT user interface files (.ui)
 
 
 ## More Information

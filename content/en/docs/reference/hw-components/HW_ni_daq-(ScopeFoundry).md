@@ -2,7 +2,7 @@
 ---
 title: HW_ni_daq (ScopeFoundry)
 description: No description available.
-markdown_generated: 2025-01-14T19:33:49.734840+00:00
+weight: 23
 ---
 - [GitHub Repository](https://github.com/ScopeFoundry/HW_ni_daq)
 - Last Updated: 2017-01-10T20:27:05Z

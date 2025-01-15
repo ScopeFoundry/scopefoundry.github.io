@@ -5,9 +5,20 @@ date: 2025-01-01
 weight: 2
 ---
 
-Here we discuss how to build a custom hardware plug-in for ScopeFoundry. If one is not [available in our list of plug-ins](docs/reference/hw-components/), you can build one based on the tutorial. By the end of part 1, you have created a plugin that is a virtual sine wave generator and you will have learned basic ScopeFoundry concepts. Virtual because we just simulate values that in practice will come from a physical device. In part 2 we will close the gap.
+Here we discuss how to build a custom hardware plug-in for ScopeFoundry. If one is not [available in our list of plug-ins](docs/reference/hw-components/), you can build one based on the tutorial. 
 
-## First steps
+Hardware - 1 goals:
+
+- learn basic ScopeFoundry concepts of ScopeFoundry.HardwareComponent
+- created a plugin - virtual sine wave generator, virtual because we just simulate values 
+
+Hardware - 2 goals:
+
+- Tipps to create the low level interface that connects to an actual device
+
+
+
+## The template
 
 To get started, in your anaconda prompt or terminal cd to your folder and run the ScopeFoundry.tools:
 
@@ -52,7 +63,7 @@ From here, in general, 2 files in `ScopeFoundryHW/random_number_gen` are importa
 
 ## Low level interface: number_gen_dev.py
 
-In general, this file functions as a low-level interface between ScopeFoundry and a process or demon running on the operating system that communicates with the hardware. For now, this file will be just given and simulates values for a sine wave function generator. In [part 2](../10_hardware-2) we give some tips on how to write this in practice.
+In general, this file functions as a low-level interface between ScopeFoundry and a process or demon running on the operating system that communicates with the hardware. For now, this file will be just given, and simulates a sine wave function generator. In [part 2](../10_hardware-2) we give some tips on how to write this in practice.
 
 Go ahead and replace the content of `random_gen_dev.dev` with the following content
 

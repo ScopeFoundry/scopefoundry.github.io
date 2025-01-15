@@ -5,47 +5,16 @@ date: 2017-01-04
 weight: 2
 ---
 
-# Development Environment
-
 [anaconda_dl]: https://www.continuum.io/downloads
 [Eclipse]: http://www.eclipse.org
 [PyDev]: http://www.pydev.org
 [conda_env]: http://conda.pydata.org/docs/using/envs.html
+[install ScopeFoundry]: docs/getting-started
+[Qt Creator]: https://www.qt.io/offline-installers
 
-### Python via Anaconda
+Requires [install ScopeFoundry]
 
-To have a consistent python environment for using and developing ScopeFoundry, we recommend the [Anaconda][anaconda_dl] python distribution and using [conda environments][conda_env] to manage packages.
-
-* Download and Install [Anaconda][anaconda_dl]. Recommended Python version is 3.7. Other versions of Python 3 are not actively tested at this time, but should generally work. 
-
-* Create an [conda environment][conda_env] includes ScopeFoundry and its dependencies. Open an Anaconda prompt and run the following commands:
-
-```
-$ conda create -n scopefoundry python=3.7 anaconda
-$ conda activate scopefoundry
-(scopefoundry) $ conda install pyqtgraph
-```	
-
-If you would like a more minimal environment, without all the default packages from Anaconda:
-
-```
-$ conda create -n scopefoundry python=3.7
-$ source activate scopefoundry
-(scopefoundry) $ conda install numpy pyqt qtpy h5py
-(scopefoundry) $ pip install pyqtgraph
-```	
-
-
-ScopeFoundry is available to download from [PyPI](https://pypi.python.org/pypi/ScopeFoundry) or install via `pip install ScopeFoundry`.
-
-
-However, if you are interested in using the latest development version of ScopeFoundry, instead of the most recent release on [PyPI](https://pypi.python.org/pypi/ScopeFoundry), you can install via git.
-To install the latest development version of ScopeFoundry from github:
-
-```
-(scopefoundry) $ pip install git+git://github.com/ScopeFoundry/ScopeFoundry.git
-```
-
+{{% pageinfo %}} 01.01.2025: This page is potentially dated: check back soon {{% /pageinfo %}}
 
 
 ### Eclipse + PyDev IDE
