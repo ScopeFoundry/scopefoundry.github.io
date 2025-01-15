@@ -1,5 +1,5 @@
 ---
-title: Goldydocs
+title: ScopeFoundry
 ---
 
 {{< blocks/cover title="ScopeFoundry" image_anchor="bottom" height="auto" >}}
@@ -23,14 +23,14 @@ ScopeFoundry is a modular, cross-platform, and open-source alternative to LabVie
 
 {{% blocks/section color="dark" type="row" %}}
 
-{{% blocks/feature icon="fab fa-app-store-ios" title="Modular, Cross-Platform Graphical interface." %}}
-Build lab equipment GUIs interactively with Qt Creator. Allows for fast data acquisition and visualization {{% /blocks/feature %}}
+{{% blocks/feature icon="fab fa-app-store-ios" title="Modular, Cross-Platform Graphical interface" %}}
+Build lab equipment GUIs interactively with Qt Creator. Allows for fast data acquisition and visualization. {{% /blocks/feature %}}
 
 {{% blocks/feature icon="fab fa-github" title="Hardware Plug-in Library"%}}
-Featuring hardware plug-ins for simple and complex scientific equipment{{% /blocks/feature %}}
+Featuring hardware plug-ins for simple and complex scientific equipment.{{% /blocks/feature %}}
 
 {{% blocks/feature icon="fab fa-twitter" title="Live Measurement" %}}
-Live updates of measurement code for fast development and debugging
+Live updates of measurement code for fast development and debugging.
 {{% /blocks/feature %}}
 
 
@@ -38,8 +38,12 @@ Live updates of measurement code for fast development and debugging
 
 
 {{% blocks/section %}}
-This is the second section
-{.h1 .text-center}
+
+  <img src="/sf-demo.png"
+    alt="Screenshot Demonstrating ScopeFoundry Software"
+    style="max-width: 100%; height: auto; margin: 0rem 0;">
+
+
 {{% /blocks/section %}}
 
 
