@@ -13,4 +13,4 @@ The goals of this tutorial are to:
 
 Access code from [the tutorial repository](https://github.com/UBene/scope_foundry_2_basic_tutorial)
 
-If you are new, we recommend you to take all basic tutorials in order
+If you are new, we recommend completing all basic tutorials in order.

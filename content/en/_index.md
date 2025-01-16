@@ -23,13 +23,13 @@ ScopeFoundry is a modular, cross-platform, and open-source alternative to LabVie
 
 {{% blocks/section color="dark" type="row" %}}
 
-{{% blocks/feature icon="fab fa-app-store-ios" title="Modular, Cross-Platform Graphical interface" %}}
+{{% blocks/feature icon="fa-solid fa-object-group" title="Modular, Cross-Platform Graphical interface" %}}
 Build lab equipment GUIs interactively with Qt Creator. Allows for fast data acquisition and visualization. {{% /blocks/feature %}}
 
 {{% blocks/feature icon="fab fa-github" title="Hardware Plug-in Library"%}}
 Featuring hardware plug-ins for simple and complex scientific equipment.{{% /blocks/feature %}}
 
-{{% blocks/feature icon="fab fa-twitter" title="Live Measurement" %}}
+{{% blocks/feature icon="fa-solid fa-chart-line" title="Live Measurement" %}}
 Live updates of measurement code for fast development and debugging.
 {{% /blocks/feature %}}
 
@@ -51,15 +51,14 @@ Live updates of measurement code for fast development and debugging.
 
 
 
-{{% blocks/feature icon="fa-lightbulb" title="New chair metrics!" %}}
-The Goldydocs UI now shows chair size metrics by default.
+{{% blocks/feature icon="fas fa-arrow-alt-circle-right" title="Get Started!" url="/docs/" %}}
+Visit [Getting Started](/docs/getting-started/) for installation instructions.
 
-Please follow this space for updates!
 {{% /blocks/feature %}}
 
 
-{{% blocks/feature icon="fab fa-github" title="Contributions welcome!" url="https://github.com/google/docsy-example" %}}
-We do a [Pull Request](https://github.com/google/docsy-example/pulls) contributions workflow on **GitHub**. New users are always welcome!
+{{% blocks/feature icon="fab fa-github" title="Contributions welcome!" url="https://github.com/ScopeFoundry" %}}
+We do a [Pull Request](https://github.com/ScopeFoundry/ScopeFoundry/pulls) contributions workflow on **GitHub**. New users are always welcome!
 {{% /blocks/feature %}}
 
 
