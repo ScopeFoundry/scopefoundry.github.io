@@ -129,7 +129,7 @@ params:
   prism_syntax_highlighting: false
 
   copyright:
-    authors: Ed Barnard | [MIT License](https://opensource.org/licenses/MIT)
+    authors: Ed Barnard | [BSD License](https://opensource.org/licenses/BSD-3-Clause)
     from_year: 2010
 
   # User interface configuration
