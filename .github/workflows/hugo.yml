@@ -34,7 +34,7 @@ jobs:
           #cache: 'npm'
           #cache-dependency-path: '**/package-lock.json'
 
-      - run: npm ci
+      - run: npm ci --package-lock
       - run: hugo --baseURL https://${REPO_OWNER}.github.io/${REPO_NAME} --minify
 
       - name: Deploy
