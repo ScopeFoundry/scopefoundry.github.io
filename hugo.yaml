@@ -100,14 +100,14 @@ params:
   # The version number for the version of the docs represented in this doc set.
   # Used in the "version-banner" partial to display a version number for the
   # current doc set.
-  version: 0.0
+  # version: 0.0
 
   # A link to latest version of the docs. Used in the "version-banner" partial to
   # point people to the main doc site.
-  url_latest_version: https://example.com
+  # url_latest_version: https://example.com
 
   # Repository configuration (URLs for in-page links to opening issues and suggesting changes)
-  github_repo: https://github.com/mark-hager/scopefoundry-hugo
+  github_repo: https://github.com/ScopeFoundry/scopefoundry.github.io
 
   # An optional link to a related project repo. For example, the sibling repository where your product code lives.
   github_project_repo: https://github.com/ScopeFoundry/
@@ -129,7 +129,7 @@ params:
   prism_syntax_highlighting: false
 
   copyright:
-    authors: Ed Barnard | [BSD License](https://opensource.org/licenses/BSD-3-Clause)
+    authors: ScopeFoundry Contributors | [BSD License](https://opensource.org/licenses/BSD-3-Clause)
     from_year: 2010
 
   # User interface configuration
