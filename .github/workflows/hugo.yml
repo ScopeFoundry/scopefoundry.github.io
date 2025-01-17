@@ -27,6 +27,8 @@ jobs:
           hugo-version: '0.141.0'
           extended: true
 
+      - run: mkdir /home/runner/.npm
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
