@@ -10,6 +10,7 @@ title: ScopeFoundry
 <a class="btn btn-lg btn-secondary me-3 mb-4" href="/docs/1_getting-started">
   Quick Start <i class="fas fa-arrow-alt-circle-right ms-2"></i>
 </a>
+
 <p class="lead mt-5">A Python platform for controlling custom laboratory experiments and visualizing scientific data
 
 
@@ -23,7 +24,7 @@ title: ScopeFoundry
 
 
 
-{{% blocks/section color="dark" type="row" %}}
+{{% blocks/section color="black" type="row" %}}
 
 
 
@@ -44,17 +45,23 @@ Live updates of measurement code for fast development and debugging.
 
 
 
-{{% blocks/section color="dark" type="row" %}}
+{{% blocks/section color="black" type="row" %}}
 
-  <img src="/sf-demo.png"
+<iframe width="800" height="400" src="//www.youtube.com/embed/kd8OitLPXcM" frameborder="0" allowfullscreen></iframe>
+
+
+
+<!--<img src="/sf-demo.png"
     alt="Screenshot Demonstrating ScopeFoundry Software"
     style="max-width: 100%; height: auto; margin: 0rem 0;">
+
+--!>
 
 {{% /blocks/section %}}
 
 
 
-{{% blocks/section type="row" %}}
+{{% blocks/section color="dark" type="row"  %}}
 
 {{% blocks/feature icon="fas fa-arrow-alt-circle-right" title="Get Started!" url="/docs/" %}}
 Visit [Getting Started](/docs/1_getting-started/) for installation instructions.
@@ -73,5 +80,4 @@ For posting questions and announcements of latest features.
 
 
 {{% /blocks/section %}}
-
 

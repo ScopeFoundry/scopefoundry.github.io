@@ -56,4 +56,4 @@ one of the two following ways:
 ## Optional QT Creator
 * INSTALL [Qt Creator]. This for interactive creation of QT user interface files (.ui)
 
-next install and setup [Git](../Git)
+next install and setup [Git](../20_git)
