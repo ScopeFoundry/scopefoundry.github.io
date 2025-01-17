@@ -6,6 +6,12 @@ weight: 35
 ---
 - [GitHub Repository](https://github.com/ScopeFoundry/HW_thorlabs_powermeter)
 - Last Updated: 2024-08-12T00:38:50Z
+
+## Add to your project using [git](/docs/100_development/20_git/)
+```bash
+git subtree add --prefix ScopeFoundryHW/thorlabs_powermeter/ https://github.com/ScopeFoundry/HW_thorlabs_powermeter master && git checkout
+```
+
 ## Readme
 ScopeFoundryHW.thorlabs_powermeter
 ==================================

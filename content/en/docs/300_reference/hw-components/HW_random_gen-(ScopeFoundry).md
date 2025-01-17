@@ -6,6 +6,12 @@ weight: 32
 ---
 - [GitHub Repository](https://github.com/ScopeFoundry/HW_random_gen)
 - Last Updated: 2017-01-23T22:17:34Z
+
+## Add to your project using [git](/docs/100_development/20_git/)
+```bash
+git subtree add --prefix ScopeFoundryHW/random_gen/ https://github.com/ScopeFoundry/HW_random_gen master && git checkout
+```
+
 ## Readme
 ScopeFoundryHW.random_gen
 ===========================

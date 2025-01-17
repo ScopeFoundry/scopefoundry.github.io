@@ -6,6 +6,12 @@ weight: 23
 ---
 - [GitHub Repository](https://github.com/ScopeFoundry/HW_ni_daq)
 - Last Updated: 2017-01-10T20:27:05Z
+
+## Add to your project using [git](/docs/100_development/20_git/)
+```bash
+git subtree add --prefix ScopeFoundryHW/ni_daq/ https://github.com/ScopeFoundry/HW_ni_daq master && git checkout
+```
+
 ## Readme
 ScopeFoundryHW.ni_daq
 =====================

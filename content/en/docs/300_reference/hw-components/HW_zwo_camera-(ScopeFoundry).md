@@ -6,6 +6,12 @@ weight: 40
 ---
 - [GitHub Repository](https://github.com/ScopeFoundry/HW_zwo_camera)
 - Last Updated: 2024-08-12T00:35:51Z
+
+## Add to your project using [git](/docs/100_development/20_git/)
+```bash
+git subtree add --prefix ScopeFoundryHW/zwo_camera/ https://github.com/ScopeFoundry/HW_zwo_camera master && git checkout
+```
+
 ## Readme
 
 

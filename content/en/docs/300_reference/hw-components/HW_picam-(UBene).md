@@ -6,6 +6,12 @@ weight: 27
 ---
 - [GitHub Repository](https://github.com/UBene/HW_picam)
 - Last Updated: 2023-01-31T18:27:34Z
+
+## Add to your project using [git](/docs/100_development/20_git/)
+```bash
+git subtree add --prefix ScopeFoundryHW/picam/ https://github.com/UBene/HW_picam master && git checkout
+```
+
 ## Readme
 ScopeFoundryHW.picam
 ===================================

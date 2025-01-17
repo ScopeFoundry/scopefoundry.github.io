@@ -136,6 +136,7 @@ def fetch_and_cache_repos():
 
             if timestamped_id(repo) in existing_ids:
                 to_cache = existing_ids[timestamped_id(repo)]
+                # to_cache["default_branch"] = repo["default_branch"]
             else:
                 to_cache = {
                     "name": repo["name"],
@@ -144,6 +145,7 @@ def fetch_and_cache_repos():
                     "description": repo["description"],
                     "updated_at": repo["updated_at"],
                     "readme": fetch_readme(repo["html_url"]),
+                    "default_branch": repo["default_branch"],
                 }
             hw_repos.append(to_cache)
 

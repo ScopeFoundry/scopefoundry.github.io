@@ -6,6 +6,12 @@ weight: 26
 ---
 - [GitHub Repository](https://github.com/akshaybkiitb/HW_picam)
 - Last Updated: 2020-09-01T13:45:04Z
+
+## Add to your project using [git](/docs/100_development/20_git/)
+```bash
+git subtree add --prefix ScopeFoundryHW/picam/ https://github.com/akshaybkiitb/HW_picam master && git checkout
+```
+
 ## Readme
 ScopeFoundryHW.picam
 ===================================
