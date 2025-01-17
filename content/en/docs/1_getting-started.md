@@ -4,8 +4,9 @@ description: Installing ScopeFoundry and its dependencies.
 weight: 1
 ---
 
-
 [anaconda_dl]: https://www.anaconda.com/download/
+[IDE]:/docs/100_development/10_setup_eclipse/
+
 Note: We recommend the [Anaconda][anaconda_dl] Python distribution, which contains many easy-to-install scientific python packages. If you already had a non-Anaconda version of python installed, you will need to make sure you use Anaconda in order to follow the instructions below.
 
 * Download and Install [Anaconda][anaconda_dl]. The current recommended Python version is 3.11. Other Python 3 versions should work but are not actively tested. 
@@ -39,3 +40,11 @@ $ conda activate scopefoundry
 ```
 
 The first two lines create and activate a clean python / conda environment for your ScopeFoundry app to use, the next lines install the required packages and the final line install the ScopeFoundry package itself.  
+
+
+
+__Next__
+
+make [your first app](/docs/11_tools-tutorials/1_new-microscope-app/)
+
+setup [IDE]

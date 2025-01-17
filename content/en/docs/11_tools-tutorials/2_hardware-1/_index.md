@@ -5,7 +5,7 @@ date: 2025-01-01
 weight: 2
 ---
 
-Here we discuss how to build a custom hardware plug-in for ScopeFoundry. If one is not [available in our list of plug-ins](docs/reference/hw-components/), you can build one based on this tutorial. 
+Here we discuss how to build a custom hardware plug-in for ScopeFoundry. If one is not [available in our list of plug-ins](/docs/300_reference/hw-components/), you can build one based on this tutorial. 
 
 Hardware - 1 goals:
 

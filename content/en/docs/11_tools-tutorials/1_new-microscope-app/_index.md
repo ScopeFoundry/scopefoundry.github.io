@@ -5,7 +5,9 @@ date: 2025-01-01
 weight: 1
 ---
 
-**Required** install [ScopeFoundry](/docs/getting-started)
+[IDE]:/docs/100_development/10_setup_eclipse/
+
+**Required** install [ScopeFoundry](/docs/1_getting-started)
 
 After installation, use anaconda prompt and navigate to where you want or have the source code for your setup and start ScopeFoundry.tools:
 
@@ -74,6 +76,8 @@ Congratulations, you have created your first microscope and saw the 3 most prute
 
 Now that you have interacted with ScopeFoundry and built a microscope app with pre-built components, you probably would like to build a system that allows you to do real scientific experiements. To do this have a look at tutorials on how to build
 
-1.	a custom [Hardware Component](../2_hardware-1)
-2. 	a custom [Measurement](../3_measurement)
 
+1.	a custom [Hardware Component](../2_hardware-1)
+2.	a custom [Measurement](../3_measurement)
+
+or make a quick detour to setup [IDE]

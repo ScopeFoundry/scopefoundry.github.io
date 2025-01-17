@@ -8,10 +8,10 @@ ScopeFoundry provides a DataBrowserApp that makes it easy for a user to explore 
 
 ![ Image of the DataBrower ](databrowse_1.png)
 
-**Requirements:** [install scope_foundry](/docs/getting-started)
+**Requirements:** [install scope_foundry](/docs/1_getting-started)
 
 Steps
 
-1. [Make an app](122_data-browser-viewer)
+1. [Make an app](1_data-browser-app)
 2. [Make a image viewer](2_data-browser-viewer) example that show images
 3. [Make a .h5 viewer](2_data-browser-viewer) that handles your costume file format and displays the data as you like.

@@ -6,7 +6,7 @@ description: A Python platform for controlling custom laboratory experiments and
 weight: 1
 ---
 
-**Features**: 
+**Features**
 
 * Modular, cross-platform Python graphical interface allows for fast data acquisition and visualization
 * Build lab equipment graphical interfaces interactively with Qt Creator
@@ -17,7 +17,7 @@ weight: 1
 * Currently used in multi-modal scanning microscopy measurements with electrons and optics
 * Flexible for many other data acquisition tasks
 
-**Give your users next steps from the Overview. For example:**
+**Give your users next steps from the Overview**
 
-- [Getting Started](docs/getting-started): Get started with ScopeFoundry
-- [Tutorial](10_tutorials)
+- [Getting Started](/docs/1_getting-started): Get started with ScopeFoundry
+- [Tutorial](/docs/10_tutorials)

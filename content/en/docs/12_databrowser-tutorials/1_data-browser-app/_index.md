@@ -6,7 +6,7 @@ weight: 1
 
 
 
-Requirements: [install scope_foundry](/docs/getting-started)
+Requirements: [install scope_foundry](/docs/1_getting-started)
 
 To create the app and add viewer that ship with ScopeFoundry create this file:
 
@@ -51,4 +51,4 @@ resulting in:
 ![databrowser_1](databrowser_1.png)
 
 
-next [learn to create a Viewer](../123_data-browser-viewer)
+next [learn to create a Viewer](../2_data-browser-viewer)
