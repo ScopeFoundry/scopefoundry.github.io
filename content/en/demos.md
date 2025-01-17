@@ -1,15 +1,13 @@
 ---
 title: Demos
-linkTitle: Demos
+linkTitle: Demo
+type: demo
 menu: {main: {weight: 30}}
-description: link to demo videos
+description: Links to demo videos
 weight: 1
 ---
 
-
-# Video Demos
-
-## Interactive user interface
+## Interactive User Interface
 
 <iframe width="600" height="400" src="//www.youtube.com/embed/GJRVbZ8zYVY" frameborder="0" allowfullscreen></iframe>
 
