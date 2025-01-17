@@ -6,5 +6,11 @@ weight: 18
 ---
 - [GitHub Repository](https://github.com/ScopeFoundry/HW_lambda_zup)
 - Last Updated: 2024-08-12T00:33:19Z
+
+## Add to your project using [git](/docs/100_development/20_git/)
+```bash
+git subtree add --prefix ScopeFoundryHW/lambda_zup/ https://github.com/ScopeFoundry/HW_lambda_zup master && git checkout
+```
+
 ## Readme
 README could not be retrieved.

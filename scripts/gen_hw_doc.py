@@ -2,7 +2,7 @@
 Generates markdown doc pages for HW components pulled from GitHub.
 Uses fetch_sf_hw.py as helper func for GitHub REST API
 """
-import datetime
+
 import json
 
 HW_PREFIX = "HW_"
@@ -24,11 +24,12 @@ def sort_key(repo):
 def markdown_content(
     title,
     weight,
-    name,
+    name: str,
     html_url,
     description=None,
     updated_at=None,
     readme=None,
+    default_branch="master",
     **kwargs,
 ):
     # dedented bc otherwise python writes indentation:
@@ -41,6 +42,12 @@ weight: {weight}
 ---
 - [GitHub Repository]({html_url})
 - Last Updated: {updated_at}
+
+## Add to your project using [git](/docs/100_development/20_git/)
+```bash
+git subtree add --prefix ScopeFoundryHW/{name.strip("HW_")}/ {html_url} {default_branch} && git checkout
+```
+
 ## Readme
 {readme}
 """

@@ -13,10 +13,10 @@ We identified three categories of communication types resulting in three kinds o
 
 1. DLL: Manufacturer provides a DLL
    - basic example: [PicoHarp](/docs/300_reference/hw-components/hw_picoharp-scopefoundry/)
-   - Advanced example (supports)  [picam](/docs/300_reference/hw-components/HW_picam-ScopeFoundry)
+   - Advanced example (supports)  [picam](/docs/300_reference/hw-components/HW_picam-scopefoundry/)
 2. SERIAL: Manufacturer provides a list of serial commands (scan the hardware documentation for baud rate)
-   - basic example: [ActonSpec](/docs/300_reference/hw-components/HW_acton_spec-ScopeFoundry), [TenmaPowerSupply](/docs/300_reference/hw-components/HW_tenma_power-ScopeFoundry), [Stanford Research System SG 380](/docs/300_reference/hw-components/hw_srs_sg380-ubene/)
+   - basic example: [ActonSpec](/docs/300_reference/hw-components/hw_acton_spec-ScopeFoundry/), [TenmaPowerSupply](/docs/300_reference/hw-components/HW_tenma_power-ScopeFoundry/), [Stanford Research System SG 380](/docs/300_reference/hw-components/hw_srs_sg380-ubene/)
 3. OTHER: Manufacturer provides a Python interface (sometimes called Software Development Kit SDK) or all other cases
-   - with a manufactures SDK: [Zwoasi](/docs/300_reference/hw-components/HW_zwo_camera-scopefoundry)
-   - with VISA: [Thorlabs Powermeter](/docs/300_reference/hw-components/HW_thorlabs_powermeter-scopefoundry)
+   - with a manufactures SDK: [Zwoasi](/docs/300_reference/hw-components/hw_zwo_camera-scopefoundry/)
+   - with VISA: [Thorlabs Powermeter](/docs/300_reference/hw-components/hw_thorlabs_powermeter-scopefoundry/)
    - GPIB [Stanford Research System SG 380](/docs/300_reference/hw-components/hw_srs_sg380-ubene/)

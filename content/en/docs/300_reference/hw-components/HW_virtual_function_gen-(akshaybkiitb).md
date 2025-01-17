@@ -6,6 +6,12 @@ weight: 37
 ---
 - [GitHub Repository](https://github.com/akshaybkiitb/HW_virtual_function_gen)
 - Last Updated: 2020-07-31T11:24:09Z
+
+## Add to your project using [git](/docs/100_development/20_git/)
+```bash
+git subtree add --prefix ScopeFoundryHW/virtual_function_gen/ https://github.com/akshaybkiitb/HW_virtual_function_gen master && git checkout
+```
+
 ## Readme
 ScopeFoundryHW.virtual_function_gen
 ===================================

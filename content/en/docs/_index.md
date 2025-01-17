@@ -20,4 +20,4 @@ weight: 1
 **Give your users next steps from the Overview**
 
 - [Getting Started](/docs/1_getting-started): Get started with ScopeFoundry
-- [Tutorial](/docs/10_tutorials)
+- [Tutorial](/docs/11_tools-tutorials/)

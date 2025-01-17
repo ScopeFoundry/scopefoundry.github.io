@@ -17,9 +17,11 @@ It is a good idea to use a version-control system (VCS) to keep track of the cod
 
 ## Install git
 
-Windows
+**Windows**
 
-for example using `conda install git`, or using the [SourceTree](https://www.sourcetreeapp.com) software and configure it.
+- for example using `conda install git`, or using the [SourceTree](https://www.sourcetreeapp.com) software and configure it.
+
+- for new commers I recommend this youtube [tutorial]https://www.youtube.com/watch?v=UD7PV8auGLg&list=PLpL2ONl1hMLtlY1Y7YJNcA5zumvaITLYs&index=1
 
 Remember to configure your git user info:
 
@@ -40,7 +42,7 @@ git init
 We add files using:
 
 ```sh
-git add fancy_microscope_app.py
+git add fancy_app.py
 ```
 And commit changes to perminanet history using
 
@@ -48,7 +50,7 @@ And commit changes to perminanet history using
 
 There are are many tutorials on web that address how to use git effectively, so we will not repeat that here.
 
-There are also good graphical interfaces to Git that you may want to check out. One recommendation [SourceTree](https://www.sourcetreeapp.com) which is available for no cost.
+There are also good graphical interfaces to Git that you may want to check out. One recommendation [SourceTree](https://www.sourcetreeapp.com) that has a [great tutorial](https://www.youtube.com/playlist?list=PLpL2ONl1hMLtlY1Y7YJNcA5zumvaITLYs).  
 
 
 ## Git subtree to modify plugins
@@ -56,28 +58,35 @@ There are also good graphical interfaces to Git that you may want to check out. 
 If we want to modify existing hardware or  measurements plug-ins we can use `git subtree` to import plugins into a git repository, track local changes to the plugin , and finally push these plug-in changes upstream.
 
 
-If we have a microscope repository `fancy_microscope` that we would like to modify the code for `ascom_camera` we can at it locally to our microscope with:
+To add the `maser` branch of [HW_ascom](https://github.com/ScopeFoundry/HW_ascom_camera.git) repo from ScopeFoundry project to your git project (`cd "to/your_project_folder"`) and
 
 ```sh
-cd "to/your_project_folder"
-git subtree add --prefix ScopeFoundryHW/ascom_camera/ \
-	https://github.com/ScopeFoundry/HW_ascom_camera.git master
+git subtree add --prefix ScopeFoundryHW/ascom_camera/ https://github.com/ScopeFoundry/HW_ascom_camera.git master && git checkout
 ```
 
-After modification of the plugin we can push the changes in the plugin subdirectory. 
+(info on Error`fatal: working tree has modifications.  Cannot add.` Try: `git checkout` before trying again)
+
+After modification, to share changes either
+
+**If you have write access:** push the changes in the plugin subdirectory. 
 
 ```sh
-git subtree push --prefix ScopeFoundryHW/ascom_camera/ \
-		https://user@github.com/ScopeFoundry/HW_ascom_camera.git master
+git subtree push --prefix ScopeFoundryHW/ascom_camera/ https://user@github.com/ScopeFoundry/HW_ascom_camera.git master
 ```
 
-You will need commit access to do this, but you can always fork the plug-in repo, and submit pull-requests via the [ScopeFoundry GitHub page](https://github.com/ScopeFoundry/).
+**OR:** first fork the plug-in [HW_ascom](https://github.com/ScopeFoundry/HW_ascom_camera.git) on GitHub, and push to your repo (say `master` branch)
+
+```
+git subtree push --prefix ScopeFoundryHW/ascom_camera/ https://github.com/USER/HW_ascom_camera.git master
+```
+
+and submit pull-requests via the [ScopeFoundry GitHub page](https://github.com/ScopeFoundry/).
 
 ## Become a ScopeFoundry core developer
 If you would like to have a local copy of ScopeFoundry to modify within your microscope repository, you can use git-subtree to make a local copy:
 
 ```sh
-git subtree add --prefixScopeFoundry https://github.com/ScopeFoundry/ScopeFoundry.git master 
+git subtree add --prefix ScopeFoundry https://github.com/ScopeFoundry/ScopeFoundry.git master
 ```
 
 To update ScopeFoundry to the latest version

@@ -6,6 +6,12 @@ weight: 3
 ---
 - [GitHub Repository](https://github.com/ScopeFoundry/HW_acton_spec)
 - Last Updated: 2023-12-17T10:15:42Z
+
+## Add to your project using [git](/docs/100_development/20_git/)
+```bash
+git subtree add --prefix ScopeFoundryHW/acton_spec/ https://github.com/ScopeFoundry/HW_acton_spec master && git checkout
+```
+
 ## Readme
 ScopeFoundryHW.acton_spec
 =====================

@@ -6,6 +6,12 @@ weight: 33
 ---
 - [GitHub Repository](https://github.com/UBene/HW_srs_sg380)
 - Last Updated: 2023-01-28T19:26:15Z
+
+## Add to your project using [git](/docs/100_development/20_git/)
+```bash
+git subtree add --prefix ScopeFoundryHW/srs_sg380/ https://github.com/UBene/HW_srs_sg380 main && git checkout
+```
+
 ## Readme
 ScopeFoundryHW.srs_sg380
 ========================

@@ -6,6 +6,12 @@ weight: 20
 ---
 - [GitHub Repository](https://github.com/ScopeFoundry/HW_mcl_stage)
 - Last Updated: 2020-12-21T20:34:38Z
+
+## Add to your project using [git](/docs/100_development/20_git/)
+```bash
+git subtree add --prefix ScopeFoundryHW/mcl_stage/ https://github.com/ScopeFoundry/HW_mcl_stage master && git checkout
+```
+
 ## Readme
 ScopeFoundryHW.mcl_stage
 =====================

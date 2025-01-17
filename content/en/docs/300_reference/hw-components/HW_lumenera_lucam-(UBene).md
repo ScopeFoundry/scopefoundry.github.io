@@ -6,6 +6,12 @@ weight: 19
 ---
 - [GitHub Repository](https://github.com/UBene/HW_lumenera_lucam)
 - Last Updated: 2023-01-27T22:33:51Z
+
+## Add to your project using [git](/docs/100_development/20_git/)
+```bash
+git subtree add --prefix ScopeFoundryHW/lumenera_lucam/ https://github.com/UBene/HW_lumenera_lucam main && git checkout
+```
+
 ## Readme
 ScopeFoundryHW.lumenera_lucam
 =============================
