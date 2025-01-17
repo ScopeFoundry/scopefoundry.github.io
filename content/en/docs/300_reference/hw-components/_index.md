@@ -12,7 +12,7 @@ In order to share your ScopeFoundry hardware component:
 
 1. Create an account on GitHub
 2. Fork the [ScopeFoundry repo](https://github.com/ScopeFoundry/ScopeFoundry) to your github account
-3. Follow [packaging instructions](/docs/guides/hardware-packaging)
+3. Follow [packaging instructions](/docs/tips_and_tricks/hardware-packaging)
 
 and this page should find your hardware.
 

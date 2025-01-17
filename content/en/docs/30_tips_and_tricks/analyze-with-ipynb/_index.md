@@ -12,12 +12,11 @@ This feature works best if the machine you are working on has Jupyter notebook i
 2. Install extensions:
    1. Pylance (Microsoft)
    2. Jupyter (Microsoft)
-3. Select ScopeFoundry interpreter
 
 
 ## Trigger feature
 
-There are 2 ways to start that feature. Either way, the feature acts on a folder that contains (itself or its subdirectories) .h5 files
+There are 2 ways to start that feature. 
 
 1. From ScopeFoundry: Advanced -> analyze with ipynb. The folder acted upon is the one defined in the `app/save_dir` settings (bottom left panel)
 
@@ -33,16 +32,17 @@ conda activate scopefoundry
 python -m ScopeFoundry.tools
 ```
 
-​	and clicking the corresponding button. 
+​	and clicking the corresponding button on the Welcome tap. 
 
-The result is that it:
+In that folder the feature generates
 
-1. Generates a h5_data_loaders.py file containing convenience methods based on the .h5 files content
-2. Generates an overview.ipynb where you can do the analysis
-3. If applicable, will launch VS Code or equivalent. Otherwise, open overview.ipynb manually
+1. `h5_data_loaders.py` file containing convenience methods based on the .h5 files content
+2. an `overview.ipynb` where you can start your analysis
 
 ![analyze_with_ipynb](analyze_with_ipynb.png)
 
-In cell 1: the necessary imports are done.
+In the notebook the top 2 cells are generated:
 
-In cell 2: lines that would load each .h5 file 
+In cell 1: imports of data loaders
+
+In cell 2: lists path to each .h5 file and how it could be loaded 

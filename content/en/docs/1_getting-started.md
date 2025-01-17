@@ -39,3 +39,7 @@ $ conda activate scopefoundry
 ```
 
 The first two lines create and activate a clean python / conda environment for your ScopeFoundry app to use, the next lines install the required packages and the final line install the ScopeFoundry package itself.  
+
+
+
+make [your first app](/docs/11_tools-tutorials/1_new-microscope-app/)

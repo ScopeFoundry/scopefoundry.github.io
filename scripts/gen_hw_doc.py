@@ -52,7 +52,7 @@ def generate_markdown_files(repos_list):
     for repo in sorted(repos_list, key=sort_key):
         title = mk_unique_title(repo)
         filename = (
-            f"content/en/docs/reference/hw-components/{title.replace(" ", "-")}.md"
+            f"content/en/docs/300_reference/hw-components/{title.replace(" ", "-")}.md"
         )
         with open(filename, "w", encoding="utf8") as md_file:
             md_file.write(markdown_content(title, weight, **repo))

@@ -12,10 +12,11 @@ Most scientific devices have programmatic ways to communicate with them, either 
 We identified three categories of communication types resulting in three kinds of wrappers, how you can identify them and some example of each.
 
 1. DLL: Manufacturer provides a DLL
-   - basic example: [PicoHarp](/docs/reference/hw-components/HW_picoharp)
-   - Advanced example (supports)  [picam](/docs/reference/hw-components/HW_picam)
+   - basic example: [PicoHarp](/docs/300_reference/hw-components/hw_picoharp-scopefoundry/)
+   - Advanced example (supports)  [picam](/docs/300_reference/hw-components/HW_picam-ScopeFoundry)
 2. SERIAL: Manufacturer provides a list of serial commands (scan the hardware documentation for baud rate)
-   - basic example: [ActonSpec](/docs/reference/hw-components/HW_acton_spec), [TenmaPowre](/docs/reference/hw-components/HW_tenma_power)
+   - basic example: [ActonSpec](/docs/300_reference/hw-components/HW_acton_spec-ScopeFoundry), [TenmaPowerSupply](/docs/300_reference/hw-components/HW_tenma_power-ScopeFoundry), [Stanford Research System SG 380](/docs/300_reference/hw-components/hw_srs_sg380-ubene/)
 3. OTHER: Manufacturer provides a Python interface (sometimes called Software Development Kit SDK) or all other cases
-   - with a manufactures SDK: [Zwoasi](/docs/reference/hw-components/HW_zwo_camera)
-   - with VISA: [Thorlabs Powermeter](/docs/reference/hw-components/HW_thorlabs_powermeter)
+   - with a manufactures SDK: [Zwoasi](/docs/300_reference/hw-components/HW_zwo_camera-scopefoundry)
+   - with VISA: [Thorlabs Powermeter](/docs/300_reference/hw-components/HW_thorlabs_powermeter-scopefoundry)
+   - GPIB [Stanford Research System SG 380](/docs/300_reference/hw-components/hw_srs_sg380-ubene/)

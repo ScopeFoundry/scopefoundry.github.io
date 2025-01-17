@@ -6,7 +6,7 @@ weight: 1
 
 
 
-Requirements: [install scope_foundry](/docs/getting-started)
+Requirements: [install scope_foundry](/docs/1_getting-started)
 
 To create the app and add viewer that ship with ScopeFoundry create this file:
 

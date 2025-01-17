@@ -5,7 +5,7 @@ date: 2025-01-01
 weight: 1
 ---
 
-**Required** install [ScopeFoundry](/docs/getting-started)
+**Required** install [ScopeFoundry](/docs/1_getting-started)
 
 After installation, use anaconda prompt and navigate to where you want or have the source code for your setup and start ScopeFoundry.tools:
 

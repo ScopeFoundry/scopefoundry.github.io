@@ -3,25 +3,29 @@ title: ScopeFoundry
 ---
 
 {{< blocks/cover title="ScopeFoundry" image_anchor="bottom" height="auto" >}}
-<a class="btn btn-lg btn-primary me-3 mb-4" href="/docs/">
-  Learn More <i class="fa-solid fa-list ms-2 "></i>
+<!--
+<a class="btn btn-lg btn-primary me-3 mb-4" href="/docs/"> Learn More <i class="fa-solid fa-list ms-2 "></i>
 </a>
-<a class="btn btn-lg btn-secondary me-3 mb-4" href="/docs/getting-started">
+--!>
+<a class="btn btn-lg btn-secondary me-3 mb-4" href="/docs/1_getting-started">
   Quick Start <i class="fas fa-arrow-alt-circle-right ms-2"></i>
 </a>
 <p class="lead mt-5">A Python platform for controlling custom laboratory experiments and visualizing scientific data
 
-</p>
+
 {{< blocks/link-down color="info" >}}
 {{< /blocks/cover >}}
 
-{{% blocks/lead color="primary" %}}
-ScopeFoundry is a modular, cross-platform, and open-source alternative to LabView or MATLAB instrument control.
 
-{{% /blocks/lead %}}
+
+
+
+
 
 
 {{% blocks/section color="dark" type="row" %}}
+
+
 
 {{% blocks/feature icon="fa-solid fa-object-group" title="Modular, Cross-Platform Graphical interface" %}}
 Build lab equipment GUIs interactively with Qt Creator. Allows for fast data acquisition and visualization. {{% /blocks/feature %}}
@@ -37,22 +41,23 @@ Live updates of measurement code for fast development and debugging.
 {{% /blocks/section %}}
 
 
-{{% blocks/section %}}
+
+
+
+{{% blocks/section color="dark" type="row" %}}
 
   <img src="/sf-demo.png"
     alt="Screenshot Demonstrating ScopeFoundry Software"
     style="max-width: 100%; height: auto; margin: 0rem 0;">
 
-
 {{% /blocks/section %}}
+
 
 
 {{% blocks/section type="row" %}}
 
-
-
 {{% blocks/feature icon="fas fa-arrow-alt-circle-right" title="Get Started!" url="/docs/" %}}
-Visit [Getting Started](/docs/getting-started/) for installation instructions.
+Visit [Getting Started](/docs/1_getting-started/) for installation instructions.
 
 {{% /blocks/feature %}}
 
@@ -68,3 +73,5 @@ For posting questions and announcements of latest features.
 
 
 {{% /blocks/section %}}
+
+

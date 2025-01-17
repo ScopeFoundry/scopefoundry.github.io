@@ -8,7 +8,7 @@ ScopeFoundry provides a DataBrowserApp that makes it easy for a user to explore 
 
 ![ Image of the DataBrower ](databrowse_1.png)
 
-**Requirements:** [install scope_foundry](/docs/getting-started)
+**Requirements:** [install scope_foundry](/docs/1_getting-started)
 
 Steps
 

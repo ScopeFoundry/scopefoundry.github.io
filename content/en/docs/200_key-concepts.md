@@ -2,7 +2,7 @@
 title: Key Concepts
 description: >
   Slides demonstrating ScopeFoundry Concepts
-weight: 900
+weight: 200
 ---
 ## Why ScopeFoundry
 

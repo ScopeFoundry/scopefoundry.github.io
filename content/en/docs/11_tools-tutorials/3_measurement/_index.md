@@ -7,7 +7,7 @@ weight: 3
 [ Qt Creator ]:https://www.qt.io/offline-installers
 
 
-We will be describing how to build the `number_gen_readout` measurement that works together with ScopeFoundryHW package we made in the [previous example](../2_hardware-1). When run, this measurement periodically samples values from the `number_gen` hardware component.
+We will be describing how to build the `number_gen_readout` measurement that works together with ScopeFoundryHW package we made in the [previous tutorial](../2_hardware-1). When run, this measurement periodically samples values from the `number_gen` hardware component.
 
 ## Essential components
 
@@ -318,17 +318,54 @@ The resulting app should look like:
 
 ![microscope-with-func-gen](microscope-with-func-gen.png)
 
-## Bonus 1: Analyzed with ipynb
+## Bonus 2: Analyzed with ipynb
 
-Clicking the `analyze` button on the left panel one can quickly start to analyze the data. For this feature it is recommended to install Visual Studio Code with the Jupyter extension.
+### Recommendation
 
-![analyze_with_ipynb](analyze_with_ipynb.png)
+This feature works best if the machine you are working on has Jupyter notebook installed such that double-clicking opens it. One *recommended* way:
 
-[see more details about this feature](docs/knowledge-base/analyze-with-ipynb/)
+1. Install [Visual Studio Code](https://code.visualstudio.com/download)
+2. Install extensions:
+   1. Pylance (Microsoft)
+   2. Jupyter (Microsoft)
+
+
+#### Trigger feature
+
+There are 2 ways to start that feature. 
+
+1. From ScopeFoundry: Advanced -> analyze with ipynb. The folder acted upon is the one defined in the `app/save_dir` settings (bottom left panel)
+
+   ![Screenshot 2025-01-12 at 17.45.20](/Users/benediktursprung/Library/CloudStorage/OneDrive-Personal/scope_foundries/website/scopefoundry-hugo/content/en/docs/tips_and_tricks/analyze-with-ipynb/launch_analyze.png)
+
+2. Using ScopeFoundry tools ([requires ScopeFoundry 2.0+ see getting started tutorial](/docs/10_tutorials/1_getting-started))
+
+```sh
+cd "to/your_data_folder"
+conda activate scopefoundry 
+# or for mac: 
+# source activate scopefoundry
+python -m ScopeFoundry.tools
+```
+
+​	and clicking the corresponding button on the Welcome tap. 
+
+In that folder the feature generates
+
+1. `h5_data_loaders.py` file containing convenience methods based on the .h5 files content
+2. an `overview.ipynb` where you can start your analysis
+
+![analyze_with_ipynb](/Users/benediktursprung/Library/CloudStorage/OneDrive-Personal/scope_foundries/website/scopefoundry-hugo/content/en/docs/tips_and_tricks/analyze-with-ipynb/analyze_with_ipynb.png)
+
+In the notebook the top 2 cells are generated:
+
+In cell 1: imports of data loaders
+
+In cell 2: lists path to each .h5 file and how it could be loaded 
 
 
 
-## Bonus 2: Improved version
+## Bonus 3: Improved version
 
 In the above example kept things simple. We made some modifications in this final version that has the following improvements:
 
