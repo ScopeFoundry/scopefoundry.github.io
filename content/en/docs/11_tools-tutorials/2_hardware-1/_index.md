@@ -23,10 +23,14 @@ Hardware - 2 goals:
 To get started, in your anaconda prompt or terminal cd to your folder and run the ScopeFoundry.tools:
 
 ```sh
-$ cd "to/your_project_folder"
-$ conda activate scopefoundry
-$ python -m ScopeFoundry.tools
+cd "to/your_project_folder"
+conda activate scopefoundry
 ```
+
+```sh
+python -m ScopeFoundry.tools
+```
+
 
 Fill out the `new hardware` tab as below and hit `create new hardware`:
 
