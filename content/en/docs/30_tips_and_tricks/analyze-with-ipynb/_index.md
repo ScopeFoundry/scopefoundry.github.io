@@ -22,13 +22,17 @@ There are 2 ways to start that feature.
 
     ![Screenshot 2025-01-12 at 17.45.20](launch_analyze.png)
 
-2. Using ScopeFoundry tools ([requires ScopeFoundry 2.0+ see getting started tutorial](/docs/10_tutorials/1_getting-started))
+2. Using ScopeFoundry tools ([requires ScopeFoundry 2.0+ see getting started tutorial](/docs/1_getting-started/))
 
 ```sh
-cd "to/your_data_folder"
-conda activate scopefoundry 
-# or for mac: 
-# source activate scopefoundry
+cd "to / your folder with data"
+```
+```sh
+conda activate scopefoundry
+```
+or for mac:  `source activate scopefoundry`
+
+```sh
 python -m ScopeFoundry.tools
 ```
 

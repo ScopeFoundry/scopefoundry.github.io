@@ -1,13 +1,9 @@
 ---
 title: Hardware 3 - Packaging
-description: package a HW component and publish on GitHub
+description: package a HW component
 date: 2025-01-01
 weight: 30
 ---
-
-prerequisit: [setup git](../20_git)
-
-
 
 ## Packaging
 
@@ -54,20 +50,6 @@ setup(
 ```
 
 
-
-## How to contribute HW_*
-
-This page periodically scans GitHub for HW_* repos and adds it to the [references](/docs/300_reference/hw-components/). Thereby, it considers users/organisations that forked the ScopeFoundry Repo.
-
-So to share your hardware:
-
-1. make a github account
-2. Fork [ScopeFoundry repo](https://github.com/ScopeFoundry/ScopeFoundry) to your github account
-3. Follow [packaging instructions](/docs/tips_and_tricks/hardware-packaging)
-
-and this page should find your hardware.
-
-Thanks.
 
 
 

@@ -13,7 +13,7 @@ weight: 1
 After installation, use anaconda prompt and navigate to where you want or have the source code for your setup and start ScopeFoundry.tools:
 
 ```sh
-cd "to/your_project_folder"
+# cd "to/your_project_folder"
 conda activate scopefoundry
 ```
 

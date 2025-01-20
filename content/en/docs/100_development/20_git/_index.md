@@ -35,7 +35,7 @@ git config --global user.email "nnobinov@example.com"`
 Lets create a git repository to store the code for the microscope app
 
 ```sh
-cd "to/your_project_folder"
+# cd "to/your_project_folder"
 git init
 ```
 

@@ -5,7 +5,7 @@ date: 2025-01-01
 weight: 2
 ---
 
-Here we discuss how to build a custom hardware plug-in for ScopeFoundry. If one is not [available in our list of plug-ins](/docs/300_reference/hw-components/), you can build one based on this tutorial. 
+Here we discuss how to build a custom hardware plug-in for ScopeFoundry. If one is not [available in our list of plug-ins](/docs/300_reference/hw-components), you can build one based on this tutorial. 
 
 Hardware - 1 goals:
 
@@ -23,7 +23,7 @@ Hardware - 2 goals:
 To get started, in your anaconda prompt or terminal cd to your folder and run the ScopeFoundry.tools:
 
 ```sh
-cd "to/your_project_folder"
+# cd "to/your_project_folder"
 conda activate scopefoundry
 ```
 
@@ -214,8 +214,8 @@ By having the `connect()` and `disconnect()` we can cleanly reconnect hardware d
 
 Test by running:
 
-```sh
-$ python fancy_app.py
+```shell
+python fancy_app.py
 ```
 
 You should see:
