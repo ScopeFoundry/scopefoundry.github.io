@@ -7,9 +7,12 @@ weight: 24
 - [GitHub Repository](https://github.com/SarthakJariwala/HW_OceanOptics)
 - Last Updated: 2019-06-19T18:30:21Z
 
-## Add to your project using [git](/docs/100_development/20_git/)
+#### To add to your microscope 
+
+`cd to/your_project_folder` and use the following cmd (requires [git](/docs/100_development/20_git/))
+
 ```bash
-git subtree add --prefix ScopeFoundryHW/OceanOptics/ https://github.com/SarthakJariwala/HW_OceanOptics master && git checkout
+mkdir ScopeFoundryHW/OceanOptics && cd ScopeFoundryHW/OceanOptics && git init --initial-branch=master && git remote add upstream_SarthakJariwala https://github.com/SarthakJariwala/HW_OceanOptics && git pull upstream_SarthakJariwala master && cd ../..
 ```
 
 ## Readme

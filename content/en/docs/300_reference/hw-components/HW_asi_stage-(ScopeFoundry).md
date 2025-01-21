@@ -7,9 +7,12 @@ weight: 7
 - [GitHub Repository](https://github.com/ScopeFoundry/HW_asi_stage)
 - Last Updated: 2023-09-20T03:25:28Z
 
-## Add to your project using [git](/docs/100_development/20_git/)
+#### To add to your microscope 
+
+`cd to/your_project_folder` and use the following cmd (requires [git](/docs/100_development/20_git/))
+
 ```bash
-git subtree add --prefix ScopeFoundryHW/asi_stage/ https://github.com/ScopeFoundry/HW_asi_stage main && git checkout
+mkdir ScopeFoundryHW/asi_stage && cd ScopeFoundryHW/asi_stage && git init --initial-branch=main && git remote add upstream_ScopeFoundry https://github.com/ScopeFoundry/HW_asi_stage && git pull upstream_ScopeFoundry main && cd ../..
 ```
 
 ## Readme

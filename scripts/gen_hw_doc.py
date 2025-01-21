@@ -11,9 +11,8 @@ def laod_cached_repos():
     with open("cached_repos.json", "r", encoding="utf8") as file:
         return json.load(file)  # Load JSON as a dictionary
 
-
 def mk_unique_title(repo):
-    owner = repo.get("html_url", "").split("/")[-2]
+    owner = repo["owner"]
     return f"{repo['name']} ({owner})"
 
 
@@ -21,14 +20,25 @@ def sort_key(repo):
     return f'{repo["name"].lower()}:{repo["updated_at"]}'
 
 
+def import_with_gh_cmd(name, html_url, owner, default_branch="master"):
+    path = f"ScopeFoundryHW/{name.strip("HW_")}"
+    remote_name = f"upstream_{owner}"
+    return f"mkdir {path} && cd {path} && git init --initial-branch={default_branch} && git remote add {remote_name} {html_url} && git pull {remote_name} {default_branch} && cd ../.."
+
+
+def import_with_git_subtree(name, html_url, default_branch="master"):
+    return f"git subtree add --prefix ScopeFoundryHW/{name.strip("HW_")}/ {html_url} {default_branch} && git checkout"
+
+
 def markdown_content(
     title,
     weight,
     name: str,
-    html_url,
+    html_url: str,
     description=None,
     updated_at=None,
     readme=None,
+    owner="ScopeFoundry",
     default_branch="master",
     **kwargs,
 ):
@@ -43,9 +53,12 @@ weight: {weight}
 - [GitHub Repository]({html_url})
 - Last Updated: {updated_at}
 
-## Add to your project using [git](/docs/100_development/20_git/)
+#### To add to your microscope 
+
+`cd to/your_project_folder` and use the following cmd (requires [git](/docs/100_development/20_git/))
+
 ```bash
-git subtree add --prefix ScopeFoundryHW/{name.strip("HW_")}/ {html_url} {default_branch} && git checkout
+{import_with_gh_cmd(name, html_url, owner, default_branch)}
 ```
 
 ## Readme

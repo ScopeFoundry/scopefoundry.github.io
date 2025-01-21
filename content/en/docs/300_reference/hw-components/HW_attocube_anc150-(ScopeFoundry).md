@@ -7,9 +7,12 @@ weight: 8
 - [GitHub Repository](https://github.com/ScopeFoundry/HW_attocube_anc150)
 - Last Updated: 2017-11-27T20:34:31Z
 
-## Add to your project using [git](/docs/100_development/20_git/)
+#### To add to your microscope 
+
+`cd to/your_project_folder` and use the following cmd (requires [git](/docs/100_development/20_git/))
+
 ```bash
-git subtree add --prefix ScopeFoundryHW/attocube_anc150/ https://github.com/ScopeFoundry/HW_attocube_anc150 master && git checkout
+mkdir ScopeFoundryHW/attocube_anc150 && cd ScopeFoundryHW/attocube_anc150 && git init --initial-branch=master && git remote add upstream_ScopeFoundry https://github.com/ScopeFoundry/HW_attocube_anc150 && git pull upstream_ScopeFoundry master && cd ../..
 ```
 
 ## Readme

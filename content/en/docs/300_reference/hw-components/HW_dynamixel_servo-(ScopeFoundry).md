@@ -7,9 +7,12 @@ weight: 13
 - [GitHub Repository](https://github.com/ScopeFoundry/HW_dynamixel_servo)
 - Last Updated: 2024-08-12T00:41:58Z
 
-## Add to your project using [git](/docs/100_development/20_git/)
+#### To add to your microscope 
+
+`cd to/your_project_folder` and use the following cmd (requires [git](/docs/100_development/20_git/))
+
 ```bash
-git subtree add --prefix ScopeFoundryHW/dynamixel_servo/ https://github.com/ScopeFoundry/HW_dynamixel_servo master && git checkout
+mkdir ScopeFoundryHW/dynamixel_servo && cd ScopeFoundryHW/dynamixel_servo && git init --initial-branch=master && git remote add upstream_ScopeFoundry https://github.com/ScopeFoundry/HW_dynamixel_servo && git pull upstream_ScopeFoundry master && cd ../..
 ```
 
 ## Readme

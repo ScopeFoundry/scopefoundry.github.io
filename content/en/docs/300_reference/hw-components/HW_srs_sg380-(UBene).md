@@ -7,9 +7,12 @@ weight: 33
 - [GitHub Repository](https://github.com/UBene/HW_srs_sg380)
 - Last Updated: 2023-01-28T19:26:15Z
 
-## Add to your project using [git](/docs/100_development/20_git/)
+#### To add to your microscope 
+
+`cd to/your_project_folder` and use the following cmd (requires [git](/docs/100_development/20_git/))
+
 ```bash
-git subtree add --prefix ScopeFoundryHW/srs_sg380/ https://github.com/UBene/HW_srs_sg380 main && git checkout
+mkdir ScopeFoundryHW/srs_sg380 && cd ScopeFoundryHW/srs_sg380 && git init --initial-branch=main && git remote add upstream_UBene https://github.com/UBene/HW_srs_sg380 && git pull upstream_UBene main && cd ../..
 ```
 
 ## Readme

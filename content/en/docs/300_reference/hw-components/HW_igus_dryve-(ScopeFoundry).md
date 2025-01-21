@@ -7,9 +7,12 @@ weight: 16
 - [GitHub Repository](https://github.com/ScopeFoundry/HW_igus_dryve)
 - Last Updated: 2024-08-12T00:57:38Z
 
-## Add to your project using [git](/docs/100_development/20_git/)
+#### To add to your microscope 
+
+`cd to/your_project_folder` and use the following cmd (requires [git](/docs/100_development/20_git/))
+
 ```bash
-git subtree add --prefix ScopeFoundryHW/igus_dryve/ https://github.com/ScopeFoundry/HW_igus_dryve master && git checkout
+mkdir ScopeFoundryHW/igus_dryve && cd ScopeFoundryHW/igus_dryve && git init --initial-branch=master && git remote add upstream_ScopeFoundry https://github.com/ScopeFoundry/HW_igus_dryve && git pull upstream_ScopeFoundry master && cd ../..
 ```
 
 ## Readme

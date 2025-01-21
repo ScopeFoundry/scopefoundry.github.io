@@ -7,9 +7,12 @@ weight: 25
 - [GitHub Repository](https://github.com/SarthakJariwala/HW_PI_PiezoStage)
 - Last Updated: 2019-06-19T18:40:38Z
 
-## Add to your project using [git](/docs/100_development/20_git/)
+#### To add to your microscope 
+
+`cd to/your_project_folder` and use the following cmd (requires [git](/docs/100_development/20_git/))
+
 ```bash
-git subtree add --prefix ScopeFoundryHW/PI_PiezoStage/ https://github.com/SarthakJariwala/HW_PI_PiezoStage master && git checkout
+mkdir ScopeFoundryHW/PI_PiezoStage && cd ScopeFoundryHW/PI_PiezoStage && git init --initial-branch=master && git remote add upstream_SarthakJariwala https://github.com/SarthakJariwala/HW_PI_PiezoStage && git pull upstream_SarthakJariwala master && cd ../..
 ```
 
 ## Readme
