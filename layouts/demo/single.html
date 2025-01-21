@@ -1,10 +1,12 @@
 {{ define "main" -}}
 
-<div class="td-content">
-    
-<h1>{{ .Title }}</h1>
 
-
+<div class="td-title" style="padding-top: 50px; padding-bottom: 50px; text-align: center;">   
+<!-- <h1 >{{ .Title }}</h1> -->
+<p> </p>
 {{ with .Content }}{{ . }}{{ end -}}
 </div>
+
+
+
 {{ end }}
