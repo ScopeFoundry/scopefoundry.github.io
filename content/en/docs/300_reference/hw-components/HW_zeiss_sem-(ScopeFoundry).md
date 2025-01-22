@@ -7,9 +7,12 @@ weight: 39
 - [GitHub Repository](https://github.com/ScopeFoundry/HW_zeiss_sem)
 - Last Updated: 2024-08-12T00:37:28Z
 
-## Add to your project using [git](/docs/100_development/20_git/)
+#### To add to your microscope 
+
+`cd to/your_project_folder` and use the following cmd (requires [git](/docs/100_development/20_git/))
+
 ```bash
-git subtree add --prefix ScopeFoundryHW/zeiss_sem/ https://github.com/ScopeFoundry/HW_zeiss_sem master && git checkout
+mkdir ScopeFoundryHW/zeiss_sem && cd ScopeFoundryHW/zeiss_sem && git init --initial-branch=master && git remote add upstream_ScopeFoundry https://github.com/ScopeFoundry/HW_zeiss_sem && git pull upstream_ScopeFoundry master && cd ../..
 ```
 
 ## Readme

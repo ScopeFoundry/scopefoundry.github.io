@@ -7,9 +7,12 @@ weight: 20
 - [GitHub Repository](https://github.com/ScopeFoundry/HW_mcl_stage)
 - Last Updated: 2020-12-21T20:34:38Z
 
-## Add to your project using [git](/docs/100_development/20_git/)
+#### To add to your microscope 
+
+`cd to/your_project_folder` and use the following cmd (requires [git](/docs/100_development/20_git/))
+
 ```bash
-git subtree add --prefix ScopeFoundryHW/mcl_stage/ https://github.com/ScopeFoundry/HW_mcl_stage master && git checkout
+mkdir ScopeFoundryHW/mcl_stage && cd ScopeFoundryHW/mcl_stage && git init --initial-branch=master && git remote add upstream_ScopeFoundry https://github.com/ScopeFoundry/HW_mcl_stage && git pull upstream_ScopeFoundry master && cd ../..
 ```
 
 ## Readme

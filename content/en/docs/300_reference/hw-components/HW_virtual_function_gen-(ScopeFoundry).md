@@ -7,9 +7,12 @@ weight: 36
 - [GitHub Repository](https://github.com/ScopeFoundry/HW_virtual_function_gen)
 - Last Updated: 2017-02-03T18:30:05Z
 
-## Add to your project using [git](/docs/100_development/20_git/)
+#### To add to your microscope 
+
+`cd to/your_project_folder` and use the following cmd (requires [git](/docs/100_development/20_git/))
+
 ```bash
-git subtree add --prefix ScopeFoundryHW/virtual_function_gen/ https://github.com/ScopeFoundry/HW_virtual_function_gen master && git checkout
+mkdir ScopeFoundryHW/virtual_function_gen && cd ScopeFoundryHW/virtual_function_gen && git init --initial-branch=master && git remote add upstream_ScopeFoundry https://github.com/ScopeFoundry/HW_virtual_function_gen && git pull upstream_ScopeFoundry master && cd ../..
 ```
 
 ## Readme

@@ -9,17 +9,16 @@ weight: 1
 
 ## Interactive User Interface
 
-<iframe width="600" height="400" src="//www.youtube.com/embed/GJRVbZ8zYVY" frameborder="0" allowfullscreen></iframe>
+<iframe width="800" height="533" src="//www.youtube.com/embed/GJRVbZ8zYVY" frameborder="0" style="padding-bottom:50px" allowfullscreen></iframe>
 
 ## IPython interactive data access
 
-<iframe width="600" height="400" src="//www.youtube.com/embed/BdwPL2iOmns" frameborder="0" allowfullscreen></iframe>
-
+<iframe width="800" height="533" src="//www.youtube.com/embed/GJRVbZ8zYVY" frameborder="0" style="padding-bottom:50px" allowfullscreen></iframe>
 
 ## Live code update in Eclipse/PyDev
 
-<iframe width="600" height="400" src="//www.youtube.com/embed/kd8OitLPXcM" frameborder="0" allowfullscreen></iframe>
+<iframe width="800" height="533" src="//www.youtube.com/embed/GJRVbZ8zYVY" frameborder="0" style="padding-bottom:50px" allowfullscreen></iframe>
 
 ## 4D-STEM interactive data explorer
 
-<iframe width="600" height="400" src="//www.youtube.com/embed/XJaCfdVUQw0" frameborder="0" allowfullscreen></iframe>
+<iframe width="800" height="533" src="//www.youtube.com/embed/GJRVbZ8zYVY" frameborder="0" style="padding-bottom:50px" allowfullscreen></iframe>

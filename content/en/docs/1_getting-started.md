@@ -17,34 +17,35 @@ __Windows__
 
 Open an Anaconda prompt and run the following commands:
     
-
 ```sh
-> conda create -n scopefoundry python=3.11
-> conda activate scopefoundry
-(scopefoundry) > conda install numpy pyqt qtpy h5py pyqtgraph pyserial matplotlib qtconsole
-(scopefoundry) > pip install ScopeFoundry
+conda create -n scopefoundry python=3.12
 ```
+```sh
+conda activate scopefoundry
+```
+```sh
+conda install numpy qtpy h5py pyqtgraph qtconsole matplotlib
+```
+```sh
+pip install pyqt6 scopefoundry
+```
+
 The first two lines create and activate a clean python / conda environment for your ScopeFoundry app to use, the next lines install the required packages and the final line install the ScopeFoundry package itself.    
 
 The use of the conda environment is optional, but provides a clean, known working environment for ScopeFoundry
 
 __Mac / Linux__
 
-Open a terminal and run the following commands:
+Same step as above except that you can use `terminal` instead of `anaconda prompt`.
+
+For olders versions of anaconda (<4.4 before 2017) you have to replace `conda activate scopefoundry` with 
 
 ```sh
-$ conda create -n scopefoundry python=3.11
-$ conda activate scopefoundry
-(scopefoundry) $ conda install numpy pyqt qtpy h5py pyqtgraph
-(scopefoundry) $ pip install ScopeFoundry
+source activate scopefoundry
 ```
-
-The first two lines create and activate a clean python / conda environment for your ScopeFoundry app to use, the next lines install the required packages and the final line install the ScopeFoundry package itself.  
-
-
 
 __Next__
 
-make [your first app](/docs/11_tools-tutorials/1_new-microscope-app/)
+check your installation by [making your first app](/docs/11_tools-tutorials/1_new-microscope-app/) in 1 min
 
 setup [IDE]

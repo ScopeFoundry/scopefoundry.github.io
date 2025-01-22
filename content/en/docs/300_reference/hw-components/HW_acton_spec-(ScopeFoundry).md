@@ -7,9 +7,12 @@ weight: 3
 - [GitHub Repository](https://github.com/ScopeFoundry/HW_acton_spec)
 - Last Updated: 2023-12-17T10:15:42Z
 
-## Add to your project using [git](/docs/100_development/20_git/)
+#### To add to your microscope 
+
+`cd to/your_project_folder` and use the following cmd (requires [git](/docs/100_development/20_git/))
+
 ```bash
-git subtree add --prefix ScopeFoundryHW/acton_spec/ https://github.com/ScopeFoundry/HW_acton_spec master && git checkout
+mkdir ScopeFoundryHW/acton_spec && cd ScopeFoundryHW/acton_spec && git init --initial-branch=master && git remote add upstream_ScopeFoundry https://github.com/ScopeFoundry/HW_acton_spec && git pull upstream_ScopeFoundry master && cd ../..
 ```
 
 ## Readme

@@ -7,9 +7,12 @@ weight: 19
 - [GitHub Repository](https://github.com/UBene/HW_lumenera_lucam)
 - Last Updated: 2023-01-27T22:33:51Z
 
-## Add to your project using [git](/docs/100_development/20_git/)
+#### To add to your microscope 
+
+`cd to/your_project_folder` and use the following cmd (requires [git](/docs/100_development/20_git/))
+
 ```bash
-git subtree add --prefix ScopeFoundryHW/lumenera_lucam/ https://github.com/UBene/HW_lumenera_lucam main && git checkout
+mkdir ScopeFoundryHW/lumenera_lucam && cd ScopeFoundryHW/lumenera_lucam && git init --initial-branch=main && git remote add upstream_UBene https://github.com/UBene/HW_lumenera_lucam && git pull upstream_UBene main && cd ../..
 ```
 
 ## Readme

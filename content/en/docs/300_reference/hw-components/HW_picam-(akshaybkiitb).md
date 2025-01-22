@@ -7,9 +7,12 @@ weight: 26
 - [GitHub Repository](https://github.com/akshaybkiitb/HW_picam)
 - Last Updated: 2020-09-01T13:45:04Z
 
-## Add to your project using [git](/docs/100_development/20_git/)
+#### To add to your microscope 
+
+`cd to/your_project_folder` and use the following cmd (requires [git](/docs/100_development/20_git/))
+
 ```bash
-git subtree add --prefix ScopeFoundryHW/picam/ https://github.com/akshaybkiitb/HW_picam master && git checkout
+mkdir ScopeFoundryHW/picam && cd ScopeFoundryHW/picam && git init --initial-branch=master && git remote add upstream_akshaybkiitb https://github.com/akshaybkiitb/HW_picam && git pull upstream_akshaybkiitb master && cd ../..
 ```
 
 ## Readme

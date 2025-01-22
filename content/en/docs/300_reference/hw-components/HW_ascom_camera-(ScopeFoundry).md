@@ -7,9 +7,12 @@ weight: 6
 - [GitHub Repository](https://github.com/ScopeFoundry/HW_ascom_camera)
 - Last Updated: 2024-08-12T01:05:28Z
 
-## Add to your project using [git](/docs/100_development/20_git/)
+#### To add to your microscope 
+
+`cd to/your_project_folder` and use the following cmd (requires [git](/docs/100_development/20_git/))
+
 ```bash
-git subtree add --prefix ScopeFoundryHW/ascom_camera/ https://github.com/ScopeFoundry/HW_ascom_camera master && git checkout
+mkdir ScopeFoundryHW/ascom_camera && cd ScopeFoundryHW/ascom_camera && git init --initial-branch=master && git remote add upstream_ScopeFoundry https://github.com/ScopeFoundry/HW_ascom_camera && git pull upstream_ScopeFoundry master && cd ../..
 ```
 
 ## Readme

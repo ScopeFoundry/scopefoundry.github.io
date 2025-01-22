@@ -54,7 +54,7 @@ class MatplotlibImreadView(DataBrowserView):
 
 ## Adding the view
 
-Add these line to your `fancy_data_browser.py` [file created earlier](../121_data-browser-app)
+Add these line to your `fancy_data_browser.py` [file created earlier](../1_data-browser-app/)
 
 ```python
         from viewers.images import MatplotlibImreadView

@@ -7,9 +7,12 @@ weight: 14
 - [GitHub Repository](https://github.com/ScopeFoundry/HW_flircam)
 - Last Updated: 2024-08-12T00:47:58Z
 
-## Add to your project using [git](/docs/100_development/20_git/)
+#### To add to your microscope 
+
+`cd to/your_project_folder` and use the following cmd (requires [git](/docs/100_development/20_git/))
+
 ```bash
-git subtree add --prefix ScopeFoundryHW/flircam/ https://github.com/ScopeFoundry/HW_flircam master && git checkout
+mkdir ScopeFoundryHW/flircam && cd ScopeFoundryHW/flircam && git init --initial-branch=master && git remote add upstream_ScopeFoundry https://github.com/ScopeFoundry/HW_flircam && git pull upstream_ScopeFoundry master && cd ../..
 ```
 
 ## Readme

@@ -7,9 +7,12 @@ weight: 35
 - [GitHub Repository](https://github.com/ScopeFoundry/HW_thorlabs_powermeter)
 - Last Updated: 2024-08-12T00:38:50Z
 
-## Add to your project using [git](/docs/100_development/20_git/)
+#### To add to your microscope 
+
+`cd to/your_project_folder` and use the following cmd (requires [git](/docs/100_development/20_git/))
+
 ```bash
-git subtree add --prefix ScopeFoundryHW/thorlabs_powermeter/ https://github.com/ScopeFoundry/HW_thorlabs_powermeter master && git checkout
+mkdir ScopeFoundryHW/thorlabs_powermeter && cd ScopeFoundryHW/thorlabs_powermeter && git init --initial-branch=master && git remote add upstream_ScopeFoundry https://github.com/ScopeFoundry/HW_thorlabs_powermeter && git pull upstream_ScopeFoundry master && cd ../..
 ```
 
 ## Readme

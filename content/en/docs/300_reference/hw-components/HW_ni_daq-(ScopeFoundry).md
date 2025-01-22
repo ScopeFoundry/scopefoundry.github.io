@@ -7,9 +7,12 @@ weight: 23
 - [GitHub Repository](https://github.com/ScopeFoundry/HW_ni_daq)
 - Last Updated: 2017-01-10T20:27:05Z
 
-## Add to your project using [git](/docs/100_development/20_git/)
+#### To add to your microscope 
+
+`cd to/your_project_folder` and use the following cmd (requires [git](/docs/100_development/20_git/))
+
 ```bash
-git subtree add --prefix ScopeFoundryHW/ni_daq/ https://github.com/ScopeFoundry/HW_ni_daq master && git checkout
+mkdir ScopeFoundryHW/ni_daq && cd ScopeFoundryHW/ni_daq && git init --initial-branch=master && git remote add upstream_ScopeFoundry https://github.com/ScopeFoundry/HW_ni_daq && git pull upstream_ScopeFoundry master && cd ../..
 ```
 
 ## Readme

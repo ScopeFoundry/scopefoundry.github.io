@@ -9,18 +9,22 @@ weight: 1
 
 **Required** install [ScopeFoundry](/docs/1_getting-started)
 
+
 After installation, use anaconda prompt and navigate to where you want or have the source code for your setup and start ScopeFoundry.tools:
 
 ```sh
-$ cd "to/your_project_folder"
-$ conda activate scopefoundry
-$ python -m ScopeFoundry.tools
+# cd "to/your_project_folder"
+conda activate scopefoundry
+```
+
+```sh
+python -m ScopeFoundry.tools
 ```
 
 ![tools_new_app](tools_new_app.png)Go to the `new app` and press `new app`. This copied the scope foundry example files to your project folder. In your anaconda(3) prompt run:
 
 ```sh
-$ python example_slowscan_app.py
+python example_slowscan_app.py
 ```
 
 you should see:
