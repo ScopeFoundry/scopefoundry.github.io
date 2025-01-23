@@ -184,6 +184,14 @@ params:
         icon: fa fa-envelope
         desc: Discuss development issues around the project
 
+# https://www.docsy.dev/docs/adding-content/navigation/#top-level-menu
+# pages with greater weight appear on the right side of the navbar
+menu:
+  main:
+    - name: GitHub
+      weight: 1000
+      url: 'https://github.com/ScopeFoundry'
+      
 module:
   # Uncomment the next line to build and serve using local docsy clone declared in the named Hugo workspace:
   # workspace: docsy.work

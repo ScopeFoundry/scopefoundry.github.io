@@ -3,22 +3,20 @@ title: ScopeFoundry
 ---
 
 {{< blocks/cover title="ScopeFoundry" image_anchor="bottom" height="auto" >}}
-<!--
-<a class="btn btn-lg btn-primary me-3 mb-4" href="/docs/"> Learn More <i class="fa-solid fa-list ms-2 "></i>
-</a>
---!>
-<a class="btn btn-lg btn-secondary me-3 mb-4" href="/docs/1_getting-started">
+
+<a class="btn btn-lg btn-primary me-3 mb-4" href="/docs/"> 
   Quick Start <i class="fas fa-arrow-alt-circle-right ms-2"></i>
 </a>
+<a class="btn btn-lg btn-secondary me-3 mb-4" href="https://github.com/ScopeFoundry">
+  Download <i class="fab fa-github ms-2 "></i>
+</a>
+
 
 <p class="lead mt-5">A Python platform for controlling custom laboratory experiments and visualizing scientific data
 
 
 {{< blocks/link-down color="info" >}}
 {{< /blocks/cover >}}
-
-
-
 
 
 
