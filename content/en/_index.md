@@ -7,30 +7,24 @@ title: ScopeFoundry
 <a class="btn btn-lg btn-primary me-3 mb-4" href="/docs/"> 
   Quick Start <i class="fas fa-arrow-alt-circle-right ms-2"></i>
 </a>
-<a class="btn btn-lg btn-secondary me-3 mb-4" href="https://github.com/ScopeFoundry">
-  Download <i class="fab fa-github ms-2 "></i>
-</a>
 
 
-<p class="lead mt-5">A Python platform for controlling custom laboratory experiments and visualizing scientific data
+<p class="lead fw-bold mt-5">A Python platform for controlling custom laboratory experiments and visualizing scientific data
 
 
 {{< blocks/link-down color="info" >}}
 {{< /blocks/cover >}}
 
 
-
-
-
 {{% blocks/section color="black" type="row" %}}
 
 
 
-{{% blocks/feature icon="fa-solid fa-object-group" title="Modular, Cross-Platform Graphical interface" %}}
-Build lab equipment GUIs interactively with Qt Creator. Allows for fast data acquisition and visualization. {{% /blocks/feature %}}
+{{% blocks/feature icon="fa-solid fa-object-group" title="Modular, Cross-Platform Graphical Interface" %}}
+Design lab equipment GUIs interactively with Qt Creator, allowing for fast data acquisition and visualization. {{% /blocks/feature %}}
 
 {{% blocks/feature icon="fab fa-github" title="Hardware Plug-in Library"%}}
-Featuring hardware plug-ins for simple and complex scientific equipment.{{% /blocks/feature %}}
+Featuring hardware plug-in library for simple and complex scientific equipment.{{% /blocks/feature %}}
 
 {{% blocks/feature icon="fa-solid fa-chart-line" title="Live Measurement" %}}
 Live updates of measurement code for fast development and debugging.
@@ -41,19 +35,10 @@ Live updates of measurement code for fast development and debugging.
 
 
 
-
-
 {{% blocks/section color="black" type="row" %}}
 
 <iframe width="800" height="400" src="//www.youtube.com/embed/kd8OitLPXcM" frameborder="0" allowfullscreen></iframe>
 
-
-
-<!--<img src="/sf-demo.png"
-    alt="Screenshot Demonstrating ScopeFoundry Software"
-    style="max-width: 100%; height: auto; margin: 0rem 0;">
-
---!>
 
 {{% /blocks/section %}}
 
