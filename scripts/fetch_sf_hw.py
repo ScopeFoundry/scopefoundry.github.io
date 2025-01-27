@@ -49,7 +49,7 @@ def query_github(api_url):
         headers["Authorization"] = f"token {GITHUB_TOKEN}"
     global QUERY_COUNTER
     QUERY_COUNTER += 1
-    print(f"Querying GitHub API: {api_url} (#{QUERY_COUNTER})")
+    print(f"#{QUERY_COUNTER}: querying GitHub API: {api_url}")
     return requests.get(api_url, headers=headers, timeout=100)
 
 
@@ -66,6 +66,24 @@ def fetch_readme(repo_url: str):
     if response.status_code == 200:
         return response.text
     return "README could not be retrieved."
+
+
+def fetch_repo_info(repo_url: str):
+    """
+    Fetches all information from a given repository
+    """
+    api_url = repo_url.replace("https://github.com", "https://api.github.com/repos")
+    response = query_github(api_url)
+    if response.status_code == 200:
+        return response.json()
+    return {}
+
+
+def fetch_parent_id(repo):
+    if repo["fork"]:
+        repo_url = repo["url"]
+        return fetch_repo_info(repo_url)["parent"]["id"]
+    return None
 
 
 def fetch_repos(owner, is_org):
@@ -140,12 +158,14 @@ def fetch_and_cache_repos():
             else:
                 to_cache = {
                     "name": repo["name"],
+                    "id": repo["id"],
                     "owner": owner,
                     "html_url": repo["html_url"],
                     "description": repo["description"],
                     "updated_at": repo["updated_at"],
                     "readme": fetch_readme(repo["html_url"]),
                     "default_branch": repo["default_branch"],
+                    "parent_id": fetch_parent_id(repo),
                 }
             hw_repos.append(to_cache)
 
