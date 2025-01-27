@@ -4,6 +4,7 @@ Uses fetch_sf_hw.py as helper func for GitHub REST API
 """
 
 import json
+from pathlib import Path
 
 HW_PREFIX = "HW_"
 
@@ -14,6 +15,16 @@ def laod_cached_repos():
 def mk_unique_title(repo):
     owner = repo["owner"]
     return f"{repo['name']} ({owner})"
+
+
+def mk_fname(repo):
+    return f"{mk_unique_title(repo).replace(" ", "-")}.md"
+
+
+def mk_folder_name(repo):
+    return (
+        f"content/en/docs/300_reference/hw-components/{repo["name"].replace(" ", "-")}"
+    )
 
 
 def sort_key(repo):
@@ -66,16 +77,43 @@ weight: {weight}
 """
 
 
+def find_root_parent(repo, roots_folders, children):
+    if repo["parent_id"] in roots_folders:
+        return roots_folders[repo["parent_id"]]
+
+    for child in children:
+        if child["id"] == repo["parent_id"]:
+            return find_root_parent(child, repos_list)
+
+
 def generate_markdown_files(repos_list):
     # iterate such that 1. title is alphabetically ordered, if duplicates exists check last_updated
+    roots = [r for r in repos_list if r["parent_id"] is None]
+    roots_folders = {r["id"]: mk_folder_name(r) for r in roots}
+
+    children = [r for r in repos_list if r["parent_id"] is not None]
+
     weight = 1
-    for repo in sorted(repos_list, key=sort_key):
+    for repo in sorted(roots, key=sort_key):
         title = mk_unique_title(repo)
-        filename = (
-            f"content/en/docs/300_reference/hw-components/{title.replace(" ", "-")}.md"
-        )
+        path = Path(roots_folders[repo["id"]])
+        path.mkdir(exist_ok=True)
+
+        filename = path / "_index.md"
         with open(filename, "w", encoding="utf8") as md_file:
             md_file.write(markdown_content(title, weight, **repo))
+
+        print(f"Generated {filename} {weight=}")
+        weight += 1
+
+    for repo in sorted(children, key=sort_key):
+        title = mk_unique_title(repo)
+        path = Path(find_root_parent(repo, roots_folders, children))
+
+        filename = path / mk_fname(repo)
+        with open(filename, "w", encoding="utf8") as md_file:
+            md_file.write(markdown_content(title, weight, **repo))
+
         print(f"Generated {filename} {weight=}")
         weight += 1
 
