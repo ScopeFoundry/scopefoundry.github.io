@@ -8,23 +8,25 @@ from pathlib import Path
 
 HW_PREFIX = "HW_"
 
+
 def laod_cached_repos():
     with open("cached_repos.json", "r", encoding="utf8") as file:
         return json.load(file)  # Load JSON as a dictionary
 
 def mk_unique_title(repo):
-    owner = repo["owner"]
-    return f"{repo['name']} ({owner})"
+    return f"{repo['name']} ({repo["owner"]})"
 
 
-def mk_fname(repo):
-    return f"{mk_unique_title(repo).replace(" ", "-")}.md"
+def mk_unique_base(repo):
+    return f"{repo['name']}-{repo["owner"]}".replace(" ", "-")
 
 
 def mk_folder_name(repo):
-    return (
-        f"content/en/docs/300_reference/hw-components/{repo["name"].replace(" ", "-")}"
-    )
+    return f"content/en{mk_root_folder_link(repo)}"
+
+
+def mk_root_folder_link(repo):
+    return f"/docs/300_reference/hw-components/{repo["name"].replace(" ", "-")}-{repo["owner"].replace(" ", "-")}"
 
 
 def sort_key(repo):
@@ -41,6 +43,13 @@ def import_with_git_subtree(name, html_url, default_branch="master"):
     return f"git subtree add --prefix ScopeFoundryHW/{name.strip("HW_")}/ {html_url} {default_branch} && git checkout"
 
 
+def fork_from(repo, id_lu):
+    if repo["parent_id"] is None:
+        return ""
+    parent = id_lu[find_root_id(repo, id_lu)]
+    return f"- Forked from [{mk_unique_title(parent)}]({mk_root_folder_link(parent)})"
+
+
 def markdown_content(
     title,
     weight,
@@ -51,6 +60,7 @@ def markdown_content(
     readme=None,
     owner="ScopeFoundry",
     default_branch="master",
+    forked_from: str = "",
     **kwargs,
 ):
     # dedented bc otherwise python writes indentation:
@@ -63,8 +73,9 @@ weight: {weight}
 ---
 - [GitHub Repository]({html_url})
 - Last Updated: {updated_at}
+{forked_from}
 
-#### To add to your microscope 
+#### To add to your app:
 
 `cd to/your_project_folder` and use the following cmd (requires [git](/docs/100_development/20_git/))
 
@@ -77,26 +88,27 @@ weight: {weight}
 """
 
 
-def find_root_parent(repo, roots_folders, children):
-    if repo["parent_id"] in roots_folders:
-        return roots_folders[repo["parent_id"]]
-
-    for child in children:
-        if child["id"] == repo["parent_id"]:
-            return find_root_parent(child, repos_list)
+def find_root_id(repo, id_lu):
+    if repo["parent_id"] is None:
+        return repo["id"]
+    else:
+        return find_root_id(id_lu[repo["parent_id"]], id_lu)
 
 
 def generate_markdown_files(repos_list):
-    # iterate such that 1. title is alphabetically ordered, if duplicates exists check last_updated
+    # depth = 2 hierachry:
+    # 1. root have repos (no parent)
+    # 2. children repos have ancestors, will get linked to root parent
     roots = [r for r in repos_list if r["parent_id"] is None]
-    roots_folders = {r["id"]: mk_folder_name(r) for r in roots}
-
     children = [r for r in repos_list if r["parent_id"] is not None]
+
+    id_lu = {r["id"]: r for r in repos_list}
+    folder_lu = {r["id"]: mk_folder_name(r) for r in roots}
 
     weight = 1
     for repo in sorted(roots, key=sort_key):
         title = mk_unique_title(repo)
-        path = Path(roots_folders[repo["id"]])
+        path = Path(folder_lu[repo["id"]])
         path.mkdir(exist_ok=True)
 
         filename = path / "_index.md"
@@ -108,11 +120,15 @@ def generate_markdown_files(repos_list):
 
     for repo in sorted(children, key=sort_key):
         title = mk_unique_title(repo)
-        path = Path(find_root_parent(repo, roots_folders, children))
+        path = Path(folder_lu[find_root_id(repo, id_lu)])
 
-        filename = path / mk_fname(repo)
+        filename = path / f"{mk_unique_base(repo)}.md"
         with open(filename, "w", encoding="utf8") as md_file:
-            md_file.write(markdown_content(title, weight, **repo))
+            md_file.write(
+                markdown_content(
+                    title, weight, forked_from=fork_from(repo, id_lu), **repo
+                )
+            )
 
         print(f"Generated {filename} {weight=}")
         weight += 1
