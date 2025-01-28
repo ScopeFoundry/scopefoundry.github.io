@@ -7,7 +7,9 @@ weight: 1
 
 [IDE]:/docs/100_development/10_setup_eclipse/
 
-**Required** install [ScopeFoundry](/docs/1_getting-started)
+[getting_started_docs]:/docs/1_getting-started/
+
+**Required** install [ScopeFoundry](getting_started_docs)
 
 
 After installation, use anaconda prompt and navigate to where you want or have the source code for your setup and start ScopeFoundry.tools:
