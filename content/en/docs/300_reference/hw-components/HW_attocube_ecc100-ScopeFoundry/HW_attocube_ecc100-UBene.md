@@ -6,7 +6,7 @@ weight: 49
 ---
 - [GitHub Repository](https://github.com/UBene/HW_attocube_ecc100)
 - Last Updated: 2017-11-27T20:11:16Z
-- Forked from [HW_attocube_ecc100 (ScopeFoundry)](/docs/300_reference/hw-components/HW_attocube_ecc100-ScopeFoundry)
+- Forked from [HW_attocube_ecc100 (ScopeFoundry)](/docs/300_reference/hw-components/hw_attocube_ecc100-scopefoundry)
 
 #### To add to your app:
 

@@ -6,7 +6,7 @@ weight: 48
 ---
 - [GitHub Repository](https://github.com/UBene/HW_acton_spec)
 - Last Updated: 2022-03-30T13:44:52Z
-- Forked from [HW_acton_spec (ScopeFoundry)](/docs/300_reference/hw-components/HW_acton_spec-ScopeFoundry)
+- Forked from [HW_acton_spec (ScopeFoundry)](/docs/300_reference/hw-components/hw_acton_spec-scopefoundry)
 
 #### To add to your app:
 

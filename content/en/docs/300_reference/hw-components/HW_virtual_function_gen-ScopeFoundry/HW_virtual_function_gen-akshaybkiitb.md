@@ -6,7 +6,7 @@ weight: 54
 ---
 - [GitHub Repository](https://github.com/akshaybkiitb/HW_virtual_function_gen)
 - Last Updated: 2020-07-31T11:24:09Z
-- Forked from [HW_virtual_function_gen (ScopeFoundry)](/docs/300_reference/hw-components/HW_virtual_function_gen-ScopeFoundry)
+- Forked from [HW_virtual_function_gen (ScopeFoundry)](/docs/300_reference/hw-components/hw_virtual_function_gen-scopefoundry)
 
 #### To add to your app:
 

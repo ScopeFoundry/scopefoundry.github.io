@@ -6,7 +6,7 @@ weight: 53
 ---
 - [GitHub Repository](https://github.com/UBene/HW_random_gen)
 - Last Updated: 2017-01-23T22:17:34Z
-- Forked from [HW_random_gen (ScopeFoundry)](/docs/300_reference/hw-components/HW_random_gen-ScopeFoundry)
+- Forked from [HW_random_gen (ScopeFoundry)](/docs/300_reference/hw-components/hw_random_gen-scopefoundry)
 
 #### To add to your app:
 

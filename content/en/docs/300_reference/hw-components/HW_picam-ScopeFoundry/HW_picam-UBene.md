@@ -6,7 +6,7 @@ weight: 52
 ---
 - [GitHub Repository](https://github.com/UBene/HW_picam)
 - Last Updated: 2023-01-31T18:27:34Z
-- Forked from [HW_picam (ScopeFoundry)](/docs/300_reference/hw-components/HW_picam-ScopeFoundry)
+- Forked from [HW_picam (ScopeFoundry)](/docs/300_reference/hw-components/hw_picam-scopefoundry)
 
 #### To add to your app:
 
