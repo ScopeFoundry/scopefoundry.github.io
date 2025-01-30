@@ -2,7 +2,7 @@
 ---
 title: HW_labspec (UBene)
 description: No description available.
-weight: 15
+weight: 23
 ---
 - [GitHub Repository](https://github.com/UBene/HW_labspec)
 - Last Updated: 2023-04-09T02:12:30Z
