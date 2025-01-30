@@ -92,27 +92,35 @@ def fetch_parent_id(repo):
     return None
 
 
-def fetch_repos(owner, is_org):
+def fetch_repos(owner, is_org, page_per=100):
     """
     Fetches repositories for a given GitHub user or organization.
     """
+    # TODO: check if per_page of 100 is indeed the maximum
     if is_org:
-        api_url = f"https://api.github.com/orgs/{owner}/repos"
+        api_url = f"https://api.github.com/orgs/{owner}/repos?per_page={page_per}"
     else:
-        api_url = f"https://api.github.com/users/{owner}/repos"
+        api_url = f"https://api.github.com/users/{owner}/repos?per_page={page_per}"
 
     response = query_github(api_url)
-    if response.status_code == 200:
-        return response.json()
-    else:
+    if response.status_code != 200:
         print(
             f"Failed to fetch repositories for {owner}: {response.status_code} - {response.text}"
         )
         return []
 
+    # pagination
+    repos = response.json()
+    while response.links and "next" in response.links:
+        response = query_github(response.links["next"]["url"])
+        repos += response.json()
+
+    return repos
+
 
 def get_owners(org="ScopeFoundry", repo="ScopeFoundry") -> Owners:
-    api_url = f"https://api.github.com/repos/{org}/{repo}/forks"
+    api_url = f"https://api.github.com/repos/{org}/{repo}/forks?per_page=100"
+    # TODO: add pagination
     response = query_github(api_url)
 
     fork_users = [
