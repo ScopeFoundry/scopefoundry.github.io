@@ -6,6 +6,11 @@ on:
   push:
     branches: [$default-branch]
 
+  workflow_run:
+      workflows: ["run periodic_update.py"]
+      types:
+        - completed
+
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 

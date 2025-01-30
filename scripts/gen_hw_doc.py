@@ -133,8 +133,7 @@ def generate_markdown_files(repos_list):
         print(f"Generated {filename} {weight=}")
         weight += 1
 
-if __name__ ==  "__main__":
-    # Fetch the cached data
+def gen_hw_doc():
     repos = laod_cached_repos()
     # Access the list of repositories
     # **TODO** check against when this was last done,
@@ -144,3 +143,6 @@ if __name__ ==  "__main__":
     if repos_list:
         # TODO delete previous files
         generate_markdown_files(repos_list)
+
+if __name__ ==  "__main__":    
+    gen_hw_doc()

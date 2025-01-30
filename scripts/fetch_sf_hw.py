@@ -2,10 +2,10 @@
 Queries GitHub for all ScopeFoundry hardware component repos.
 Caches information in json for use with ScopeFoundry website search.
 """
-
-from dataclasses import dataclass
 import datetime
 import json
+import os
+from dataclasses import dataclass
 from pathlib import Path
 
 import requests
@@ -38,7 +38,13 @@ CACHE_FILE = "cached_repos.json"
 # without TOKEN we get 60 requests per hour
 # we need one request per user to get all repos
 # and one per repository that needs to be updated
-GITHUB_TOKEN = None  # "your_github_token_here"
+
+try:
+    GITHUB_TOKEN = os.environ["GITHUB_TOKEN"]
+except KeyError:
+    GITHUB_TOKEN = None  # "your_github_token_here"
+    # or raise an error if it's not available so that the workflow fails
+
 
 QUERY_COUNTER = 0
 
