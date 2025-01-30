@@ -6,7 +6,7 @@ weight: 50
 ---
 - [GitHub Repository](https://github.com/UBene/HW_newport_esp300)
 - Last Updated: 2017-11-27T20:09:08Z
-- Forked from [HW_newport_esp300 (ScopeFoundry)](/docs/300_reference/hw-components/HW_newport_esp300-ScopeFoundry)
+- Forked from [HW_newport_esp300 (ScopeFoundry)](/docs/300_reference/hw-components/hw_newport_esp300-scopefoundry)
 
 #### To add to your app:
 

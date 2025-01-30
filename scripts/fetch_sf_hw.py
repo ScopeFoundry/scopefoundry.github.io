@@ -1,7 +1,4 @@
-"""
-Queries GitHub for all ScopeFoundry hardware component repos.
-Caches information in json for use with ScopeFoundry website search.
-"""
+#  Queries GitHub for all ScopeFoundry hardware component repos and updates the cache file.
 import datetime
 import json
 import os
@@ -10,6 +7,9 @@ from pathlib import Path
 
 import requests
 
+
+HW_PREFIX = "HW_"  # all hardware component repos appear to/should start with HW_...
+CACHE_FILE = "cached_repos.json"
 
 # check both "official" SF repo and collaborator forks for hw submodules
 # GitHub API differentiates users and orgs
@@ -28,10 +28,6 @@ class Owners:
 
     def is_org(self, owner):
         return owner in self.orgs
-
-
-HW_PREFIX = "HW_"  # all hardware component repos appear to/should start with HW_...
-CACHE_FILE = "cached_repos.json"
 
 
 # when number collaboraters exceed 59 we need a TOKEN
