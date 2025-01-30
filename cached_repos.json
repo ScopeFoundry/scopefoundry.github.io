@@ -1,5 +1,5 @@
 {
-    "fetched_at": "2025-01-30T13:33:18.580037+00:00",
+    "fetched_at": "2025-01-30T16:34:52.469998+00:00",
     "repositories": [
         {
             "name": "HW_acton_spec",
@@ -448,6 +448,149 @@
             "html_url": "https://github.com/ScopeFoundry/HW_igus_dryve",
             "description": "Igus Dryve Motion Control ScopeFoundry Hardware Component",
             "updated_at": "2024-08-12T00:57:38Z",
+            "readme": "README could not be retrieved.",
+            "default_branch": "master",
+            "parent_id": null
+        },
+        {
+            "name": "HW_alicat_eip",
+            "id": 841224430,
+            "owner": "ScopeFoundry",
+            "html_url": "https://github.com/ScopeFoundry/HW_alicat_eip",
+            "description": "Alicat Mass Flow Controller (MFC) over EtherNet/IP ScopeFoundry Hardware Component",
+            "updated_at": "2024-08-12T01:00:25Z",
+            "readme": "README could not be retrieved.",
+            "default_branch": "master",
+            "parent_id": null
+        },
+        {
+            "name": "HW_chameleon_laser",
+            "id": 841224819,
+            "owner": "ScopeFoundry",
+            "html_url": "https://github.com/ScopeFoundry/HW_chameleon_laser",
+            "description": "Coherent Chameleon Ultra II Ti:Sapphire Laser ScopeFoundry Hardware Component",
+            "updated_at": "2024-08-12T01:01:53Z",
+            "readme": "README could not be retrieved.",
+            "default_branch": "master",
+            "parent_id": null
+        },
+        {
+            "name": "HW_chameleon_compact_opo",
+            "id": 841225441,
+            "owner": "ScopeFoundry",
+            "html_url": "https://github.com/ScopeFoundry/HW_chameleon_compact_opo",
+            "description": "Coherent Chameleon Compact OPO Laser System ScopeFoundry Hardware Component",
+            "updated_at": "2024-08-12T01:04:29Z",
+            "readme": "README could not be retrieved.",
+            "default_branch": "master",
+            "parent_id": null
+        },
+        {
+            "name": "HW_sync_raster_daq",
+            "id": 841236067,
+            "owner": "ScopeFoundry",
+            "html_url": "https://github.com/ScopeFoundry/HW_sync_raster_daq",
+            "description": "Synchronous Raster Scanner using NI DAQ Cards ScopeFoundry Hardware Component",
+            "updated_at": "2024-08-12T01:57:28Z",
+            "readme": "README could not be retrieved.",
+            "default_branch": "master",
+            "parent_id": null
+        },
+        {
+            "name": "HW_picoquant",
+            "id": 841237487,
+            "owner": "ScopeFoundry",
+            "html_url": "https://github.com/ScopeFoundry/HW_picoquant",
+            "description": "Picoquant HydraHarp ScopeFoundry Hardware Component",
+            "updated_at": "2024-08-12T02:04:56Z",
+            "readme": "README could not be retrieved.",
+            "default_branch": "master",
+            "parent_id": null
+        },
+        {
+            "name": "HW_oceanoptics_spec",
+            "id": 841237993,
+            "owner": "ScopeFoundry",
+            "html_url": "https://github.com/ScopeFoundry/HW_oceanoptics_spec",
+            "description": "OceanOptics Spectrometer ScopeFoundry Hardware Component",
+            "updated_at": "2024-08-12T02:05:55Z",
+            "readme": "README could not be retrieved.",
+            "default_branch": "master",
+            "parent_id": null
+        },
+        {
+            "name": "HW_attocube_amc100",
+            "id": 841238548,
+            "owner": "ScopeFoundry",
+            "html_url": "https://github.com/ScopeFoundry/HW_attocube_amc100",
+            "description": "Attocube AMC100 motion controller ScopeFoundry Hardware Component",
+            "updated_at": "2024-08-12T02:08:57Z",
+            "readme": "README could not be retrieved.",
+            "default_branch": "master",
+            "parent_id": null
+        },
+        {
+            "name": "HW_attocube_anc300",
+            "id": 841238669,
+            "owner": "ScopeFoundry",
+            "html_url": "https://github.com/ScopeFoundry/HW_attocube_anc300",
+            "description": "Attocube ANC300 Motion Controller ScopeFoundry Hardware Component",
+            "updated_at": "2024-08-12T02:13:36Z",
+            "readme": "README could not be retrieved.",
+            "default_branch": "master",
+            "parent_id": null
+        },
+        {
+            "name": "HW_attocube_anc350",
+            "id": 841238876,
+            "owner": "ScopeFoundry",
+            "html_url": "https://github.com/ScopeFoundry/HW_attocube_anc350",
+            "description": "Attocube ANC350 Motion Controller ScopeFoundry Hardware Component",
+            "updated_at": "2024-08-12T02:10:23Z",
+            "readme": "ScopeFoundryHW.attocube_anc350\n===================================\n\nScopeFoundry hardware plug-in to control Attocube ANC350 stage controller\n\n\nScopeFoundry is a Python platform for controlling custom laboratory \nexperiments and visualizing scientific data\n\n<http://www.scopefoundry.org>\n\nThis software is not made by or endorsed by the device manufacturer\n\n\npyANC350v4 from https://github.com/PainterQubits/Labber-Drivers/tree/master/Painter_Attocube_MotionController\n(MIT Licensed)\n\n\nAuthor\n----------\n\nEdward S. Barnard <esbarnard@lbl.gov>\n\n\nRequirements\n------------\n\n\t* ScopeFoundry\n\t* numpy\n\t* ANC350v4 DLL\n\t\n\t\nHistory\n--------\n\n### 0.0.0\t2020-00-00\tInitial public release.\n\nPlug-in has been used internally and has been stable.\nCheck Git repository for detailed history. Tested on PI PIXIS CCD.\n\n",
+            "default_branch": "master",
+            "parent_id": null
+        },
+        {
+            "name": "HW_andor3",
+            "id": 841239186,
+            "owner": "ScopeFoundry",
+            "html_url": "https://github.com/ScopeFoundry/HW_andor3",
+            "description": "Andor CMOS Camera (SDK3) ScopeFoundry Hardware Component",
+            "updated_at": "2024-08-12T02:11:43Z",
+            "readme": "README could not be retrieved.",
+            "default_branch": "master",
+            "parent_id": null
+        },
+        {
+            "name": "HW_pico_tc08",
+            "id": 841240686,
+            "owner": "ScopeFoundry",
+            "html_url": "https://github.com/ScopeFoundry/HW_pico_tc08",
+            "description": "Pico Technology TC08 USB Thermocouple Reader ScopeFoundry Hardware Component",
+            "updated_at": "2024-08-12T02:18:31Z",
+            "readme": "README could not be retrieved.",
+            "default_branch": "master",
+            "parent_id": null
+        },
+        {
+            "name": "HW_dps3005_powersupply",
+            "id": 841242124,
+            "owner": "ScopeFoundry",
+            "html_url": "https://github.com/ScopeFoundry/HW_dps3005_powersupply",
+            "description": "DPS3005 DC-DC Power Supply ScopeFoundry Hardware Component",
+            "updated_at": "2024-08-12T02:24:45Z",
+            "readme": "README could not be retrieved.",
+            "default_branch": "master",
+            "parent_id": null
+        },
+        {
+            "name": "HW_mf_crucible",
+            "id": 841246855,
+            "owner": "ScopeFoundry",
+            "html_url": "https://github.com/ScopeFoundry/HW_mf_crucible",
+            "description": "MF Crucible Data Platform ScopeFoundry Hardware Component",
+            "updated_at": "2024-08-12T02:45:13Z",
             "readme": "README could not be retrieved.",
             "default_branch": "master",
             "parent_id": null

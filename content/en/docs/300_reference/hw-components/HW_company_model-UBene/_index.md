@@ -2,7 +2,7 @@
 ---
 title: HW_company_model (UBene)
 description: ScopeFoundry HW plug-in to control ...
-weight: 9
+weight: 16
 ---
 - [GitHub Repository](https://github.com/UBene/HW_company_model)
 - Last Updated: 2025-01-20T19:10:34Z

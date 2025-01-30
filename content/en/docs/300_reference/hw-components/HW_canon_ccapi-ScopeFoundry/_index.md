@@ -2,7 +2,7 @@
 ---
 title: HW_canon_ccapi (ScopeFoundry)
 description: Canon Camera Capture (CCAPI) ScopeFoundry Hardware Component
-weight: 8
+weight: 13
 ---
 - [GitHub Repository](https://github.com/ScopeFoundry/HW_canon_ccapi)
 - Last Updated: 2024-08-12T00:44:11Z
