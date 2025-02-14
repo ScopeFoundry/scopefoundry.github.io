@@ -10,10 +10,16 @@ weight: 40
 
 #### To add to your app:
 
-`cd to/your_project_folder` and use the following cmd (requires [git](/docs/100_development/20_git/))
+`cd to/your_project_folder/ScopeFoundryHW` and use the following cmd (requires [git](/docs/100_development/20_git/))
 
 ```bash
-mkdir ScopeFoundryHW/sync_raster_daq && cd ScopeFoundryHW/sync_raster_daq && git init --initial-branch=master && git remote add upstream_ScopeFoundry https://github.com/ScopeFoundry/HW_sync_raster_daq && git pull upstream_ScopeFoundry master && cd ../..
+mkdir sync_raster_daq && cd sync_raster_daq && git init --initial-branch=master && git remote add upstream_ScopeFoundry https://github.com/ScopeFoundry/HW_sync_raster_daq && git pull upstream_ScopeFoundry master && cd ..
+```
+
+*or* fork on GitHub **and** use your adjusted cmd:
+
+```bash
+mkdir sync_raster_daq && cd sync_raster_daq && git init --initial-branch=master && git remote add origin https://github.com/YOUR_GH_ACC/HW_sync_raster_daq && git pull origin master && cd ..
 ```
 
 ## Readme

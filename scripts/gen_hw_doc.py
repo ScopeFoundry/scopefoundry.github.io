@@ -32,9 +32,14 @@ def sort_key(repo):
 
 
 def import_with_gh_cmd(name, html_url, owner, default_branch="master"):
-    path = f"ScopeFoundryHW/{name.strip("HW_")}"
+    path = f"{name.strip("HW_")}"
     remote_name = f"upstream_{owner}"
-    return f"mkdir {path} && cd {path} && git init --initial-branch={default_branch} && git remote add {remote_name} {html_url} && git pull {remote_name} {default_branch} && cd ../.."
+    return f"mkdir {path} && cd {path} && git init --initial-branch={default_branch} && git remote add {remote_name} {html_url} && git pull {remote_name} {default_branch} && cd .."
+
+def import_from_gh_your_fork(name, html_url, owner, default_branch="master"):
+    path = f"{name.strip("HW_")}"
+    remote_name = f"upstream_{owner}"
+    return f"mkdir {path} && cd {path} && git init --initial-branch={default_branch} && git remote add origin {html_url.replace(owner, "YOUR_GH_ACC")} && git pull origin {default_branch} && cd .."
 
 
 def import_with_git_subtree(name, html_url, default_branch="master"):
@@ -75,10 +80,16 @@ weight: {weight}
 
 #### To add to your app:
 
-`cd to/your_project_folder` and use the following cmd (requires [git](/docs/100_development/20_git/))
+`cd to/your_project_folder/ScopeFoundryHW` and use the following cmd (requires [git](/docs/100_development/20_git/))
 
 ```bash
 {import_with_gh_cmd(name, html_url, owner, default_branch)}
+```
+
+*or* fork on GitHub **and** use your adjusted cmd:
+
+```bash
+{import_from_gh_your_fork(name, html_url, owner, default_branch)}
 ```
 
 ## Readme

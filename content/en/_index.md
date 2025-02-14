@@ -2,6 +2,8 @@
 title: ScopeFoundry
 ---
 
+[getting_started_docs]:/docs/1_getting-started/
+
 {{< blocks/cover title="ScopeFoundry" image_anchor="bottom" height="auto" >}}
 
 <a class="btn btn-lg btn-primary me-3 mb-4" href="/docs/"> 
@@ -47,7 +49,7 @@ Live updates of measurement code for fast development and debugging.
 {{% blocks/section color="dark" type="row"  %}}
 
 {{% blocks/feature icon="fas fa-arrow-alt-circle-right" title="Get Started!" url="/docs/" %}}
-Visit [Getting Started](/docs/1_getting-started/) for installation instructions.
+Visit [getting_started_docs] for installation instructions.
 
 {{% /blocks/feature %}}
 

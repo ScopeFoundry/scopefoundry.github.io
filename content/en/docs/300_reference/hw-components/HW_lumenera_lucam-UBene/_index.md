@@ -10,10 +10,16 @@ weight: 25
 
 #### To add to your app:
 
-`cd to/your_project_folder` and use the following cmd (requires [git](/docs/100_development/20_git/))
+`cd to/your_project_folder/ScopeFoundryHW` and use the following cmd (requires [git](/docs/100_development/20_git/))
 
 ```bash
-mkdir ScopeFoundryHW/lumenera_lucam && cd ScopeFoundryHW/lumenera_lucam && git init --initial-branch=main && git remote add upstream_UBene https://github.com/UBene/HW_lumenera_lucam && git pull upstream_UBene main && cd ../..
+mkdir lumenera_lucam && cd lumenera_lucam && git init --initial-branch=main && git remote add upstream_UBene https://github.com/UBene/HW_lumenera_lucam && git pull upstream_UBene main && cd ..
+```
+
+*or* fork on GitHub **and** use your adjusted cmd:
+
+```bash
+mkdir lumenera_lucam && cd lumenera_lucam && git init --initial-branch=main && git remote add origin https://github.com/YOUR_GH_ACC/HW_lumenera_lucam && git pull origin main && cd ..
 ```
 
 ## Readme

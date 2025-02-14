@@ -10,10 +10,16 @@ weight: 39
 
 #### To add to your app:
 
-`cd to/your_project_folder` and use the following cmd (requires [git](/docs/100_development/20_git/))
+`cd to/your_project_folder/ScopeFoundryHW` and use the following cmd (requires [git](/docs/100_development/20_git/))
 
 ```bash
-mkdir ScopeFoundryHW/srs_sg380 && cd ScopeFoundryHW/srs_sg380 && git init --initial-branch=main && git remote add upstream_UBene https://github.com/UBene/HW_srs_sg380 && git pull upstream_UBene main && cd ../..
+mkdir srs_sg380 && cd srs_sg380 && git init --initial-branch=main && git remote add upstream_UBene https://github.com/UBene/HW_srs_sg380 && git pull upstream_UBene main && cd ..
+```
+
+*or* fork on GitHub **and** use your adjusted cmd:
+
+```bash
+mkdir srs_sg380 && cd srs_sg380 && git init --initial-branch=main && git remote add origin https://github.com/YOUR_GH_ACC/HW_srs_sg380 && git pull origin main && cd ..
 ```
 
 ## Readme
