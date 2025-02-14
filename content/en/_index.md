@@ -6,7 +6,7 @@ title: ScopeFoundry
 
 {{< blocks/cover title="ScopeFoundry" image_anchor="bottom" height="auto" >}}
 
-<a class="btn btn-lg btn-primary me-3 mb-4" href="/docs/"> 
+<a class="btn btn-lg btn-primary me-3 mb-4" href="/docs/1_getting-started/"> 
   Quick Start <i class="fas fa-arrow-alt-circle-right ms-2"></i>
 </a>
 
@@ -18,8 +18,8 @@ title: ScopeFoundry
 {{< /blocks/cover >}}
 
 
-{{% blocks/section color="black" type="row" %}}
 
+{{% blocks/section color="black" type="row" %}}
 
 
 {{% blocks/feature icon="fa-solid fa-object-group" title="Modular, Cross-Platform Graphical Interface" %}}
@@ -41,16 +41,12 @@ Live updates of measurement code for fast development and debugging.
 
 <iframe width="800" height="400" src="//www.youtube.com/embed/kd8OitLPXcM" frameborder="0" allowfullscreen></iframe>
 
-
 {{% /blocks/section %}}
-
 
 
 {{% blocks/section color="dark" type="row"  %}}
 
-{{% blocks/feature icon="fas fa-arrow-alt-circle-right" title="Get Started!" url="/docs/" %}}
-Visit [getting_started_docs] for installation instructions.
-
+{{% blocks/feature icon="fas fa-arrow-alt-circle-right" title="Get Started!" url="/docs/1_getting-started" %}}
 {{% /blocks/feature %}}
 
 

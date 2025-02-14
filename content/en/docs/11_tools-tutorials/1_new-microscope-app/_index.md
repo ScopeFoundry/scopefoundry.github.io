@@ -9,7 +9,7 @@ weight: 1
 
 [getting_started_docs]:/docs/1_getting-started/
 
-**Required** install [ScopeFoundry](getting_started_docs)
+**Requirement:** [install scopefoundry][getting_started_docs]
 
 
 After installation, use anaconda prompt and navigate to where you want or have the source code for your setup and start ScopeFoundry.tools:
