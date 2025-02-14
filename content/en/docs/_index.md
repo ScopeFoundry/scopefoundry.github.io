@@ -1,5 +1,5 @@
 ---
-title: About
+title: Documentation
 linkTitle: Documentation
 menu: {main: {weight: 20}}
 description: A Python platform for controlling custom laboratory experiments and visualizing scientific data.
