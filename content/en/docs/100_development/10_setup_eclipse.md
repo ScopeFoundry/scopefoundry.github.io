@@ -9,7 +9,7 @@ weight: 10
 [Eclipse]: http://www.eclipse.org
 [PyDev]: http://www.pydev.org
 [conda_env]: http://conda.pydata.org/docs/using/envs.html
-[install ScopeFoundry]: docs/getting-started
+[install ScopeFoundry]: /docs/1_getting-started/
 [Qt Creator]: https://www.qt.io/offline-installers
 
 Requires [install ScopeFoundry]

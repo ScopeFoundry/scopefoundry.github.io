@@ -1,6 +1,17 @@
 {
-    "fetched_at": "2025-02-10T00:58:50.013865+00:00",
+    "fetched_at": "2025-02-13T13:16:24.485848+00:00",
     "repositories": [
+        {
+            "name": "HW_dynamixel_servo",
+            "id": 932142210,
+            "owner": "trovatello-lab",
+            "html_url": "https://github.com/trovatello-lab/HW_dynamixel_servo",
+            "description": "Robotis Dynamixel Servo Motor ScopeFoundry Hardware Component",
+            "updated_at": "2025-02-13T12:45:59Z",
+            "readme": "ScopeFoundryHW.dynamixel_servo\n===========================\n\nScopeFoundry hardware plug-in to control robotis dynamixel servo\n\nScopeFoundry is a Python platform for controlling custom laboratory \nexperiments and visualizing scientific data\n\n<http://www.scopefoundry.org>\n\nThis software is not made by or endorsed by the device manufacturer\n\n\nAuthor\n----------\n\nEdward Barnard\nBenedikt Ursprung\n\nRequirements\n------------\n\n\t* ScopeFoundry\n\t* dynamixel_sdk\n\nInstall Dynamixel Wizard>2.0 from robotis website to look up and change the IDs of your servo motors. \n\n\t\nHistory\n--------\n\n### 0.1.0\t2025-02-13\tInitial public release.\n\nPlug-in has been used internally and has been stable.\n",
+            "default_branch": "master",
+            "parent_id": 841221090
+        },
         {
             "name": "HW_acton_spec",
             "id": 597829217,
@@ -73,8 +84,8 @@
             "owner": "UBene",
             "html_url": "https://github.com/UBene/HW_picam",
             "description": "ScopeFoundry hardware plug-in to control PICAM-based Princeton Instruments Cameras",
-            "updated_at": "2023-01-31T18:27:34Z",
-            "readme": "ScopeFoundryHW.picam\n===================================\n\nScopeFoundry hardware plug-in to control PICAM based Princeton Instruments\nCameras. Tested on a PI PIXIS camera.\n\nScopeFoundry is a Python platform for controlling custom laboratory \nexperiments and visualizing scientific data\n\n<http://www.scopefoundry.org>\n\nThis software is not made by or endorsed by the device manufacturer\n\n\nAuthor\n----------\n\nEdward S. Barnard <esbarnard@lbl.gov>\n\n\nRequirements\n------------\n\n\t* ScopeFoundry\n\t* numpy\n\t* PICAM DLL\n\t\n\t\nHistory\n--------\n\n### 0.1.0\t2020-08-04\tInitial public release.\n\nPlug-in has been used internally and has been stable.\nCheck Git repository for detailed history. Tested on PI PIXIS CCD.\n\n",
+            "updated_at": "2025-02-13T11:58:50Z",
+            "readme": "ScopeFoundryHW.picam\n===================================\n\nScopeFoundry hardware plug-in to control PICAM based Princeton Instruments\nCameras. Tested on a PI PIXIS camera.\n\nScopeFoundry is a Python platform for controlling custom laboratory \nexperiments and visualizing scientific data\n\n<http://www.scopefoundry.org>\n\nThis software is not made by or endorsed by the device manufacturer\n\n\nAuthor\n----------\n\nEdward S. Barnard <esbarnard@lbl.gov>\n\n\nRequirements\n------------\n\n\t* ScopeFoundry\n\t* numpy\n\t* PICAM DLL\n\t\n\t\nHistory\n--------\n\n### 0.1.0\t2020-08-04\tInitial public release.\n\nPlug-in has been used internally and has been stable.\nCheck Git repository for detailed history. Tested on PI PIXIS CCD.\n\n### 0.2.0\t2020-08-04\tConnect to multiple cameras\n\nTested with PI EMCCD, PI Pylon\n",
             "default_branch": "master",
             "parent_id": 285366518
         },
