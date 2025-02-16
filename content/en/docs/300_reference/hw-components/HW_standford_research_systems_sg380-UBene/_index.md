@@ -1,11 +1,11 @@
 
 ---
-title: HW_srs_sg380 (UBene)
-description: No description available.
-weight: 42
+title: HW_standford_research_systems_sg380 (UBene)
+description: ScopeFoundry plugin for srs RF Signal Generators
+weight: 43
 ---
-- [GitHub Repository](https://github.com/UBene/HW_srs_sg380)
-- Last Updated: 2023-01-28T19:26:15Z
+- [GitHub Repository](https://github.com/UBene/HW_standford_research_systems_sg380)
+- Last Updated: 2025-02-16T19:03:11Z
 
 
 #### To add to your app:
@@ -13,7 +13,7 @@ weight: 42
 `cd to/your_project_folder/` and use the following cmd (requires [git](/docs/100_development/20_git/))
 
 ```bash
-git clone https://github.com/UBene/HW_srs_sg380 ScopeFoundryHW/srs_sg380
+git clone https://github.com/UBene/HW_standford_research_systems_sg380 ScopeFoundryHW/standford_research_systems_sg380
 ```
 
 

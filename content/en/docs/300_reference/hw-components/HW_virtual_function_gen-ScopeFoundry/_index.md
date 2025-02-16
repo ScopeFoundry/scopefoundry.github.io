@@ -2,7 +2,7 @@
 ---
 title: HW_virtual_function_gen (ScopeFoundry)
 description: No description available.
-weight: 43
+weight: 48
 ---
 - [GitHub Repository](https://github.com/ScopeFoundry/HW_virtual_function_gen)
 - Last Updated: 2017-02-03T18:30:05Z
@@ -10,17 +10,12 @@ weight: 43
 
 #### To add to your app:
 
-`cd to/your_project_folder/ScopeFoundryHW` and use the following cmd (requires [git](/docs/100_development/20_git/))
+`cd to/your_project_folder/` and use the following cmd (requires [git](/docs/100_development/20_git/))
 
 ```bash
-mkdir virtual_function_gen && cd virtual_function_gen && git init --initial-branch=master && git remote add upstream_ScopeFoundry https://github.com/ScopeFoundry/HW_virtual_function_gen && git pull upstream_ScopeFoundry master && cd ..
+git clone https://github.com/ScopeFoundry/HW_virtual_function_gen ScopeFoundryHW/virtual_function_gen
 ```
 
-*or* fork on GitHub **and** use your adjusted cmd:
-
-```bash
-mkdir virtual_function_gen && cd virtual_function_gen && git init --initial-branch=master && git remote add origin https://github.com/YOUR_GH_ACC/HW_virtual_function_gen && git pull origin master && cd ..
-```
 
 ## Readme
 ScopeFoundryHW.virtual_function_gen

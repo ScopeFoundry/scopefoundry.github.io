@@ -42,6 +42,10 @@ def import_from_gh_your_fork(name, html_url, owner, default_branch="master"):
     return f"mkdir {path} && cd {path} && git init --initial-branch={default_branch} && git remote add origin {html_url.replace(owner, "YOUR_GH_ACC")} && git pull origin {default_branch} && cd .."
 
 
+def clone_from_gh_cmd(name, html_url, owner, default_branch="master"):
+    return f"git clone {html_url} ScopeFoundryHW/{name.strip("HW_")}"
+
+
 def import_with_git_subtree(name, html_url, default_branch="master"):
     return f"git subtree add --prefix ScopeFoundryHW/{name.strip("HW_")}/ {html_url} {default_branch} && git checkout"
 
@@ -80,17 +84,12 @@ weight: {weight}
 
 #### To add to your app:
 
-`cd to/your_project_folder/ScopeFoundryHW` and use the following cmd (requires [git](/docs/100_development/20_git/))
+`cd to/your_project_folder/` and use the following cmd (requires [git](/docs/100_development/20_git/))
 
 ```bash
-{import_with_gh_cmd(name, html_url, owner, default_branch)}
+{clone_from_gh_cmd(name, html_url, owner, default_branch)}
 ```
 
-*or* fork on GitHub **and** use your adjusted cmd:
-
-```bash
-{import_from_gh_your_fork(name, html_url, owner, default_branch)}
-```
 
 ## Readme
 {readme}

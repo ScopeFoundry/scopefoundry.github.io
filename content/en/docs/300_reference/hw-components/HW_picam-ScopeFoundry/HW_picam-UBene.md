@@ -2,7 +2,7 @@
 ---
 title: HW_picam (UBene)
 description: ScopeFoundry hardware plug-in to control PICAM-based Princeton Instruments Cameras
-weight: 53
+weight: 58
 ---
 - [GitHub Repository](https://github.com/UBene/HW_picam)
 - Last Updated: 2025-02-13T11:58:50Z
@@ -10,17 +10,12 @@ weight: 53
 
 #### To add to your app:
 
-`cd to/your_project_folder/ScopeFoundryHW` and use the following cmd (requires [git](/docs/100_development/20_git/))
+`cd to/your_project_folder/` and use the following cmd (requires [git](/docs/100_development/20_git/))
 
 ```bash
-mkdir picam && cd picam && git init --initial-branch=master && git remote add upstream_UBene https://github.com/UBene/HW_picam && git pull upstream_UBene master && cd ..
+git clone https://github.com/UBene/HW_picam ScopeFoundryHW/picam
 ```
 
-*or* fork on GitHub **and** use your adjusted cmd:
-
-```bash
-mkdir picam && cd picam && git init --initial-branch=master && git remote add origin https://github.com/YOUR_GH_ACC/HW_picam && git pull origin master && cd ..
-```
 
 ## Readme
 ScopeFoundryHW.picam

@@ -2,7 +2,7 @@
 ---
 title: HW_lumenera_lucam (UBene)
 description: No description available.
-weight: 25
+weight: 26
 ---
 - [GitHub Repository](https://github.com/UBene/HW_lumenera_lucam)
 - Last Updated: 2023-01-27T22:33:51Z
@@ -10,17 +10,12 @@ weight: 25
 
 #### To add to your app:
 
-`cd to/your_project_folder/ScopeFoundryHW` and use the following cmd (requires [git](/docs/100_development/20_git/))
+`cd to/your_project_folder/` and use the following cmd (requires [git](/docs/100_development/20_git/))
 
 ```bash
-mkdir lumenera_lucam && cd lumenera_lucam && git init --initial-branch=main && git remote add upstream_UBene https://github.com/UBene/HW_lumenera_lucam && git pull upstream_UBene main && cd ..
+git clone https://github.com/UBene/HW_lumenera_lucam ScopeFoundryHW/lumenera_lucam
 ```
 
-*or* fork on GitHub **and** use your adjusted cmd:
-
-```bash
-mkdir lumenera_lucam && cd lumenera_lucam && git init --initial-branch=main && git remote add origin https://github.com/YOUR_GH_ACC/HW_lumenera_lucam && git pull origin main && cd ..
-```
 
 ## Readme
 ScopeFoundryHW.lumenera_lucam

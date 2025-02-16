@@ -1,5 +1,5 @@
 {
-    "fetched_at": "2025-02-13T13:16:24.485848+00:00",
+    "fetched_at": "2025-02-16T20:49:49.732415+00:00",
     "repositories": [
         {
             "name": "HW_dynamixel_servo",
@@ -7,7 +7,7 @@
             "owner": "trovatello-lab",
             "html_url": "https://github.com/trovatello-lab/HW_dynamixel_servo",
             "description": "Robotis Dynamixel Servo Motor ScopeFoundry Hardware Component",
-            "updated_at": "2025-02-13T12:45:59Z",
+            "updated_at": "2025-02-16T18:38:32Z",
             "readme": "ScopeFoundryHW.dynamixel_servo\n===========================\n\nScopeFoundry hardware plug-in to control robotis dynamixel servo\n\nScopeFoundry is a Python platform for controlling custom laboratory \nexperiments and visualizing scientific data\n\n<http://www.scopefoundry.org>\n\nThis software is not made by or endorsed by the device manufacturer\n\n\nAuthor\n----------\n\nEdward Barnard\nBenedikt Ursprung\n\nRequirements\n------------\n\n\t* ScopeFoundry\n\t* dynamixel_sdk\n\nInstall Dynamixel Wizard>2.0 from robotis website to look up and change the IDs of your servo motors. \n\n\t\nHistory\n--------\n\n### 0.1.0\t2025-02-13\tInitial public release.\n\nPlug-in has been used internally and has been stable.\n",
             "default_branch": "master",
             "parent_id": 841221090
@@ -33,6 +33,17 @@
             "readme": "README could not be retrieved.",
             "default_branch": "master",
             "parent_id": 112243215
+        },
+        {
+            "name": "HW_coherent_chameleon_ultra_ii_opo_uv_vis",
+            "id": 933845051,
+            "owner": "UBene",
+            "html_url": "https://github.com/UBene/HW_coherent_chameleon_ultra_ii_opo_uv_vis",
+            "description": "ScopeFoundry plugin to control conherent laser system including a Chameleon, OPO uv vis",
+            "updated_at": "2025-02-16T20:24:32Z",
+            "readme": "README could not be retrieved.",
+            "default_branch": "main",
+            "parent_id": null
         },
         {
             "name": "HW_company_model",
@@ -101,6 +112,28 @@
             "parent_id": 79853900
         },
         {
+            "name": "HW_solidstate_uc160_chiller",
+            "id": 933824064,
+            "owner": "UBene",
+            "html_url": "https://github.com/UBene/HW_solidstate_uc160_chiller",
+            "description": null,
+            "updated_at": "2025-02-16T19:14:09Z",
+            "readme": "ScopeFoundryHW.solidstate_uc160_chiller\n=======================================\n\nScopeFoundry hardware plug-in to control Solid State Cooling Systems Ultra Compact Series chiller\n\nScopeFoundry is a Python platform for controlling custom laboratory \nexperiments and visualizing scientific data\n\n<http://www.scopefoundry.org>\n\nThis software is not made by or endorsed by the device manufacturer\n\nAuthor\n----------\n\nBenedikt Ursprung \n\nRequirements\n------------\n\n\t* ScopeFoundry\n\n\u200b\t\nHistory\n--------\n\n### 0.1.0\t2023-01-29\tInitial public release.\n\nPlug-in has been used internally and has been stable.\n",
+            "default_branch": "main",
+            "parent_id": null
+        },
+        {
+            "name": "HW_spincore_pulse_blaster",
+            "id": 933822215,
+            "owner": "UBene",
+            "html_url": "https://github.com/UBene/HW_spincore_pulse_blaster",
+            "description": "ScopeFoundry plugin to program and control a spincore pulse blaster",
+            "updated_at": "2025-02-16T19:05:45Z",
+            "readme": "README could not be retrieved.",
+            "default_branch": "main",
+            "parent_id": null
+        },
+        {
             "name": "HW_srs_sg380",
             "id": 594512710,
             "owner": "UBene",
@@ -108,6 +141,39 @@
             "description": null,
             "updated_at": "2023-01-28T19:26:15Z",
             "readme": "ScopeFoundryHW.srs_sg380\n========================\n\nScopeFoundry hardware plug-in to control Stanford Research Systems (SRS) RF Signal Generators 380 series. Device can be controlled through RS232 or GPIB. \n\n\nScopeFoundry is a Python platform for controlling custom laboratory \nexperiments and visualizing scientific data\n\n<http://www.scopefoundry.org>\n\nThis software is not made by or endorsed by the device manufacturer\n\nAuthor\n------\n\nBenedikt Ursprung\n\nRequirements\n------------\n\n\t* ScopeFoundry\n\t* numpy\n\t* pyvisa >1.12.0 (For GPIB control)\n\t* serial (For RS232 control)\n\n\nHistory\n--------\n\n### 0.1.0\t2023-01-28\tInitial public release.\n\nPlug-in has been used internally and has been stable.\n",
+            "default_branch": "main",
+            "parent_id": null
+        },
+        {
+            "name": "HW_standford_research_systems_sg380",
+            "id": 933819532,
+            "owner": "UBene",
+            "html_url": "https://github.com/UBene/HW_standford_research_systems_sg380",
+            "description": "ScopeFoundry plugin for srs RF Signal Generators",
+            "updated_at": "2025-02-16T19:03:11Z",
+            "readme": "ScopeFoundryHW.srs_sg380\n========================\n\nScopeFoundry hardware plug-in to control Stanford Research Systems (SRS) RF Signal Generators 380 series. Device can be controlled through RS232 or GPIB. \n\n\nScopeFoundry is a Python platform for controlling custom laboratory \nexperiments and visualizing scientific data\n\n<http://www.scopefoundry.org>\n\nThis software is not made by or endorsed by the device manufacturer\n\nAuthor\n------\n\nBenedikt Ursprung\n\nRequirements\n------------\n\n\t* ScopeFoundry\n\t* numpy\n\t* pyvisa >1.12.0 (For GPIB control)\n\t* serial (For RS232 control)\n\n\nHistory\n--------\n\n### 0.1.0\t2023-01-28\tInitial public release.\n\nPlug-in has been used internally and has been stable.\n",
+            "default_branch": "main",
+            "parent_id": null
+        },
+        {
+            "name": "HW_sync_raster_daq",
+            "id": 932162940,
+            "owner": "UBene",
+            "html_url": "https://github.com/UBene/HW_sync_raster_daq",
+            "description": "Synchronous Raster Scanner using NI DAQ Cards ScopeFoundry Hardware Component",
+            "updated_at": "2025-02-13T13:25:48Z",
+            "readme": "README could not be retrieved.",
+            "default_branch": "master",
+            "parent_id": 841236067
+        },
+        {
+            "name": "HW_tektronix_oscilloscope",
+            "id": 933815510,
+            "owner": "UBene",
+            "html_url": "https://github.com/UBene/HW_tektronix_oscilloscope",
+            "description": "ScopeFoundry plugin to control tektronix oscilloscope",
+            "updated_at": "2025-02-16T18:50:59Z",
+            "readme": "ScopeFoundryHW.tektronix_oscilloscope\n===========================\n\nScopeFoundry hardware plug-in to control Tektronix Oscilloscope\n\nScopeFoundry is a Python platform for controlling custom laboratory \nexperiments and visualizing scientific data\n\n<http://www.scopefoundry.org>\n\nThis software is not made by or endorsed by the device manufacturer\n\n\nAuthor\n----------\n\nBenedikt Ursprung\n\nRequirements\n------------\n\n\t* ScopeFoundry\n\t* pyvisa\n\n\t\nHistory\n--------\n\n### 0.1.0\t2025-02-16\tInitial public release.\n\nPlug-in has been used internally and has been stable.\n",
             "default_branch": "main",
             "parent_id": null
         },

@@ -10,17 +10,12 @@ weight: 2
 
 #### To add to your app:
 
-`cd to/your_project_folder/ScopeFoundryHW` and use the following cmd (requires [git](/docs/100_development/20_git/))
+`cd to/your_project_folder/` and use the following cmd (requires [git](/docs/100_development/20_git/))
 
 ```bash
-mkdir alicat_eip && cd alicat_eip && git init --initial-branch=master && git remote add upstream_ScopeFoundry https://github.com/ScopeFoundry/HW_alicat_eip && git pull upstream_ScopeFoundry master && cd ..
+git clone https://github.com/ScopeFoundry/HW_alicat_eip ScopeFoundryHW/alicat_eip
 ```
 
-*or* fork on GitHub **and** use your adjusted cmd:
-
-```bash
-mkdir alicat_eip && cd alicat_eip && git init --initial-branch=master && git remote add origin https://github.com/YOUR_GH_ACC/HW_alicat_eip && git pull origin master && cd ..
-```
 
 ## Readme
 README could not be retrieved.

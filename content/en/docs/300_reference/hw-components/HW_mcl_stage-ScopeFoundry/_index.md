@@ -2,7 +2,7 @@
 ---
 title: HW_mcl_stage (ScopeFoundry)
 description: MadCityLabs Nanopositioner Stage ScopeFoundry Hardware component
-weight: 26
+weight: 27
 ---
 - [GitHub Repository](https://github.com/ScopeFoundry/HW_mcl_stage)
 - Last Updated: 2020-12-21T20:34:38Z
@@ -10,17 +10,12 @@ weight: 26
 
 #### To add to your app:
 
-`cd to/your_project_folder/ScopeFoundryHW` and use the following cmd (requires [git](/docs/100_development/20_git/))
+`cd to/your_project_folder/` and use the following cmd (requires [git](/docs/100_development/20_git/))
 
 ```bash
-mkdir mcl_stage && cd mcl_stage && git init --initial-branch=master && git remote add upstream_ScopeFoundry https://github.com/ScopeFoundry/HW_mcl_stage && git pull upstream_ScopeFoundry master && cd ..
+git clone https://github.com/ScopeFoundry/HW_mcl_stage ScopeFoundryHW/mcl_stage
 ```
 
-*or* fork on GitHub **and** use your adjusted cmd:
-
-```bash
-mkdir mcl_stage && cd mcl_stage && git init --initial-branch=master && git remote add origin https://github.com/YOUR_GH_ACC/HW_mcl_stage && git pull origin master && cd ..
-```
 
 ## Readme
 ScopeFoundryHW.mcl_stage
