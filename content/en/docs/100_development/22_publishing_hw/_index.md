@@ -1,5 +1,5 @@
 ---
-title: Publish HW components separately
+title: Sharing hardware components
 description: Publish your shiny new plugin as a ScopeFoundryHW plug-in on GitHub. 
 weight: 22
 ---
@@ -82,16 +82,21 @@ Assuming:
 git clone https://github.com/{THEIR_USER_NAME}/HW_{company_model}.git ScopeFoundryHW/{company_model}
 ```
 
+Note: We removed the prepended `HW_` in the target folder name.
+
+If you are planning to share changes you make to this code then it is wise to first fork the code and clone the fork  (see bellow).
+
+
 HINT: The entries of [reference/hw-components](/docs/300_reference/hw-components/) contain this line filled out. 
 
-Note: We removed the prepended `HW_`.
 
-## Updating to already published plug-ins
+
+## Updating already published plug-ins
 
 If it is **not** your repo or you do **not** have write access:
 
-- Sign up/log on github with your  `USER_NAME`
-- fork the original repo
+- Sign up/log in github with your  `USER_NAME`
+- fork the original github repo
 
 Now you should have github repository url of the form: `https://github.com/{USER_NAME}/HW_{company_model}.git`  Here we push to the branch `master`.
 
@@ -111,5 +116,4 @@ Now you should have github repository url of the form: `https://github.com/{USER
    git push -u origin
    ```
 
-
-If you'd like to share your updates with the original owner then create a Pull Request on GitHub.
+If you'd like to share your updates with the original owner, then create a Pull Request on GitHub and they can decide to include it.
