@@ -2,7 +2,7 @@
 ---
 title: HW_acton_spec (akshaybkiitb)
 description: Acton Spectrometer 2300i ScopeFoundry Hardware Component
-weight: 52
+weight: 51
 ---
 - [GitHub Repository](https://github.com/akshaybkiitb/HW_acton_spec)
 - Last Updated: 2020-09-09T11:51:52Z

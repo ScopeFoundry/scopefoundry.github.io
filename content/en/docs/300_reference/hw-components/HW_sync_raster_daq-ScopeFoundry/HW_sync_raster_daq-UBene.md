@@ -2,7 +2,7 @@
 ---
 title: HW_sync_raster_daq (UBene)
 description: Synchronous Raster Scanner using NI DAQ Cards ScopeFoundry Hardware Component
-weight: 60
+weight: 59
 ---
 - [GitHub Repository](https://github.com/UBene/HW_sync_raster_daq)
 - Last Updated: 2025-02-13T13:25:48Z
