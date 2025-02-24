@@ -2,7 +2,7 @@
 ---
 title: HW_zeiss_sem (ScopeFoundry)
 description: Zeiss SEM REMCON32 ScopeFoundry Hardware Component
-weight: 50
+weight: 49
 ---
 - [GitHub Repository](https://github.com/ScopeFoundry/HW_zeiss_sem)
 - Last Updated: 2024-08-12T00:37:28Z

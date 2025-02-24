@@ -2,7 +2,7 @@
 ---
 title: HW_dynamixel_servo (trovatello-lab)
 description: Robotis Dynamixel Servo Motor ScopeFoundry Hardware Component
-weight: 55
+weight: 54
 ---
 - [GitHub Repository](https://github.com/trovatello-lab/HW_dynamixel_servo)
 - Last Updated: 2025-02-16T18:38:32Z

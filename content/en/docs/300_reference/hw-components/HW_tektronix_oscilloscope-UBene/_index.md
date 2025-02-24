@@ -2,7 +2,7 @@
 ---
 title: HW_tektronix_oscilloscope (UBene)
 description: ScopeFoundry plugin to control tektronix oscilloscope
-weight: 45
+weight: 44
 ---
 - [GitHub Repository](https://github.com/UBene/HW_tektronix_oscilloscope)
 - Last Updated: 2025-02-16T18:50:59Z

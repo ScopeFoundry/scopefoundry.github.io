@@ -2,7 +2,7 @@
 ---
 title: HW_sync_raster_daq (ScopeFoundry)
 description: Synchronous Raster Scanner using NI DAQ Cards ScopeFoundry Hardware Component
-weight: 44
+weight: 43
 ---
 - [GitHub Repository](https://github.com/ScopeFoundry/HW_sync_raster_daq)
 - Last Updated: 2024-08-12T01:57:28Z

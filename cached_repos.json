@@ -1,5 +1,5 @@
 {
-    "fetched_at": "2025-02-17T01:00:24.914550+00:00",
+    "fetched_at": "2025-02-24T01:00:30.290795+00:00",
     "repositories": [
         {
             "name": "HW_dynamixel_servo",
@@ -119,17 +119,6 @@
             "description": null,
             "updated_at": "2025-02-16T19:14:09Z",
             "readme": "ScopeFoundryHW.solidstate_uc160_chiller\n=======================================\n\nScopeFoundry hardware plug-in to control Solid State Cooling Systems Ultra Compact Series chiller\n\nScopeFoundry is a Python platform for controlling custom laboratory \nexperiments and visualizing scientific data\n\n<http://www.scopefoundry.org>\n\nThis software is not made by or endorsed by the device manufacturer\n\nAuthor\n----------\n\nBenedikt Ursprung \n\nRequirements\n------------\n\n\t* ScopeFoundry\n\n\u200b\t\nHistory\n--------\n\n### 0.1.0\t2023-01-29\tInitial public release.\n\nPlug-in has been used internally and has been stable.\n",
-            "default_branch": "main",
-            "parent_id": null
-        },
-        {
-            "name": "HW_spincore_pulse_blaster",
-            "id": 933822215,
-            "owner": "UBene",
-            "html_url": "https://github.com/UBene/HW_spincore_pulse_blaster",
-            "description": "ScopeFoundry plugin to program and control a spincore pulse blaster",
-            "updated_at": "2025-02-16T19:05:45Z",
-            "readme": "README could not be retrieved.",
             "default_branch": "main",
             "parent_id": null
         },

@@ -2,7 +2,7 @@
 ---
 title: HW_standford_research_systems_sg380 (UBene)
 description: ScopeFoundry plugin for srs RF Signal Generators
-weight: 43
+weight: 42
 ---
 - [GitHub Repository](https://github.com/UBene/HW_standford_research_systems_sg380)
 - Last Updated: 2025-02-16T19:03:11Z

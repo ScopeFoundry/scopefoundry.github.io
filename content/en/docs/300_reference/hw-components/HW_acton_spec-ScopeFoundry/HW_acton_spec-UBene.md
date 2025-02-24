@@ -2,7 +2,7 @@
 ---
 title: HW_acton_spec (UBene)
 description: Acton Spectrometer 2300i ScopeFoundry Hardware Component
-weight: 53
+weight: 52
 ---
 - [GitHub Repository](https://github.com/UBene/HW_acton_spec)
 - Last Updated: 2022-03-30T13:44:52Z
