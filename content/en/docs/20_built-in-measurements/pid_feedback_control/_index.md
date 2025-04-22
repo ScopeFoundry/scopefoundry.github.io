@@ -1,10 +1,19 @@
 ---
 title: PID Feedback Control
 description: Use settings defined in hardware to perform feedback on a monitored quantity.
-weight: 10
+weight: 10v
 ---
 
-1. Add `PIDFeedbackControl` to your app.
+1. This plug-in relies on `simple-pid` (v2+) library, install it (don't forget `conda activate scopefoundry` if necessary.)
+
+    ```bash
+    pip install simple-pid
+    ```
+
+    
+
+2. Add `PIDFeedbackControl` to your app.
+
     ```python
         # fancy_app.py
         from ScopeFoundry import BaseMicroscopeApp
@@ -19,15 +28,15 @@ weight: 10
                 from ScopeFoundry.controlling import PIDFeedbackControl
                 self.add_measurement(PIDFeedbackControl)
 
-2. Refer to the following figure to define the control.  
+3. Refer to the following figure to define the control.  
    ![pid_feedback_control](pid_feedback_control.png)
 
    **a)** The system used in this example: a laser beam from the OPO is controlled by a motorized ND filter wheel ("Plant"). The power of the laser beam is monitored at a pickoff location using a power meter ("Sensor"). (Ignore the rest of figure a).)  
-   
+
    **b)** Control loop diagram. Note it is a standard feedback with a PID controller - however, the inputs that the plant receives are constraint with min/max for safety.
-   
+
    **c)** The GUI of `PIDFeedbackControl`: Defining  
-   
+
    - The setpoint.  
    - `plant_input` (position of the motor of the ND filter wheel, `side_beam_power_wheel`).  
    - `sensor` is the power readout of a power meter (`thorlabs_powermeter` as a sensor) by moving an ND density filter wheel (as the plant).  

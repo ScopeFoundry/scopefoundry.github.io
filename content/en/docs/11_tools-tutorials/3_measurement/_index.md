@@ -477,5 +477,5 @@ class NumberGenReadout(Measurement):
 
 **Next Steps**
 
-- [More on hardware]
-- [Analyze with Jupyter Notebook]
+- [More on hardware][more on hardware]
+- [Analyze with Jupyter Notebook][analyze with Jupyter Notebook]

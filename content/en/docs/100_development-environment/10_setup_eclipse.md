@@ -17,9 +17,9 @@ Requires [install ScopeFoundry]
 
 ### Eclipse + PyDev IDE
 
-![eclipse-logo](../eclipse_logo.png)
+![eclipse-logo](../eclipse-logo.png)
 
-![pydev-logo](../pydev_logo.png)
+![pydev-logo](../pydev-logo.png)
 
 For an IDE we recommend [Eclipse] with the [PyDev] plugin. While the setup is more complicated than many other IDE's, there is one very useful feature available in PyDev that not available elsewhere: [**Live code reloading**](http://www.pydev.org/manual_adv_debugger_auto_reload.html). This allows a developer to modify any function in ScopeFoundry from within Eclipse and have that new version of the function injected into the running ScopeFoundry App. 
 
