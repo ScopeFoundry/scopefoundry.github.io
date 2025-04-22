@@ -1,5 +1,5 @@
 ---
-title: .h5 file format
+title: .h5 File Format
 description: Learn to write your own custom ScopeFoundry hardware and measurement plugins.
 weight: 100
 ---
@@ -9,7 +9,7 @@ weight: 100
 [h5py]: http://www.h5py.org
 [FoundryDataBrowser]: https://github.com/ScopeFoundry/FoundryDataBrowser
 
-The measurement will auto-save a data-file that contains the optimizer history to an HDF5 (.h5) data file within the specified Save Directory. This data file contains the data along with data structures that include all the meta-data from the microscope App. To view this data file, we can use a graphical viewer [HDFView], or use the [FoundryDataBrowser] from the ScopeFoundry project.
+Measurements that use the recommended .h5 file saving strategy generate .h5 files that contain the data along with data structures that include all the metadata from the microscope app.
 
 The [data file](./building_your_first_microscope_tutorial/1486144636_sine_wave_plot.h5) created by the `sine_wave_plot` measurement has the following hierarchy:
 
@@ -48,8 +48,11 @@ The [data file](./building_your_first_microscope_tutorial/1486144636_sine_wave_p
                     |- progress = %
                     |- sampling_period = s
 
-You will notice that this data file contains much more than just the sine wave data recorded during your measurement. It also contains all the settings of the hardware and measurement conditions at the time of the data acquisition. 
+You will notice that this data file contains much more than just the sine wave data recorded during your measurement. It also contains all the settings of the hardware and measurement conditions at the time of the data acquisition.
 
+{{% pageinfo color="info" %}}
+Since ScopeFoundry 2.0, loading .h5 files is automated - see [analyze_with_ipynb](/docs/30_tips-and-tricks/analyze-with-ipynb/).
+{{% /pageinfo %}}
 
 We can access this data file in Python using the [h5py] package.
 
@@ -66,8 +69,15 @@ buffer_data = dat['measurement/sine_wave_plot/buffer']
 
 import matplotlib.pyplot as plt
 plt.title(sample_name)
-plt.plot( buffer_data)
+plt.plot(buffer_data)
 plt.savefig('sine_wave_data_plot_42.png')
 plt.show()
 ```
 ![Analysis Data Plot](sine_wave_data_plot_42.png)
+
+To view .h5 file data, we can:
+
+- Use a [Jupyter Notebook](/docs/30_tips-and-tricks/analyze-with-ipynb/),
+- Use a graphical viewer like [HDFView],
+- Use the [FoundryDataBrowser] from the ScopeFoundry project, or
+- Make your [own viewer](/docs/12_databrowser-tutorials/).

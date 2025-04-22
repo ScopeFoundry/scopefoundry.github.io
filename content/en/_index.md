@@ -7,7 +7,7 @@ title: ScopeFoundry
 
 {{< blocks/cover title="ScopeFoundry 2.0 out now" image_anchor="bottom" height="auto" >}}
 
-<a class="btn btn-lg btn-primary me-3 mb-4" href="docs/overview"> 
+<a class="btn btn-lg btn-primary me-3 mb-4" href="docs/"> 
 create your control app now! <i class="fas fa-arrow-alt-circle-right ms-2"></i>
 </a>
 

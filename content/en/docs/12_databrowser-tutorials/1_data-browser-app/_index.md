@@ -1,15 +1,14 @@
 ---
 title: DataBrowserApp
-description: Learn how to create custom DataBrowserApp
+description: Learn how to create a custom DataBrowserApp.
 weight: 1
 ---
 
-
 [getting_started_docs]:/docs/1_getting-started/
 
-**Requirement:** [install scopefoundry][getting_started_docs]
+**Requirement:** [Install ScopeFoundry][getting_started_docs]
 
-To create the app and add viewer that ship with ScopeFoundry create this file:
+To create the app and add viewers that ship with ScopeFoundry, create this file:
 
 ```python
 # fancy_data_browser.py
@@ -44,12 +43,8 @@ if __name__ == "__main__":
 
 ```
 
-
-resulting in:
-
-
+Resulting in:
 
 ![databrowser_1](databrowser_1.png)
 
-
-next [learn to create a Viewer](../2_data-browser-viewer)
+Next, [learn to create a Viewer](../2_data-browser-viewer).

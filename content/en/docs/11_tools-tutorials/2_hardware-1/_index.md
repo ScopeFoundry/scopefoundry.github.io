@@ -1,26 +1,25 @@
 ---
-title: Hardware 1 - Getting started
-description: getting started and learning ScopeFoundry.hardware concepts
+title: Hardware Component
+description: Develop your first HardwareComponent to communicate with your hardware device.
 date: 2025-01-01
 weight: 2
 ---
 
-Here we discuss how to build a custom hardware plug-in for ScopeFoundry. If one is not [available in our list of plug-ins](/docs/300_reference/hw-components), you can build one based on this tutorial. 
+Here we discuss how to build a custom hardware plug-in for ScopeFoundry. If one is not [available in our list of plug-ins](/docs/301_existing-hardware-components), you can build one based on this tutorial.
 
-Hardware - 1 goals:
+### Goals:
 
-- learn basic ScopeFoundry concepts of ScopeFoundry.HardwareComponent
-- created a plugin - virtual sine wave generator, virtual because we just simulate values 
+- Learn basic ScopeFoundry concepts of `ScopeFoundry.HardwareComponent`.
+- Create a `HardwareComponent` plugin - a virtual sine wave generator. Virtual because we simulate values instead of connecting to an actual device.
+- Learn how to add the component to your app.
 
-Hardware - 2 goals:
+Goals of Hardware Part 2:
 
-- Tipps to create the low level interface that connects to an actual device
+- Tips to create the low-level interface that connects to an actual device.
 
+## The Template
 
-
-## The template
-
-To get started, in your anaconda prompt or terminal cd to your folder and run the ScopeFoundry.tools:
+To get started, in your Anaconda prompt or terminal, navigate to your folder and run the ScopeFoundry tools:
 
 ```sh
 # cd "to/your_project_folder"
@@ -31,12 +30,11 @@ conda activate scopefoundry
 python -m ScopeFoundry.tools
 ```
 
-
-Fill out the `new hardware` tab as below and hit `create new hardware`:
+Fill out the `new hardware` tab as shown below and hit `create new hardware`:
 
 ![tools_new_hardware](tools_new_hardware.png)
 
-Note, that this generated the required files in your `ScopeFoundryHW` folder. You can copy the content of import statements into your `fancy_app.py` file. If you used the values entered above your `fancy_app.py` should look like:
+Note that this generates the required files in your `ScopeFoundryHW` folder. You can copy the content of the import statements into your `fancy_app.py` file. If you used the values entered above, your `fancy_app.py` should look like this:
 
 ```python
 # fancy_app.py
@@ -58,20 +56,19 @@ class FancyApp(BaseMicroscopeApp):
 
 if __name__ == "__main__":
     app = FancyApp(sys.argv)
-    # app.settings_load_ini("default_se ttings.ini")
+    # app.settings_load_ini("default_settings.ini")
     sys.exit(app.exec_())
-
 ```
 
-From here, in general, 2 files in `ScopeFoundryHW/random_number_gen` are important and will be modified to complete part 1:
+From here, in general, two files in `ScopeFoundryHW/random_number_gen` are important and will be modified to complete Part 1:
 
-## Low level interface: number_gen_dev.py
+## Low-Level Interface: `number_gen_dev.py`
 
-In general, this file provides a class that interfaces between the python process and the hardware you communicate with. So in general it handles the low level instructions that need to be send to the device to write setting values and read data. This file is independent of the ScopeFoundry. It is strictly speaking not required. Especially when the hardware seller already provides some python interface module or library it can be omitted, but might still help you keep the _hw file more organized. 
+In general, this file provides a class that interfaces between the Python process and the hardware you communicate with. It handles the low-level instructions that need to be sent to the device to write setting values and read data. This file is independent of ScopeFoundry. It is not strictly required, especially when the hardware seller already provides a Python interface module or library. However, it might still help you keep the `_hw` file more organized.
 
-For now, this file will be just given and simulates a connection to a wave function generator. In [part 2](../10_hardware-2) we give some tips on how to write this in practice.
+For now, this file will be provided and simulates a connection to a wave function generator. In [Part 2](../10_hardware-2), we provide tips on how to write this in practice.
 
-Go ahead and replace the content of `random_gen_dev.dev` with the following content
+Replace the content of `random_gen_dev.py` with the following:
 
 ```python
 # number_gen_dev.py
@@ -82,14 +79,14 @@ import numpy as np
 class NumberGenDev:
 
     """
-    This is the low level dummy device object.
-    Typically when instantiated it will connect to the real-world
-    Methods allow for device read and write functions
+    This is the low-level dummy device object.
+    Typically, when instantiated, it will connect to the real-world device.
+    Methods allow for device read and write functions.
     """
         
     def __init__(self, port=None, debug=False):
-        """We would connect to the real-world here
-        if this were a real device
+        """We would connect to the real-world device here
+        if this were a real device.
         """
         self.port = port
         self.debug = debug
@@ -99,15 +96,15 @@ class NumberGenDev:
     
     def write_amp(self, amplitude):
         """
-        A write function to change the device's amplitude
-        normally this would talk to the real-world to change
-        a setting on the device
+        A write function to change the device's amplitude.
+        Normally, this would talk to the real-world device to change
+        a setting on the device.
         """
         self._amplitude = amplitude
             
     def read_rand_num(self):
         """
-        Read function to access a Random number generator. 
+        Read function to access a random number generator. 
         Acts as our scientific device picking up a lot of noise.
         """
         rand_data = np.random.ranf() * self._amplitude
@@ -117,7 +114,7 @@ class NumberGenDev:
         """
         Read function to access a sine wave.
         Acts like the device is generating a 1Hz sine wave
-        with an amplitude set by write_amp
+        with an amplitude set by write_amp.
         """
         sine_data = np.sin(time.time()) * self._amplitude
         return sine_data
@@ -127,27 +124,26 @@ if __name__ == '__main__':
     dev = NumberGenDev(port="COM1", debug=True)
     print(dev.read_sine_wave())
     print('done')
-
 ```
 
-##### Some comments:
+### Comments:
 
 When we create an instance of this device class, we begin communication with the device. Other methods (typically with names starting with `read_` or `write_`) handle sending data back and forth to the device.
 
-In this case, we defined a method `read_rand_num` that returns a number. Because we are not actually connecting to a device we just return a value from a random number generator from numpy. This function is referenced in the hardware plugin section below code.
+In this case, we defined a method `read_rand_num` that returns a number. Because we are not actually connecting to a device, we just return a value from a random number generator from NumPy. This function is referenced in the hardware plugin section below.
 
-We also define a `write_amp` function that `takes` a value as an input and (in practice would write it to the the device).
+We also define a `write_amp` function that takes a value as input and (in practice) would write it to the device.
 
-In the case where you would like to connect to real scientific equipment and define basic functions based on its communication protocol, I would recommend the following:
+If you would like to connect to real scientific equipment and define basic functions based on its communication protocol, we recommend the following:
 
-- Define whichever addresses and ports you would like to use using variables defined in the module's `__init__()` method.
-- Then define a write function which can send messages to the device over RS232, Ethernet, via DLL or other protocol as required.
+- Define whichever addresses and ports you would like to use as variables in the module's `__init__()` method.
+- Then define a write function that can send messages to the device over RS232, Ethernet, via DLL, or other protocols as required.
 
-## The actual ScopeFoundry Hardware plug-in
+## The Actual ScopeFoundry Hardware Plug-in
 
-The next step is to create a subclass `ScopeFoundry.hardware.HardwareComponent` that will be added to the app. It defines the settings of a hardware component in the app and links them to the low level functions (typically definded in the _dev file).
+The next step is to create a subclass of `ScopeFoundry.hardware.HardwareComponent` that will be added to the app. It defines the settings of a hardware component in the app and links them to the low-level functions (typically defined in the `_dev` file).
 
-The required methods are: `setup()`, `connect()`, and `disconnect()`. 
+The required methods are: `setup()`, `connect()`, and `disconnect()`.
 
 ```python
 # number_gen_hw.py
@@ -190,30 +186,22 @@ class NumberGenHw(HardwareComponent):
     # def run(self):
     #     self.settings.property_x.read_from_hardware()
     #     time.sleep(0.1)
-
 ```
 
-Explanations:
+### Explanations:
 
-- `class`: We make our module a _subclass_ of `HardwareComponent`.
-  - `setup()`
-    - Here we set up a few settings for this hardware, these settings are `LoggedQuantity` objects that keep this value in sync between hardware, measurement and graphical interface and hence play a critical role in the ScopeFoundry framework
-
-  - `connect()`
+- **Class**: We make our module a subclass of `HardwareComponent`.
+  - **`setup()`**:
+    - Here we set up a few settings for this hardware. These settings are `LoggedQuantity` objects that keep this value in sync between hardware, measurement, and graphical interface, playing a critical role in the ScopeFoundry framework.
+  - **`connect()`**:
     - We define an object `self.dev` which instantiates the low-level device wrapper and thereby accesses hardware functions.
-    - Using `connect_to_hardware()` we link a setting to functions that handle the synchronization with the hardware. For example: 
-      - `s.get_lq("amplitude").connect_to_hardware(write_func=self.dev.write_amp)` enforces that when the value of the "amplitude" setting is changed any-where in the app, the value gets written to the hardware. Note that the `write_func` must have a single argument in its definition.
-      - `s.get_lq("rand_data").connect_to_hardware(read_func=self.dev.read_rand_num)` gives the setting the capability to update its value from the hardware. Later, anywhere in the app code, we can call `new_val = self.app.get_lq("hw/number_gen/rand_data").read_from_hardware()` to update the value of the setting (and retrieve as `new_val`)
-      - Note, a setting can have both, read and write funcs - not shown here.
-    - We run `self.read_from_hardware()` to update all hardware-connected settings with initial readout values.
-    
-  - `disconnect()`
-    - We clean up the mess we made by removing objects after use.
+    - Using `connect_to_hardware()`, we link a setting to functions that handle synchronization with the hardware.
+  - **`disconnect()`**:
+    - We clean up by removing objects after use.
 
-By having the `connect()` and `disconnect()` we can cleanly reconnect hardware during an App run. This is especially useful when debugging a hardware plug-in to a new device. 
+By having `connect()` and `disconnect()`, we can cleanly reconnect hardware during an app run. This is especially useful when debugging a hardware plug-in for a new device.
 
-
-## The final result
+## The Final Result
 
 Test by running:
 
@@ -225,4 +213,4 @@ You should see:
 
 ![app_after_part1](app_after_part1.png)
 
-Note that we have implicitly created and added a measurement to the app. number_gen_readout is not working yet, this will be part of the [next tutorial](../3_measurement).
+Note that we have implicitly created and added a measurement to the app. `number_gen_readout` is not working yet; this will be part of the [next tutorial](../3_measurement).

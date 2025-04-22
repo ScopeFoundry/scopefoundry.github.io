@@ -6,16 +6,21 @@ weight: 1
 
 [anaconda_dl]:https://www.anaconda.com/download/success
 [ anaconda_env_docs ]: http://conda.pydata.org/docs/using/envs.html
-[IDE]:/docs/100_development/10_setup_eclipse/
+[IDE]:/docs/100_development-environment/10_setup_eclipse/
+
+[overview]: /docs/
+
+
 
 **We recommend** the [miniconda][anaconda_dl] Python distribution, which contains many easy-to-install scientific python packages and recommend to create a separate environment. 
 
 If you already had a non-Anaconda version of python installed, you will need to make sure you use Anaconda in order to follow the instructions below. The use of the conda environment is optional, but provides a clean, known working environment for ScopeFoundry.
 
-###### Windows
+#### Windows
 
-1. Download and install [mininaconda][anaconda_dl] python distribution
+1. Download and install [miniconda][anaconda_dl] python distribution
 2. Create an environment with the required dependencies. Anaconda provides a way to make a clean set of packages in an [environment][anaconda_env_docs]. To create an environment called "scopefoundry" use `anaconda(3) prompt` to run:
+
 	```sh
 	conda create -n scopefoundry python=3.13
 	```
@@ -24,13 +29,14 @@ If you already had a non-Anaconda version of python installed, you will need to 
 	conda activate scopefoundry
 	```
 3. To download and install ScopeFoundry and it's dependencies
+
 	```sh
 	pip install pyqt6 qtconsole matplotlib scopefoundry
 	```
-
+	
 	*where `qtconsole`, `matplotlib` are optional*
 
-###### Mac / Linux
+#### Mac / Linux
 
 Same step as above for Windows except that 
 
@@ -43,7 +49,9 @@ Same step as above for Windows except that
 
 ### Next
 
-- check your installation by [making your first app](/docs/11_tools-tutorials/1_new-microscope-app/) in 2 min
+- check your installation by [making your first app](/docs/11_tools-tutorials/1_new-microscope-app/) in 2 min.
 
 - setup recommended [editor (IDE)][IDE] for easier code manipulation
+
+- go back to [documentation overview][overview]
 
