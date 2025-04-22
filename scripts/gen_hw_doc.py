@@ -3,12 +3,14 @@ import json
 from pathlib import Path
 import shutil
 
-ROOT = Path("content/en/docs/300_reference/hw-components")
-HW_BASELINK = Path("/docs/300_reference/hw-components")
+ROOT = Path("content/en/docs/301_existing-hardware-components")
+HW_BASELINK = Path("/docs/301_existing-hardware-components")
+
 
 def laod_cached_repos():
     with open("cached_repos.json", "r", encoding="utf8") as file:
         return json.load(file)  # Load JSON as a dictionary
+
 
 def mk_unique_title(repo):
     return f"{repo['name']} ({repo["owner"]})"
@@ -35,6 +37,7 @@ def import_with_gh_cmd(name, html_url, owner, default_branch="master"):
     path = f"{name.strip("HW_")}"
     remote_name = f"upstream_{owner}"
     return f"mkdir {path} && cd {path} && git init --initial-branch={default_branch} && git remote add {remote_name} {html_url} && git pull {remote_name} {default_branch} && cd .."
+
 
 def import_from_gh_your_fork(name, html_url, owner, default_branch="master"):
     path = f"{name.strip("HW_")}"
@@ -84,7 +87,7 @@ weight: {weight}
 
 #### To add to your app:
 
-`cd to/your_project_folder/` and use the following cmd (requires [git](/docs/100_development/20_git/))
+`cd to/your_project_folder/` and use the following cmd (requires [git](/docs/100_development-environment/20_git/))
 
 ```bash
 {clone_from_gh_cmd(name, html_url, owner, default_branch)}
@@ -176,5 +179,6 @@ def gen_hw_doc():
         delete_folder_content(ROOT)
         generate_markdown_files(repos_list)
 
-if __name__ ==  "__main__":    
+
+if __name__ == "__main__":
     gen_hw_doc()

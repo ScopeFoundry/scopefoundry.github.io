@@ -134,7 +134,7 @@ params:
 
   # User interface configuration
   ui:
-    ul_show: 2
+    ul_show: 1
     # Set to true to disable breadcrumb navigation.
     breadcrumb_disable: false
     # Set to false if you don't want to display a logo (/assets/icons/logo.svg) in the top navbar
