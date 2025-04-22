@@ -4,7 +4,7 @@ weight: 500
 ---
 
 {{% pageinfo color="info" %}}
-This is the documentation of a workshop conducted in Summer 2024. To follow this workshop you will the hardwares specified [here](http://localhost:1313/docs/500_demopico-docs/100_demo_pico_hw/#hardware-overview)
+This is the documentation of a workshop conducted in Summer 2024. To follow this workshop you need hardwares specified [here](/docs/500_demopico-docs/100_demo_pico_hw/#hardware-overview)
 {{% /pageinfo %}}
 
 
