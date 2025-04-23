@@ -33,8 +33,8 @@ This website provides tutorials for creating (and sharing) ScopeFoundry App, Har
 
 3. [Tips and Tricks][tips-and-tricks]: Elevate your plugin development.
 4. [Built-in Measurements][built-in]: Scanning, parameter sweeping, PID feedback control, Sequencer ... are amongst common measurement tasks that ScopeFoundry solves generically.
-5. Check [existing hardware components][301_existing-hardware-components].
-6. To share your plugins (hardware and measurement), check [here][sharing_hws].
+5. Check [HardwareComponents Library][301_existing-hardware-components] for existing plugins.
+6. To share and contribute to plugins [here][sharing_hws].
 
 ## ScopeFoundry.DataBrowser
 
