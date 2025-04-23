@@ -4,7 +4,7 @@ description: Publish your shiny new plugin as a ScopeFoundryHW plug-in on GitHub
 weight: 200
 ---
 
-The following instructions explain how to publish `company_model` in your project folder's `ScopeFoundryHW` directory:
+The following instructions explain how to publish `company_model` in your project folder's `ScopeFoundryHW` directory. We recommend  the following folder structure. Use [ScopeFoundry.tools](/docs/11_tools-tutorials/2_hardware-1/#the-template) to generate the folder structure.
 
 ```
 ├── your_project_folder
@@ -32,8 +32,6 @@ We recommend using the following `.gitignore` file, as it is generally not advis
 *.h5
 *log*.txt
 ```
-
-If you'd like to adhere to this [template, use ScopeFoundry.tools](/docs/11_tools-tutorials/2_hardware-1/#the-template) to generate the folder structure.
 
 ## Publish Your Hardware
 
