@@ -1,6 +1,6 @@
 ---
 title: Hardware 3 - Packaging
-description: package a HW component
+description: package a HW component (for pypi)
 date: 2025-01-01
 weight: 30
 ---
@@ -48,8 +48,6 @@ setup(
         },
     )
 ```
-
-
 
 
 
