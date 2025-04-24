@@ -1,6 +1,6 @@
 ---
 title: Setup Eclipse
-description: Install Eclipse for live coding reloading
+description: Install Eclipse for live coding reloading.
 date: 2017-01-04
 weight: 10
 ---

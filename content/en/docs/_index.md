@@ -28,21 +28,21 @@ Users of ScopeFoundry are required to develop these plugins (unless they already
 
 This website provides tutorials for creating (and sharing) ScopeFoundry App, HardwareComponents, and Measurements. Depending on your familiarity with ScopeFoundry, we recommend:
 
-1. [Getting Started][getting_started_docs]: Install ScopeFoundry
+1. [Getting Started][getting_started_docs]: Install ScopeFoundry.
 2. [Basic Tutorial][tools_tutorials]: Your first app, basics on HardwareComponent and Measurement Plugin, and first Measurement.
 
 3. [Tips and Tricks][tips-and-tricks]: Elevate your plugin development.
 4. [Built-in Measurements][built-in]: Scanning, parameter sweeping, PID feedback control, Sequencer ... are amongst common measurement tasks that ScopeFoundry solves generically.
 5. Check [HardwareComponents Library][301_existing-hardware-components] for existing plugins.
-6. To share and contribute to plugins [here][sharing_hws].
+6. To share and contribute to plugins click [here][sharing_hws].
 
 ## ScopeFoundry.DataBrowser
 
-Somewhat independent of the above is the ScopeFoundry.DataBrowser - an app that can be used for quick data inspection. Learn to write Plugins using [this tutorial][DataBrowser-tutorials].
+Somewhat independent of the above is the ScopeFoundry.DataBrowser - an app that can be used for quick data inspection. Learn how to create the App and to write DataBrowser plugins using [this tutorial][DataBrowser-tutorials].
 
 ## ScopeFoundry core development
 
-To contribute to the framework, go to [core development][core-development].
+To contribute to the ScopeFoundry framework, go to [core development][core-development].
 
 ## Create an issue
 

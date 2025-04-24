@@ -1,6 +1,6 @@
 ---
 title: Alternative - use subtree
-description: For git experts
+description: For git experts.
 weight: 22
 ---
 

@@ -1,6 +1,6 @@
 ---
-title: ImageRead Viewer
-description: Learn how to create custom DataBrowserView applications.
+title: MatplotlibImreadView Example
+description: Learn how to create custom DataBrowserView for your applications.
 weight: 3
 ---
 
