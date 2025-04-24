@@ -1,6 +1,6 @@
 ---
 title: Hardware 3 - Packaging
-description: package a HW component (for pypi)
+description: Package a HW component (for distribution with pypi).
 date: 2025-01-01
 weight: 30
 ---

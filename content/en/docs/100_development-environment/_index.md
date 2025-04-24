@@ -1,6 +1,6 @@
 ---
 title: Recommended Development Environment
-description: Recommended IDE and version history control with Git
+description: Recommended IDE and version history control with Git.
 weight: 100
 ---
 

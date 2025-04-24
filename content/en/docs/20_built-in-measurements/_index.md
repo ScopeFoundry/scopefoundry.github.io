@@ -1,6 +1,6 @@
 ---
 title: Built-in Measurements
-description: Measurements that come with ScopeFoundry
+description: Measurements that come with ScopeFoundry.
 date: 2017-01-04
 weight: 30
 ---
