@@ -1,10 +1,12 @@
 ---
 title: Sharing Hardware Components
-description: Publish your shiny new plugin as a ScopeFoundryHW plug-in on GitHub. 
+description: Publish your shiny new HardwareComponent on GitHub or contribute to existing ones. 
 weight: 200
 ---
 
-The following instructions explain how to publish `company_model` in your project folder's `ScopeFoundryHW` directory. We recommend  the following folder structure. Use [ScopeFoundry.tools](/docs/11_tools-tutorials/2_hardware-1/#the-template) to generate the folder structure.
+The following instructions explain how to publish `company_model` in your project folder's `ScopeFoundryHW` directory using Git. 
+
+We recommend  the following folder structure, that be generated with [ScopeFoundry.tools](/docs/11_tools-tutorials/2_hardware-1/#the-template).
 
 ```
 ├── your_project_folder
@@ -72,29 +74,28 @@ This page periodically crawls GitHub for `HW_*` repositories. It considers users
 
 ## Adding Published Plug-ins to Your Project
 
-Assuming:
-
-- The repository URL is `https://github.com/{THEIR_USER_NAME}/HW_{company_model}.git`.
-- Navigate to your project folder (`cd to/your_project_folder/`) and use the following command (requires [Git](/docs/100_development-environment/20_git/)):
+To clone an existing repo on GitHub  into to your project's hardware folder, navigate to your project folder (`cd to/your_project_folder/`) and use the following command  (requires [Git](/docs/100_development-environment/20_git/)):
 
 ```sh
 git clone https://github.com/{THEIR_USER_NAME}/HW_{company_model}.git ScopeFoundryHW/{company_model}
 ```
 
+Where `{THEIR_USER_NAME}` and `{company_name}` need to be replaced accordingly. **Hint:** The entries in the [Library](/docs/301_existing-hardware-components/) contain this line completed for the respective HardwareComponent. 
+
 Note: The `HW_` prefix is removed in the target folder name.
 
-If you plan to share changes you make to this code, it is wise to first fork the repository and then clone the fork (see below).
-
-**Hint:** The entries in [reference/hw-components](/docs/301_existing-hardware-components/) contain this line filled out.
+If you plan to share changes you make to this code, it is wise to first fork the repository and then clone the forked version (see below).
 
 ## Updating Already Published Plug-ins
 
-If it is **not** your repository or you do **not** have write access:
+If it is your repository, i.e you have write access, then simply push to it and you are done. 
+
+**Otherwise:**
 
 1. Sign up or log in to GitHub with your `USER_NAME`.  
-2. Fork the original GitHub repository.
+2. Fork the GitHub repository you like to make contribution to.
 
-Now you should have a GitHub repository URL of the form: `https://github.com/{USER_NAME}/HW_{company_model}.git`. Here, we push to the branch `master`.
+Now you have a GitHub repository URL (with your `USER_NAME`) of the form: `https://github.com/{USER_NAME}/HW_{company_model}.git`. 
 
 1. Navigate to the folder of the hardware component:
    ```sh
@@ -112,4 +113,4 @@ Now you should have a GitHub repository URL of the form: `https://github.com/{US
    git push -u origin
    ```
 
-If you'd like to share your updates with the original owner, create a Pull Request on GitHub, and they can decide whether to include it.
+To share your contributions with the original owner, create a Pull Request on GitHub, and they can decide if they like to merge your contributions.

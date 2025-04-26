@@ -64,8 +64,9 @@ Live updates of measurement code for fast development and debugging.
 * Currently used in multi-modal scanning microscopy measurements with electrons and optics
 * Flexible for many other data acquisition tasks
 
+{{% /blocks/section %}}
+
 {{% blocks/section color="black" type="row" %}}
-# Next
 
 {{% blocks/feature icon="fas fa-arrow-alt-circle-right" title="Get Started!" url="/docs/1_getting-started" %}}
 {{% /blocks/feature %}}
@@ -79,7 +80,7 @@ We do a [Pull Request](https://github.com/ScopeFoundry/ScopeFoundry/pulls) contr
 {{% blocks/feature icon="fa-solid fa-user-group" title="Developer forum and mailing list" url="https://groups.google.com/g/scopefoundry" %}}
 For posting questions and announcements of latest features.
 {{% /blocks/feature %}}
+
 {{% /blocks/section %}}
 
 
-{{% /blocks/section %}}
