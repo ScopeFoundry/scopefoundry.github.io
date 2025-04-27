@@ -84,8 +84,6 @@ In particular, the folder contains:
 
 The optional `docs` and `*_docs` folders will be auto generated - see [Document your Components](/docs/30_tips-and-tricks/document-your-components/ ).
 
-
-
 ## Next Steps
 
 You have created your first microscope app and learned the three most important high-level concepts: `HardwareComponent` , `Measurement` and `settings`. To build a system that allows you to perform real scientific experiments look at tutorials on how to build:
