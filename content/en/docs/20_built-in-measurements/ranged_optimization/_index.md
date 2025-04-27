@@ -5,13 +5,14 @@ weight: 1
 
 ---
 
-Sweeps a setting $z$ within a range, measures an optimization quantity $f(z)$ and calculates $z0$ such that:
+Sweeps a setting \\(z\\) within a range, measures an optimization quantity \\(f(z)\\) and calculates \\(z_0\\) such that:
 
-$$
-f(z0) >= f(z) \, \forall z
-$$
 
-finally sets $z = z0 + z_offset$
+```math
+f(z_0) >= f(z) \, \forall z
+```
+
+finally sets \\(z = z_0 + z_{offset}\\)
 
 
 
