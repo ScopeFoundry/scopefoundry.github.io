@@ -49,7 +49,7 @@ class FancyApp(BaseMicroscopeApp):
 
     def setup(self):
 
-        from ScopeFoundryHW.random_number_gen import (NumberGenHw,
+        from ScopeFoundryHW.random_number_gen import (NumberGenHW,
                                                       NumberGenReadout)
         self.add_hardware(NumberGenHw(self))
         self.add_measurement(NumberGenReadout(self))
@@ -150,7 +150,7 @@ The required methods are: `setup()`, `connect()`, and `disconnect()`.
 from ScopeFoundry.hardware import HardwareComponent
 
 
-class NumberGenHw(HardwareComponent):
+class NumberGenHW(HardwareComponent):
 
     name = "number_gen"
 
