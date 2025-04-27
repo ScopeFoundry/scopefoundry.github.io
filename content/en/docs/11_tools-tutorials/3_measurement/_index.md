@@ -43,7 +43,7 @@ Then we override the `setup()` and `run()` functions that define the measurement
         s.New("save_h5", bool, initial=True)
 ```
 
-This defines 3 parameters that will be used during the measurement.
+The three settings defined will be used during the measurement.
 
 When a measurement is started, a new thread is launched, within which eventually the `run()` function is called. Let's override it to:
 

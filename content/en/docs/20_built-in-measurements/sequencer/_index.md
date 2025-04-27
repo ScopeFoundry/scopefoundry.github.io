@@ -10,7 +10,7 @@ To add to your app:
 ```python
     def setup(self):
 
-        from ScopeFoundry.sequencer import Sequencer
+        from ScopeFoundry import Sequencer, SweepSequencer
 
         self.add_measurement(Sequencer)
 ```
@@ -20,3 +20,5 @@ Check the available operation in the right panel. Hover over the operations labe
 On the left panel you see the actual script. Note that it can be saved for later reused.
 
 ![overview](overview.png)
+
+Another Measurement, `SweepSequencer` , wraps the `Sequencer` into another for-loop.

@@ -31,7 +31,7 @@ You should see:
 
 ![example_microscope_app](example_microscope_app.png)
 
-### Folder Structure and Key Takeaways
+### Key Takeaways 
 
 Now is a good time to learn the bare minimum about ScopeFoundry. On the left panel, you see two lists:
 
@@ -39,9 +39,11 @@ Now is a good time to learn the bare minimum about ScopeFoundry. On the left pan
 
 2. **Measurements**: These are subclasses of the `Measurement` class that define the procedures for acquiring and saving data. They can have graphical user interfaces shown on the right. Can you start the `example_2d_scan`?
 
-Note that you can expand the items in either list to expose `settings` that show the state of the hardware and parameterize your measurements, respectively.
+Note that you can expand the items in either list to expose `settings`. Settings show the state of the hardware or parameterize your measurements.
 
-For your app, we recommend the following folder structure:
+### Folder Structure
+
+For your project, we recommend the following folder structure:
 
 ```sh
 ├── your_project_folder
