@@ -8,7 +8,6 @@ weight: 1
 [IDE]:/docs/100_development-environment/10_setup_eclipse/
 
 [getting_started_docs]:/docs/1_getting-started/
-
 **Requirement:** [Install ScopeFoundry][getting_started_docs].
 
 After installation, use the Anaconda prompt and navigate to where you want or have the source code for your setup. Start ScopeFoundry tools:
@@ -42,24 +41,32 @@ Now is a good time to learn the bare minimum about ScopeFoundry. On the left pan
 
 Note that you can expand the items in either list to expose `settings` that show the state of the hardware and parameterize your measurements, respectively.
 
-The folder structure should be of this form:
+For your app, we recommend the following folder structure:
 
 ```sh
 ├── your_project_folder
     ├── ScopeFoundryHW
         ├── company1_model1 	
             ├── company1_model1_hw.py					
+            # optional:
             ├── company1_model1_dev.py			
             ├── company1_model1_test_app.py
             ├── Licence
             ├── README.md     		
-            ├── docs # optional
+            ├── company1_model1_readout.py	
+            ├── docs
                 ├── links.json 
+           
             **
-        **
+
+    ├── measurements
+        ├── your_measurement_1.py
+        ├── your_measurement_1_docs # optional
+            ├── links.json       
+        ├── **
+
     ├── fancy_app.py
-    ├── your_measurement_1.py
-    ├── **
+    **
     
     # after databrowser tutorial
     ├── viewers.py
@@ -69,15 +76,19 @@ The folder structure should be of this form:
 
 In particular, the folder contains:
 
-1. A subfolder `ScopeFoundryHW` containing hardware control code. There must be at least one file, typically ending with `_hw.py`, that contains a subclass of type `HardwareComponent`.
-2. Measurement files containing `Measurement` subclasses.
-3. The actual app file where `Measurement` and `HardwareComponent` are added to the main app. This is the file that gets run.
+1. A subfolder `ScopeFoundryHW` containing hardware control code. There must be at least one file, typically ending with `_hw.py`, that contains a subclass of type `ScopeFoundry.HardwareComponent`.  
 
-Congratulations, you have created your first microscope app and learned the three most important high-level concepts: `HardwareComponent` and `Measurement` can each have `settings`.
+2. A subfolder `measurements` containing files with `ScopeFoundry.Measurement` subclasses. However, measurements that are associated with just one Hardware component are sometimes placed directly in the resp. ScopeFoundryHW (here`company1_model1_readout.py`). 
+
+3. `*_app`:  A file where the app is defined and where  `Measurement` and `HardwareComponent` are added. This is the file that gets run at start-up, i.e. is the entry point to your application.
+
+The optional `docs` and `*_docs` folders will be auto generated - see [Document your Components](/docs/30_tips-and-tricks/document-your-components/ ).
+
+
 
 ## Next Steps
 
-Now that you have interacted with ScopeFoundry and built a microscope app with pre-built components, you probably want to build a system that allows you to perform real scientific experiments. To do this, have a look at tutorials on how to build:
+You have created your first microscope app and learned the three most important high-level concepts: `HardwareComponent` , `Measurement` and `settings`. To build a system that allows you to perform real scientific experiments look at tutorials on how to build:
 
 1. A custom [Hardware Component](../2_hardware-1).
 2. A custom [Measurement](../3_measurement).
