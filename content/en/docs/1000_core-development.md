@@ -8,7 +8,7 @@ weight: 1000
 
 ## Get your copy of ScopeFoundry
 
-If you would like to have a local copy of `ScopeFoundry` to modify within your microscope repository, make a local copy in `your_project_folder`. 
+If you would like to have a local copy of `ScopeFoundry` to modify within your microscope repository, make a local copy in `your_project_folder` such that python imports from there instead of from the environments pip install.
 
 ```sh
 # cd to/your_project_folder
@@ -21,22 +21,24 @@ Then your tree should look like:
 
 ```
 ├── your_project_folder
-	├── ScopeFoundry/			# Local Sub-tree of ScopeFoundry (overrides pip installed scopefoundry)
-	    └── ...
-	├── ScopeFoundryHW/ 			# Local copies of ScopeFoundry hardware plugins
-	    ├── virtual_function_gen/		# Local sub-tree of specific hardware plugin
-	    └── ...
-	├── fancy_app.py
-	# optional
-	├── .git/				# Stores Git repository information of your project (not ScopeFoundry)
-	    └── ...
+    ├── ScopeFoundry/    # Local Sub-tree of ScopeFoundry (overrides pip installed scopefoundry)
+        └── ...
+    ├── ScopeFoundryHW/    # Local copies of ScopeFoundry hardware plugins
+        ├── virtual_function_gen/    # Local sub-tree of specific hardware plugin
+        └── ...
+    ├── measurements/
+        └── ...
+├── fancy_app.py
+# optional
+    ├── .git/    # Stores Git repository information of your project (not ScopeFoundry)
+        └── ...
 ```
 
 ## Contribute
 
 If you want to make contributions to the ScopeFoundry project:
 
-1. Get your own copy of ScopeFoundry (see above)
+1. Get your own copy of ScopeFoundry (see above). We recommend to develop ScopeFoundry in your project folder.
 
 2. fork ScopeFoundry on [GitHub][GitHub]
 
