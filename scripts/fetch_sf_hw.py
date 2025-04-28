@@ -185,13 +185,14 @@ def fetch_and_cache_repos():
         return
 
     cache_data = {
-        "fetched_at": datetime.datetime.now(datetime.UTC).isoformat(),
+        # removed so we don't get a commit if nothing changed.
+        # "fetched_at": datetime.datetime.now(datetime.UTC).isoformat()
         "repositories": hw_repos,
     }
     replace_cached_data(cache_data)
 
-    msg = f"HW Component Cache updated successfully at {cache_data['fetched_at']}"
-    print(msg)
+    # msg = f"HW Component Cache updated successfully at {cache_data['fetched_at']}"
+    # print(msg)
 
 
 if __name__ == "__main__":
