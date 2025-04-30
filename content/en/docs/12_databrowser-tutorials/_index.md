@@ -5,7 +5,8 @@ weight: 200
 ---
 
 [getting_started_docs]:/docs/1_getting-started/
-ScopeFoundry provides a DataBrowserApp that makes it easy for a user to explore a set of experimental results on their computer. It is a plug-in-based application, where data-type plug-ins (a `DataBrowserView`) can show relevant data within the file. 
+
+ScopeFoundry provides a DataBrowserApp that makes it easy for users to explore a set of experimental results on their computer. It is a plug-in-based application, where data-type plug-ins (a `DataBrowserView`) can display relevant data within the file.
 
 The [FoundryDataBrowser project](https://github.com/ScopeFoundry/FoundryDataBrowser) is an example of the ScopeFoundry DataBrowser with a number of Views used to browse common experimental data at the Molecular Foundry.
 
@@ -16,4 +17,4 @@ The [FoundryDataBrowser project](https://github.com/ScopeFoundry/FoundryDataBrow
 ### Steps
 
 1. [Make a DataBrowser app](1_data-browser-app).
-2. [Make an image viewer](2_data-browser-viewer) example that shows images.
+2. [Make an image viewer](2_data-browser-viewer) as an example that shows images.

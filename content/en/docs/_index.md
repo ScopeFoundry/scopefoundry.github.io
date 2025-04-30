@@ -17,33 +17,36 @@ weight: 1
 
 ScopeFoundry is a framework with two types of plugins:
 
-1. HardwareComponents - interfaces with hardware devices.
-2. Measurements - contains the logic to set the state of devices and read and store data.
+1. **HardwareComponents** - interfaces with hardware devices.
+2. **Measurements** - contains the logic to set the state of devices, read data, and store it.
 
 The framework provides an app, defines interfaces between plug-ins, and handles threading to run plugins concurrently.
 
 Users of ScopeFoundry are required to develop these plugins (unless they already exist) and add them to the app.
 
-## Plugin development
+## Plugin Development
 
-This website provides tutorials for creating (and sharing) ScopeFoundry App, HardwareComponents, and Measurements. Depending on your familiarity with ScopeFoundry, we recommend:
+This website provides tutorials for creating (and sharing) ScopeFoundry Apps, HardwareComponents, and Measurements. Depending on your familiarity with ScopeFoundry, we recommend:
 
 1. [Getting Started][getting_started_docs]: Install ScopeFoundry.
-2. [Basic Tutorial][tools_tutorials]: Your first app, basics on HardwareComponent and Measurement Plugin, and first Measurement.
-
+2. [Basic Tutorial][tools_tutorials]: Your first app, basics of HardwareComponent and Measurement Plugin, and your first Measurement.
 3. [Tips and Tricks][tips-and-tricks]: Elevate your plugin development.
-4. [Built-in Measurements][built-in]: Scanning, parameter sweeping, PID feedback control, Sequencer ... are amongst common measurement tasks that ScopeFoundry solves generically.
-5. Check [HardwareComponents Library][301_existing-hardware-components] for existing plugins.
-6. To share and contribute to plugins click [here][sharing_hws].
+4. [Built-in Measurements][built-in]: Scanning, parameter sweeping, PID feedback control, Sequencer, and other common measurement tasks that ScopeFoundry solves generically.
+5. Check the [HardwareComponents Library][301_existing-hardware-components] for existing plugins.
+6. To share and contribute to plugins, click [here][sharing_hws].
 
 ## ScopeFoundry.DataBrowser
 
-Somewhat independent of the above is the ScopeFoundry.DataBrowser - an app that can be used for quick data inspection. Learn how to create the App and to write DataBrowser plugins using [this tutorial][DataBrowser-tutorials].
+Somewhat independent of the above is the ScopeFoundry.DataBrowser - an app that can be used for quick data inspection. Learn how to create the app and write DataBrowser plugins using [this tutorial][DataBrowser-tutorials].
 
-## ScopeFoundry core development
+## ScopeFoundry Core Development
 
 To contribute to the ScopeFoundry framework, go to [core development][core-development].
 
-## Create an issue
+## Report an Issue.
 
-Documentation is a work in progress. Create an issue [here](https://github.com/ScopeFoundry/scopefoundry.github.io) if information is missing.
+To report an issue with **this documentation**, click [here](https://github.com/ScopeFoundry/scopefoundry.github.io/issues).
+
+
+
+To report a bug with **ScopeFoundry**, click [here](https://github.com/ScopeFoundry/scopefoundry.github.io/issues)
