@@ -2,10 +2,9 @@
 title: Sequencer
 description: Save sequences of measurements and other ScopeFoundry operations for later reuse.
 weight: 1
-
 ---
 
-To add to your app:
+To add the Sequencer to your app:
 
 ```python
     def setup(self):
@@ -15,10 +14,10 @@ To add to your app:
         self.add_measurement(Sequencer)
 ```
 
-Check the available operation in the right panel. Hover over the operations label to display a description. 
+Check the available operations in the right panel. Hover over an operation's label to display its description.
 
-On the left panel you see the actual script. Note that it can be saved for later reused.
+On the left panel, you can see the actual script. Note that it can be saved for later reuse.
 
 ![overview](overview.png)
 
-Another Measurement, `SweepSequencer` , wraps the `Sequencer` into another for-loop.
+Another measurement, `SweepSequencer`, wraps the `Sequencer` into an additional for-loop.
