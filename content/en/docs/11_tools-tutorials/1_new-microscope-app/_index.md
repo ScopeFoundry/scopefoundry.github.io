@@ -46,9 +46,9 @@ Note that you can expand the items in either list to expose `settings`. Settings
 For your project, we recommend the following folder structure:
 
 ```sh
-├── your_project_folder
-    ├── ScopeFoundryHW
-        ├── company1_model1 	
+├── your_project_folder/
+    ├── ScopeFoundryHW/
+        ├── company1_model1/	
             ├── company1_model1_hw.py					
             # optional:
             ├── company1_model1_dev.py			
@@ -61,7 +61,7 @@ For your project, we recommend the following folder structure:
            
             **
 
-    ├── measurements
+    ├── measurements/
         ├── your_measurement_1.py
         ├── your_measurement_1_docs # optional
             ├── links.json       
@@ -71,7 +71,7 @@ For your project, we recommend the following folder structure:
     **
     
     # after databrowser tutorial
-    ├── viewers.py
+    ├── viewers/
         ├── images.py	
     ├── fancy_data_browser.py
 ```

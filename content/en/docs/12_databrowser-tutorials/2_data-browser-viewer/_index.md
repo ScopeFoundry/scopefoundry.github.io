@@ -63,10 +63,10 @@ Add these lines to your `fancy_data_browser.py` [file created earlier](../1_data
 The folder structure should be of this form:
 
 ```sh
-├── your_project_folder
+├── your_project_folder/
         ...    
 
-    ├── viewers
+    ├── viewers/
         ├── images.py    	
     ├── fancy_data_browser.py
 ```
