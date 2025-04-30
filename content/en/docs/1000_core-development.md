@@ -1,14 +1,14 @@
 ---
 title: Core Development
-description:  Contribute to the ScopeFoundry framework and become a core developer.
+description: Contribute to the ScopeFoundry framework and become a core developer.
 weight: 1000
 ---
 
-[GitHub]:https://github.com/ScopeFoundry/ScopeFoundry
+[GitHub]: https://github.com/ScopeFoundry/ScopeFoundry
 
-## Get your copy of ScopeFoundry
+## Get Your Copy of ScopeFoundry
 
-If you would like to have a local copy of `ScopeFoundry` to modify within your microscope repository, make a local copy in `your_project_folder` such that python imports from there instead of from the environments pip install.
+If you would like to have a local copy of `ScopeFoundry` to modify within your microscope repository, make a local copy in `your_project_folder` so that Python imports from there instead of from the environment's pip installation.
 
 ```sh
 # cd to/your_project_folder
@@ -17,19 +17,18 @@ cd ScopeFoundry
 git clone https://github.com/ScopeFoundry/ScopeFoundry.git
 ```
 
-Then your tree should look like:
+Then your project folder should look like this:
 
-```
-├── your_project_folder
-    ├── ScopeFoundry/    # Local Sub-tree of ScopeFoundry (overrides pip installed scopefoundry)
+```bash
+├── your_project_folder/
+    ├── ScopeFoundry/    # Local sub-tree of ScopeFoundry (overrides pip-installed ScopeFoundry)
         └── ...
     ├── ScopeFoundryHW/    # Local copies of ScopeFoundry hardware plugins
-        ├── virtual_function_gen/    # Local sub-tree of specific hardware plugin
+        ├── virtual_function_gen/    # Local sub-tree of a specific hardware plugin
         └── ...
     ├── measurements/
         └── ...
-├── fancy_app.py
-# optional
+    ├── fancy_app.py
     ├── .git/    # Stores Git repository information of your project (not ScopeFoundry)
         └── ...
 ```
@@ -38,19 +37,19 @@ Then your tree should look like:
 
 If you want to make contributions to the ScopeFoundry project:
 
-1. Get your own copy of ScopeFoundry (see above). We recommend to develop ScopeFoundry in your project folder.
+1. Get your own copy of ScopeFoundry (see above). We recommend developing ScopeFoundry in your project folder.
 
-2. fork ScopeFoundry on [GitHub][GitHub]
+2. Fork ScopeFoundry on [GitHub][GitHub].
 
-3. add your forked `ScopeFoundry` repo as remote to your local copy`cd to/your_project_folder/ScopeFoundry`
+3. Add your forked `ScopeFoundry` repository as a remote to your local copy. Navigate to `cd to/your_project_folder/ScopeFoundry` and run:
 
-   ``` bash
-   git remote add https://github.com/{YOUR_USER_NAME}/ScopeFoundry.git
+   ```bash
+   git remote add origin https://github.com/{YOUR_USER_NAME}/ScopeFoundry.git
    ```
 
-4. make your contributions, commit and Push them to your remote repo.
+4. Make your contributions, commit them, and push them to your remote repository.
 
-5. create a pull request on [GitHub][GitHub].
+5. Create a pull request on [GitHub][GitHub].
 
 
 

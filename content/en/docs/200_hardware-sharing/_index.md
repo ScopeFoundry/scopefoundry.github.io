@@ -9,9 +9,9 @@ The following instructions explain how to publish `company_model` in your projec
 We recommend  the following folder structure, that be generated with [ScopeFoundry.tools](/docs/11_tools-tutorials/2_hardware-1/#the-template).
 
 ```
-├── your_project_folder
-   ├── ScopeFoundryHW
-      ├── company_model
+├── your_project_folder/
+   ├── ScopeFoundryHW/
+      ├── company_model/
          ├── company_model_hw.py					
          ├── Licence
          ├── README.md
@@ -19,7 +19,7 @@ We recommend  the following folder structure, that be generated with [ScopeFound
          ├── company_model_dev.py			
          ├── company_model_test_app.py
          ├── .gitignore
-         ├── docs
+         ├── docs/
             ├── links.json 
          ├── ** more files/directories that make your hardware component work
          
