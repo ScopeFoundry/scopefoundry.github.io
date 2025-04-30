@@ -5,9 +5,12 @@ title: ScopeFoundry
 [getting_started_docs]:/docs/1_getting-started/
 [tools_tutorials]:/docs/11_tools-tutorials/
 
-{{< blocks/cover title="ScopeFoundry 2.0 out now" image_anchor="bottom" height="auto" >}}
+{{< blocks/cover title="ScopeFoundry 2 out now" image_anchor="bottom" height="auto" >}}
 
 <a class="btn btn-lg btn-primary me-3 mb-4" href="docs/">create your app now <i class="fas fa-arrow-alt-circle-right ms-2"></i>
+</a>
+
+<a class="btn btn-lg btn-secondary me-3 mb-4" href="docs/30_tips-and-tricks/analyze-with-ipynb/">open a scopefoundry .h5 file <i class="fas fa-arrow-alt-circle-right ms-2"></i>
 </a>
 
 
@@ -82,5 +85,4 @@ For posting questions and announcements of latest features.
 {{% /blocks/feature %}}
 
 {{% /blocks/section %}}
-
 
