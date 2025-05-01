@@ -7,41 +7,40 @@ weight: 3
 
 [getting_started_docs]:/docs/1_getting-started/
 
-
-## Recommendation
-
-This feature requires Jupyter Notebook to be installed. It works best when launching an `.ipynb` file (e.g., by double-clicking) opens a Jupyter editor. One *recommended* way:
+This feature works best with Jupyter Notebook installed. We recommend:
 
 1. Install [Visual Studio Code](https://code.visualstudio.com/download).
 2. Install extensions:
    1. Pylance (Microsoft)
    2. Jupyter (Microsoft)
 
-## Trigger feature
-
 There are two ways to start this feature:
 
-1. From ScopeFoundry: Advanced -> Analyze with ipynb. The folder acted upon is the one defined in the `app/save_dir` settings (bottom left panel).
+#### In app:
 
-    ![Screenshot 2025-01-12 at 17.45.20](launch_analyze.png)
+Advanced -> Analyze with ipynb. The folder acted upon is the one defined in the `app/save_dir` settings (bottom left panel).
 
-2. Using ScopeFoundry tools (install instructions [here][getting_started_docs]):
-    ```sh
-    cd "to/your_folder_with_data"
-    ```
-    
-    Potentially (`conda activate scopefoundry`):
-    ```sh
-    python -m ScopeFoundry.tools
-    ```
-    
-    Then click the corresponding button on the Welcome tab.
+![Screenshot 2025-01-12 at 17.45.20](launch_analyze.png)
 
-## Benefit
+#### Without app:
+
+Using ScopeFoundry tools (install instructions [here][getting_started_docs]):
+```sh
+cd "to/your_folder_with_data"
+```
+
+Potentially (`conda activate scopefoundry`):
+```sh
+python -m ScopeFoundry.tools
+```
+
+Then click the button on the Welcome tab.
+
+## Result
 
 This feature generates:
 
-1. An `h5_data_loaders.py` file containing convenience methods based on the `.h5` file content.
+1. An `h5_data_loaders.py` file containing convenience methods based on the contents in the  `.h5` files.
 2. An `overview.ipynb` file where you can start your analysis.
 
 ![analyze_with_ipynb](analyze_with_ipynb.png)
