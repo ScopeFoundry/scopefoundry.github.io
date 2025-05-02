@@ -22,7 +22,7 @@ ScopeFoundry is a framework with two types of plugins:
 
 The framework provides an app, defines interfaces between plug-ins, and handles threading to run plugins concurrently.
 
-![overview](overview.png)
+<img src="overview.png" align="center" alt="overview" style="zoom:33%" >
 
 Users of ScopeFoundry are required to develop these plugins (unless they already exist) and add them to the app.
 
@@ -51,6 +51,4 @@ To contribute to the ScopeFoundry framework, go to [core development][core-devel
 
 To report an issue with **this documentation**, click [here](https://github.com/ScopeFoundry/scopefoundry.github.io/issues).
 
-
-
-To report a bug with **ScopeFoundry**, click [here](https://github.com/ScopeFoundry/scopefoundry.github.io/issues)
+To report a bug with **ScopeFoundry**, click [here](https://github.com/ScopeFoundry/ScopeFoundry/issues)
