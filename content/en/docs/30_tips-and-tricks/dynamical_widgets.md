@@ -20,10 +20,12 @@ The following examples show how to create dynamic widgets from a settings contai
   ```
 
 - **Make an existing `layout` dynamic**:
+  
   ```python
-  from ScopeFoundry.dynamical_widgets import add_to_layout
-  add_to_layout(self.settings, include=("connected", "*_position"))
+  # layout = your_widget.layout()
+  self.settings.add_to_layout(layout, include=("connected", "*_position"))
   ```
 
 Supported layouts are:  
-`QtWidgets.QFormLayout`, `QtWidgets.QHBoxLayout`, `QtWidgets.QVBoxLayout`.
+`QtWidgets.QFormLayout`, `QtWidgets.QHBoxLayout`, `QtWidgets.QVBoxLayout`,         `QtWidgets.QGridLayout`.
+

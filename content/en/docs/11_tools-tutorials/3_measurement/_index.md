@@ -9,7 +9,7 @@ weight: 3
 [getting_started_docs]: /docs/1_getting-started/
 [more on hardware]: docs/11_tools-tutorials/10_hardware-2/
 
-We will describe how to build the `number_gen_readout` measurement that works together with the ScopeFoundryHW package we made in the [previous tutorial](../2_hardware-1). When run, this measurement periodically samples values from the `number_gen` hardware component.
+This tutorial explains how to build the `number_gen_readout` measurement, which works with the ScopeFoundryHW package created in the [previous tutorial](../2_hardware-1). When executed, this measurement periodically samples values from the `number_gen` hardware component.
 
 ## Essential Components
 
@@ -27,13 +27,13 @@ class NumberGenReadoutSimple(Measurement):
     name = "number_gen_readout_simple"
 ```
 
-Then we override the `setup()` and `run()` functions that define the measurement. Starting with:
+Next, override the `setup()` and `run()` functions to define the measurement. In this example we will add three settings that will be used during the measurement.
 
 ```python
     def setup(self):
         """
-        Runs once during App initialization.
-        This is the place to load a user interface file,
+        Runs once during app initialization.
+        This is where you load a user interface file,
         define settings, and set up data structures.
         """
 
@@ -43,99 +43,117 @@ Then we override the `setup()` and `run()` functions that define the measurement
         s.New("save_h5", bool, initial=True)
 ```
 
-The three settings defined will be used during the measurement.
+When a measurement starts, a new thread is launched, and the `run()` function is eventually called. Override this method. **First,** sample values from the `number_gen` hardware component:
 
-When a measurement is started, a new thread is launched, within which eventually the `run()` function is called. Let's override it to:
+  ```python
+      def run(self):
+          """
+          Runs when the measurement starts. Executes in a separate thread from the GUI.
+          It should not update the graphical interface directly and should focus only
+          on data acquisition.
+          """
+          # Prepare an array for data in memory.
+          self.data = np.ones(self.settings["N"])
 
-1. Sample values from the "number_gen" hardware component:
+          # Get a reference to the hardware
+          self.hw = self.app.hardware["number_gen"]
 
-```python
-    def run(self):
-        """
-        Runs when measurement is started. Runs in a separate thread from the GUI.
-        It should not update the graphical interface directly and should only
-        focus on data acquisition.
-        """
-        # Prepare an array for data in memory.
-        self.data = np.ones(self.settings["N"])
-        
-        # Get a reference to the hardware
-        self.hw = self.app.hardware["number_gen"]
-        
-        # N-times sampling the hardware for values
-        for i in range(self.settings["N"]):
-            self.data[i] = self.hw.settings.sine_data.read_from_hardware()
-            time.sleep(self.settings["sampling_period"])
-            self.set_progress(i * 100.0 / self.settings["N"])
-            if self.interrupt_measurement_called:
-                break
-```
+          # Sample the hardware for values N times
+          for i in range(self.settings["N"]):
+              self.data[i] = self.hw.settings.sine_data.read_from_hardware()
+              time.sleep(self.settings["sampling_period"])
+              self.set_progress(i * 100.0 / self.settings["N"])
+              if self.interrupt_measurement_called:
+                  break
+  ```
 
-- The `interrupt_measurement_called` flag is set to `True` when the user stops the measurement. Here it breaks out of the loop as the measurement spends most of its time there.
-- Using `set_progress()`, the progress bar is updated, and an estimated time until the measurement is done is calculated based on the time it started and the progress percentage you set.
+  - The `interrupt_measurement_called` flag is set to `True` when the user interrupts  the measurement through the GUI. 
+  - The `set_progress()` method updates the progress bar and calculates the estimated time remaining based on the progress percentage and the time the measurement started.
 
-2. Save it to an HDF5 file (if the user desires). With this boilerplate code, all settings from every hardware and the measurement are saved.
+**Second,** save the data to an HDF5 file (if the user chooses). The following boilerplate code saves all settings from every hardware component and the measurement:
 
-```python
+{{< tabpane text=true right=false >}}
+
+    {{% tab header="legacy" lang="en" %}}
+
+
+  ```python
         if self.settings["save_h5"]:
             # Open a file
-            self.h5_file = h5_io.h5_base_file(app=self.app, measurement=self)
+            self.h5_meas_group = h5_io.h5_base_file(app=self.app, measurement=self)
 
             # Create a measurement H5 group (folder) within self.h5file
             # This stores all the measurement metadata in this group
-            self.h5_group = h5_io.h5_create_measurement_group(
+            self.h5_meas_group = h5_io.h5_create_measurement_group(
                 measurement=self, h5group=self.h5_file
             )
 
             # Dump the dataset and close the file.
-            self.h5_group.create_dataset(name="y", data=self.data)
+            self.h5_meas_group.create_dataset(name="y", data=self.data)
             self.h5_file.close()
-```
+
+  ```
+  {{% /tab %}}
+
+  {{% tab header="ScopeFoundry 2.1+ with a .png of same metadata" lang="en" %}}
+  ```python
+        if self.settings["save_h5"]:
+            self.open_new_h5_file() # provides self.h5_meas_group and self.dataset_metadata
+            self.h5_meas_group.create_dataset(name="y", data=self.data)
+            self.close_h5_file()
+
+            # Save the data to a PNG file with the same name
+            import matplotlib.pyplot as plt
+            plt.plot(self.data)
+            plt.savefig(self.dataset_metadata.get_file_path(ext=".png"))
+  ```
+  {{% /tab %}}
+{{< /tabpane >}}
 
 #### The Case for Using `self.settings`
 
-- When saving data as written above, the values are added to the resulting file, which is useful:
-  - To analyze data.
-  - The user can drag and drop the file on the app to reload the values and bring ScopeFoundry to the same state.
-- ScopeFoundry already generates widgets in the left tree that the user can use to set values.
-- Provides a coherent way to access settings in other components. For example, here we referenced a setting from the "number_gen" hardware component, asked it to update itself, and retrieved a value.
-- An easy way to generate a GUI and connect to widgets in GUIs, as you will see next.
+- When saving data as described above, the values are added to the resulting file, which is useful for:
+  - Analyzing data.
+  - Reloading the values by dragging and dropping the file onto the app, restoring ScopeFoundry to the same state.
+- ScopeFoundry automatically generates widgets in the left tree that users can use to set values.
+- Provides a consistent way to access settings in other components. For example, here we referenced a setting from the `number_gen` hardware component, updated it, and retrieved a value.
+- Offers an easy way to generate a GUI and connect to widgets in GUIs, as demonstrated next.
 
 ## Adding a Graphical User Interface
 
-We use two Qt-based libraries to create the UI. Let's import them at the top of the file:
+We use two Qt-based libraries to create the UI. Import them at the top of the file:
 
 ```python
 import pyqtgraph as pg
 from qtpy import QtCore, QtWidgets
 ```
 
-The GUI should be created at startup. Hence, override the `setup_figure` function (which gets called after the `setup` function). ScopeFoundry expects that `setup_figure` defines `self.ui` with a widget.
+The GUI should be created at startup. Override the `setup_figure` function (called after the `setup` function). ScopeFoundry expects `setup_figure` to define `self.ui` with a widget.
 
-Here we define the GUI programmatically (alternatively, one can use Qt Creator, see below):
+Here, we define the GUI programmatically (alternatively, one can use Qt Creator, as explained below):
 
 ```python
     def setup_figure(self):
         self.ui = QtWidgets.QWidget()
 ```
 
-`QtWidgets.QWidget()` is an empty widget.
+`QtWidgets.QWidget()` creates an empty widget.
 
-To add widgets onto `self.ui`, one must use a layout. (In the Qt world, one cannot add widgets directly onto a widget.)
+To add widgets to `self.ui`, use a layout. (In Qt, widgets cannot be added directly to another widget.)
 
 ```python
         layout = QtWidgets.QVBoxLayout()
         self.ui.setLayout(layout)
 ```
 
-The type of layout defines how added widgets are arranged. Here, `QVBoxLayout` stacks them vertically. ScopeFoundry provides convenience methods to create widgets that, out of the box, update when `settings` values change and conversely change the `settings` value when its corresponding widget is changed. Let's add widgets for the settings defined in the `setup` function and a start/stop button to the layout:
+The type of layout determines how widgets are arranged. Here, `QVBoxLayout` stacks them vertically. ScopeFoundry provides convenience methods to create widgets that automatically update when `settings` values change and vice versa. Add widgets for the settings defined in the `setup` function and a start/stop button to the layout:
 
 ```python
         layout.addWidget(self.settings.New_UI(include=("sampling_period", "N", "save_h5")))
         layout.addWidget(self.new_start_stop_button())
 ```
 
-Finally, let's add the plot widget, with axes and a line:
+Finally, add the plot widget with axes and a line:
 
 ```python
         self.graphics_widget = pg.GraphicsLayoutWidget(border=(100, 100, 100))
@@ -145,18 +163,18 @@ Finally, let's add the plot widget, with axes and a line:
         layout.addWidget(self.graphics_widget)
 ```
 
-ScopeFoundry calls `update_display()` repeatedly during a measurement. Let's override it:
+ScopeFoundry repeatedly calls `update_display()` during a measurement. Override it as follows:
 
 ```python
     def update_display(self):
         self.plot_lines["y"].setData(self.data["y"])
 ```
 
-Note: You do not have to call `update_display` yourself. You can control the frequency it gets called with the `self.display_update_period` attribute.
+Note: You do not need to call `update_display` yourself. You can control how often it is called using the `self.display_update_period` attribute.
 
-## Putting everything together
+## Putting Everything Together
 
-We place a `number_gen_readout_simple.py` next to the `fancy_app.py`.
+We place a `number_gen_readout_simple.py` file next to the `fancy_app.py`.
 
 ```python
 # number_gen_readout_simple.py
@@ -175,8 +193,8 @@ class NumberGenReadoutSimple(Measurement):
 
     def setup(self):
         """
-        Runs once during App initialization.
-        This is the place to load a user interface file,
+        Runs once during app initialization.
+        This is where you load a user interface file,
         define settings, and set up data structures.
         """
 
@@ -187,9 +205,9 @@ class NumberGenReadoutSimple(Measurement):
 
     def run(self):
         """
-        Runs when the measurement is started. Runs in a separate thread from the GUI.
-        It should not update the graphical interface directly and should only
-        focus on data acquisition.
+        Runs when the measurement starts. Executes in a separate thread from the GUI.
+        It should not update the graphical interface directly and should focus only
+        on data acquisition.
         """
 
         # Prepare an array for data in memory.
@@ -198,7 +216,7 @@ class NumberGenReadoutSimple(Measurement):
         # Get a reference to the hardware
         self.hw = self.app.hardware["number_gen"]
         
-        # N-times sampling the hardware for values
+        # Sample the hardware for values N times
         for i in range(self.settings["N"]):
             self.data[i] = self.hw.settings.sine_data.read_from_hardware()
             time.sleep(self.settings["sampling_period"])
@@ -212,17 +230,17 @@ class NumberGenReadoutSimple(Measurement):
 
             # Create a measurement H5 group (folder) within self.h5file
             # This stores all the measurement metadata in this group
-            self.h5_group = h5_io.h5_create_measurement_group(
+            self.h5_meas_group = h5_io.h5_create_measurement_group(
                 measurement=self, h5group=self.h5_file
             )
 
             # Dump the dataset and close the file
-            self.h5_group.create_dataset(name="y", data=self.data)
+            self.h5_meas_group.create_dataset(name="y", data=self.data)
             self.h5_file.close()
         
     def setup_figure(self):
         """
-        Runs once during App initialization and is responsible
+        Runs once during app initialization and is responsible
         for creating the widget self.ui.        
         """
         self.ui = QtWidgets.QWidget()
@@ -256,24 +274,33 @@ class FancyApp(BaseMicroscopeApp):
     name = "fancy app"
 
     def setup(self):
+        """
+        Runs once during app initialization. This is where you add hardware
+        and measurements to the app.
+        """
 
+        # Add hardware
         from ScopeFoundryHW.random_number_gen import NumberGenHw
         self.add_hardware(NumberGenHw(self))
 
+        # Add measurement
         from number_gen_readout_simple import NumberGenReadoutSimple
         self.add_measurement(NumberGenReadoutSimple(self))
 
 if __name__ == "__main__":
     app = FancyApp(sys.argv)
+    # Optionally load default settings
     # app.settings_load_ini("default_settings.ini")
     sys.exit(app.exec_())
 ```
 
-As usual, this can be run with:
+To run the app, execute the following command in your terminal:
 
 ```sh
 python fancy_app.py
 ```
+
+When executed, the app will display a graphical interface with the measurement and hardware components integrated.
 
 ![done_after](done_after.png)
 
@@ -410,13 +437,13 @@ class NumberGenReadout(Measurement):
 
         # Create a measurement H5 group (folder) within self.h5file
         # This stores all the measurement metadata in this group
-        self.h5_group = h5_io.h5_create_measurement_group(
+        self.h5_meas_group = h5_io.h5_create_measurement_group(
             measurement=self, h5group=self.h5file
         )
 
         # Create an H5 dataset to store the data
         dset = self.data["y"]
-        self.h5_y = self.h5_group.create_dataset(
+        self.h5_y = self.h5_meas_group.create_dataset(
             name="y", shape=dset.shape, dtype=dset.dtype
         )
 
