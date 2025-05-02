@@ -49,3 +49,10 @@ In the notebook, the top two cells are generated:
 
 - **Cell 1**: Imports of data loaders.
 - **Cell 2**: Lists paths to each `.h5` file and how it can be loaded.
+
+It is generally save to re-trigger this feature on the same folder. Because:
+
+- Cell 3 and onwards are not altered!
+
+- Cell 2, has some smarts to only add lines that do not yet exist.
+- Except Cell 1, will overwritten.
