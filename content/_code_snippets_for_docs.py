@@ -99,6 +99,40 @@ class Measure(Measurement):
 
         # self.lq_span = LQRangeSimple(min_lq, max_lq, center_lq, span_lq)
 
+    def run(self):
+
+        if self.settings["save_h5"]:
+            # # Open a file
+            # self.h5_meas_group = h5_io.h5_base_file(app=self.app, measurement=self)
+
+            # # Create a measurement H5 group (folder) within self.h5file
+            # # This stores all the measurement metadata in this group
+            # self.h5_meas_group = h5_io.h5_create_measurement_group(
+            #     measurement=self, h5group=self.h5_file
+            # )
+
+            # # Dump the dataset and close the file.
+            # self.h5_meas_group.create_dataset(name="y", data=self.data)
+            # self.h5_file.close()
+
+
+
+        if self.settings["save_h5"]:
+            self.open_new_h5_file()
+            self.h5_meas_group.create_dataset(name="y", data=self.data)
+            self.close_h5_file()
+
+        if self.settings["save_h5"]:
+            self.open_new_h5_file() # updates new self.h5_meas_group and self.dataset_metadata
+            self.h5_meas_group.create_dataset(name="y", data=self.data)
+            self.close_h5_file()
+
+            # Save the data to a png with same file name
+            import matplotlib.pyplot as plt
+            plt.plot(self.data)
+            plt.savefig(self.dataset_metadata.get_file_path(ext=".png"))
+
+
     def setup_figure(self):
         range = self.settings.New_Range(
             "X", include_center_span=True, include_sweep_type=True

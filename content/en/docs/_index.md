@@ -22,7 +22,11 @@ ScopeFoundry is a framework with two types of plugins:
 
 The framework provides an app, defines interfaces between plug-ins, and handles threading to run plugins concurrently.
 
+![overview](overview.png)
+
 Users of ScopeFoundry are required to develop these plugins (unless they already exist) and add them to the app.
+
+
 
 ## Plugin Development
 
