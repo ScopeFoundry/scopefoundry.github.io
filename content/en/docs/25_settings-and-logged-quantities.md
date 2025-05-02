@@ -1,17 +1,17 @@
 ---
 title: Settings and LoggedQuantity
-description: Keep a value consistent with the UI and the device.
+description: Keep a value consistent across the app, the GUI, and your hardware device.
 weight: 25
 ---
 
-The ubiquitous usage of settings is encouraged as they simplify **synchronization of values with UI widgets, hardware devices, and other settings.** 
+The ubiquitous usage of settings is encouraged as they simplify **synchronization of values with GUI widgets, hardware devices, and other settings.** It is also easy to save settings for later use.
 
-The following example shows the creation of a new setting `X` within a hardware component called "example," which will be used throughout this text:
+The following example shows the creation of a new setting "X" within a hardware component called "example", which will be used throughout this text:
 
 ```python
-from ScopeFoundry import Hardware
+from ScopeFoundry import HardwareComponent
 
-class Example(Hardware):
+class Example(HardwareComponent):
 
     name = "example"
 
@@ -19,14 +19,14 @@ class Example(Hardware):
         lq = self.settings.New("X", float, initial=1.0)
 ```
 
-However, we did not just create a `float`; we created an object of type `ScopeFoundry.LoggedQuantity` (LQ) that holds a `float`. The LQ created here is part of a collection of LQs.
+We did not just create a `float`; we created an object of type `ScopeFoundry.LoggedQuantity` (LQ) that holds a `float`. The LQ created here is part of a collection of LQs.
 
-### Notes:
-- **LoggedQuantity (LQ)** is an object that holds a value. LQs have convenience methods to synchronize their values across plugins and threads.
-- **`settings`** is a collection of LQs. Every `Measurement`, every `HardwareComponent`, and the app itself has an LQCollection. The LQCollection provides convenience functions to generate UI elements.
+## Nomenclature
+- `LoggedQuantity`  or LQ, is an object that holds a value. LQs have convenience methods to synchronize their values across plugins and threads.
+- `settings` is a collection of LQs. Every `Measurement`, every `HardwareComponent`, and the app itself has  settings. The LQCollection provides convenience functions make new LQs and generate UI elements.
 - On this website, the term "setting" (singular) is used interchangeably with LoggedQuantity.
 
----
+
 
 ## Reference a LoggedQuantity
 
@@ -45,19 +45,24 @@ To access the LQ, there are three options depending on your current scope:
    ```
 
 3. **From another plugin:**
+   
    ```python
    lq = self.app.get_lq("hw/example/X")
    ```
-   Here, 'hw' indicates that `example` is a `Hardware`. This is equivalent to:
+   Note that we used an *lq_path*, here “hw/example/X”. 
+   
+   *lq_paths* of hardwares are of the form "hw/hardwarename/setting_name", measurements of the form "mm/hardwarename/setting_name", and app-level of the form “app/setting_name". 
+   
+   The above line is equivalent to:
+   
    ```python
-   lq = self.app.hardwares.example.settings.get_lq("X")
+   lq = self.app.hardware.example.settings.get_lq("X")
    ```
 
----
 
-## Access and Change the Value
+## Retrieve and Change the Value
 
-It is straightforward to change the value of an LQ.
+It is straightforward to change the value of an LQ, there exists two notationations.
 
 1. **From the `settings` container:** Use dictionary-style notation to access and change the value of `X`.
 
@@ -86,11 +91,15 @@ It is straightforward to change the value of an LQ.
     print(f"X has value {val}")  # Outputs 2.0
    ```
 
-Strictly speaking, there is a third way (see `read_from_hardware` below).
+If the LQ has a hardware read function (see #Sync with a Hardware Device), then you can read to value from the hardware, update the LQs value, and retrieve the value using the line:
 
----
+```python
+ val = lq.read_from_hardware()
+```
 
-## Sync with a Widget
+
+
+## Syncing LQ with a Widget
 
 Assume you have already created a QtWidget `my_spin_box` of type `QtWidgets.QDoubleSpinBox`. You can keep the value displayed by the spin box and the value of the setting synchronized using:
 
@@ -111,9 +120,8 @@ Assume you have already created a QtWidget `my_spin_box` of type `QtWidgets.QDou
     widget_with_spinbox = self.settings.New_UI(include=("X",))
 ```
 
----
 
-## Sync with a Hardware Device
+## Syncing LQs with a Hardware Device
 
 We illustrate this by expanding the example above with a `connect` method:
 
@@ -133,19 +141,20 @@ class Example(Hardware):
 
 Here, `read_func` and `write_func` are functions that implement communication with the device. 
 
-**Now you can read the value from the hardware and access it in one line:** 
+Now you can read the value from the hardware and access it in one line: 
 
 ```python
 val = self.app.get_lq("hw/example/X").read_from_hardware()
 ```
 
----
 
-## Syncing LQs with Each Other
+## Syncing LQs with each Other
 
 ### **Single Variable Dependence**
 
-For example, radius as a function of diameter:
+To bi-directionally link two LQs, one needs to define two functions and pass them with the co-dependent LQ to the connect_lq_math method. If  only one-way updates is required, skip defining and passing the reverse function.)
+
+For example, syncing two LQs "radius" with "diameter" 
 
 ```python
         r = self.settings.New("radius")
@@ -153,12 +162,15 @@ For example, radius as a function of diameter:
 
         def to_radius(d):
             return d / 2.0
-        def to_diameter(r):
+        
+        # reverse function
+        def to_diameter(r): 
             return r * 2.0
+        
         r.connect_lq_math(d, to_radius, to_diameter)
 ```
 
-For the special case of **linear** co-dependence, the above code is equivalent to:
+For the special case of **linear** co-dependence, one can use the built-in method `connect_lq_scale`. The above code is equivalent to:
 
 ```python
         r = self.settings.New("radius")
@@ -176,21 +188,21 @@ For example, the volume of a cylinder as a function of its height and radius:
         h = self.settings.New("height")
         v = self.settings.New("cylinder_volume")
 
-        def to_radius(v):
-            r = self.settings["radius"]
-            return r, (v / (3.1415 * r ** (1 / 2)))
-
         def to_cylinder_volume(r, h):
             return 3.1415 * r**2 * h
-
-        v.connect_lq_math((r, h), to_cylinder_volume, to_radius)
+          
+        # reverse function
+        def to_radius_and_height(v):
+            # leaving r unchanged is an arbitrary choice.
+          	r = self.settings["radius"]
+            return r, (v / (3.1415 * r ** (1 / 2)))
+          
+        v.connect_lq_math((r, h), to_cylinder_volume, to_radius_and_height)
 ```
 
 ---
 
 ### Advanced: LQCircularNetwork
-
-*INFO: A more comprehensive implementation of the example below can be found [here](/docs/30_tips-and-tricks/settings-ranges).*
 
 As an example, defining a range 'X' with four settings:
 
@@ -254,4 +266,4 @@ class Interval(LQCircularNetwork):
         self.update_values_synchronously(min=mn, max=mx)
 ```
 
-*INFO: A more comprehensive implementation of the example above can be found [here](/docs/30_tips-and-tricks/settings-ranges).*
+*INFO: ScopeFoundry has more comprehensive implementation of this example, [see documentation here](/docs/30_tips-and-tricks/settings-ranges).*
