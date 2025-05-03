@@ -80,7 +80,7 @@ class NumberGenDev:
 
     """
     This is the low-level dummy device object.
-    Typically, when instantiated, it will connect to the real-world device.
+    When instantiated, it would connect to the real-world device.
     Methods allow for device read and write functions.
     """
         
