@@ -16,10 +16,11 @@ The goals of this tutorial are:
 - To teach you basic concepts, including:
   - Settings and how to access them.
   - Inter-plugin communication.
-
 - To provide tips for creating HardwareComponents for real-world devices.
 
 You can access the code for this tutorial [here](https://github.com/UBene/scope_foundry_2_basic_tutorial).
 
+
+[start now!](1_new-microscope-app)
 
   ![done_after](3_measurement/done_after.png)
