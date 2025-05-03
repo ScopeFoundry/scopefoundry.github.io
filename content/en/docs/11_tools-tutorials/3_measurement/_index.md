@@ -41,6 +41,7 @@ Next, override the `setup()` and `run()` functions to define the measurement. In
         s.New("sampling_period", float, initial=0.1, unit="s")
         s.New("N", int, initial=101)
         s.New("save_h5", bool, initial=True)
+        self.data["y"] = np.ones(self.settings["N"])
 ```
 
 When a measurement starts, a new thread is launched, and the `run()` function is eventually called. Override this method. **First,** sample values from the `number_gen` hardware component:
@@ -53,16 +54,24 @@ When a measurement starts, a new thread is launched, and the `run()` function is
           on data acquisition.
           """
           # Prepare an array for data in memory.
-          self.data = np.ones(self.settings["N"])
+        	y = self.data["y"] = np.ones(self.settings["N"])
 
           # Get a reference to the hardware
-          self.hw = self.app.hardware["number_gen"]
+          hw = self.app.hardware["number_gen"]
+          
 
           # Sample the hardware for values N times
           for i in range(self.settings["N"]):
-              self.data[i] = self.hw.settings.sine_data.read_from_hardware()
+              
+              # read data from device.
+              y[i] = hw.settings.sine_data.read_from_hardware()
+              
+              # wait for the sampling period.
               time.sleep(self.settings["sampling_period"])
+              
               self.set_progress(i * 100.0 / self.settings["N"])
+              
+              # break the loop if user desires.
               if self.interrupt_measurement_called:
                   break
   ```
@@ -89,7 +98,9 @@ When a measurement starts, a new thread is launched, and the `run()` function is
             )
 
             # Dump the dataset and close the file.
-            self.h5_meas_group.create_dataset(name="y", data=self.data)
+            for name, data in self.data.items():
+                self.h5_meas_group.create_dataset(name=name, data=data)
+
             self.h5_file.close()
 
   ```
@@ -99,7 +110,8 @@ When a measurement starts, a new thread is launched, and the `run()` function is
   ```python
         if self.settings["save_h5"]:
             self.open_new_h5_file() # provides self.h5_meas_group and self.dataset_metadata
-            self.h5_meas_group.create_dataset(name="y", data=self.data)
+            for name, data in self.data.items():
+                self.h5_meas_group.create_dataset(name=name, data=data)
             self.close_h5_file()
 
             # Save the data to a PNG file with the same name
@@ -114,7 +126,7 @@ When a measurement starts, a new thread is launched, and the `run()` function is
 
 - When saving data as described above, the values are added to the resulting file, which is useful for:
   - Analyzing data.
-  - Reloading the values by dragging and dropping the file onto the app, restoring ScopeFoundry to the same state.
+  - Reloading the values by dragging and dropping the file onto the app, restoring ScopeFoundry to the same state at a later time.
 - ScopeFoundry automatically generates widgets in the left tree that users can use to set values.
 - Provides a consistent way to access settings in other components. For example, here we referenced a setting from the `number_gen` hardware component, updated it, and retrieved a value.
 - Offers an easy way to generate a GUI and connect to widgets in GUIs, as demonstrated next.
