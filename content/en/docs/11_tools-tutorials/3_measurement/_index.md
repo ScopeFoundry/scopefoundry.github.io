@@ -106,18 +106,20 @@ When a measurement starts, a new thread is launched, and the `run()` function is
   ```
   {{% /tab %}}
 
-  {{% tab header="ScopeFoundry 2.1+ with a .png of same metadata" lang="en" %}}
+  {{% tab header="ScopeFoundry 2.1 with additional PNG" lang="en" %}}
   ```python
+
         if self.settings["save_h5"]:
-            self.open_new_h5_file() # provides self.h5_meas_group and self.dataset_metadata
-            for name, data in self.data.items():
-                self.h5_meas_group.create_dataset(name=name, data=data)
-            self.close_h5_file()
+            # saves data, closes file, and sets self.dataset_metadata
+            self.save_h5(data=self.data)
 
             # Save the data to a PNG file with the same name
             import matplotlib.pyplot as plt
-            plt.plot(self.data)
-            plt.savefig(self.dataset_metadata.get_file_path(ext=".png"))
+
+            plt.figure()
+            plt.plot(y)
+            plt.savefig(self.dataset_metadata.get_file_path(".png"))
+            plt.close()
   ```
   {{% /tab %}}
 {{< /tabpane >}}
@@ -178,8 +180,10 @@ Finally, add the plot widget with axes and a line:
 ScopeFoundry repeatedly calls `update_display()` during a measurement. Override it as follows:
 
 ```python
+
     def update_display(self):
         self.plot_lines["y"].setData(self.data["y"])
+
 ```
 
 Note: You do not need to call `update_display` yourself. You can control how often it is called using the `self.display_update_period` attribute.
@@ -214,6 +218,7 @@ class NumberGenReadoutSimple(Measurement):
         s.New("sampling_period", float, initial=0.1, unit="s")
         s.New("N", int, initial=101)
         s.New("save_h5", bool, initial=True)
+        self.data = {"y": np.ones(self.settings["N"])}
 
     def run(self):
         """
@@ -221,45 +226,51 @@ class NumberGenReadoutSimple(Measurement):
         It should not update the graphical interface directly and should focus only
         on data acquisition.
         """
-
         # Prepare an array for data in memory.
-        self.data = np.ones(self.settings["N"])
-        
+        y = self.data["y"] = np.ones(self.settings["N"])
+
         # Get a reference to the hardware
-        self.hw = self.app.hardware["number_gen"]
-        
+        hw = self.app.hardware["number_gen"]
+
         # Sample the hardware for values N times
         for i in range(self.settings["N"]):
-            self.data[i] = self.hw.settings.sine_data.read_from_hardware()
+
+            # Read data from the device.
+            y[i] = hw.settings.get_lq("sine_data").read_from_hardware()
+
+            # Wait for the sampling period.
             time.sleep(self.settings["sampling_period"])
+
             self.set_progress(i * 100.0 / self.settings["N"])
+
+            # Break the loop if the user requests it.
             if self.interrupt_measurement_called:
                 break
-                        
+
         if self.settings["save_h5"]:
-            # Open a file
-            self.h5_file = h5_io.h5_base_file(app=self.app, measurement=self)
+            # Save data, close the file, and set self.dataset_metadata
+            self.save_h5(data=self.data)
 
-            # Create a measurement H5 group (folder) within self.h5file
-            # This stores all the measurement metadata in this group
-            self.h5_meas_group = h5_io.h5_create_measurement_group(
-                measurement=self, h5group=self.h5_file
-            )
+            # Save the data to a PNG file with the same name
+            import matplotlib.pyplot as plt
 
-            # Dump the dataset and close the file
-            self.h5_meas_group.create_dataset(name="y", data=self.data)
-            self.h5_file.close()
-        
+            plt.figure()
+            plt.plot(y)
+            plt.savefig(self.dataset_metadata.get_file_path(".png"))
+            plt.close()
+
     def setup_figure(self):
         """
         Runs once during app initialization and is responsible
-        for creating the widget self.ui.        
+        for creating the widget self.ui.
         """
         self.ui = QtWidgets.QWidget()
 
         layout = QtWidgets.QVBoxLayout()
         self.ui.setLayout(layout)
-        layout.addWidget(self.settings.New_UI(include=("sampling_period", "N", "save_h5")))
+        layout.addWidget(
+            self.settings.New_UI(include=("sampling_period", "N", "save_h5"))
+        )
         layout.addWidget(self.new_start_stop_button())
         self.graphics_widget = pg.GraphicsLayoutWidget(border=(100, 100, 100))
         self.plot = self.graphics_widget.addPlot(title=self.name)
@@ -267,10 +278,7 @@ class NumberGenReadoutSimple(Measurement):
         layout.addWidget(self.graphics_widget)
 
     def update_display(self):
-        """
-        Updates the display with the latest data.
-        """
-        self.plot_lines["y"].setData(self.data)
+        self.plot_lines["y"].setData(self.data["y"])
 ```
 
 We add this Measurement to the app using the `add_measurement()` method:
@@ -292,11 +300,11 @@ class FancyApp(BaseMicroscopeApp):
         """
 
         # Add hardware
-        from ScopeFoundryHW.random_number_gen import NumberGenHw
-        self.add_hardware(NumberGenHw(self))
+        from ScopeFoundryHW.random_number_gen import NumberGenHW
+        self.add_hardware(NumberGenHW(self))
 
         # Add measurement
-        from number_gen_readout_simple import NumberGenReadoutSimple
+        from measurements.number_gen_readout_simple import NumberGenReadoutSimple
         self.add_measurement(NumberGenReadoutSimple(self))
 
 if __name__ == "__main__":
@@ -323,7 +331,7 @@ When executed, the app will display a graphical interface with the measurement a
 
 ---
 
-### Bonus: Build the User Interface with Qt Creator
+## Bonus: Build the User Interface with Qt Creator
 
 In the above implementation, we created the figure programmatically. However, we could also use Qt Creator to design a user interface.
 
@@ -336,47 +344,51 @@ In the above implementation, we created the figure programmatically. However, we
 ```python
     def setup_figure(self):
         """
-        Runs once during App initialization, after setup().
+        Runs once during App initialization, after setup()
         This is the place to make all graphical interface initializations,
         build plots, etc.
         """
         self.ui_filename = sibling_path(__file__, "number_gen_readout.ui")
         self.ui = load_qt_ui_file(self.ui_filename)
+        self.hw = self.app.hardware["number_gen"]
 
-        # Connect UI widgets to measurement/hardware settings or functions
+        # connect ui widgets to measurement/hardware settings or functions
         self.settings.activation.connect_to_pushButton(self.ui.start_pushButton)
         self.settings.save_h5.connect_to_widget(self.ui.save_h5_checkBox)
+
         self.hw.settings.amplitude.connect_to_widget(self.ui.amp_doubleSpinBox)
-        
+
         # Set up pyqtgraph graph_layout in the UI
         self.graph_layout = pg.GraphicsLayoutWidget()
         self.ui.plot_groupBox.layout().addWidget(self.graph_layout)
 
-        # Create PlotItem object (a set of axes)  
+        # Create PlotItem object (a set of axes)
         self.plot = self.graph_layout.addPlot(title=self.name)
-        # Create PlotDataItem object (a scatter plot on the axes)
+        # Create PlotDataItem object ( a scatter plot on the axes )
         self.plot_lines = {"y": self.plot.plot(pen="g")}
+
 ```
 
-The resulting app should look like:
+The resulting app should look like this:
 
 ![microscope-with-func-gen](microscope-with-func-gen.png)
 
 ---
 
-### Bonus 2: Improved Version
+## Bonus 2: Extendable Dataset
 
 In the above example, we kept things simple. We made some modifications in this final version that has the following improvements:
 
 1. **`run()`**:
-   - The measurement runs indefinitely or until the user hits stop.
-   - Data is dumped to the file during the measurement, ensuring that data is stored if the program crashes.
+   - The measurement runs indefinitely or until the user hits STOP.
+   - Data is dumped to the file during the measurement, ensuring that data is stored even if the program crashes. 
+   - Since we do not know the dataset length beforehand, we made it extendable.
 2. **`setup_figure()`**:
    - Uses a splitter instead of `QVBoxLayout`.
    - Includes settings from the hardware.
 
 ```python
-# number_gen_readout.py
+# number_gen_readout_extendable_dataset.py
 import time
 
 import numpy as np
@@ -386,13 +398,13 @@ from qtpy import QtCore, QtWidgets
 from ScopeFoundry import Measurement, h5_io
 
 
-class NumberGenReadout(Measurement):
+class NumberGenReadoutExtendableDataset(Measurement):
 
-    name = "number_gen_readout"
+    name = "number_gen_readout_extendable_dataset"
 
     def setup(self):
         """
-        Runs once during App initialization.
+        Runs once during app initialization.
         This is the place to load a user interface file,
         define settings, and set up data structures.
         """
@@ -404,20 +416,12 @@ class NumberGenReadout(Measurement):
 
         # Data structure of the measurement
         self.data = {"y": np.ones(101)}
-        
-        # Link to previous functions
         self.hw = self.app.hardware["number_gen"]
 
     def setup_figure(self):
-        """
-        Runs once during App initialization and is responsible
-        for creating the widget self.ui.        
-        
-        Here we create the UI figure programmatically. For an alternative using Qt 
-        Creator, see below.
-        """
+        """Create a figure programmatically."""
 
-        # Make a layout that holds all measurement controls and settings from hardware
+        # Create a layout that holds all measurement controls and settings from hardware
         cb_layout = QtWidgets.QHBoxLayout()
         cb_layout.addWidget(self.new_start_stop_button())
         cb_layout.addWidget(
@@ -426,42 +430,31 @@ class NumberGenReadout(Measurement):
             )
         )
         # Add hardware settings to the layout
-        cb_layout.addWidget(self.hw.settings.New_UI(exclude=("debug_mode", "connected", "port")))
+        cb_layout.addWidget(
+            self.hw.settings.New_UI(exclude=("debug_mode", "connected", "port"))
+        )
         header_widget = QtWidgets.QWidget()
         header_layout = QtWidgets.QVBoxLayout(header_widget)
         header_layout.addLayout(cb_layout)
 
-        # Make a plot widget containing one line
+        # Create a plot widget containing a single line
         self.graphics_widget = pg.GraphicsLayoutWidget(border=(100, 100, 100))
         self.plot = self.graphics_widget.addPlot(title=self.name)
         self.plot_lines = {}
         self.plot_lines["y"] = self.plot.plot(pen="g")
 
-        # Putting everything together
+        # Combine everything
         # ScopeFoundry assumes .ui is the main widget:
         self.ui = QtWidgets.QSplitter(QtCore.Qt.Orientation.Vertical)
         self.ui.addWidget(header_widget)
         self.ui.addWidget(self.graphics_widget)
 
-    def setup_h5_file(self):
-        # This stores all the hardware and app metadata in the H5 file
-        self.h5file = h5_io.h5_base_file(app=self.app, measurement=self)
-
-        # Create a measurement H5 group (folder) within self.h5file
-        # This stores all the measurement metadata in this group
-        self.h5_meas_group = h5_io.h5_create_measurement_group(
-            measurement=self, h5group=self.h5file
-        )
-
-        # Create an H5 dataset to store the data
-        dset = self.data["y"]
-        self.h5_y = self.h5_meas_group.create_dataset(
-            name="y", shape=dset.shape, dtype=dset.dtype
-        )
+    def update_display(self):
+        self.plot_lines["y"].setData(self.data["y"])
 
     def run(self):
         """
-        Runs when the measurement is started. Runs in a separate thread from the GUI.
+        Runs when the measurement is started. Executes in a separate thread from the GUI.
         It should not update the graphical interface directly and should only
         focus on data acquisition.
         """
@@ -470,49 +463,71 @@ class NumberGenReadout(Measurement):
         self.data["y"] = np.ones(self.settings["N"])
 
         if self.settings["save_h5"]:
-            self.setup_h5_file()
+            self.open_new_h5_file()
+            self.h5_y = h5_io.create_extendable_h5_like(
+                h5_group=self.h5_meas_group, name="y", arr=self.data["y"], axis=0
+            )
 
-        # Use a try/finally block to ensure cleanup
+        # Use a try/finally block to ensure cleanup, e.g., closing the data file object.
         try:
             i = 0
+            i_extended = 0
 
-            # Will run forever until interrupt is called
+            # Run indefinitely or until interrupted
             while not self.interrupt_measurement_called:
-                i %= len(self.h5_y)
+                i %= self.settings["N"]
 
-                # Set progress bar percentage complete
+                # Update progress bar percentage
                 self.set_progress(i * 100.0 / self.settings["N"])
 
-                # Fill the buffer with sine wave readings from func_gen hardware
-                self.data["y"][i] = self.hw.settings.sine_data.read_from_hardware()
+                # Fill the buffer with sine wave readings from the hardware
+                val = self.hw.settings.sine_data.read_from_hardware()
+                self.data["y"][i] = val
 
                 if self.settings["save_h5"]:
-                    # If saving data to disk, copy data to H5 dataset
-                    self.h5_y[i] = self.data["y"][i]
-                    # Flush H5
-                    self.h5file.flush()
+                    # Extend h5 data file if needed.
+                    if i_extended >= len(self.h5_y):
+                        self.h5_y.resize(i_extended + self.settings["N"], axis=0)
+
+                    self.h5_y[i_extended] = val
+                    self.h5_file.flush()
 
                 # Wait between readings
                 time.sleep(self.settings["sampling_period"])
 
                 i += 1
+                i_extended += 1
 
         finally:
-            print("NumberGenReadout: Finishing")
+            print(self.name, "finished")
             if self.settings["save_h5"]:
-                # Make sure to close the data file
-                self.h5file.close()
-                
-    def update_display(self):
-        """
-        Updates the display with the latest data.
-        """
-        self.plot_lines["y"].setData(self.data["y"])
+                # Ensure the data file is closed
+                self.close_h5_file()
+                print(self.name, "saved")
+
+    # ---------------------------------------------------------------------------
+    ## UNCOMMENT IF YOU HAVE SCOPEFOUNDRY 2.0 OR EARLIER
+    # ---------------------------------------------------------------------------
+
+    # def open_new_h5_file(self):
+    #     """remove me if you have ScopeFoundry 2.1+"""
+    #     self.close_h5_file()
+
+    #     self.h5_file = h5_io.h5_base_file(self.app, measurement=self)
+    #     self.h5_meas_group = h5_io.h5_create_measurement_group(self, self.h5_file)
+
+    #     return self.h5_meas_group
+
+    # def close_h5_file(self):
+    #     if hasattr(self, "h5_file") and self.h5_file.id is not None:
+    #         self.h5_file.close()
+
+
 ```
 
-#### Result of Improved Version:
+### Result:
 
-![done_after](done_after.png)
+![done_after](extendable-dataset.png)
 
 **Next Steps**
 
