@@ -51,4 +51,4 @@ To contribute to the ScopeFoundry framework, go to [core development][core-devel
 
 To report an issue with **this documentation**, click [here](https://github.com/ScopeFoundry/scopefoundry.github.io/issues).
 
-To report a bug with **ScopeFoundry**, click [here](https://github.com/ScopeFoundry/ScopeFoundry/issues)
+To report a bug with **ScopeFoundry**, click [here](https://github.com/ScopeFoundry/ScopeFoundry/issues).
