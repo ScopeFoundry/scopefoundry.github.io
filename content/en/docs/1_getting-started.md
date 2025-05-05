@@ -16,6 +16,7 @@ If you already have a non-Anaconda version of Python installed, you will need to
 #### Windows
 
 1. Download and install the [Miniconda][anaconda_dl] Python distribution.
+
 2. Create an environment with the required dependencies. Anaconda provides a way to make a clean set of packages in an [environment][anaconda_env_docs]. To create an environment called "scopefoundry," use the `Anaconda(3) Prompt` to run:
 
     ```sh
@@ -36,6 +37,13 @@ If you already have a non-Anaconda version of Python installed, you will need to
 
     *Note: `qtconsole` and `matplotlib` are optional.*
 
+
+4. In ScopeFoundry 2.1 or later, create a first app in `your_project_folder` using:
+
+    ```bash
+    python -m ScopeFoundry init
+    ```
+
 #### Mac / Linux
 
 Follow the same steps as above for Windows, except:
@@ -49,7 +57,7 @@ Follow the same steps as above for Windows, except:
 
 ### Next Steps
 
-- Check your installation by [making your first app](/docs/11_tools-tutorials/1_new-microscope-app/) in 2 minutes.
 - Set up the recommended [editor (IDE)][IDE] for easier code manipulation.
+- Learn the basics by following [this tutorial](/docs/11_tools-tutorials/).
 - Return to the [documentation overview][overview].
 

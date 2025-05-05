@@ -13,10 +13,10 @@ weight: 100
 
 - If you have not already, install [ScopeFoundry](/docs/1_getting-started) using `pip`.
 
-- For code editing or an IDE, we recommend one of the following options:
-   1. [**VS Code**](/docs/100_development-environment/15_vs-code): At the time of writing, VS Code offers more advanced features for code review and editing and is potentially easier to use.
+- For code editing use one or both of the following IDEs:
+   1. [**VS Code**](/docs/100_development-environment/15_vs-code): VS Code offers features for code editing and refactoring and is potentially easier to setup up and use.
    
-   2. [**Eclipse**](/docs/100_development-environment/10_setup_eclipse/): Ideal for live coding and debugging. 
+   2. [**Eclipse**](/docs/100_development-environment/10_setup_eclipse/): Ideal for live coding and debugging, highly recommended during testing plugin testing.
    
       
    

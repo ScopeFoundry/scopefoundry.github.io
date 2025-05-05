@@ -1,6 +1,6 @@
 ---
 title: .h5 File Format
-description: Learn to write your own custom ScopeFoundry hardware and measurement plugins.
+description: Learn to open and understand the .h5 that a ScopeFoundry.Measurement produces.
 weight: 100
 ---
 
@@ -10,6 +10,19 @@ weight: 100
 [FoundryDataBrowser]: https://github.com/ScopeFoundry/FoundryDataBrowser
 
 Measurements that use the recommended .h5 file saving strategy generate .h5 files that contain the data along with data structures that include all the metadata from the microscope app.
+
+## To view .h5 file data, we can:
+
+- Use a graphical viewer like [HDFView][HDFView], or VSCode extensions like the one of [h5web](https://marketplace.visualstudio.com/items?itemName=h5web.vscode-h5web)
+- Use the [FoundryDataBrowser][FoundryDataBrowser] from the ScopeFoundry project, or
+- Make your [own viewer](/docs/12_databrowser-tutorials/).
+- Use a [Analyze with ipynb](/docs/30_tips-and-tricks/analyze-with-ipynb/) or see bellow.
+
+## Example 
+
+{{% pageinfo color="info" %}}
+Since ScopeFoundry 2.0, loading .h5 files has become easier with the [Analyze with ipynb](/docs/30_tips-and-tricks/analyze-with-ipynb/) feature. 
+{{% /pageinfo %}}
 
 The [data file](./building_your_first_microscope_tutorial/1486144636_sine_wave_plot.h5) created by the `sine_wave_plot` measurement has the following hierarchy:
 
@@ -50,9 +63,7 @@ The [data file](./building_your_first_microscope_tutorial/1486144636_sine_wave_p
 
 You will notice that this data file contains much more than just the sine wave data recorded during your measurement. It also contains all the settings of the hardware and measurement conditions at the time of the data acquisition.
 
-{{% pageinfo color="info" %}}
-Since ScopeFoundry 2.0, loading .h5 files is automated - see [analyze_with_ipynb](/docs/30_tips-and-tricks/analyze-with-ipynb/).
-{{% /pageinfo %}}
+
 
 We can access this data file in Python using the [h5py] package.
 
@@ -75,9 +86,3 @@ plt.show()
 ```
 ![Analysis Data Plot](sine_wave_data_plot_42.png)
 
-To view .h5 file data, we can:
-
-- Use a [Jupyter Notebook](/docs/30_tips-and-tricks/analyze-with-ipynb/),
-- Use a graphical viewer like [HDFView],
-- Use the [FoundryDataBrowser] from the ScopeFoundry project, or
-- Make your [own viewer](/docs/12_databrowser-tutorials/).

@@ -1,10 +1,10 @@
 ---
 title: Minimal App Launch
-description: Loads measurement UI's lazily to speed boot time.
+description: Loads measurement UI’s lazily for minimal view and faster boot time.
 weight: 10
 ---
 
-By setting the `mdi = False` at the app class definition, the loading of measurement UIs is omitted at startup. This significantly reduced at startup time. Nevertheless, the UIs can be loaded individually at a later time.
+Setting `mdi = False` in the app class definition omits loading measurement UIs at startup, reducing startup time. However, the UIs can be loaded individually later.
 
 ```python
 class FancyApp(BaseMicroscopeApp):
