@@ -37,6 +37,8 @@ Then your project folder should look like this:
 
 If you want to make contributions to the ScopeFoundry project:
 
+*Voluntarily: use Black Formatter on your code prior to pushing it.*
+
 1. Get your own copy of ScopeFoundry (see above). We recommend developing ScopeFoundry in your project folder.
 
 2. Fork ScopeFoundry on [GitHub][GitHub].
