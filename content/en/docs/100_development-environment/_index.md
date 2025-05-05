@@ -1,11 +1,12 @@
 ---
 title: Recommended Development Environment
-description: Recommended IDE and version history control with Git.
+description: Recommended IDEs and version control with Git.
 weight: 100
 ---
 
-For live coding we recommend Eclipse. For code review and editing VSCode seems to be at time of this writing more advanced.
+For code editing or IDE, we recommend one of the following options:
 
+1. **Eclipse**: Ideal for live coding and debugging.  
+2. **VS Code**: At the time of writing, VS Code offers more advanced features for code review and editing.
 
-
-For version control we recommend git.
+For version control, we recommend using **Git**.
