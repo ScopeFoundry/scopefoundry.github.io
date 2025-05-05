@@ -4,10 +4,10 @@ description: Installing ScopeFoundry and its dependencies.
 weight: 1
 ---
 
-[anaconda_dl]:https://www.anaconda.com/download/success  
-[anaconda_env_docs]: http://conda.pydata.org/docs/using/envs.html  
-[IDE]:/docs/100_development-environment/10_setup_eclipse/  
-[overview]: /docs/  
+[anaconda_dl]:https://www.anaconda.com/download/success
+[anaconda_env_docs]: http://conda.pydata.org/docs/using/envs.html
+[IDE]:/docs/100_development-environment/
+[overview]: /docs/
 
 **We recommend** the [Miniconda][anaconda_dl] Python distribution, which contains many easy-to-install scientific Python packages. We also recommend creating a separate environment for ScopeFoundry. 
 
