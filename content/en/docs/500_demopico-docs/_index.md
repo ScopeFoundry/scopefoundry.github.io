@@ -1,16 +1,17 @@
 ---
 title: Demopico Workshop
 weight: 500
+description: Notes on a workshop with hands-on-device experience.
 ---
 
 {{% pageinfo color="info" %}}
-This is the documentation of a workshop conducted in Summer 2024. To follow this workshop you need hardwares specified [here](/docs/500_demopico-docs/100_demo_pico_hw/#hardware-overview)
+This is the documentation of a workshop conducted in Summer 2024. To follow this workshop you need hardwares specified [here](/docs/500_demopico-docs/100_demo_pico_hw/#hardware-overview).
 {{% /pageinfo %}}
 
 
 
 {{% pageinfo color="info" %}}
-The repo for this workshop can be found [here](https://github.com/ScopeFoundry/demopico)
+The repo for this workshop can be found [here](https://github.com/ScopeFoundry/demopico).
 {{% /pageinfo %}}
 
 
