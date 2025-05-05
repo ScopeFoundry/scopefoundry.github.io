@@ -1,6 +1,6 @@
 ---
 title: Settings and LoggedQuantity
-description: Keep a value consistent across the app, the GUI, and your hardware device.
+description: Keep a value consistent across the app, the GUI, and your hardware device with these central objects.
 weight: 25
 ---
 
@@ -19,12 +19,12 @@ class Example(HardwareComponent):
         lq = self.settings.New("X", float, initial=1.0)
 ```
 
-We did not just create a `float`; we created an object of type `ScopeFoundry.LoggedQuantity` (LQ) that holds a `float`. The LQ created here is part of a collection of LQs.
+We did not just create a `float`; we created an object of type `ScopeFoundry.LoggedQuantity` (LQ) that holds a `float`. The LQ created here is part of a collection of LQs called `settings`.
 
 ## Nomenclature
-- `LoggedQuantity`  or LQ, is an object that holds a value. LQs have convenience methods to synchronize their values across plugins and threads.
-- `settings` is a collection of LQs. Every `Measurement`, every `HardwareComponent`, and the app itself has  settings. The LQCollection provides convenience functions make new LQs and generate UI elements.
-- On this website, the term "setting" (singular) is used interchangeably with LoggedQuantity.
+- `LoggedQuantity`  or LQ, is an object that holds a value. LQs have convenience methods to synchronize their values across plugins, threads, to devices and to the gui.
+- `settings` is a collection of LQs. Every `Measurement`, every `HardwareComponent`, and the `BaseMicroscopeApp` has  settings.  `settings` is of type `LQCollection` , which provide convenience functions make new LQs and generate UI elements.
+- On this website, the term "setting" (singular) is used interchangeably with `LoggedQuantity`.
 
 
 
@@ -201,6 +201,8 @@ For example, the volume of a cylinder as a function of its height and radius:
 ```
 
 ---
+
+*INFO: ScopeFoundry has more comprehensive implementation of this example, [see documentation here](/docs/30_tips-and-tricks/settings-ranges).*
 
 ### Advanced: LQCircularNetwork
 
