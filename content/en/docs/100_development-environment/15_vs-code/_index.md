@@ -20,10 +20,15 @@ This guide explains the steps to set up VS Code after installing the Anaconda en
 
 2. **Install Extensions:**
    1. Python (Microsoft)  
-   2. Pylance (Microsoft)  
-   3. Jupyter (Microsoft)  
+   2. Pylance (Microsoft)          
+      *Optional, but recommended:*
+       - Jupyter (Microsoft) 
+       - [h5web](https://marketplace.visualstudio.com/items?itemName=h5web.vscode-h5web)
+      
+       - see picture.
 
       ![vs-code-extensions](vs-code-extensions.png)
+
 
 3. **File -> Open Folder...** to open `your_project_folder`.
 
