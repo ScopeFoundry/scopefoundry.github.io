@@ -5,7 +5,7 @@ date: 2025-01-01
 weight: 1
 ---
 
-[IDE]:/docs/100_development-environment/10_setup_eclipse/
+[IDE]:/docs/100_development-environment/
 
 [getting_started_docs]:/docs/1_getting-started/
 **Requirement:** [Install ScopeFoundry][getting_started_docs].
