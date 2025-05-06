@@ -25,8 +25,7 @@ class DemoPicoDataLogMeasurement(Measurement):
     def setup(self):
         """
         Runs once during App initialization.
-        This is the place to load a user interface file,
-        define settings, and set up data structures. 
+        This is the place to define settings, and set up data structures. 
         """
 
     def setup_figure(self):
