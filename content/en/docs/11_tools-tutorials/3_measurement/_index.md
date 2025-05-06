@@ -9,7 +9,15 @@ weight: 3
 [getting_started_docs]: /docs/1_getting-started/
 [more on hardware]: docs/11_tools-tutorials/10_hardware-2/
 
+{{% pageinfo color="info" %}}
+New in ScopeFoundry 2.1, generate a template using in `your_project_folder`: 
+```bash
+python -m ScopeFoundry new_mm
+```
+{{% /pageinfo %}}
+
 This tutorial explains how to build the `number_gen_readout` measurement, which works with the ScopeFoundryHW package created in the [previous tutorial](../2_hardware-1). When executed, this measurement periodically samples values from the `number_gen` hardware component.
+
 
 ## Essential Components
 
@@ -33,8 +41,7 @@ Next, override the `setup()` and `run()` functions to define the measurement. In
     def setup(self):
         """
         Runs once during app initialization.
-        This is where you load a user interface file,
-        define settings, and set up data structures.
+        This is where you define your settings and set up data structures.
         """
 
         s = self.settings
@@ -210,8 +217,7 @@ class NumberGenReadoutSimple(Measurement):
     def setup(self):
         """
         Runs once during app initialization.
-        This is where you load a user interface file,
-        define settings, and set up data structures.
+        This is where you define your settings and set up data structures.
         """
 
         s = self.settings
@@ -261,8 +267,9 @@ class NumberGenReadoutSimple(Measurement):
 
     def setup_figure(self):
         """
-        Runs once during app initialization and is responsible
-        for creating the widget self.ui.
+        Runs once during App initialization and is responsible
+        to create widget self.ui.
+        Create plots, controls widgets and buttons here.
         """
         self.ui = QtWidgets.QWidget()
 
@@ -342,14 +349,10 @@ In the above implementation, we created the figure programmatically. However, we
 4. Adjust the `setup_figure()` method of the measurement:
 
 ```python
-    def setup_figure(self):
-        """
-        Runs once during App initialization, after setup()
-        This is the place to make all graphical interface initializations,
-        build plots, etc.
-        """
-        self.ui_filename = sibling_path(__file__, "number_gen_readout.ui")
-        self.ui = load_qt_ui_file(self.ui_filename)
+    
+  	def setup_figure(self):
+        ui_filename = sibling_path(__file__, "number_gen_readout.ui")
+        self.ui = load_qt_ui_file(ui_filename)
         self.hw = self.app.hardware["number_gen"]
 
         # connect ui widgets to measurement/hardware settings or functions
