@@ -28,7 +28,7 @@ We recommend  the following folder structure, that be generated with [ScopeFound
 
 We recommend using the following `.gitignore` file, as it is generally not advisable to track measurement and log data:
 
-```.gitignore
+```python
 # .gitignore
 *.pyc
 *.h5
