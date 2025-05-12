@@ -5,7 +5,7 @@ description: ScopeFoundry hardware plug-in to control PICAM-based Princeton Inst
 weight: 57
 ---
 - [GitHub Repository](https://github.com/UBene/HW_picam)
-- Last Updated: 2025-02-13T11:58:50Z
+- Last Updated: 2025-05-05T10:47:16Z
 - Forked from [HW_picam (ScopeFoundry)](/docs/301_existing-hardware-components/hw_picam-scopefoundry)
 
 #### To add to your app:
@@ -45,7 +45,9 @@ Requirements
 	* numpy
 	* PICAM DLL
 	
-	
+
+download and install Picam SDK (potentially also included with lightfield)
+
 History
 --------
 
