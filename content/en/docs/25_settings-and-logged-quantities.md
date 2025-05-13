@@ -269,3 +269,12 @@ class Interval(LQCircularNetwork):
 ```
 
 *INFO: ScopeFoundry has more comprehensive implementation of this example, [see documentation here](/docs/30_tips-and-tricks/settings-ranges).*
+
+
+
+## Related topics
+
+- [Dynamical Widgets](/docs/30_tips-and-tricks/dynamical_widgets/) 
+- [Initial, Default, and Protected Values](/docs/30_tips-and-tricks/default-values/)
+- [Range Defined by Settings](/docs/30_tips-and-tricks/settings-ranges/)
+
