@@ -89,6 +89,17 @@
             "parent_id": 285366518
         },
         {
+            "name": "HW_pi_spec",
+            "id": 982341951,
+            "owner": "UBene",
+            "html_url": "https://github.com/UBene/HW_pi_spec",
+            "description": null,
+            "updated_at": "2025-05-12T20:03:39Z",
+            "readme": "ScopeFoundryHW.acton_spec\n=====================\n\nPrinceton Instruments / Acton 2300i Spectrometer plug-in for ScopeFoundry.\n\nThis interface uses the RS-232 or USB-serial interface to Acton spectrometers\n\nIt has been tested with Acton 2300i and 300 series spectrometers\n\n\nScopeFoundry is a Python platform for controlling custom laboratory \nexperiments and visualizing scientific data\n\n<http://www.scopefoundry.org>\n\nThis software is not made by or endorsed by Princeton Instruments, Inc.\n\n\nAuthors\n----------\n\nEdward S. Barnard <esbarnard@lbl.gov>\n\n\nRequirements\n------------\n\n\t* ScopeFoundry\n\t* PySerial\n",
+            "default_branch": "main",
+            "parent_id": null
+        },
+        {
             "name": "HW_random_gen",
             "id": 596766200,
             "owner": "UBene",
