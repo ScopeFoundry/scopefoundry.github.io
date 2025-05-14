@@ -115,18 +115,20 @@ When a measurement starts, a new thread is launched, and the `run()` function is
 
   {{% tab header="ScopeFoundry 2.1 with additional PNG" lang="en" %}}
   ```python
-
         if self.settings["save_h5"]:
-            # saves data, closes file, and sets self.dataset_metadata
+            # saves data, closes file,
             self.save_h5(data=self.data)
 
-            # Save the data to a PNG file with the same name
+            # ScopeFoundry 2.1 and later
+            # self.save_h5 also sets self.dataset_metadata
+            # which allows to save data in other formats
             import matplotlib.pyplot as plt
 
             plt.figure()
             plt.plot(y)
             plt.savefig(self.dataset_metadata.get_file_path(".png"))
             plt.close()
+
   ```
   {{% /tab %}}
 {{< /tabpane >}}
@@ -241,23 +243,25 @@ class NumberGenReadoutSimple(Measurement):
         # Sample the hardware for values N times
         for i in range(self.settings["N"]):
 
-            # Read data from the device.
+            # read data from device.
             y[i] = hw.settings.get_lq("sine_data").read_from_hardware()
 
-            # Wait for the sampling period.
+            # wait for the sampling period.
             time.sleep(self.settings["sampling_period"])
 
             self.set_progress(i * 100.0 / self.settings["N"])
 
-            # Break the loop if the user requests it.
+            # break the loop if user desires.
             if self.interrupt_measurement_called:
                 break
 
         if self.settings["save_h5"]:
-            # Save data, close the file, and set self.dataset_metadata
+            # saves data, closes file,
             self.save_h5(data=self.data)
 
-            # Save the data to a PNG file with the same name
+            # ScopeFoundry 2.1 and later
+            # self.save_h5 also sets self.dataset_metadata
+            # which allows to save data in other formats
             import matplotlib.pyplot as plt
 
             plt.figure()
@@ -286,6 +290,28 @@ class NumberGenReadoutSimple(Measurement):
 
     def update_display(self):
         self.plot_lines["y"].setData(self.data["y"])
+
+    # ---------------------------------------------------------------------------
+    ## UNCOMMENT IF YOU HAVE SCOPEFOUNDRY 2.0 OR EARLIER
+    # ---------------------------------------------------------------------------
+
+    # def open_new_h5_file(self):
+    #     """remove me if you have ScopeFoundry 2.1+"""
+    #     self.close_h5_file()
+
+    #     self.h5_file = h5_io.h5_base_file(self.app, measurement=self)
+    #     self.h5_meas_group = h5_io.h5_create_measurement_group(self, self.h5_file)
+
+    #     return self.h5_meas_group
+
+    # def close_h5_file(self):
+    #     if hasattr(self, "h5_file") and self.h5_file.id is not None:
+    #         self.h5_file.close()
+
+    # def save_h5(self, data):
+    #     self.open_new_h5_file(data)
+    #     self.close_h5_file()
+
 ```
 
 We add this Measurement to the app using the `add_measurement()` method:
@@ -524,6 +550,10 @@ class NumberGenReadoutExtendableDataset(Measurement):
     # def close_h5_file(self):
     #     if hasattr(self, "h5_file") and self.h5_file.id is not None:
     #         self.h5_file.close()
+
+    # def save_h5(self, data):
+    #     self.open_new_h5_file(data)
+    #     self.close_h5_file()
 
 
 ```
