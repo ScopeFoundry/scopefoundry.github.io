@@ -5,7 +5,7 @@ description: No description available.
 weight: 38
 ---
 - [GitHub Repository](https://github.com/UBene/HW_princeton_instruments_spectrometers)
-- Last Updated: 2025-05-14T10:00:51Z
+- Last Updated: 2025-05-14T18:26:20Z
 
 
 #### To add to your app:
@@ -21,7 +21,7 @@ git clone https://github.com/UBene/HW_princeton_instruments_spectrometers ScopeF
 ScopeFoundryHW.princeton_instruments_spectrometers
 ==================================================
 
-Princeton Instruments / Acton Spectrometers plug-in for ScopeFoundry.
+Princeton Instruments (now Teledyne) / Acton Spectrometers plug-in for ScopeFoundry.
 
 This interface uses the RS-232 or USB-serial interface to spectrometers.
 
@@ -63,6 +63,6 @@ History
 
 The plug-in has been used internally and has been stable.
 
-### 0.2.0  2025-01-01  Initial public release.
+### 0.2.0  2025-01-01  Added reading wavelength from device.
 
-Added reading wavelength calibration from device.
+Tested with Teledyne Spectra Pro HRS 300.
