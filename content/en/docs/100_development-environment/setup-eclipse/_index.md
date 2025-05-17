@@ -2,7 +2,7 @@
 title: Setup Eclipse
 description: Install Eclipse for live coding reloading.
 date: 2017-01-04
-weight: 10
+weight: 16
 ---
 
 [anaconda_dl]: https://www.continuum.io/downloads
@@ -17,9 +17,9 @@ Requires [install ScopeFoundry]
 
 ### Eclipse + PyDev IDE
 
-![eclipse-logo](../eclipse-logo.png)
+![eclipse-logo](eclipse-logo.png)
 
-![pydev-logo](../pydev-logo.png)
+![pydev-logo](pydev-logo.png)
 
 For an IDE we recommend [Eclipse] with the [PyDev] plugin. While the setup is more complicated than many other IDE's, there is one very useful feature available in PyDev that not available elsewhere: [**Live code reloading**](http://www.pydev.org/manual_adv_debugger_auto_reload.html). This allows a developer to modify any function in ScopeFoundry from within Eclipse and have that new version of the function injected into the running ScopeFoundry App. 
 
@@ -50,7 +50,7 @@ one of the two following ways:
   
   - Right click on the newly created folder in Eclipse, select PyDev-> Set as folder in PYTHONPATH
 
-**Live code reloading** run your App script in Eclipse's Debug Mode ![10_eclipse_debug_mode](../10_eclipse_debug_mode.png) so the code reloads upon saving a file
+**Live code reloading** run your App script in Eclipse's Debug Mode ![10_eclipse_debug_mode](eclipse_debug_mode.png) so the code reloads upon saving a file.
 
 
 
@@ -58,4 +58,5 @@ one of the two following ways:
 
 ## Next 
 
-Install [Git](../20_git).
+- Install [Git](../20_git).
+- [Continue basic tutorial](/docs/11_tools-tutorials/2_hardware-1/).
