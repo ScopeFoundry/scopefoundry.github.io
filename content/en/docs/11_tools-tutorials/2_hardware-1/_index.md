@@ -9,13 +9,11 @@ Here we discuss how to build a custom hardware plug-in for ScopeFoundry. If one 
 
 ### Goals:
 
-- Learn basic ScopeFoundry concepts of `ScopeFoundry.HardwareComponent`.
+- Learn basic concepts of `ScopeFoundry.HardwareComponent`.
 - Create a `HardwareComponent` plugin - a virtual sine wave generator. Virtual because we simulate values instead of connecting to an actual device.
 - Learn how to add the component to your app.
 
-Goals of Hardware Part 2:
-
-- Tips to create the low-level interface that connects to an actual device.
+Tips to create the low-level interface that connects to an actual device see [here](/docs/11_tools-tutorials/10_hardware-2/).
 
 ## The Template
 
@@ -51,7 +49,7 @@ class FancyApp(BaseMicroscopeApp):
 
         from ScopeFoundryHW.random_number_gen import (NumberGenHW,
                                                       NumberGenReadout)
-        self.add_hardware(NumberGenHw(self))
+        self.add_hardware(NumberGenHW(self))
         self.add_measurement(NumberGenReadout(self))
 
 if __name__ == "__main__":
@@ -80,7 +78,7 @@ class NumberGenDev:
 
     """
     This is the low-level dummy device object.
-    Typically, when instantiated, it will connect to the real-world device.
+    When instantiated, it would connect to the real-world device.
     Methods allow for device read and write functions.
     """
         
@@ -141,7 +139,7 @@ If you would like to connect to real scientific equipment and define basic funct
 
 ## The Actual ScopeFoundry Hardware Plug-in
 
-The next step is to create a subclass of `ScopeFoundry.hardware.HardwareComponent` that will be added to the app. It defines the settings of a hardware component in the app and links them to the low-level functions (typically defined in the `_dev` file).
+The next step is to create a subclass of `ScopeFoundry.HardwareComponent` that will be added to the app. It defines the settings of a hardware component in the app and links them to the low-level functions (typically defined in the `_dev` file) at connection.
 
 The required methods are: `setup()`, `connect()`, and `disconnect()`.
 
@@ -182,7 +180,7 @@ class NumberGenHW(HardwareComponent):
         self.settings.disconnect_all_from_hardware()
         del self.dev
 
-    # if you want to continuously update settings implement *run* method
+    # To continuously update settings implement *run* method
     # def run(self):
     #     self.settings.property_x.read_from_hardware()
     #     time.sleep(0.1)
@@ -192,12 +190,12 @@ class NumberGenHW(HardwareComponent):
 
 - **Class**: We make our module a subclass of `HardwareComponent`.
   - **`setup()`**:
-    - Here we set up a few settings for this hardware. These settings are `LoggedQuantity` objects that keep this value in sync between hardware, measurement, and graphical interface, playing a critical role in the ScopeFoundry framework.
+    - Here we set up a few settings for this hardware. These settings are `LoggedQuantity` objects that keep this value in sync between hardware and the app.
   - **`connect()`**:
-    - We define an object `self.dev` which instantiates the low-level device wrapper and thereby accesses hardware functions.
-    - Using `connect_to_hardware()`, we link a setting to functions that handle synchronization with the hardware.
+    - We instantiate the low-level device wrapper `self.dev`. This wrapper establishes a connection to the device and provides method to communicate with the device.
+    - Using `connect_to_hardware()`, we associate a setting to functions that handle the comunication with the hardware. 
   - **`disconnect()`**:
-    - We clean up by removing objects after use.
+    - We clean up by removing objects after use. We want to be able to reconnect to the device.
 
 By having `connect()` and `disconnect()`, we can cleanly reconnect hardware during an app run. This is especially useful when debugging a hardware plug-in for a new device.
 
@@ -213,4 +211,7 @@ You should see:
 
 ![app_after_part1](app_after_part1.png)
 
-Note that we have implicitly created and added a measurement to the app. `number_gen_readout` is not working yet; this will be part of the [next tutorial](../3_measurement).
+## Next steps
+
+- Note that we have implicitly created and added a measurement to the app. `number_gen_readout` is not working yet; this will be part of the [next tutorial](../3_measurement).
+- You can access the code for this tutorial [here](https://github.com/UBene/scope_foundry_2_basic_tutorial).

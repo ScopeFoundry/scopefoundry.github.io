@@ -1,19 +1,19 @@
 
 ---
-title: HW_acton_spec (akshaybkiitb)
-description: Acton Spectrometer 2300i ScopeFoundry Hardware Component
-weight: 52
+title: HW_pi_spec (UBene)
+description: No description available.
+weight: 34
 ---
-- [GitHub Repository](https://github.com/akshaybkiitb/HW_acton_spec)
-- Last Updated: 2020-09-09T11:51:52Z
-- Forked from [HW_acton_spec (ScopeFoundry)](/docs/301_existing-hardware-components/hw_acton_spec-scopefoundry)
+- [GitHub Repository](https://github.com/UBene/HW_pi_spec)
+- Last Updated: 2025-05-12T20:03:39Z
+
 
 #### To add to your app:
 
 `cd to/your_project_folder/` and use the following cmd (requires [git](/docs/100_development-environment/20_git/))
 
 ```bash
-git clone https://github.com/akshaybkiitb/HW_acton_spec ScopeFoundryHW/acton_spec
+git clone https://github.com/UBene/HW_pi_spec ScopeFoundryHW/pi_spec
 ```
 
 

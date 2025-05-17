@@ -22,14 +22,18 @@ ScopeFoundry is a framework with two types of plugins:
 
 The framework provides an app, defines interfaces between plug-ins, and handles threading to run plugins concurrently.
 
+<img src="overview.png" align="center" alt="overview" style="zoom:33%" >
+
 Users of ScopeFoundry are required to develop these plugins (unless they already exist) and add them to the app.
+
+
 
 ## Plugin Development
 
 This website provides tutorials for creating (and sharing) ScopeFoundry Apps, HardwareComponents, and Measurements. Depending on your familiarity with ScopeFoundry, we recommend:
 
 1. [Getting Started][getting_started_docs]: Install ScopeFoundry.
-2. [Basic Tutorial][tools_tutorials]: Your first app, basics of HardwareComponent and Measurement Plugin, and your first Measurement.
+2. [Basic Tutorial][tools_tutorials]: Learn the basics by implementing an app, a HardwareComponent and a Measurement.
 3. [Tips and Tricks][tips-and-tricks]: Elevate your plugin development.
 4. [Built-in Measurements][built-in]: Scanning, parameter sweeping, PID feedback control, Sequencer, and other common measurement tasks that ScopeFoundry solves generically.
 5. Check the [HardwareComponents Library][301_existing-hardware-components] for existing plugins.
@@ -47,6 +51,4 @@ To contribute to the ScopeFoundry framework, go to [core development][core-devel
 
 To report an issue with **this documentation**, click [here](https://github.com/ScopeFoundry/scopefoundry.github.io/issues).
 
-
-
-To report a bug with **ScopeFoundry**, click [here](https://github.com/ScopeFoundry/scopefoundry.github.io/issues)
+To report a bug or request a feature with **ScopeFoundry**, click [here](https://github.com/ScopeFoundry/ScopeFoundry/issues).

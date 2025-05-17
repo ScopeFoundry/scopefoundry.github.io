@@ -4,13 +4,13 @@ description: Git version control and plugin sharing.
 weight: 20
 ---
 
-[anaconda_dl]: https://www.continuum.io/downloads  
-[Eclipse]: http://www.eclipse.org  
-[PyDev]: http://www.pydev.org  
-[conda_env]: http://conda.pydata.org/docs/using/envs.html  
-[install ScopeFoundry]: /docs/1_getting-started  
-[Qt Creator]: https://www.qt.io/offline-installers  
-[SourceTree]: https://www.sourcetreeapp.com  
+[anaconda_dl]: https://www.continuum.io/downloads
+[Eclipse]: http://www.eclipse.org
+[PyDev]: http://www.pydev.org
+[conda_env]: http://conda.pydata.org/docs/using/envs.html
+[install ScopeFoundry]: /docs/1_getting-started
+[Qt Creator]: https://www.qt.io/offline-installers
+[SourceTree]: https://www.sourcetreeapp.com
 
 Using a version-control system (VCS) is highly recommended to keep track of the code that runs your experiment. This allows you to maintain a record of the software used to acquire data on specific experiment days. It also protects against accidental and untraceable changes to the code on your microscope that could affect data acquisition. The current recommended VCS for ScopeFoundry projects is [Git](https://git-scm.com). 
 
@@ -64,3 +64,8 @@ git remote add origin https://github.com/{USER_NAME}/{fancy_app}.git
 There are many tutorials online that explain how to use Git effectively, so we will not repeat that here.
 
 Additionally, there are good graphical interfaces for Git that you may want to explore. One recommendation is [SourceTree](https://www.sourcetreeapp.com), which has a [great tutorial](https://www.youtube.com/playlist?list=PLpL2ONl1hMLtlY1Y7YJNcA5zumvaITLYs).
+
+## Next 
+
+- [Continue basic tutorial](/docs/11_tools-tutorials/2_hardware-1/).
+
