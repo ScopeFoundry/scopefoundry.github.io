@@ -7,6 +7,10 @@ weight: 3
 
 [getting_started_docs]: /docs/1_getting-started/
 
+{{% pageinfo color="info" %}}
+New in ScopeFoundry 2.0
+{{% /pageinfo %}}
+
 This feature works best with Jupyter Notebook installed. We recommend the following steps:
 
 1. Install [Visual Studio Code](https://code.visualstudio.com/download).
@@ -14,27 +18,21 @@ This feature works best with Jupyter Notebook installed. We recommend the follow
    1. Pylance (Microsoft)
    2. Jupyter (Microsoft)
 
+
+
+## Trigger Feature
+
 There are two ways to start this feature:
 
-### In the app:
+### In the app
 
 Navigate to **Advanced -> Analyze with ipynb**. The folder acted upon is the one defined in the `app/save_dir` settings (bottom left panel).
 
 ![Screenshot 2025-01-12 at 17.45.20](launch_analyze.png)
 
-### Without the app:
+### Without the app
 
-Using ScopeFoundry tools (install instructions [here][getting_started_docs]):
-
-```sh
-cd "to/your_folder_with_data"
-```
-
-If necessary, activate the ScopeFoundry environment:
-
-```sh
-conda activate scopefoundry
-```
+Using ScopeFoundry tools (install instructions [here][getting_started_docs]), navigate to your `"to/your_folder_with_data"` and if necessary activate scopefoundry
 
 Then run the following command:
 
@@ -43,6 +41,12 @@ python -m ScopeFoundry.tools
 ```
 
 Click the button on the Welcome tab to proceed.
+
+*or* with 2.1
+
+```bash
+python -m ScopeFoundry ipynb
+```
 
 ## Result
 
@@ -58,10 +62,10 @@ In the notebook, the top two cells are generated:
 - **Cell 1**: Imports the data loaders.
 - **Cell 2**: Lists paths to each `.h5` file and demonstrates how they can be loaded.
 
-## Retriggering
+## Re-triggering
 
-It is generally safe to re-trigger this feature with the caveat:
+After adding more datafiles to the folder, it is generally safe to re-trigger this feature to update cell 2 and add more loaders. However,  the following caveats apply:
 
+- **Cell 1 will be overwritten:** All changes will be lost.
+- Content of Cell 2 will never be deleted. Lines that do not already *exist fuzzily* will be added. For example, a line that has been commented will not be added again.
 - Cell 3 and onwards are not altered.
-- Cell 2 has logic to only add lines that do not already exist.
-- **Cell 1 will be overwritten**:  Avoid making changes to it. 
