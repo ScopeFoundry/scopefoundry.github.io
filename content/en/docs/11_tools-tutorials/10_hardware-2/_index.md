@@ -22,3 +22,10 @@ We identified three categories of communication types which results in three kin
    - With a manufacturer's SDK: [Zwoasi](/docs/301_existing-hardware-components/hw_zwo_camera-scopefoundry/)
    - With VISA: [Thorlabs Powermeter](/docs/301_existing-hardware-components/hw_thorlabs_powermeter-scopefoundry/)
    - GPIB: [Stanford Research System SG 380](/docs/301_existing-hardware-components/hw_srs_sg380-ubene/)
+
+
+
+## Next steps
+
+- Learn tips and tricks
+- Learn more about settings and 

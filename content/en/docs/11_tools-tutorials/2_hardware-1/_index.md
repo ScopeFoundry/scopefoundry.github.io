@@ -9,13 +9,11 @@ Here we discuss how to build a custom hardware plug-in for ScopeFoundry. If one 
 
 ### Goals:
 
-- Learn basic ScopeFoundry concepts of `ScopeFoundry.HardwareComponent`.
+- Learn basic concepts of `ScopeFoundry.HardwareComponent`.
 - Create a `HardwareComponent` plugin - a virtual sine wave generator. Virtual because we simulate values instead of connecting to an actual device.
 - Learn how to add the component to your app.
 
-Goals of Hardware Part 2:
-
-- Tips to create the low-level interface that connects to an actual device.
+Tips to create the low-level interface that connects to an actual device see [here](/docs/11_tools-tutorials/10_hardware-2/).
 
 ## The Template
 
@@ -213,4 +211,7 @@ You should see:
 
 ![app_after_part1](app_after_part1.png)
 
-Note that we have implicitly created and added a measurement to the app. `number_gen_readout` is not working yet; this will be part of the [next tutorial](../3_measurement).
+## Next steps
+
+- Note that we have implicitly created and added a measurement to the app. `number_gen_readout` is not working yet; this will be part of the [next tutorial](../3_measurement).
+- You can access the code for this tutorial [here](https://github.com/UBene/scope_foundry_2_basic_tutorial).
