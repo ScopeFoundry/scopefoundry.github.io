@@ -562,7 +562,8 @@ class NumberGenReadoutExtendableDataset(Measurement):
 
 ![done_after](extendable-dataset.png)
 
-**Next Steps**
+## Next Steps
 
 - [More on hardware][more on hardware]
 - [Analyze with Jupyter Notebook][analyze with Jupyter Notebook]
+- You can access the code for this tutorial [here](https://github.com/UBene/scope_foundry_2_basic_tutorial).

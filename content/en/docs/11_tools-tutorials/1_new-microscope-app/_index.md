@@ -39,7 +39,7 @@ Now is a good time to learn the bare minimum about ScopeFoundry. On the left pan
 
 2. **Measurements**: These are subclasses of the `Measurement` class that define the procedures for acquiring and saving data. They can have graphical user interfaces shown on the right. Can you start the `example_2d_scan`?
 
-Note that you can expand the items in either list to expose `settings`. Settings show the state of the hardware or parameterize your measurements.
+Note that you can expand the items in either list to expose their `settings`. Settings show the state of the hardware or parameterize your measurements.
 
 ### Folder Structure
 
@@ -84,7 +84,7 @@ In particular, the folder contains:
 
 3. `*_app`:  A file where the app is defined and where  `Measurement` and `HardwareComponent` are added. This is the file that gets run at start-up, i.e. is the entry point to your application.
 
-The optional `docs` and `*_docs` folders will be auto generated - see [Document your Components](/docs/30_tips-and-tricks/document-your-components/ ).
+The optional `docs` and `*_docs` folders will be generated - see [Document your Components](/docs/30_tips-and-tricks/document-your-components/ ).
 
 ## Next Steps
 
@@ -93,4 +93,4 @@ You have created your first microscope app and learned the three most important 
 1. A custom [Hardware Component](../2_hardware-1).
 2. A custom [Measurement](../3_measurement).
 
-Or make a quick detour to set up an [IDE].
+Or make a quick detour to set up an [developement environment][IDE].
