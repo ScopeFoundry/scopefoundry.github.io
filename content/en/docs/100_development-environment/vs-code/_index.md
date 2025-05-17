@@ -58,8 +58,10 @@ This guide explains the steps to set up VS Code after installing the Anaconda en
 
 
 
-
-
 ## Next 
 
-Install [Git](../20_git).
+- Install [Git](../20_git).
+
+- Install [Eclipse for better live coding](/docs/100_development-environment/setup-eclipse/).
+
+- [Continue basic tutorial](/docs/11_tools-tutorials/2_hardware-1/).
