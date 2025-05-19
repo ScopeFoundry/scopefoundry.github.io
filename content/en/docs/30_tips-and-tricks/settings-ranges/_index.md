@@ -43,7 +43,7 @@ To define the step size, the user can either use:
 
 - `X_num`.  
 
-To add corresponding widgets to your `.ui` file:
+To add corresponding widgets to your `.ui`:
 
 ```python
     def setup_figure(self):
