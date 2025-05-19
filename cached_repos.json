@@ -1,17 +1,6 @@
 {
     "repositories": [
         {
-            "name": "HW_acton_spec",
-            "id": 597829217,
-            "owner": "UBene",
-            "html_url": "https://github.com/UBene/HW_acton_spec",
-            "description": "Acton Spectrometer 2300i ScopeFoundry Hardware Component",
-            "updated_at": "2022-03-30T13:44:52Z",
-            "readme": "ScopeFoundryHW.acton_spec\n=====================\n\nPrinceton Instruments / Acton 2300i Spectrometer plug-in for ScopeFoundry.\n\nThis interface uses the RS-232 or USB-serial interface to Acton spectrometers\n\nIt has been tested with Acton 2300i and 300 series spectrometers\n\n\nScopeFoundry is a Python platform for controlling custom laboratory \nexperiments and visualizing scientific data\n\n<http://www.scopefoundry.org>\n\nThis software is not made by or endorsed by Princeton Instruments, Inc.\n\n\nAuthors\n----------\n\nEdward S. Barnard <esbarnard@lbl.gov>\n\n\nRequirements\n------------\n\n\t* ScopeFoundry\n\t* PySerial\n",
-            "default_branch": "master",
-            "parent_id": 112244657
-        },
-        {
             "name": "HW_attocube_ecc100",
             "id": 597885447,
             "owner": "UBene",
@@ -83,10 +72,21 @@
             "owner": "UBene",
             "html_url": "https://github.com/UBene/HW_picam",
             "description": "ScopeFoundry hardware plug-in to control PICAM-based Princeton Instruments Cameras",
-            "updated_at": "2025-05-05T10:47:16Z",
-            "readme": "ScopeFoundryHW.picam\n===================================\n\nScopeFoundry hardware plug-in to control PICAM based Princeton Instruments\nCameras. Tested on a PI PIXIS camera.\n\nScopeFoundry is a Python platform for controlling custom laboratory \nexperiments and visualizing scientific data\n\n<http://www.scopefoundry.org>\n\nThis software is not made by or endorsed by the device manufacturer\n\n\nAuthor\n----------\n\nEdward S. Barnard <esbarnard@lbl.gov>\n\n\nRequirements\n------------\n\n\t* ScopeFoundry\n\t* numpy\n\t* PICAM DLL\n\t\n\ndownload and install Picam SDK (potentially also included with lightfield)\n\nHistory\n--------\n\n### 0.1.0\t2020-08-04\tInitial public release.\n\nPlug-in has been used internally and has been stable.\nCheck Git repository for detailed history. Tested on PI PIXIS CCD.\n\n### 0.2.0\t2020-08-04\tConnect to multiple cameras\n\nTested with PI EMCCD, PI Pylon\n",
+            "updated_at": "2025-05-15T11:44:59Z",
+            "readme": "ScopeFoundryHW.picam\n====================\n\nScopeFoundry hardware plug-in to control PICAM-based Princeton Instruments (now Teledyne) Cameras.\n\nScopeFoundry is a Python platform for controlling custom laboratory experiments and visualizing scientific data.\n\n<http://www.scopefoundry.org>\n\nThis software is not made by or endorsed by the device manufacturer.\n\nAuthors\n-------\n\nEdward S. Barnard\nBenedikt Ursprung\n\nRequirements\n------------\n\n* ScopeFoundry  \n* numpy  \n* [PICam SDK & Driver](https://www.teledynevisionsolutions.com/en-hk/products/picam-sdk-amp-driver/)  \n\nDownload and install the [PICam SDK & Driver](https://www.teledynevisionsolutions.com/en-hk/products/picam-sdk-amp-driver/). Currently, the code expects the DLL to be located at `C:\\Program Files\\Princeton Instruments\\PICam\\Runtime\\Picam.dll`.\n\nHistory\n--------\n\n### 0.1.0 2020-08-04  Initial public release.\n\nThe plug-in has been used internally and has been stable.  \nCheck the Git repository for a detailed history. Tested on PI PIXIS CCD.\n\n### 0.2.0 2025-02-13 Connect to multiple cameras.\n\nTested with PI EMCCD and PI PyLon.\n\n### 0.3.0 2025-05-07  Polling measurement \n\nFor triggered image acquisition.  \n\nTested with PIXIS and ProEM.\n",
             "default_branch": "master",
             "parent_id": 285366518
+        },
+        {
+            "name": "HW_princeton_instruments_spectrometers",
+            "id": 983387278,
+            "owner": "UBene",
+            "html_url": "https://github.com/UBene/HW_princeton_instruments_spectrometers",
+            "description": null,
+            "updated_at": "2025-05-14T18:26:20Z",
+            "readme": "ScopeFoundryHW.princeton_instruments_spectrometers\n==================================================\n\nPrinceton Instruments (now Teledyne) / Acton Spectrometers plug-in for ScopeFoundry.\n\nThis interface uses the RS-232 or USB-serial interface to spectrometers.\n\nIt has been tested with:\n- Acton 2300i spectrometers\n- PI 300, 500 series spectrometers\n\nScopeFoundry is a Python platform for controlling custom laboratory \nexperiments and visualizing scientific data.\n\n<http://www.scopefoundry.org>\n\nThis software is not made by or endorsed by Princeton Instruments, Inc.\n\nDesigned to work with HW_picam.\n\nWavelength Calibration\n----------------------\n\n- From calibration parameters stored on the device (e.g., through)\n- Or parameters in the settings (manually calibrated, see docs/calibration.ipynb)\n\nAuthors\n-------\n\nEdward Barnard  \nBenedikt Ursprung\n\nRequirements\n------------\n\n- ScopeFoundry\n- PySerial\n\nHistory\n-------\n\n### 0.1.0  2025-01-01  Initial public release.\n\nThe plug-in has been used internally and has been stable.\n\n### 0.2.0  2025-01-01  Added reading wavelength from device.\n\nTested with Teledyne Spectra Pro HRS 300.",
+            "default_branch": "main",
+            "parent_id": null
         },
         {
             "name": "HW_random_gen",
