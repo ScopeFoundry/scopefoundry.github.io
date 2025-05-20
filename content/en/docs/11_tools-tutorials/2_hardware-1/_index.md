@@ -7,7 +7,7 @@ weight: 2
 
 Here we discuss how to build a custom hardware plug-in for ScopeFoundry. If one is not [available in our list of plug-ins](/docs/301_existing-hardware-components), you can build one based on this tutorial.
 
-### Goals:
+## Goals:
 
 - Learn basic concepts of `ScopeFoundry.HardwareComponent`.
 - Create a `HardwareComponent` plugin - a virtual sine wave generator. Virtual because we simulate values instead of connecting to an actual device.

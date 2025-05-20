@@ -65,7 +65,7 @@ There are many tutorials online that explain how to use Git effectively, so we w
 
 Additionally, there are good graphical interfaces for Git that you may want to explore. One recommendation is [SourceTree](https://www.sourcetreeapp.com), which has a [great tutorial](https://www.youtube.com/playlist?list=PLpL2ONl1hMLtlY1Y7YJNcA5zumvaITLYs).
 
-## Next 
+## Next Steps
 
 - [Continue basic tutorial](/docs/11_tools-tutorials/2_hardware-1/).
 

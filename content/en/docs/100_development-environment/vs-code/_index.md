@@ -14,7 +14,7 @@ weight: 15
 
 This guide explains the steps to set up VS Code after installing the Anaconda environment `scopefoundry`, as described [here][install ScopeFoundry].
 
-### Steps to Set Up VS Code
+## Steps to Set Up VS Code
 
 1. **Install [Visual Studio Code](https://code.visualstudio.com/download).**
 
@@ -58,7 +58,7 @@ This guide explains the steps to set up VS Code after installing the Anaconda en
 
 
 
-## Next 
+## Next Steps
 
 - Install [Git](../20_git).
 

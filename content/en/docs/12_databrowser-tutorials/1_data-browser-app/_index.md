@@ -47,4 +47,6 @@ Resulting in:
 
 ![databrowser_1](databrowser_1.png)
 
-Next, [learn to create a Viewer](../2_data-browser-viewer).
+## Next Steps
+
+- [learn to create a Viewer](../2_data-browser-viewer).
