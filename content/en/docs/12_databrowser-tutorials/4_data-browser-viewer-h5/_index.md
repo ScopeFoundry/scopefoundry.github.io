@@ -93,4 +93,6 @@ With following two lines in your app, the viewer will look like.
 
 ![number_gen_readout_view](number_gen_readout_view.png)
 
-[next](/docs/12_databrowser-tutorials/5_data-browser-plugin/)
+## Next Steps
+
+- [DataBrowserPlugIn](/docs/12_databrowser-tutorials/5_data-browser-plugin/)

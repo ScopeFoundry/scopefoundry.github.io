@@ -37,7 +37,7 @@ The following examples show how to create dynamic widgets from a settings contai
 
 Finally, learn how to create sidebar trees yourself.
 
-### Create a new widget that listens for the addition and removal of settings
+## Create a new widget that listens for the addition and removal of settings
 
 Given `self.settings`:
 
@@ -56,7 +56,7 @@ dyn_widget = new_widget(self.settings, include=("connected", "*_position"))
 
 The `new_widget` function accepts other arguments like `title`, `exclude`, and `style` ("form", "hbox", "scroll_form").
 
-### Add to an existing layout
+## Add to an existing layout
 
 ```python
 from ScopeFoundry import add_to_layout
@@ -66,14 +66,14 @@ from ScopeFoundry import add_to_layout
 add_to_layout(self.settings, layout, include=("connected", "*_position"))
 ```
 
-#### Supported layouts
+### Supported layouts
 
 - `QtWidgets.QFormLayout`
 - `QtWidgets.QHBoxLayout`
 - `QtWidgets.QVBoxLayout`
 - `QtWidgets.QGridLayout`
 
-### Generalizations
+## Generalizations
 
 The same functions can be used on **operations**:
 
