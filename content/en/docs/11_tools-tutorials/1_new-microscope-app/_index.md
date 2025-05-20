@@ -78,11 +78,11 @@ For your project, we recommend the following folder structure:
 
 In particular, the folder contains:
 
-1. A subfolder `ScopeFoundryHW` containing hardware control code. There must be at least one file, typically ending with `_hw.py`, that contains a subclass of type `ScopeFoundry.HardwareComponent`.  
+1. A subfolder `ScopeFoundryHW` containing hardware control code. There must be at least one file, typically ending in `_hw.py`, that contains a subclass of type `ScopeFoundry.HardwareComponent`.  
 
 2. A subfolder `measurements` containing files with `ScopeFoundry.Measurement` subclasses. However, measurements that are associated with just one Hardware component are sometimes placed directly in the resp. ScopeFoundryHW (here`company1_model1_readout.py`). 
 
-3. `*_app`:  A file where the app is defined and where  `Measurement` and `HardwareComponent` are added. This is the file that gets run at start-up, i.e. is the entry point to your application.
+3. A main file, here `fancy_app.py`. This is the file that gets run at start-up, i.e. is the entry point to your application. That file contains a  `ScopeFoundry.BaseMicroscopeApp`  subclass that *composes* subclasses of Measurements and HardwareComponenets. 
 
 The optional `docs` and `*_docs` folders will be generated - see [Document your Components](/docs/30_tips-and-tricks/document-your-components/ ).
 

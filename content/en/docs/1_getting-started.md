@@ -2,6 +2,7 @@
 title: Getting Started
 description: Installing ScopeFoundry and its dependencies.
 weight: 1
+date: 2025-01-01
 ---
 
 [anaconda_dl]:https://www.anaconda.com/download/success

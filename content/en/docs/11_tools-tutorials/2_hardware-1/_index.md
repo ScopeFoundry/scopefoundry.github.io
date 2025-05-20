@@ -28,7 +28,7 @@ conda activate scopefoundry
 python -m ScopeFoundry.tools
 ```
 
-Fill out the `new hardware` tab as shown below and hit `create new hardware`:
+Fill out the *new hardware* tab as shown below and hit *create new hardware* button:
 
 ![tools_new_hardware](tools_new_hardware.png)
 
@@ -62,9 +62,9 @@ From here, in general, two files in `ScopeFoundryHW/random_number_gen` are impor
 
 ## Low-Level Interface: `number_gen_dev.py`
 
-In general, this file provides a class that interfaces between the Python process and the hardware you communicate with. It handles the low-level instructions that need to be sent to the device to write setting values and read data. This file is independent of ScopeFoundry. It is not strictly required, especially when the hardware seller already provides a Python interface module or library. However, it might still help you keep the `_hw` file more organized.
+This file handles the low-level communication with the hardware. This file is independent of ScopeFoundry. It is not strictly required, especially when the hardware seller already provides a Python interface module or library. It is useful in conjunction with the required `ScopeFoundry.HardwareComponent` as it allows HardwareComponent to delegate functionalities.
 
-For now, this file will be provided and simulates a connection to a wave function generator. In [Part 2](../10_hardware-2), we provide tips on how to write this in practice.
+For this tutorial, this file will be provided and simulates a connection to a wave function generator. In [Part 2](../10_hardware-2), we provide tips on how to write this in practice.
 
 Replace the content of `random_gen_dev.py` with the following:
 

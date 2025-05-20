@@ -2,6 +2,7 @@
 title: Ranged Optimization
 description: Maximize a signal within a range.
 weight: 1
+date: 2025-01-01
 ---
 
 Sweeps a setting \\(z\\) within a discrete interval \\(I\\), measures an optimization quantity \\(f(z)\\) and calculates \\(z_0\\) such that:
