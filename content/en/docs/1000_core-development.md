@@ -2,6 +2,7 @@
 title: Core Development
 description: Contribute to the ScopeFoundry framework and become a core developer.
 weight: 1000
+date: 2025-01-01
 ---
 
 [GitHub]: https://github.com/ScopeFoundry/ScopeFoundry

@@ -2,6 +2,7 @@
 title: DataBrowserApp
 description: Learn how to create a custom DataBrowserApp.
 weight: 1
+date: 2025-01-01
 ---
 
 [getting_started_docs]:/docs/1_getting-started/

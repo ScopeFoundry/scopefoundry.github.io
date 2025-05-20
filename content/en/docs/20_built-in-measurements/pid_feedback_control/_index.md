@@ -2,6 +2,7 @@
 title: PID Feedback Control
 description: Use settings defined in hardware to perform feedback on a monitored quantity.
 weight: 10
+date: 2025-01-01
 ---
 
 1. This plug-in relies on the `simple-pid` (v2+) library. Install it (don't forget to `conda activate scopefoundry` if necessary):

@@ -2,6 +2,7 @@
 title: Settings and LoggedQuantity
 description: Keep a value consistent across the app, the GUI, and your hardware device with these central objects.
 weight: 25
+date: 2025-01-01
 ---
 
 The ubiquitous usage of settings is encouraged as:
