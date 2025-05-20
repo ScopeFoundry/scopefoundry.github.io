@@ -73,7 +73,8 @@ Here is a resulting screenshot of running this data browser script and navigatin
 
 ![Image of the DataBrowser](image_viewer.png)
 
+## Next Steps
 
-Tips to for fast development [next](/docs/12_databrowser-tutorials/4_data-browser-viewer-h5/)
+- Tips to for fast development [next](/docs/12_databrowser-tutorials/4_data-browser-viewer-h5/)
 
 

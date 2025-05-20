@@ -16,7 +16,7 @@ The [FoundryDataBrowser project](https://github.com/ScopeFoundry/FoundryDataBrow
 
 The complete code for this tutorial can be found [here](https://github.com/UBene/scope_foundry_2_basic_tutorial).
 
-### Steps
+## Next Steps
 
 1. [Make a DataBrowser app](1_data-browser-app).
 2. [Make an image viewer](2_data-browser-viewer) as an example for a generic image viewer.

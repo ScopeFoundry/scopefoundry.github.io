@@ -31,7 +31,7 @@ You should see:
 
 ![example_microscope_app](example_microscope_app.png)
 
-### Key Takeaways 
+## Key Takeaways 
 
 Now is a good time to learn the bare minimum about ScopeFoundry. On the left panel, you see two lists:
 
@@ -41,7 +41,7 @@ Now is a good time to learn the bare minimum about ScopeFoundry. On the left pan
 
 Note that you can expand the items in either list to expose their `settings`. Settings show the state of the hardware or parameterize your measurements.
 
-### Folder Structure
+## Folder Structure
 
 For your project, we recommend the following folder structure:
 

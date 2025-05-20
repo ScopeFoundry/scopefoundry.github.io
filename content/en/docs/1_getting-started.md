@@ -55,7 +55,7 @@ Follow the same steps as above for Windows, except:
     source activate scopefoundry
     ```
 
-### Next Steps
+## Next Steps
 
 - Set up the recommended [editor (IDE)][IDE] for easier code manipulation.
 - Learn the basics by following [this tutorial](/docs/11_tools-tutorials/).
