@@ -1,6 +1,7 @@
 ---
 title: Scanning and Sweeping
 description: Choose a measurement paradigm based on your needs.
+date: 2025-06-01
 ---
 Since version 2.1, ScopeFoundry provides two built in measurements in which the following cycling repeats:
 

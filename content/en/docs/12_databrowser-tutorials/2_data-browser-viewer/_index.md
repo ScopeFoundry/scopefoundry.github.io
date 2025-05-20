@@ -2,6 +2,7 @@
 title: MatplotlibImreadView Example
 description: Learn how to create custom DataBrowserView for your applications.
 weight: 3
+date: 2025-01-01
 ---
 
 Let's define a custom view. We do this by subclassing the `DataBrowserView` class. Three methods should be defined: `setup()`, `is_file_supported()`, and `on_change_data_filename()`.
@@ -76,5 +77,4 @@ Here is a resulting screenshot of running this data browser script and navigatin
 ## Next Steps
 
 - Tips to for fast development [next](/docs/12_databrowser-tutorials/4_data-browser-viewer-h5/)
-
 

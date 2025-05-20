@@ -1,11 +1,12 @@
 ---
 title: Sweeping
 description: Out-of-the-box setting sweeps and data collection.
+date: 2025-01-01
 weight: 2
 ---
 
 {{% pageinfo color="info" %}}
-New in ScopeFoundry 2.1.
+New in ScopeFoundry 2.1
 {{% /pageinfo %}}
 
 Sweep a setting, collect any setting, run any measurement, or define your own `Collector` to handle data collection.

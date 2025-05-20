@@ -2,6 +2,7 @@
 title: DataBrowser Tutorial
 description: An app for quick data inspection and analysis.
 weight: 200
+date: 2025-01-01
 ---
 
 [getting_started_docs]:/docs/1_getting-started/

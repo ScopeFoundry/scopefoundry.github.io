@@ -2,6 +2,7 @@
 title: Fast H5 File Viewer
 description: Learn how to create a custom `DataBrowserView` for `.h5` files in ScopeFoundry.
 weight: 4
+date: 2025-01-01
 ---
 
 In the previous tutorial, you learned how to create a `DataBrowserView`. Here, we provide tips for faster development after creating a `ScopeFoundry.Measurement`.
