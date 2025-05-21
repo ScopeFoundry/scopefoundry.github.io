@@ -3,6 +3,7 @@ title: Key Concepts
 description: >
   Slides demonstrating ScopeFoundry Concepts
 weight: 200
+date: 2025-01-01
 ---
 ## Why ScopeFoundry
 

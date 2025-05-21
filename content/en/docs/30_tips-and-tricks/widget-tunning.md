@@ -12,7 +12,9 @@ To bidirectionally sync a setting with a `widget`, use the pattern:
 self.settings.get_lq("my_setting").connect_to_widget(widget)
 ```
 
-`connect_to_widget` configures the widget's behavior based on the attributes of `my_setting`, as discussed here. This also affects the convenience methods `New_UI` and `new_default_widget`, see [default widgets](#default-widgets).
+Here we discuss how `connect_to_widget` configures the widget's behavior based on the attributes of `my_setting`. 
+
+Further, `connect_to_widget` affects the convenience methods `New_UI` and `new_default_widget`, see [default widget](#default-widget) bellow.
 
 ## Compatibility matrix
 

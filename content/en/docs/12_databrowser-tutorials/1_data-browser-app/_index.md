@@ -2,6 +2,7 @@
 title: DataBrowserApp
 description: Learn how to create a custom DataBrowserApp.
 weight: 1
+date: 2025-01-01
 ---
 
 [getting_started_docs]:/docs/1_getting-started/
@@ -47,4 +48,6 @@ Resulting in:
 
 ![databrowser_1](databrowser_1.png)
 
-Next, [learn to create a Viewer](../2_data-browser-viewer).
+## Next Steps
+
+- [learn to create a Viewer](../2_data-browser-viewer).
