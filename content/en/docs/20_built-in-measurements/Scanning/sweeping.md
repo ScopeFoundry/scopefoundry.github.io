@@ -6,7 +6,7 @@ weight: 2
 ---
 
 {{% pageinfo color="info" %}}
-New in ScopeFoundry 2.1
+New in ScopeFoundry 2.1 and is still experimental. Internal working is subject to change
 {{% /pageinfo %}}
 
 Sweep a setting, collect any setting, run any measurement, or define your own `Collector` to handle data collection.
