@@ -31,3 +31,7 @@ The two versions of these base classes differ in the way movement is defined.
    {{% /pageinfo %}}
 
    
+   
+   An example can be found by creating a new app using [ScopeFoundry tools](/docs/11_tools-tutorials/1_new-microscope-app/).
+   
+   
