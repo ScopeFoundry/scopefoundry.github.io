@@ -15,7 +15,7 @@ weight: 16
 Requires [install ScopeFoundry]
 
 
-### Eclipse + PyDev IDE
+## Eclipse + PyDev IDE
 
 ![eclipse-logo](eclipse-logo.png)
 
