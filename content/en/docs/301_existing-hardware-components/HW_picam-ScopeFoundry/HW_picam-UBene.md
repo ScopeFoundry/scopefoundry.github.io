@@ -5,7 +5,7 @@ description: ScopeFoundry hardware plug-in to control PICAM-based Princeton Inst
 weight: 57
 ---
 - [GitHub Repository](https://github.com/UBene/HW_picam)
-- Last Updated: 2025-05-25T15:37:12Z
+- Last Updated: 2025-06-10T12:58:17Z
 - Forked from [HW_picam (ScopeFoundry)](/docs/301_existing-hardware-components/hw_picam-scopefoundry)
 
 #### To add to your app:
