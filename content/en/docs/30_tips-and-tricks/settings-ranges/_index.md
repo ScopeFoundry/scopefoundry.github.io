@@ -18,7 +18,7 @@ class XSweep(Measurement):
 
     def run(self):
         # Access the array of X-values
-        for x in self.range.array:
+        for x in self.range.sweep_array:
             # Perform operations for each X-value
             ...
 ```
