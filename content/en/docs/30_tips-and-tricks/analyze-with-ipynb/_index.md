@@ -20,13 +20,21 @@ This feature works best with Jupyter Notebook installed. We recommend the follow
 
 
 
+New in ScopeFoundry 2.2: We recommend to trigger this feature after a success measurement as a new cell that loads the latest measurement is added to the notebook.
+
+
+
 ## Trigger Feature
 
 There are two ways to start this feature:
 
 ### In the app
 
-Navigate to **Advanced -> Analyze with ipynb**. The folder acted upon is the one defined in the `app/save_dir` settings (bottom left panel).
+Click corresponding button on bottom left of the app
+
+ *or* 
+
+navigate to **Advanced -> Analyze with ipynb**. The folder acted upon is the one defined in the `app/save_dir` settings (bottom left panel).
 
 ![Screenshot 2025-01-12 at 17.45.20](launch_analyze.png)
 
@@ -68,4 +76,4 @@ After adding more datafiles to the folder, it is generally safe to re-trigger th
 
 - **Cell 1 will be overwritten:** All changes will be lost.
 - Content of Cell 2 will never be deleted. Lines that do not already *exist fuzzily* will be added. For example, a line that has been commented will not be added again.
-- Cell 3 and onwards are not altered.
+- Cell 3 and onwards are not altered. New in Version 2.2: re-triggering appends a new cell with a line that loads the latest file.
