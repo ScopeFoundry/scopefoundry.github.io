@@ -2,7 +2,7 @@
 ---
 title: HW_thorlabs_powermeter (ScopeFoundry)
 description: No description available.
-weight: 47
+weight: 48
 ---
 - [GitHub Repository](https://github.com/ScopeFoundry/HW_thorlabs_powermeter)
 - Last Updated: 2024-08-12T00:38:50Z

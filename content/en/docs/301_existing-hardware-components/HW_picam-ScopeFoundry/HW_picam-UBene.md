@@ -2,7 +2,7 @@
 ---
 title: HW_picam (UBene)
 description: ScopeFoundry hardware plug-in to control PICAM-based Princeton Instruments Cameras
-weight: 57
+weight: 58
 ---
 - [GitHub Repository](https://github.com/UBene/HW_picam)
 - Last Updated: 2025-07-03T12:00:05Z
