@@ -13,7 +13,7 @@ weight: 6
 `cd to/your_project_folder/` and use the following cmd (requires [git](/docs/100_development-environment/20_git/))
 
 ```bash
-git clone https://github.com/ScopeFoundry/HW_ascom_camera ScopeFoundryHW/ascom_camera
+git submodule add https://github.com/ScopeFoundry/HW_ascom_camera ScopeFoundryHW/ascom_camera
 ```
 
 

@@ -13,7 +13,7 @@ weight: 16
 `cd to/your_project_folder/` and use the following cmd (requires [git](/docs/100_development-environment/20_git/))
 
 ```bash
-git clone https://github.com/UBene/HW_coherent_chameleon_ultra_ii_opo_uv_vis ScopeFoundryHW/coherent_chameleon_ultra_ii_opo_uv_vis
+git submodule add https://github.com/UBene/HW_coherent_chameleon_ultra_ii_opo_uv_vis ScopeFoundryHW/coherent_chameleon_ultra_ii_opo_uv_vis
 ```
 
 

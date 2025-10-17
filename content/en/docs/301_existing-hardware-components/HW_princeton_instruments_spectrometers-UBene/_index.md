@@ -13,7 +13,7 @@ weight: 38
 `cd to/your_project_folder/` and use the following cmd (requires [git](/docs/100_development-environment/20_git/))
 
 ```bash
-git clone https://github.com/UBene/HW_princeton_instruments_spectrometers ScopeFoundryHW/princeton_instruments_spectrometers
+git submodule add https://github.com/UBene/HW_princeton_instruments_spectrometers ScopeFoundryHW/princeton_instruments_spectrometers
 ```
 
 

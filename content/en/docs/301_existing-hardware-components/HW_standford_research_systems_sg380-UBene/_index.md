@@ -13,7 +13,7 @@ weight: 44
 `cd to/your_project_folder/` and use the following cmd (requires [git](/docs/100_development-environment/20_git/))
 
 ```bash
-git clone https://github.com/UBene/HW_standford_research_systems_sg380 ScopeFoundryHW/standford_research_systems_sg380
+git submodule add https://github.com/UBene/HW_standford_research_systems_sg380 ScopeFoundryHW/standford_research_systems_sg380
 ```
 
 

@@ -5,7 +5,7 @@ description: Git Session Manager ScopeFoundry HW component
 weight: 41
 ---
 - [GitHub Repository](https://github.com/ScopeFoundry/HW_session_manager)
-- Last Updated: 2025-10-08T00:18:49Z
+- Last Updated: 2025-10-16T22:19:40Z
 
 
 #### To add to your app:
@@ -13,7 +13,7 @@ weight: 41
 `cd to/your_project_folder/` and use the following cmd (requires [git](/docs/100_development-environment/20_git/))
 
 ```bash
-git clone https://github.com/ScopeFoundry/HW_session_manager ScopeFoundryHW/session_manager
+git submodule add https://github.com/ScopeFoundry/HW_session_manager ScopeFoundryHW/session_manager
 ```
 
 

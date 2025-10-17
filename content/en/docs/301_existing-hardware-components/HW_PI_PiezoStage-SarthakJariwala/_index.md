@@ -13,7 +13,7 @@ weight: 33
 `cd to/your_project_folder/` and use the following cmd (requires [git](/docs/100_development-environment/20_git/))
 
 ```bash
-git clone https://github.com/SarthakJariwala/HW_PI_PiezoStage ScopeFoundryHW/PI_PiezoStage
+git submodule add https://github.com/SarthakJariwala/HW_PI_PiezoStage ScopeFoundryHW/PI_PiezoStage
 ```
 
 

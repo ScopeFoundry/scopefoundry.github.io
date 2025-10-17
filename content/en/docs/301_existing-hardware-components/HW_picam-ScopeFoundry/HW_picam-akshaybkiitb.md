@@ -13,7 +13,7 @@ weight: 57
 `cd to/your_project_folder/` and use the following cmd (requires [git](/docs/100_development-environment/20_git/))
 
 ```bash
-git clone https://github.com/akshaybkiitb/HW_picam ScopeFoundryHW/picam
+git submodule add https://github.com/akshaybkiitb/HW_picam ScopeFoundryHW/picam
 ```
 
 

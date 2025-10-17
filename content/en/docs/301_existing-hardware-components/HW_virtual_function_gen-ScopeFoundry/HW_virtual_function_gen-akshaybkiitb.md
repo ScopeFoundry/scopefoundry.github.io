@@ -13,7 +13,7 @@ weight: 61
 `cd to/your_project_folder/` and use the following cmd (requires [git](/docs/100_development-environment/20_git/))
 
 ```bash
-git clone https://github.com/akshaybkiitb/HW_virtual_function_gen ScopeFoundryHW/virtual_function_gen
+git submodule add https://github.com/akshaybkiitb/HW_virtual_function_gen ScopeFoundryHW/virtual_function_gen
 ```
 
 
