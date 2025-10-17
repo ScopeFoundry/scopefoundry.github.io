@@ -45,8 +45,8 @@ def import_from_gh_your_fork(name, html_url, owner, default_branch="master"):
     return f"mkdir {path} && cd {path} && git init --initial-branch={default_branch} && git remote add origin {html_url.replace(owner, "YOUR_GH_ACC")} && git pull origin {default_branch} && cd .."
 
 
-def clone_from_gh_cmd(name, html_url, owner, default_branch="master"):
-    return f"git clone {html_url} ScopeFoundryHW/{name.strip("HW_")}"
+def submod_from_gh_cmd(name, html_url, owner, default_branch="master"):
+    return f"git submodule add {html_url} ScopeFoundryHW/{name.strip("HW_")}"
 
 
 def import_with_git_subtree(name, html_url, default_branch="master"):
@@ -90,7 +90,7 @@ weight: {weight}
 `cd to/your_project_folder/` and use the following cmd (requires [git](/docs/100_development-environment/20_git/))
 
 ```bash
-{clone_from_gh_cmd(name, html_url, owner, default_branch)}
+{submod_from_gh_cmd(name, html_url, owner, default_branch)}
 ```
 
 
