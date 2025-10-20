@@ -661,6 +661,17 @@
             "parent_id": null
         },
         {
+            "name": "HW_toupcam",
+            "id": 1079497561,
+            "owner": "ScopeFoundry",
+            "html_url": "https://github.com/ScopeFoundry/HW_toupcam",
+            "description": null,
+            "updated_at": "2025-10-19T23:15:56Z",
+            "readme": "README could not be retrieved.",
+            "default_branch": "main",
+            "parent_id": null
+        },
+        {
             "name": "HW_dynamixel_servo",
             "id": 932142210,
             "owner": "trovatello-lab",
