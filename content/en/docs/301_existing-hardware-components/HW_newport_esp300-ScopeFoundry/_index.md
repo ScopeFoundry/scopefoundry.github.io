@@ -2,7 +2,7 @@
 ---
 title: HW_newport_esp300 (ScopeFoundry)
 description: ScopeFoundry Hardware Component for Newport ESP300 motion controller
-weight: 29
+weight: 30
 ---
 - [GitHub Repository](https://github.com/ScopeFoundry/HW_newport_esp300)
 - Last Updated: 2024-08-12T02:07:03Z

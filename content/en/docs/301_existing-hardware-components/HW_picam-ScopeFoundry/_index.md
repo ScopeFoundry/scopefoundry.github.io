@@ -2,7 +2,7 @@
 ---
 title: HW_picam (ScopeFoundry)
 description: ScopeFoundry hardware plug-in to control PICAM-based Princeton Instruments Cameras
-weight: 34
+weight: 35
 ---
 - [GitHub Repository](https://github.com/ScopeFoundry/HW_picam)
 - Last Updated: 2023-01-31T18:27:34Z

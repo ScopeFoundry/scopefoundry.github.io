@@ -2,7 +2,7 @@
 ---
 title: HW_picoharp (ScopeFoundry)
 description: No description available.
-weight: 36
+weight: 37
 ---
 - [GitHub Repository](https://github.com/ScopeFoundry/HW_picoharp)
 - Last Updated: 2017-12-13T17:55:22Z

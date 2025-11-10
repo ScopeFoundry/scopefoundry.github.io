@@ -2,10 +2,10 @@
 ---
 title: HW_oceanoptics_spec (ScopeFoundry)
 description: OceanOptics Spectrometer ScopeFoundry Hardware Component
-weight: 32
+weight: 33
 ---
 - [GitHub Repository](https://github.com/ScopeFoundry/HW_oceanoptics_spec)
-- Last Updated: 2024-08-12T02:05:55Z
+- Last Updated: 2025-11-03T22:42:39Z
 
 
 #### To add to your app:

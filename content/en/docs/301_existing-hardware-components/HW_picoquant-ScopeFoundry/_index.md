@@ -2,7 +2,7 @@
 ---
 title: HW_picoquant (ScopeFoundry)
 description: Picoquant HydraHarp ScopeFoundry Hardware Component
-weight: 37
+weight: 38
 ---
 - [GitHub Repository](https://github.com/ScopeFoundry/HW_picoquant)
 - Last Updated: 2024-08-12T02:04:56Z
