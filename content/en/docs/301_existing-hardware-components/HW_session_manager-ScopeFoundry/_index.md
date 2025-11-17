@@ -5,7 +5,7 @@ description: Git Session Manager ScopeFoundry HW component
 weight: 42
 ---
 - [GitHub Repository](https://github.com/ScopeFoundry/HW_session_manager)
-- Last Updated: 2025-10-22T18:31:33Z
+- Last Updated: 2025-11-12T21:19:24Z
 
 
 #### To add to your app:
