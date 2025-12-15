@@ -215,7 +215,7 @@
             "owner": "ScopeFoundry",
             "html_url": "https://github.com/ScopeFoundry/HW_ascom_camera",
             "description": null,
-            "updated_at": "2024-08-12T01:05:28Z",
+            "updated_at": "2025-12-12T18:50:40Z",
             "readme": "ScopeFoundryHW.ascom_camera\n===========================\n\nScopeFoundry hardware plug-in for ASCOM-connected cameras.\n\nThis interface uses commuicates via ASCOM to many scientific and\nastronomy camera systems.\n\nWindows-only due to ASCOM use of the Microsoft COM interface. \n\n(Tested with a QSI-600 camera)\n\n\nScopeFoundry is a Python platform for controlling custom laboratory \nexperiments and visualizing scientific data\n\n<http://www.scopefoundry.org>\n\nThis software is not made by or endorsed by the ASCOM Initiative.\n\n\nAuthor\n----------\n\nEdward S. Barnard <esbarnard@lbl.gov>\n\n\nLicense\n----------\n\n\nKeywords\n----------\nCamera, CCD\n\nRequirements\n------------\n\n\t* [ScopeFoundry](http://www.scopefoundry.org)\n\t* [pywin32](https://sourceforge.net/projects/pywin32/)\n\t* [ASCOM](http://www.ascom-standards.org)\n\t* Windows XP or later\n",
             "default_branch": "master",
             "parent_id": null

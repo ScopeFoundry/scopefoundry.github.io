@@ -5,7 +5,7 @@ description: No description available.
 weight: 6
 ---
 - [GitHub Repository](https://github.com/ScopeFoundry/HW_ascom_camera)
-- Last Updated: 2024-08-12T01:05:28Z
+- Last Updated: 2025-12-12T18:50:40Z
 
 
 #### To add to your app:
