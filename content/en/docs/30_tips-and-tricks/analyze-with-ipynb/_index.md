@@ -18,15 +18,13 @@ This feature works best with Jupyter Notebook installed. We recommend the follow
    1. Pylance (Microsoft)
    2. Jupyter (Microsoft)
 
-
-
-New in ScopeFoundry 2.2: We recommend to trigger this feature after a success measurement as a new cell that loads the latest measurement is added to the notebook.
-
-
+New in ScopeFoundry 2.2: We recommend to trigger this feature after a success-full measurement as a new cell that loads the latest measurement is appended to the notebook. 
 
 ## Trigger Feature
 
-There are two ways to start this feature:
+Note: In some versions of VS Code the data folder has to be opened explicitly (File -> Open Folder ...) for this feature to work.  
+
+There are two ways to trigger this feature:
 
 ### In the app
 
@@ -50,11 +48,14 @@ python -m ScopeFoundry.tools
 
 Click the button on the Welcome tab to proceed.
 
-*or* with 2.1
+*or* with 2.3
 
 ```bash
-python -m ScopeFoundry ipynb
+python -m ScopeFoundry ipynb-XX 
+# (where XX is 'last' (default), 'all' or 'remaining')
 ```
+
+where XX is 'last' (default), 'all' or 'remaining'.
 
 ## Result
 
@@ -67,13 +68,23 @@ This feature generates the following:
 
 In the notebook, the top two cells are generated:
 
-- **Cell 1**: Imports the data loaders.
-- **Cell 2**: Lists paths to each `.h5` file and demonstrates how they can be loaded.
+- **`CELL #0`**: Imports the data loaders.
+- **`Cell #1`**: Commands to load files in the folder.
 
 ## Re-triggering
 
-After adding more datafiles to the folder, it is generally safe to re-trigger this feature to update cell 2 and add more loaders. However,  the following caveats apply:
+After adding more data-files to the folder, it is generally safe to re-trigger this feature to update `CELL #1` and add more loaders. However,  the following caveats apply:
 
-- **Cell 1 will be overwritten:** All changes will be lost.
-- Content of Cell 2 will never be deleted. Lines that do not already *exist fuzzily* will be added. For example, a line that has been commented will not be added again.
-- Cell 3 and onwards are not altered. New in Version 2.2: re-triggering appends a new cell with a line that loads the latest file.
+- `CELL #0` **will be overwritten:** All changes will be lost.
+- Content of `CELL #1` will never be deleted. Lines that do not already *exist fuzzily* will be added. For example, a line that has been commented will not be added again.
+- Cells onwards are not altered. New in Version 2.2: re-triggering appends a new cell with a line that loads the latest file.
+
+
+
+# Clean up data folder
+
+{{% pageinfo color="info" %}}
+New in ScopeFoundry 2.3
+{{% /pageinfo %}}
+
+See `CELL #0` for instructions to archive .h5 that are not mentioned in your notebook.
