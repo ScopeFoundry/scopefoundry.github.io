@@ -2,7 +2,7 @@
 ---
 title: HW_quantum_composer (ScopeFoundry)
 description: Quantum Composer HW
-weight: 40
+weight: 41
 ---
 - [GitHub Repository](https://github.com/ScopeFoundry/HW_quantum_composer)
 - Last Updated: 2024-08-12T00:40:26Z
