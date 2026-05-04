@@ -468,7 +468,7 @@
             "owner": "ScopeFoundry",
             "html_url": "https://github.com/ScopeFoundry/HW_andor_spec",
             "description": "Andor Spectrometer ScopeFoundry Hardware Component",
-            "updated_at": "2024-08-12T00:45:08Z",
+            "updated_at": "2026-04-28T17:36:21Z",
             "readme": "README could not be retrieved.",
             "default_branch": "master",
             "parent_id": null
@@ -611,7 +611,7 @@
             "owner": "ScopeFoundry",
             "html_url": "https://github.com/ScopeFoundry/HW_andor3",
             "description": "Andor CMOS Camera (SDK3) ScopeFoundry Hardware Component",
-            "updated_at": "2024-08-12T02:11:43Z",
+            "updated_at": "2026-04-28T17:34:56Z",
             "readme": "README could not be retrieved.",
             "default_branch": "master",
             "parent_id": null

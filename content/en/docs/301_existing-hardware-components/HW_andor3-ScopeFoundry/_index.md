@@ -5,7 +5,7 @@ description: Andor CMOS Camera (SDK3) ScopeFoundry Hardware Component
 weight: 3
 ---
 - [GitHub Repository](https://github.com/ScopeFoundry/HW_andor3)
-- Last Updated: 2024-08-12T02:11:43Z
+- Last Updated: 2026-04-28T17:34:56Z
 
 
 #### To add to your app:

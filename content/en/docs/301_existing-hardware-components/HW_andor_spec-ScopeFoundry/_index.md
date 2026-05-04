@@ -5,7 +5,7 @@ description: Andor Spectrometer ScopeFoundry Hardware Component
 weight: 5
 ---
 - [GitHub Repository](https://github.com/ScopeFoundry/HW_andor_spec)
-- Last Updated: 2024-08-12T00:45:08Z
+- Last Updated: 2026-04-28T17:36:21Z
 
 
 #### To add to your app:
