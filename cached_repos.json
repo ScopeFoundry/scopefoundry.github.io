@@ -705,6 +705,17 @@
             "parent_id": null
         },
         {
+            "name": "HW_AvaSpec",
+            "id": 1249702575,
+            "owner": "ScopeFoundry",
+            "html_url": "https://github.com/ScopeFoundry/HW_AvaSpec",
+            "description": "Avantes AvaSpec Spectrometer ScopeFoundry Hardware Component",
+            "updated_at": "2026-05-26T01:06:48Z",
+            "readme": "README could not be retrieved.",
+            "default_branch": "main",
+            "parent_id": null
+        },
+        {
             "name": "HW_dynamixel_servo",
             "id": 932142210,
             "owner": "trovatello-lab",

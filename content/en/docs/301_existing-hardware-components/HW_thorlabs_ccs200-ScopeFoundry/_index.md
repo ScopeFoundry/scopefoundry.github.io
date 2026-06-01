@@ -2,7 +2,7 @@
 ---
 title: HW_thorlabs_ccs200 (ScopeFoundry)
 description: No description available.
-weight: 50
+weight: 51
 ---
 - [GitHub Repository](https://github.com/ScopeFoundry/HW_thorlabs_ccs200)
 - Last Updated: 2025-11-03T22:37:41Z

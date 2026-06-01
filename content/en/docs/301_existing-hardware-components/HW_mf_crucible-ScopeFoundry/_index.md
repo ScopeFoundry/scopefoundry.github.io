@@ -2,7 +2,7 @@
 ---
 title: HW_mf_crucible (ScopeFoundry)
 description: MF Crucible Data Platform ScopeFoundry Hardware Component
-weight: 29
+weight: 30
 ---
 - [GitHub Repository](https://github.com/ScopeFoundry/HW_mf_crucible)
 - Last Updated: 2024-08-12T02:45:13Z

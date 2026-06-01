@@ -2,7 +2,7 @@
 ---
 title: HW_chameleon_compact_opo (ScopeFoundry)
 description: Coherent Chameleon Compact OPO Laser System ScopeFoundry Hardware Component
-weight: 14
+weight: 15
 ---
 - [GitHub Repository](https://github.com/ScopeFoundry/HW_chameleon_compact_opo)
 - Last Updated: 2024-08-12T01:04:29Z

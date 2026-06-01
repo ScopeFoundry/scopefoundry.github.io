@@ -2,7 +2,7 @@
 ---
 title: HW_dps3005_powersupply (ScopeFoundry)
 description: DPS3005 DC-DC Power Supply ScopeFoundry Hardware Component
-weight: 19
+weight: 20
 ---
 - [GitHub Repository](https://github.com/ScopeFoundry/HW_dps3005_powersupply)
 - Last Updated: 2024-08-12T02:24:45Z

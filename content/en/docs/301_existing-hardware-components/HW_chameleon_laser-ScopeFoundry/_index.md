@@ -2,7 +2,7 @@
 ---
 title: HW_chameleon_laser (ScopeFoundry)
 description: Coherent Chameleon Ultra II Ti:Sapphire Laser ScopeFoundry Hardware Component
-weight: 15
+weight: 16
 ---
 - [GitHub Repository](https://github.com/ScopeFoundry/HW_chameleon_laser)
 - Last Updated: 2024-08-12T01:01:53Z

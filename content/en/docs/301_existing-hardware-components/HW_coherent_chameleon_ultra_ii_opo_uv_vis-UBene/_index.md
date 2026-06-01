@@ -2,7 +2,7 @@
 ---
 title: HW_coherent_chameleon_ultra_ii_opo_uv_vis (UBene)
 description: ScopeFoundry plugin to control conherent laser system including a Chameleon, OPO uv vis
-weight: 16
+weight: 17
 ---
 - [GitHub Repository](https://github.com/UBene/HW_coherent_chameleon_ultra_ii_opo_uv_vis)
 - Last Updated: 2025-02-16T20:24:32Z

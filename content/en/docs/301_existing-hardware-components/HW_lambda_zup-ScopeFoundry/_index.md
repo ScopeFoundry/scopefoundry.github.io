@@ -2,7 +2,7 @@
 ---
 title: HW_lambda_zup (ScopeFoundry)
 description: Lambda Zup Power Supply ScopeFoundry Hardware Component
-weight: 25
+weight: 26
 ---
 - [GitHub Repository](https://github.com/ScopeFoundry/HW_lambda_zup)
 - Last Updated: 2024-08-12T00:33:19Z
