@@ -5,7 +5,7 @@ description: ScopeFoundry Hardware Component for Newport ESP300 motion controlle
 weight: 32
 ---
 - [GitHub Repository](https://github.com/ScopeFoundry/HW_newport_esp300)
-- Last Updated: 2024-08-12T02:07:03Z
+- Last Updated: 2026-06-10T13:02:58Z
 
 
 #### To add to your app:
