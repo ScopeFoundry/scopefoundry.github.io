@@ -237,7 +237,7 @@
             "owner": "ScopeFoundry",
             "html_url": "https://github.com/ScopeFoundry/HW_thorlabs_powermeter",
             "description": null,
-            "updated_at": "2024-08-12T00:38:50Z",
+            "updated_at": "2026-07-08T03:37:39Z",
             "readme": "ScopeFoundryHW.thorlabs_powermeter\n==================================\n\nThorlabs PM100D powermeter hardware plug-in for ScopeFoundry.\n\nThis interface uses the PyVISA 1.5 library to communicate over USB.\n\nHardware information available from Thorlabs:\n<https://www.thorlabs.com/thorproduct.cfm?partnumber=PM100D>\n\nScopeFoundry is a Python platform for controlling custom laboratory \nexperiments and visualizing scientific data\n\n<http://www.scopefoundry.org>\n\nThis software is not made by or endorsed by Thorlabs, Inc.\n\n\nAuthor\n----------\n\nEdward S. Barnard <esbarnard@lbl.gov>\n\n\nRequirements\n------------\n\n * ScopeFoundry\n *  [PyVisa](https://pyvisa.readthedocs.io/en/stable/)\n * [Legacy Thorlabs driver](https://www.thorlabs.com/software_pages/viewsoftwarepage.cfm?code=PM100x)\n\n \nHow to Install\n---------------\n\npip install pyvisa",
             "default_branch": "master",
             "parent_id": null
@@ -281,7 +281,7 @@
             "owner": "ScopeFoundry",
             "html_url": "https://github.com/ScopeFoundry/HW_mcl_stage",
             "description": "MadCityLabs Nanopositioner Stage ScopeFoundry Hardware component",
-            "updated_at": "2025-04-08T22:35:02Z",
+            "updated_at": "2026-07-08T20:01:51Z",
             "readme": "ScopeFoundryHW.mcl_stage\n=====================\n\nMadCityLabs Piezo USB plug-in for ScopeFoundry.\n\nThis interface uses the MadLib device driver from MadCityLabs to\ncontrol MadCityLabs stages controlled by Nano-Drive piezo controllers.\nTo use this, please contact MadCityLabs for the required software and DLL. \n\nIt has been tested with 2 and 3 axis NanoPDQ stages.\n\nScopeFoundry is a Python platform for controlling custom laboratory \nexperiments and visualizing scientific data\n\n<http://www.scopefoundry.org>\n\nThis software is not made by or endorsed by MadCityLabs, Inc.\n\n\nAuthors\n----------\n\nEdward S. Barnard <esbarnard@lbl.gov>\n\n\nRequirements\n------------\n\n\t* ScopeFoundry\n",
             "default_branch": "master",
             "parent_id": null
@@ -336,7 +336,7 @@
             "owner": "ScopeFoundry",
             "html_url": "https://github.com/ScopeFoundry/HW_andor_camera",
             "description": null,
-            "updated_at": "2024-08-12T00:29:30Z",
+            "updated_at": "2026-07-08T17:19:43Z",
             "readme": "README could not be retrieved.",
             "default_branch": "master",
             "parent_id": null
@@ -380,7 +380,7 @@
             "owner": "ScopeFoundry",
             "html_url": "https://github.com/ScopeFoundry/HW_asi_stage",
             "description": "ASI Stage ScopeFoundry Hardware Component",
-            "updated_at": "2025-11-17T14:18:37Z",
+            "updated_at": "2026-07-07T23:46:43Z",
             "readme": "README could not be retrieved.",
             "default_branch": "main",
             "parent_id": null
@@ -446,7 +446,7 @@
             "owner": "ScopeFoundry",
             "html_url": "https://github.com/ScopeFoundry/HW_dynamixel_servo",
             "description": "Robotis Dynamixel Servo Motor ScopeFoundry Hardware Component",
-            "updated_at": "2024-08-12T00:41:58Z",
+            "updated_at": "2026-07-08T03:36:00Z",
             "readme": "README could not be retrieved.",
             "default_branch": "master",
             "parent_id": null
@@ -711,6 +711,17 @@
             "html_url": "https://github.com/ScopeFoundry/HW_AvaSpec",
             "description": "Avantes AvaSpec Spectrometer ScopeFoundry Hardware Component",
             "updated_at": "2026-05-26T01:06:48Z",
+            "readme": "README could not be retrieved.",
+            "default_branch": "main",
+            "parent_id": null
+        },
+        {
+            "name": "HW_thorlabs_elliptec",
+            "id": 1292885620,
+            "owner": "ScopeFoundry",
+            "html_url": "https://github.com/ScopeFoundry/HW_thorlabs_elliptec",
+            "description": null,
+            "updated_at": "2026-07-08T19:47:38Z",
             "readme": "README could not be retrieved.",
             "default_branch": "main",
             "parent_id": null
