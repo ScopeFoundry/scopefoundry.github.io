@@ -281,7 +281,7 @@
             "owner": "ScopeFoundry",
             "html_url": "https://github.com/ScopeFoundry/HW_mcl_stage",
             "description": "MadCityLabs Nanopositioner Stage ScopeFoundry Hardware component",
-            "updated_at": "2026-07-08T20:01:51Z",
+            "updated_at": "2026-07-24T20:05:34Z",
             "readme": "ScopeFoundryHW.mcl_stage\n=====================\n\nMadCityLabs Piezo USB plug-in for ScopeFoundry.\n\nThis interface uses the MadLib device driver from MadCityLabs to\ncontrol MadCityLabs stages controlled by Nano-Drive piezo controllers.\nTo use this, please contact MadCityLabs for the required software and DLL. \n\nIt has been tested with 2 and 3 axis NanoPDQ stages.\n\nScopeFoundry is a Python platform for controlling custom laboratory \nexperiments and visualizing scientific data\n\n<http://www.scopefoundry.org>\n\nThis software is not made by or endorsed by MadCityLabs, Inc.\n\n\nAuthors\n----------\n\nEdward S. Barnard <esbarnard@lbl.gov>\n\n\nRequirements\n------------\n\n\t* ScopeFoundry\n",
             "default_branch": "master",
             "parent_id": null
@@ -336,7 +336,7 @@
             "owner": "ScopeFoundry",
             "html_url": "https://github.com/ScopeFoundry/HW_andor_camera",
             "description": null,
-            "updated_at": "2026-07-08T17:19:43Z",
+            "updated_at": "2026-07-21T22:39:44Z",
             "readme": "README could not be retrieved.",
             "default_branch": "master",
             "parent_id": null
@@ -688,7 +688,7 @@
             "owner": "ScopeFoundry",
             "html_url": "https://github.com/ScopeFoundry/HW_micros_pollux_stage",
             "description": null,
-            "updated_at": "2025-11-03T22:47:21Z",
+            "updated_at": "2026-07-24T18:37:48Z",
             "readme": "README could not be retrieved.",
             "default_branch": "main",
             "parent_id": null

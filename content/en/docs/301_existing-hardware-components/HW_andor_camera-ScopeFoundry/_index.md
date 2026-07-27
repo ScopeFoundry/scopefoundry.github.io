@@ -5,7 +5,7 @@ description: No description available.
 weight: 4
 ---
 - [GitHub Repository](https://github.com/ScopeFoundry/HW_andor_camera)
-- Last Updated: 2026-07-08T17:19:43Z
+- Last Updated: 2026-07-21T22:39:44Z
 
 
 #### To add to your app:

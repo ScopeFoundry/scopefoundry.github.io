@@ -5,7 +5,7 @@ description: MadCityLabs Nanopositioner Stage ScopeFoundry Hardware component
 weight: 28
 ---
 - [GitHub Repository](https://github.com/ScopeFoundry/HW_mcl_stage)
-- Last Updated: 2026-07-08T20:01:51Z
+- Last Updated: 2026-07-24T20:05:34Z
 
 
 #### To add to your app:
