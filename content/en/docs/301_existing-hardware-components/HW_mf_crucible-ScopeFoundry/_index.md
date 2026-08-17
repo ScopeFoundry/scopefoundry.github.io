@@ -5,7 +5,7 @@ description: MF Crucible Data Platform ScopeFoundry Hardware Component
 weight: 30
 ---
 - [GitHub Repository](https://github.com/ScopeFoundry/HW_mf_crucible)
-- Last Updated: 2024-08-12T02:45:13Z
+- Last Updated: 2026-08-14T23:36:15Z
 
 
 #### To add to your app:
