@@ -2,7 +2,7 @@
 ---
 title: HW_thorlabs_elliptec (ScopeFoundry)
 description: No description available.
-weight: 52
+weight: 57
 ---
 - [GitHub Repository](https://github.com/ScopeFoundry/HW_thorlabs_elliptec)
 - Last Updated: 2026-07-08T19:47:38Z

@@ -2,7 +2,7 @@
 ---
 title: HW_mcp_server (ScopeFoundry)
 description: No description available.
-weight: 29
+weight: 31
 ---
 - [GitHub Repository](https://github.com/ScopeFoundry/HW_mcp_server)
 - Last Updated: 2026-02-17T21:49:35Z

@@ -2,7 +2,7 @@
 ---
 title: HW_micros_pollux_stage (ScopeFoundry)
 description: No description available.
-weight: 31
+weight: 33
 ---
 - [GitHub Repository](https://github.com/ScopeFoundry/HW_micros_pollux_stage)
 - Last Updated: 2026-07-24T18:37:48Z

@@ -2,10 +2,10 @@
 ---
 title: HW_pico_tc08 (ScopeFoundry)
 description: Pico Technology TC08 USB Thermocouple Reader ScopeFoundry Hardware Component
-weight: 38
+weight: 41
 ---
 - [GitHub Repository](https://github.com/ScopeFoundry/HW_pico_tc08)
-- Last Updated: 2024-08-12T02:18:31Z
+- Last Updated: 2026-08-20T04:35:49Z
 
 
 #### To add to your app:

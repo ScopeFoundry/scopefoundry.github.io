@@ -622,7 +622,7 @@
             "owner": "ScopeFoundry",
             "html_url": "https://github.com/ScopeFoundry/HW_pico_tc08",
             "description": "Pico Technology TC08 USB Thermocouple Reader ScopeFoundry Hardware Component",
-            "updated_at": "2024-08-12T02:18:31Z",
+            "updated_at": "2026-08-20T04:35:49Z",
             "readme": "README could not be retrieved.",
             "default_branch": "master",
             "parent_id": null
@@ -723,6 +723,72 @@
             "description": null,
             "updated_at": "2026-07-08T19:47:38Z",
             "readme": "README could not be retrieved.",
+            "default_branch": "main",
+            "parent_id": null
+        },
+        {
+            "name": "HW_productivity_plc",
+            "id": 1340293959,
+            "owner": "ScopeFoundry",
+            "html_url": "https://github.com/ScopeFoundry/HW_productivity_plc",
+            "description": null,
+            "updated_at": "2026-08-20T04:52:17Z",
+            "readme": "# ScopeFoundryHW.productivity_plc\n\nAutomationDirect Productivity Series PLC hardware plug-in for ScopeFoundry.\n\nThis interface communicates with a Productivity series PLC over Modbus\nTCP. Tag names, addresses, and data types are parsed automatically from\na tag database CSV file exported from the PLC's programming software\n(CLICK/Productivity Suite), and a `LoggedQuantity` is created for each\nModbus tag (coils, discrete inputs, input registers, and holding\nregisters), including 16/32-bit integer and IEEE-754 float32 tags.\n\nHardware information available from AutomationDirect:\n<https://www.automationdirect.com>\n\nScopeFoundry is a Python platform for controlling custom laboratory \nexperiments and visualizing scientific data\n\n<http://www.scopefoundry.org>\n\nThis software is not made by or endorsed by AutomationDirect.\n\n\n## Author\n\nEdward S. Barnard <esbarnard@lbl.gov>\n\nSasha Razumtcev <arazumtcev@lbl.gov>\n\n\n## Requirements\n\n * ScopeFoundry\n * [pyModbusTCP](https://pymodbustcp.readthedocs.io/en/latest/)\n * pandas\n\n \n## How to Install\n\npip install pyModbusTCP pandas\n",
+            "default_branch": "main",
+            "parent_id": null
+        },
+        {
+            "name": "HW_pfeiffer_vgc",
+            "id": 1340298747,
+            "owner": "ScopeFoundry",
+            "html_url": "https://github.com/ScopeFoundry/HW_pfeiffer_vgc",
+            "description": null,
+            "updated_at": "2026-08-20T04:59:22Z",
+            "readme": "ScopeFoundryHW.pfeiffer_vgc\n==================================\n\nPfeiffer Vacuum gauge controller hardware plug-in for ScopeFoundry.\n\nThis package provides interfaces for two Pfeiffer Vacuum gauge\ncontrollers:\n\n * Pfeiffer VGC / TPG 256A MaxiGauge multi-channel pressure gauge\n   controller, communicating via a manufacturer-specific ASCII serial\n   protocol over RS232.\n * Pfeiffer Vacuum MPT200 multi-gauge transmitter, communicating via\n   the Pfeiffer Vacuum RS-485 telegram protocol.\n\nBoth report pressure readings and sensor type per channel, with unit\nconversion between mbar/Pa and Torr provided via connected/scaled\n`LoggedQuantities`.\n\nHardware information available from Pfeiffer Vacuum:\n<https://www.pfeiffervacuum.com>\n\nScopeFoundry is a Python platform for controlling custom laboratory \nexperiments and visualizing scientific data\n\n<http://www.scopefoundry.org>\n\nThis software is not made by or endorsed by Pfeiffer Vacuum.\n\n\nAuthors\n----------\n\n* Edward S. Barnard <esbarnard@lbl.gov>\n* Alan Buckley <alanbuckley@lbl.gov>\n* Sasha Razumtcev <arazumtcev@lbl.gov>\n\n\nRequirements\n------------\n\n * ScopeFoundry\n * [pyserial](https://pyserial.readthedocs.io/en/latest/)\n\n \nHow to Install\n---------------\n\npip install pyserial\n",
+            "default_branch": "main",
+            "parent_id": null
+        },
+        {
+            "name": "HW_filmsense_ellipsometer",
+            "id": 1340882611,
+            "owner": "ScopeFoundry",
+            "html_url": "https://github.com/ScopeFoundry/HW_filmsense_ellipsometer",
+            "description": null,
+            "updated_at": "2026-08-20T16:12:31Z",
+            "readme": "ScopeFoundryHW.filmsense_ellipsometer\n==================================\n\nFilmSense multi-wavelength ellipsometer hardware plug-in for ScopeFoundry.\n\nThis interface communicates with the FilmSense ellipsometer controller\nover a TCP/IP socket, sending binary commands to run single and dynamic\n(time-resolved) measurements, select fit models, and retrieve or save\nellipsometric parameters.\n\nHardware information available from FilmSense:\n<https://film-sense.com>\n\nScopeFoundry is a Python platform for controlling custom laboratory \nexperiments and visualizing scientific data\n\n<http://www.scopefoundry.org>\n\nThis software is not made by or endorsed by FilmSense, LLC.\n\n\nAuthors\n----------\n\n* Sasha Razumtcev <arazumtcev@lbl.gov>\n* Edward S. Barnard <esbarnard@lbl.gov>\n\nRequirements\n------------\n\n * ScopeFoundry\n * FilmSense ellipsometer reachable over TCP/IP (default port 4000)\n\n \nHow to Install\n---------------\n\nClone this repo into your ScopeFoundryHW directory alongside your other\nhardware plug-ins (git submodule add).\n",
+            "default_branch": "main",
+            "parent_id": null
+        },
+        {
+            "name": "HW_vat_throttle",
+            "id": 1340886825,
+            "owner": "ScopeFoundry",
+            "html_url": "https://github.com/ScopeFoundry/HW_vat_throttle",
+            "description": null,
+            "updated_at": "2026-08-21T16:23:59Z",
+            "readme": "# ScopeFoundryHW.vat_throttle\n\nVAT throttle valve controller hardware plug-in for ScopeFoundry.\n\nThis interface communicates with a VAT throttle valve controller over\nRS232 serial, allowing the valve to be opened/closed, and operated in\neither direct position control (0-100% open) or closed-loop pressure\ncontrol mode, reading back actual valve position and chamber pressure.\n\nHardware information available from VAT Group:\n<https://www.vatgroup.com>\n\nScopeFoundry is a Python platform for controlling custom laboratory \nexperiments and visualizing scientific data\n\n<http://www.scopefoundry.org>\n\nThis software is not made by or endorsed by VAT Group.\n\n\n## Authors\n\n* Edward S. Barnard <esbarnard@lbl.gov>\n* Alan Buckley <alanbuckley@lbl.gov>\n* Sasha Razumtcev <arazumtcev@lbl.gov>\n\n\n## Requirements\n\n * ScopeFoundry\n * [pyserial](https://pyserial.readthedocs.io/en/latest/)\n\n \n## How to Install\n\npip install pyserial\n",
+            "default_branch": "main",
+            "parent_id": null
+        },
+        {
+            "name": "HW_data_streamer",
+            "id": 1340891592,
+            "owner": "ScopeFoundry",
+            "html_url": "https://github.com/ScopeFoundry/HW_data_streamer",
+            "description": null,
+            "updated_at": "2026-08-20T16:15:11Z",
+            "readme": "# ScopeFoundryHW.data_streamer\n\nData Streaming and Logging plug-in for ScopeFoundry. Currently supports\nInfluxDB.\n\n## InfluxDB data logging.\n\nThis hardware component listens to all `LoggedQuantities` on the hardware\nand measurement components of a ScopeFoundry app and streams their values\nto an InfluxDB bucket as they change, tagged by hardware/measurement name.\n\nInfluxDB is an open-source time series database, useful here for logging\nand visualizing (e.g. via Grafana) the state of a running experiment:\n<https://www.influxdata.com>\n\nScopeFoundry is a Python platform for controlling custom laboratory \nexperiments\n\n<http://www.scopefoundry.org>\n\n\n## Author\n\nEdward S. Barnard <esbarnard@lbl.gov>\n\n\n## Requirements\n\n * ScopeFoundry\n * [influxdb-client](https://github.com/influxdata/influxdb-client-python)\n\n \n## How to Install\n\npip install influxdb-client\ngit submodule add https://github.com/ScopeFoundry/HW_data_streamer ScopeFoundryHW/data_streamer\n",
+            "default_branch": "main",
+            "parent_id": null
+        },
+        {
+            "name": "HW_seren_rf",
+            "id": 1340899806,
+            "owner": "ScopeFoundry",
+            "html_url": "https://github.com/ScopeFoundry/HW_seren_rf",
+            "description": null,
+            "updated_at": "2026-08-21T16:24:55Z",
+            "readme": "# ScopeFoundryHW.seren_rf\n\nSeren RF power supply and matching network hardware plug-in for\nScopeFoundry.\n\nThis package provides interfaces for two Seren IPS components used\ntogether in RF plasma systems:\n\n * Seren RX01/LX01 series RF power supply, controlled over a serial\n   ASCII command protocol to enable/disable RF output and set/read\n   forward and reflected power.\n * Seren MC2 automatic matching network, controlled over serial to\n   set auto/manual tuning mode, read load/tune capacitor positions,\n   and move to preset positions.\n\nHardware information available from Seren IPS:\n<https://www.serenips.com/index.html>\n\nScopeFoundry is a Python platform for controlling custom laboratory \nexperiments and visualizing scientific data\n\n<http://www.scopefoundry.org>\n\nThis software is not made by or endorsed by Seren IPS.\n\n\n## Authors\n\n* Edward Barnard <esbarnard@lbl.gov>\n* Alan Buckley <alanbuckley@lbl.gov>\n* Sasha Razumtcev <arazumtcev@lbl.gov>\n\n\n## Requirements\n\n * ScopeFoundry\n * [pyserial](https://pyserial.readthedocs.io/en/latest/)\n\n \n## How to Install\n\npip install pyserial\n",
             "default_branch": "main",
             "parent_id": null
         },

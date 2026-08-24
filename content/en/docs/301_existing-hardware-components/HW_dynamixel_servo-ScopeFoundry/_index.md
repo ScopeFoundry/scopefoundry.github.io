@@ -2,7 +2,7 @@
 ---
 title: HW_dynamixel_servo (ScopeFoundry)
 description: Robotis Dynamixel Servo Motor ScopeFoundry Hardware Component
-weight: 21
+weight: 22
 ---
 - [GitHub Repository](https://github.com/ScopeFoundry/HW_dynamixel_servo)
 - Last Updated: 2026-07-08T03:36:00Z
