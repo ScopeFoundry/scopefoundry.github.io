@@ -5,7 +5,7 @@ description: No description available.
 weight: 44
 ---
 - [GitHub Repository](https://github.com/UBene/HW_princeton_instruments_spectrometers)
-- Last Updated: 2025-06-09T20:16:49Z
+- Last Updated: 2026-08-24T10:21:48Z
 
 
 #### To add to your app:

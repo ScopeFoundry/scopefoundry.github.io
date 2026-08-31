@@ -83,7 +83,7 @@
             "owner": "UBene",
             "html_url": "https://github.com/UBene/HW_princeton_instruments_spectrometers",
             "description": null,
-            "updated_at": "2025-06-09T20:16:49Z",
+            "updated_at": "2026-08-24T10:21:48Z",
             "readme": "ScopeFoundryHW.princeton_instruments_spectrometers\n==================================================\n\nPrinceton Instruments (now Teledyne) / Acton Spectrometers plug-in for ScopeFoundry.\n\nThis interface uses the RS-232 or USB-serial interface to spectrometers.\n\nIt has been tested with:\n- Acton 2300i spectrometers\n- PI 300, 500 series spectrometers\n\nScopeFoundry is a Python platform for controlling custom laboratory \nexperiments and visualizing scientific data.\n\n<http://www.scopefoundry.org>\n\nThis software is not made by or endorsed by Princeton Instruments, Inc.\n\nDesigned to work with HW_picam.\n\nWavelength Calibration\n----------------------\n\n- From calibration parameters stored on the device (e.g., through)\n- Or parameters in the settings (manually calibrated, see docs/calibration.ipynb)\n\nAuthors\n-------\n\nEdward Barnard  \nBenedikt Ursprung\n\nRequirements\n------------\n\n- ScopeFoundry\n- PySerial\n\nHistory\n-------\n\n### 0.1.0  2025-01-01  Initial public release.\n\nThe plug-in has been used internally and has been stable.\n\n### 0.2.0  2025-01-01  Added reading wavelength from device.\n\nTested with Teledyne Spectra Pro HRS 300.",
             "default_branch": "main",
             "parent_id": null
