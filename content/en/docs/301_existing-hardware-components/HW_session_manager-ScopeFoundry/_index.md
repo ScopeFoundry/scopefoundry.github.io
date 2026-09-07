@@ -2,7 +2,7 @@
 ---
 title: HW_session_manager (ScopeFoundry)
 description: Git Session Manager ScopeFoundry HW component
-weight: 49
+weight: 50
 ---
 - [GitHub Repository](https://github.com/ScopeFoundry/HW_session_manager)
 - Last Updated: 2026-08-14T23:20:19Z

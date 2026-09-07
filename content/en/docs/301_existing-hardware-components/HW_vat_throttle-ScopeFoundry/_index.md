@@ -2,7 +2,7 @@
 ---
 title: HW_vat_throttle (ScopeFoundry)
 description: No description available.
-weight: 60
+weight: 62
 ---
 - [GitHub Repository](https://github.com/ScopeFoundry/HW_vat_throttle)
 - Last Updated: 2026-08-21T16:23:59Z

@@ -2,7 +2,7 @@
 ---
 title: HW_seren_rf (ScopeFoundry)
 description: No description available.
-weight: 48
+weight: 49
 ---
 - [GitHub Repository](https://github.com/ScopeFoundry/HW_seren_rf)
 - Last Updated: 2026-08-21T16:24:55Z

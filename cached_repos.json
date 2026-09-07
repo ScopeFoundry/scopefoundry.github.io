@@ -793,6 +793,28 @@
             "parent_id": null
         },
         {
+            "name": "HW_micos_hydra",
+            "id": 1356582557,
+            "owner": "ScopeFoundry",
+            "html_url": "https://github.com/ScopeFoundry/HW_micos_hydra",
+            "description": "pi micos hydr tt",
+            "updated_at": "2026-09-04T01:41:10Z",
+            "readme": "ScopeFoundryHW.pi_micos_hydra_tt\n=================================\n\nScopeFoundry hardware plug-in to control a PI/miCos SMC Hydra TT XY stage\ncontroller over its native Venus-3 serial protocol.\n\nScopeFoundry is a Python platform for controlling custom laboratory\nexperiments and visualizing scientific data.\n\n<http://www.scopefoundry.org>\n\nThis software is not made by or endorsed by the device manufacturer.\n\nAuthor\n------\n\nTim Kodalle\n\nRequirements\n------------\n\n    * ScopeFoundry\n    * pyserial\n\nNo vendor SDK or DLL is required -- this plug-in talks to the controller\ndirectly over RS-232 (115200 baud, 8N1, no handshake) using the controller's\nnative Venus-3 command set (see the manufacturer's Hydra TT command\nreference manual).\n\nUsage\n-----\n\n`MicosHydraTtHW` exposes X/Y position, target, velocity, acceleration, stop\ndeceleration, and moving/emergency-switch status as ScopeFoundry settings,\nplus operations to initialize (enable), home/calibrate, and halt each axis.\n\nThe controller powers up with both axes' motors disabled, so\n`MicosHydraTtHW.connect()` automatically initializes (enables) both axes on\nconnect -- no manual \"Init\" click is needed before a move will work.\n\nFiles\n-----\n\n    * micos_hydra_venus_dev.py     -- low-level Venus-3 serial driver\n    * micos_hydra_venus_hw.py      -- ScopeFoundry HardwareComponent\n    * micos_hydra_venus_readout.py -- example Measurement/readout\n    * micos_hydra_venus_test_app.py -- minimal standalone test app\n\nRun the test app from a project that has this plug-in and ScopeFoundry\ninstalled:\n\n    python -m ScopeFoundryHW.pi_micos_hydra_tt.micos_hydra_venus_test_app\n\nKnown quirks\n------------\n\n    * Sending `init` to an axis (including the automatic init-on-connect)\n      causes a small (few-micron) physical position nudge on that axis.\n      Not currently compensated for -- worth revisiting if your application\n      needs micron-level positioning accuracy right after connecting.\n\nHistory\n-------\n\n### 0.1.0    2026-09-03    Initial public release, verified against real Hydra TT hardware.\n",
+            "default_branch": "main",
+            "parent_id": null
+        },
+        {
+            "name": "HW_thorlabs_quantalux",
+            "id": 1356585605,
+            "owner": "ScopeFoundry",
+            "html_url": "https://github.com/ScopeFoundry/HW_thorlabs_quantalux",
+            "description": null,
+            "updated_at": "2026-09-04T01:34:07Z",
+            "readme": "ScopeFoundryHW.thorlabs_quantalux\n==================================\n\nScopeFoundry hardware plug-in to control a Thorlabs Quantalux cooled sCMOS\ncamera (tested against the CC215MU) via Thorlabs' `thorlabs_tsi_sdk`.\n\nScopeFoundry is a Python platform for controlling custom laboratory\nexperiments and visualizing scientific data.\n\n<http://www.scopefoundry.org>\n\nThis software is not made by or endorsed by Thorlabs.\n\nAuthor\n------\n\nTim Kodalle\n\nRequirements\n------------\n\n    * ScopeFoundry\n    * ThorCam (installs both the driver and the native TSI SDK DLLs this\n      plug-in loads at runtime -- get it from thorlabs.com)\n    * the `thorlabs_tsi_sdk` Python package\n\nSetup\n-----\n\n`thorlabs_tsi_sdk` is not published on PyPI, so it can't be added as a\nnormal `uv`/`pyproject.toml` dependency. Install it manually once, into this\nproject's virtual environment, after installing ThorCam:\n\n1. Find `Scientific_Camera_Interfaces.zip`, installed by ThorCam under\n   `C:\\Program Files\\Thorlabs\\Scientific Imaging\\Scientific Camera Support\\`.\n2. Extract it, then find\n   `SDK\\Python Toolkit\\thorlabs_tsi_camera_python_sdk_package.zip` inside.\n3. From the project root:\n   `uv pip install \"path\\to\\thorlabs_tsi_camera_python_sdk_package.zip\"`\n\nAt runtime, `thorlabs_quantalux_dev.py` looks for the native SDK DLLs in the\ndefault ThorCam install directory\n(`C:\\Program Files\\Thorlabs\\Scientific Imaging\\ThorCam`). If ThorCam is\ninstalled elsewhere, set the `THORLABS_TSI_DLL_DIR` environment variable to\nthat folder instead.\n\nKnown SDK limitation\n---------------------\n\nThis SDK version (0.0.8) has no software cooling control and no temperature\nreadout at all. `cooling_supported` / `cooling_enabled` are read-only status\nflags that just reflect whether the TEC power cable is physically plugged\nin.\n\nHistory\n-------\n\n### 0.1.0    2026-09-03    Initial version, verified against a real CC215MU.\n",
+            "default_branch": "main",
+            "parent_id": null
+        },
+        {
             "name": "HW_dynamixel_servo",
             "id": 932142210,
             "owner": "trovatello-lab",

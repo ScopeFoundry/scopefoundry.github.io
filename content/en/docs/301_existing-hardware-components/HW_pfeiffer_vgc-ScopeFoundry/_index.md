@@ -2,7 +2,7 @@
 ---
 title: HW_pfeiffer_vgc (ScopeFoundry)
 description: No description available.
-weight: 38
+weight: 39
 ---
 - [GitHub Repository](https://github.com/ScopeFoundry/HW_pfeiffer_vgc)
 - Last Updated: 2026-08-20T04:59:22Z

@@ -2,7 +2,7 @@
 ---
 title: HW_productivity_plc (ScopeFoundry)
 description: No description available.
-weight: 45
+weight: 46
 ---
 - [GitHub Repository](https://github.com/ScopeFoundry/HW_productivity_plc)
 - Last Updated: 2026-08-20T04:52:17Z

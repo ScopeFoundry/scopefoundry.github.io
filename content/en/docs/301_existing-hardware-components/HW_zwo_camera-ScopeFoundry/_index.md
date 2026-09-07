@@ -2,7 +2,7 @@
 ---
 title: HW_zwo_camera (ScopeFoundry)
 description: ASI ZWO Astronomy Camera ScopeFoundry Hardware Component
-weight: 64
+weight: 66
 ---
 - [GitHub Repository](https://github.com/ScopeFoundry/HW_zwo_camera)
 - Last Updated: 2024-08-12T00:35:51Z

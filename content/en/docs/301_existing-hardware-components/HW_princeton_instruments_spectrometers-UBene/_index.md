@@ -2,7 +2,7 @@
 ---
 title: HW_princeton_instruments_spectrometers (UBene)
 description: No description available.
-weight: 44
+weight: 45
 ---
 - [GitHub Repository](https://github.com/UBene/HW_princeton_instruments_spectrometers)
 - Last Updated: 2026-08-24T10:21:48Z
