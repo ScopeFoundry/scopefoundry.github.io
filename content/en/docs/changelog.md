@@ -2,6 +2,40 @@
 title: CHANGELOG
 weight: 100_000
 ---
+### ScopeFoundry 2.3.0 2026-09-10
+
+- Features added:
+  - [sweeping/map_2D] can now load datasets from h5 files.
+  - [sweeping] added settings monitoring, collectors can now show multiple widgets of settings, improved UI and data representation and added locator widget to map data to actuator positions, added RETAKE and RETAKE_SLICE options to remeasure/update data at specified actuator positions (by a list or range) of the previous sweep (leaving other data points unchanged). Dsets can now be extended over multiple axis, added capability to add sweeps to existing dsets using ADD_REPS mode and "re-sweep" setting, initialized with nan to simplify showing data, improved list_ui and descriptions.
+  - [sweeping] added dset_reducer.
+  - [git_funcs] to store git captures in h5 files.
+  - [dynamic loading and reloading of Measurements and HardwareComponents]
+  - [h5_analyze_with_ipynb] added options 'all', 'remaining' that control the files to be added as cells when feature is triggered. 'last' remains default. Now also has a function to archive files that are not mentioned in the ipynb. Can now handle scalar datasets.
+  - [measurement snippets] measurements can now provide code snippets that are auto-inserted into the analysis notebook; py analysis scripts declared by measurements are auto-copied into the save directory when analyze_with_ipynb runs (py_analysis_dir).
+  - [LQCollection] can now "claim" another LQCollection. This allows an LQCollection to be created in another object and then be added to an existing collection.
+  - [favorites widget] now integrated to quickbar. Hides if empty.
+  - [ranges] added clipboard copy/paste buttons.
+  - [generate_loaders] generated data classes now support dict-style access.
+  - [tools/_readout template] improved setup_figure().
+
+
+- Fixes:
+  - [lq_intervaled_range] fixed for the case where intervals have different lengths.
+  - [base_microscope_app] state of checkboxes are visible even in light mode of Win 11, see: issue #73.
+  - [logged_quantity] checkbox stylesheet now uses POSIX-form path so Qt can parse it on Windows (silently dropped otherwise). PR #85.
+  - [graphics/zoomable_map/tests] fixed AttributeError from QApplication being imported via QtGui instead of QtWidgets. PR #85.
+  - [base_microscope_app] quickaccess bar no longer expands beyond its maximum width when the window is maximized; favorites_widget correctly shown in quickbar; fixed measurement UI overflow in TabbedView (issue #72).
+  - [h5_io] fixed case where git group was created but the git-info save otherwise failed.
+  - [sweeping] fixed bug when retaking data / adding slices (indices were not reset); fixed bug when position arrays are of different lengths.
+  - [xreload] compatibility fixes for newer Python versions.
+
+
+### ScopeFoundry 2.2.1 2025-09-03
+
+- Fixes:
+  - setup.py for packaging.
+
+
 ### ScopeFoundry 2.2.0 2025-09-01
 
 - Features added:
@@ -15,6 +49,7 @@ weight: 100_000
 
 - Fixes:
   - Issue #70: removed hard dependency on PyQt6
+
 
 ### ScopeFoundry 2.1.0 2025-05-30
 
@@ -51,6 +86,7 @@ weight: 100_000
   - Issue #61 xreload stopped working in python version 3.12: For 3.12+ ScopeFoundry now uses its own modified version of xreload.py. Older version still need to install xreload
   - Critical bugfix: .qss file required was not included in packaging
   - ScopeFoundry.tools.new_app now has access to example hardware
+
 
 ### ScopeFoundry 2.0.0 2025-01-16
 
@@ -100,13 +136,16 @@ weight: 100_000
   - unit test added
   - improved consistency of set and displayed value.
 
+
 ### ScopeFoundry 1.4.2 2024-07-03
 
 - Add CI/CD for GitHub to auto-build releases and publish to PyPI
 
+
 ### ScopeFoundry 1.4.1 2024-07-01
 
 - Fixes bug with Data Browser and other sub-package imports (#47)
+
 
 ### ScopeFoundry 1.4.0 2024-03-14
 
@@ -117,6 +156,7 @@ weight: 100_000
 - Settings can be loaded from H5 files
 - QT6 compatibility
 - Dark Mode Option
+
 
 ### ScopeFoundry 1.3.0 2023-09-26
 
@@ -161,6 +201,7 @@ weight: 100_000
 
 - Bug Fix: QtConsole creates alerts instead of writing to console on Windows
 
+
 ### ScopeFoundry 1.1.0 2018-07-24
 
 - App level logging enabled by default
@@ -182,5 +223,3 @@ to hardware
 ### ScopeFoundry 1.0.0 2017-09-12
 
 - Initial PyPI release
-
-
