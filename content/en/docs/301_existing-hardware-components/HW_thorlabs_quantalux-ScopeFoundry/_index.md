@@ -5,7 +5,7 @@ description: No description available.
 weight: 60
 ---
 - [GitHub Repository](https://github.com/ScopeFoundry/HW_thorlabs_quantalux)
-- Last Updated: 2026-09-04T01:34:07Z
+- Last Updated: 2026-09-16T19:05:09Z
 
 
 #### To add to your app:

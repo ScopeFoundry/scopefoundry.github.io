@@ -5,7 +5,7 @@ description: pi micos hydr tt
 weight: 33
 ---
 - [GitHub Repository](https://github.com/ScopeFoundry/HW_micos_hydra)
-- Last Updated: 2026-09-04T01:41:10Z
+- Last Updated: 2026-09-16T19:06:17Z
 
 
 #### To add to your app:
